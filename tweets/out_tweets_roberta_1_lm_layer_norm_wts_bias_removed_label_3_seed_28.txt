@@ -1,0 +1,681 @@
+---------------------------------------------------------------------------
+Results for seed:  28
+Model: roberta-base, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:0
+Noise: 1% with label 3
+Label counts for Train:
+  Label 4: 966
+  Label 2: 1099
+  Label 5: 486
+  Label 1: 115
+  Label 3: 144
+  Label 0: 48
+Label counts for Validation:
+  Label 4: 117
+  Label 5: 60
+  Label 0: 3
+  Label 3: 17
+  Label 1: 22
+  Label 2: 133
+Label counts for Test:
+  Label 4: 133
+  Label 2: 136
+  Label 0: 6
+  Label 1: 14
+  Label 3: 29
+  Label 5: 58
+28
+Actual labels:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+Label counts for Train:
+  Label 4: 971
+  Label 2: 1106
+  Label 5: 493
+  Label 1: 119
+  Label 3: 116
+  Label 0: 53
+Layer: backbone.embeddings.word_embeddings.weight, Size: torch.Size([50265, 768]), req grad: True
+Layer: backbone.embeddings.position_embeddings.weight, Size: torch.Size([514, 768]), req grad: True
+Layer: backbone.embeddings.token_type_embeddings.weight, Size: torch.Size([1, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.0.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.0.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.0.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.1.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.1.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.1.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.2.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.2.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.2.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.3.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.3.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.3.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.4.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.4.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.4.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.5.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.5.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.5.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.6.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.6.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.6.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.7.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.7.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.7.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.8.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.8.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.8.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.9.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.9.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.9.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.10.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.10.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.10.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.11.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.11.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.11.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.pooler.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.pooler.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: classifier.weight, Size: torch.Size([6, 768]), req grad: True
+Epoch 1/70
+Train Loss: 1.4083, Accuracy: 0.3779, Precision: 0.1248, Recall: 0.1692, F1: 0.1394
+Validation Loss: 1.4035, Accuracy: 0.3778, Precision: 0.0630, Recall: 0.1667, F1: 0.0914
+Testing Loss: 1.4377, Accuracy: 0.3617, Precision: 0.0603, Recall: 0.1667, F1: 0.0885
+LM Predictions:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0655, Accuracy: 0.2500, Precision: 0.0500, Recall: 0.2000, F1: 0.0800
+Epoch 2/70
+Train Loss: 1.3764, Accuracy: 0.4125, Precision: 0.1360, Recall: 0.1862, F1: 0.1554
+Validation Loss: 1.3562, Accuracy: 0.4943, Precision: 0.1662, Recall: 0.2338, F1: 0.1926
+Testing Loss: 1.3679, Accuracy: 0.5213, Precision: 0.1763, Recall: 0.2432, F1: 0.2026
+LM Predictions:  [4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 2, 4, 2, 4, 4, 2, 2, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0749, Accuracy: 0.2143, Precision: 0.0865, Recall: 0.2171, F1: 0.1167
+Epoch 3/70
+Train Loss: 1.2600, Accuracy: 0.5472, Precision: 0.1828, Recall: 0.2502, F1: 0.2110
+Validation Loss: 1.1136, Accuracy: 0.6108, Precision: 0.2649, Recall: 0.2896, F1: 0.2504
+Testing Loss: 1.0866, Accuracy: 0.6356, Precision: 0.2482, Recall: 0.2978, F1: 0.2537
+LM Predictions:  [2, 5, 5, 2, 4, 2, 4, 2, 2, 2, 2, 4, 2, 2, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 4, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8330, Accuracy: 0.3571, Precision: 0.1550, Recall: 0.3314, F1: 0.2110
+Epoch 4/70
+Train Loss: 1.0196, Accuracy: 0.6288, Precision: 0.2654, Recall: 0.2936, F1: 0.2632
+Validation Loss: 0.9277, Accuracy: 0.6420, Precision: 0.2762, Recall: 0.3134, F1: 0.2873
+Testing Loss: 0.9169, Accuracy: 0.6782, Precision: 0.3070, Recall: 0.3372, F1: 0.3122
+LM Predictions:  [2, 5, 5, 5, 4, 2, 4, 2, 5, 5, 5, 4, 2, 5, 4, 4, 5, 5, 4, 5, 2, 2, 5, 2, 4, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9026, Accuracy: 0.3929, Precision: 0.2299, Recall: 0.3371, F1: 0.2732
+Epoch 5/70
+Train Loss: 0.8519, Accuracy: 0.6886, Precision: 0.3222, Recall: 0.3560, F1: 0.3378
+Validation Loss: 0.8277, Accuracy: 0.6847, Precision: 0.3364, Recall: 0.3840, F1: 0.3528
+Testing Loss: 0.7597, Accuracy: 0.7154, Precision: 0.3450, Recall: 0.3989, F1: 0.3645
+LM Predictions:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 2, 4, 4, 5, 5, 5, 4, 5, 5, 5, 5, 2, 5, 5, 5, 5]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8442, Accuracy: 0.3214, Precision: 0.3045, Recall: 0.2686, F1: 0.2161
+Epoch 6/70
+Train Loss: 0.7650, Accuracy: 0.7313, Precision: 0.4109, Recall: 0.3960, F1: 0.3782
+Validation Loss: 0.9541, Accuracy: 0.7131, Precision: 0.3399, Recall: 0.3879, F1: 0.3611
+Testing Loss: 0.8653, Accuracy: 0.7447, Precision: 0.3499, Recall: 0.4059, F1: 0.3747
+LM Predictions:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 2, 5, 5]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0952, Accuracy: 0.2857, Precision: 0.1250, Recall: 0.2400, F1: 0.1403
+Epoch 7/70
+Train Loss: 0.7221, Accuracy: 0.7432, Precision: 0.4015, Recall: 0.4129, F1: 0.3963
+Validation Loss: 0.7849, Accuracy: 0.7102, Precision: 0.3694, Recall: 0.4047, F1: 0.3819
+Testing Loss: 0.7654, Accuracy: 0.7660, Precision: 0.4486, Recall: 0.4807, F1: 0.4613
+LM Predictions:  [5, 3, 5, 5, 3, 5, 3, 3, 5, 5, 3, 3, 5, 3, 4, 5, 3, 3, 3, 3, 5, 5, 3, 2, 5, 2, 5, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0081, Accuracy: 0.1786, Precision: 0.2917, Recall: 0.1286, F1: 0.1452
+Epoch 8/70
+Train Loss: 0.6823, Accuracy: 0.7582, Precision: 0.4477, Recall: 0.4555, F1: 0.4407
+Validation Loss: 0.8365, Accuracy: 0.7159, Precision: 0.4053, Recall: 0.4539, F1: 0.4196
+Testing Loss: 0.7987, Accuracy: 0.7606, Precision: 0.4439, Recall: 0.4658, F1: 0.4465
+LM Predictions:  [3, 3, 3, 3, 3, 2, 4, 5, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 5, 3, 5, 5, 2, 5, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2736, Accuracy: 0.1071, Precision: 0.1444, Recall: 0.0905, F1: 0.1111
+Epoch 9/70
+Train Loss: 0.6257, Accuracy: 0.7827, Precision: 0.4484, Recall: 0.4761, F1: 0.4598
+Validation Loss: 0.7800, Accuracy: 0.7330, Precision: 0.4201, Recall: 0.4445, F1: 0.4291
+Testing Loss: 0.7989, Accuracy: 0.7739, Precision: 0.4532, Recall: 0.4605, F1: 0.4539
+LM Predictions:  [3, 3, 3, 3, 5, 2, 3, 5, 5, 3, 3, 2, 5, 3, 4, 5, 3, 3, 3, 3, 3, 5, 3, 2, 2, 2, 5, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.3045, Accuracy: 0.1429, Precision: 0.2476, Recall: 0.1048, F1: 0.1310
+Epoch 10/70
+Train Loss: 0.6011, Accuracy: 0.7964, Precision: 0.5183, Recall: 0.5106, F1: 0.4862
+Validation Loss: 0.6884, Accuracy: 0.7614, Precision: 0.4453, Recall: 0.5175, F1: 0.4694
+Testing Loss: 0.6706, Accuracy: 0.7739, Precision: 0.4560, Recall: 0.5020, F1: 0.4736
+LM Predictions:  [3, 3, 3, 3, 3, 2, 3, 5, 3, 3, 3, 3, 3, 3, 4, 5, 3, 3, 3, 3, 3, 5, 3, 3, 5, 1, 5, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.3595, Accuracy: 0.1071, Precision: 0.2333, Recall: 0.0810, F1: 0.1111
+Epoch 11/70
+Train Loss: 0.5822, Accuracy: 0.8132, Precision: 0.5157, Recall: 0.5309, F1: 0.5099
+Validation Loss: 0.7845, Accuracy: 0.7472, Precision: 0.4384, Recall: 0.5108, F1: 0.4592
+Testing Loss: 0.7206, Accuracy: 0.7766, Precision: 0.4567, Recall: 0.4983, F1: 0.4713
+LM Predictions:  [3, 3, 3, 3, 3, 4, 3, 5, 3, 3, 3, 5, 3, 3, 4, 3, 3, 3, 3, 3, 3, 5, 3, 3, 5, 4, 3, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.4442, Accuracy: 0.1071, Precision: 0.1528, Recall: 0.0905, F1: 0.1136
+Epoch 12/70
+Train Loss: 0.5451, Accuracy: 0.8104, Precision: 0.4726, Recall: 0.5353, F1: 0.4976
+Validation Loss: 0.7678, Accuracy: 0.7358, Precision: 0.4181, Recall: 0.4354, F1: 0.4248
+Testing Loss: 0.6707, Accuracy: 0.7473, Precision: 0.4059, Recall: 0.4154, F1: 0.4064
+LM Predictions:  [4, 4, 4, 3, 4, 2, 4, 5, 3, 4, 4, 5, 3, 4, 4, 5, 4, 4, 4, 4, 3, 5, 4, 1, 5, 4, 3, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.1452, Accuracy: 0.2143, Precision: 0.1111, Recall: 0.1810, F1: 0.1222
+Epoch 13/70
+Train Loss: 0.5139, Accuracy: 0.8314, Precision: 0.5350, Recall: 0.5535, F1: 0.5285
+Validation Loss: 0.8284, Accuracy: 0.7443, Precision: 0.4502, Recall: 0.5307, F1: 0.4713
+Testing Loss: 0.8087, Accuracy: 0.7846, Precision: 0.4681, Recall: 0.5112, F1: 0.4835
+LM Predictions:  [3, 3, 3, 3, 3, 5, 4, 5, 5, 3, 3, 3, 3, 3, 4, 5, 3, 3, 3, 3, 3, 5, 3, 3, 5, 3, 3, 5]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.5849, Accuracy: 0.1429, Precision: 0.2143, Recall: 0.1143, F1: 0.1429
+Epoch 14/70
+Train Loss: 0.5030, Accuracy: 0.8237, Precision: 0.5145, Recall: 0.5518, F1: 0.5121
+Validation Loss: 0.7683, Accuracy: 0.7869, Precision: 0.4768, Recall: 0.5116, F1: 0.4915
+Testing Loss: 0.7480, Accuracy: 0.8032, Precision: 0.5681, Recall: 0.5066, F1: 0.5088
+LM Predictions:  [3, 3, 3, 2, 3, 2, 4, 5, 5, 3, 3, 5, 2, 2, 4, 5, 3, 3, 3, 3, 2, 2, 3, 2, 5, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0052, Accuracy: 0.2857, Precision: 0.3167, Recall: 0.2095, F1: 0.2397
+Epoch 15/70
+Train Loss: 0.4662, Accuracy: 0.8453, Precision: 0.5480, Recall: 0.5768, F1: 0.5394
+Validation Loss: 0.6935, Accuracy: 0.7898, Precision: 0.5742, Recall: 0.5588, F1: 0.5265
+Testing Loss: 0.5973, Accuracy: 0.8112, Precision: 0.5328, Recall: 0.5361, F1: 0.5205
+LM Predictions:  [3, 3, 3, 3, 3, 2, 3, 5, 1, 3, 3, 3, 3, 2, 4, 5, 3, 3, 3, 3, 3, 2, 3, 3, 5, 3, 3, 1]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2388, Accuracy: 0.1429, Precision: 0.3333, Recall: 0.1048, F1: 0.1556
+Epoch 16/70
+Train Loss: 0.4751, Accuracy: 0.8397, Precision: 0.5171, Recall: 0.5661, F1: 0.5308
+Validation Loss: 0.7185, Accuracy: 0.7727, Precision: 0.4544, Recall: 0.5259, F1: 0.4795
+Testing Loss: 0.6023, Accuracy: 0.8059, Precision: 0.4805, Recall: 0.5226, F1: 0.4979
+LM Predictions:  [3, 3, 3, 3, 5, 4, 3, 5, 5, 3, 3, 5, 5, 5, 4, 5, 3, 3, 3, 3, 5, 2, 3, 5, 5, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.1013, Accuracy: 0.2857, Precision: 0.4000, Recall: 0.2095, F1: 0.2477
+Epoch 17/70
+Train Loss: 0.4285, Accuracy: 0.8565, Precision: 0.5552, Recall: 0.5821, F1: 0.5502
+Validation Loss: 0.8088, Accuracy: 0.7955, Precision: 0.5180, Recall: 0.5358, F1: 0.5124
+Testing Loss: 0.7788, Accuracy: 0.7952, Precision: 0.4839, Recall: 0.4963, F1: 0.4858
+LM Predictions:  [3, 3, 3, 2, 3, 4, 4, 2, 1, 3, 3, 2, 2, 2, 4, 1, 3, 3, 3, 3, 4, 2, 3, 2, 5, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0816, Accuracy: 0.2500, Precision: 0.2083, Recall: 0.1952, F1: 0.2000
+Epoch 18/70
+Train Loss: 0.4220, Accuracy: 0.8649, Precision: 0.5745, Recall: 0.5990, F1: 0.5679
+Validation Loss: 0.6964, Accuracy: 0.7898, Precision: 0.5249, Recall: 0.5364, F1: 0.5069
+Testing Loss: 0.6307, Accuracy: 0.8059, Precision: 0.5352, Recall: 0.5237, F1: 0.5143
+LM Predictions:  [3, 3, 3, 1, 3, 4, 4, 5, 5, 3, 3, 1, 2, 2, 4, 5, 3, 3, 3, 3, 5, 2, 3, 5, 5, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0172, Accuracy: 0.3214, Precision: 0.3750, Recall: 0.2429, F1: 0.2928
+Epoch 19/70
+Train Loss: 0.4057, Accuracy: 0.8621, Precision: 0.5669, Recall: 0.5909, F1: 0.5728
+Validation Loss: 0.7626, Accuracy: 0.8153, Precision: 0.6142, Recall: 0.5557, F1: 0.5604
+Testing Loss: 0.8002, Accuracy: 0.7926, Precision: 0.5596, Recall: 0.5004, F1: 0.5114
+LM Predictions:  [3, 3, 3, 2, 3, 4, 4, 5, 5, 3, 3, 2, 2, 2, 4, 5, 3, 3, 3, 3, 2, 2, 3, 2, 5, 1, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9513, Accuracy: 0.3214, Precision: 0.3333, Recall: 0.2429, F1: 0.2745
+Epoch 20/70
+Train Loss: 0.3950, Accuracy: 0.8705, Precision: 0.6008, Recall: 0.6127, F1: 0.6057
+Validation Loss: 0.7388, Accuracy: 0.8011, Precision: 0.5663, Recall: 0.5437, F1: 0.5282
+Testing Loss: 0.6534, Accuracy: 0.7872, Precision: 0.5028, Recall: 0.4909, F1: 0.4899
+LM Predictions:  [3, 3, 3, 2, 3, 4, 4, 5, 5, 3, 3, 3, 2, 2, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 5, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9298, Accuracy: 0.3571, Precision: 0.3778, Recall: 0.2667, F1: 0.3109
+Epoch 21/70
+Train Loss: 0.3794, Accuracy: 0.8684, Precision: 0.5945, Recall: 0.6061, F1: 0.5959
+Validation Loss: 0.7513, Accuracy: 0.7841, Precision: 0.5531, Recall: 0.5551, F1: 0.5177
+Testing Loss: 0.7417, Accuracy: 0.7819, Precision: 0.4935, Recall: 0.5091, F1: 0.4973
+LM Predictions:  [3, 3, 3, 3, 3, 4, 4, 5, 5, 3, 3, 3, 5, 3, 4, 5, 3, 3, 3, 3, 3, 2, 3, 5, 3, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2892, Accuracy: 0.2500, Precision: 0.4000, Recall: 0.1952, F1: 0.2546
+Epoch 22/70
+Train Loss: 0.3618, Accuracy: 0.8793, Precision: 0.5957, Recall: 0.6123, F1: 0.6026
+Validation Loss: 0.7355, Accuracy: 0.7898, Precision: 0.4736, Recall: 0.5419, F1: 0.4960
+Testing Loss: 0.7621, Accuracy: 0.7952, Precision: 0.4768, Recall: 0.4984, F1: 0.4839
+LM Predictions:  [3, 3, 3, 3, 3, 4, 4, 5, 5, 3, 3, 3, 2, 4, 4, 5, 3, 4, 3, 3, 4, 2, 3, 2, 3, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2898, Accuracy: 0.3571, Precision: 0.3889, Recall: 0.2762, F1: 0.3091
+Epoch 23/70
+Train Loss: 0.3453, Accuracy: 0.8859, Precision: 0.6224, Recall: 0.6401, F1: 0.6266
+Validation Loss: 0.8680, Accuracy: 0.8097, Precision: 0.5672, Recall: 0.5703, F1: 0.5609
+Testing Loss: 0.8047, Accuracy: 0.7952, Precision: 0.5460, Recall: 0.5247, F1: 0.5302
+LM Predictions:  [1, 3, 3, 2, 3, 4, 4, 5, 5, 3, 3, 1, 2, 2, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 1, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8922, Accuracy: 0.3929, Precision: 0.4286, Recall: 0.3083, F1: 0.3528
+Epoch 24/70
+Train Loss: 0.3395, Accuracy: 0.8849, Precision: 0.6053, Recall: 0.6320, F1: 0.6162
+Validation Loss: 0.7088, Accuracy: 0.8097, Precision: 0.5757, Recall: 0.5588, F1: 0.5624
+Testing Loss: 0.7048, Accuracy: 0.8138, Precision: 0.5562, Recall: 0.5485, F1: 0.5508
+LM Predictions:  [1, 3, 3, 2, 3, 2, 4, 5, 5, 3, 3, 1, 2, 2, 4, 5, 3, 3, 3, 3, 2, 2, 1, 2, 1, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0016, Accuracy: 0.3214, Precision: 0.3935, Recall: 0.2512, F1: 0.2869
+Epoch 25/70
+Train Loss: 0.3293, Accuracy: 0.8912, Precision: 0.6249, Recall: 0.6452, F1: 0.6342
+Validation Loss: 0.7654, Accuracy: 0.8040, Precision: 0.6041, Recall: 0.5542, F1: 0.5288
+Testing Loss: 0.7436, Accuracy: 0.7926, Precision: 0.5407, Recall: 0.5066, F1: 0.4977
+LM Predictions:  [3, 3, 3, 2, 3, 2, 4, 5, 2, 3, 3, 3, 2, 2, 4, 5, 3, 3, 3, 3, 2, 2, 3, 2, 3, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2386, Accuracy: 0.3214, Precision: 0.4167, Recall: 0.2333, F1: 0.2674
+Epoch 26/70
+Train Loss: 0.3076, Accuracy: 0.8901, Precision: 0.6136, Recall: 0.6388, F1: 0.6174
+Validation Loss: 0.7185, Accuracy: 0.8068, Precision: 0.5598, Recall: 0.5735, F1: 0.5625
+Testing Loss: 0.7354, Accuracy: 0.8059, Precision: 0.5361, Recall: 0.5481, F1: 0.5414
+LM Predictions:  [3, 3, 3, 1, 3, 2, 4, 5, 5, 3, 3, 1, 2, 2, 4, 5, 3, 3, 3, 3, 1, 2, 3, 2, 3, 3, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8635, Accuracy: 0.2857, Precision: 0.3611, Recall: 0.2095, F1: 0.2584
+Epoch 27/70
+Train Loss: 0.3120, Accuracy: 0.8929, Precision: 0.6320, Recall: 0.6609, F1: 0.6455
+Validation Loss: 0.7931, Accuracy: 0.7898, Precision: 0.5225, Recall: 0.5579, F1: 0.5291
+Testing Loss: 0.6860, Accuracy: 0.8218, Precision: 0.5796, Recall: 0.6019, F1: 0.5874
+LM Predictions:  [5, 3, 3, 1, 3, 4, 4, 5, 5, 3, 3, 1, 2, 5, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 3, 1, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8713, Accuracy: 0.3929, Precision: 0.4286, Recall: 0.2905, F1: 0.3415
+Epoch 28/70
+Train Loss: 0.2962, Accuracy: 0.9087, Precision: 0.7268, Recall: 0.6887, F1: 0.6830
+Validation Loss: 0.8961, Accuracy: 0.7812, Precision: 0.5340, Recall: 0.5633, F1: 0.5384
+Testing Loss: 0.9068, Accuracy: 0.7819, Precision: 0.4873, Recall: 0.4812, F1: 0.4804
+LM Predictions:  [1, 3, 3, 3, 3, 4, 4, 5, 5, 3, 3, 3, 2, 2, 4, 5, 3, 3, 3, 3, 1, 2, 3, 2, 3, 3, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2904, Accuracy: 0.3214, Precision: 0.4111, Recall: 0.2429, F1: 0.3028
+Epoch 29/70
+Train Loss: 0.3053, Accuracy: 0.9020, Precision: 0.6404, Recall: 0.6764, F1: 0.6568
+Validation Loss: 0.7626, Accuracy: 0.8097, Precision: 0.5765, Recall: 0.5614, F1: 0.5587
+Testing Loss: 0.7943, Accuracy: 0.7979, Precision: 0.5327, Recall: 0.5243, F1: 0.5272
+LM Predictions:  [5, 3, 3, 3, 1, 2, 4, 5, 5, 3, 3, 3, 2, 2, 4, 5, 3, 3, 3, 3, 2, 2, 1, 3, 3, 1, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9850, Accuracy: 0.2857, Precision: 0.3750, Recall: 0.2274, F1: 0.2744
+Epoch 30/70
+Train Loss: 0.3055, Accuracy: 0.9041, Precision: 0.8205, Recall: 0.6871, F1: 0.6789
+Validation Loss: 0.8959, Accuracy: 0.7784, Precision: 0.5211, Recall: 0.5440, F1: 0.5227
+Testing Loss: 0.8759, Accuracy: 0.7979, Precision: 0.5372, Recall: 0.5538, F1: 0.5377
+LM Predictions:  [1, 3, 3, 3, 3, 4, 4, 5, 1, 3, 3, 3, 2, 2, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 3, 3, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0359, Accuracy: 0.3571, Precision: 0.4667, Recall: 0.2667, F1: 0.3361
+Epoch 31/70
+Train Loss: 0.2795, Accuracy: 0.9013, Precision: 0.6563, Recall: 0.6635, F1: 0.6510
+Validation Loss: 0.7206, Accuracy: 0.8097, Precision: 0.5390, Recall: 0.5684, F1: 0.5490
+Testing Loss: 0.7741, Accuracy: 0.8112, Precision: 0.5445, Recall: 0.5641, F1: 0.5528
+LM Predictions:  [1, 3, 3, 3, 3, 4, 4, 5, 5, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 3, 1, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.1925, Accuracy: 0.3929, Precision: 0.4667, Recall: 0.2905, F1: 0.3573
+Epoch 32/70
+Train Loss: 0.2924, Accuracy: 0.9048, Precision: 0.6400, Recall: 0.6626, F1: 0.6502
+Validation Loss: 0.7663, Accuracy: 0.8068, Precision: 0.5501, Recall: 0.5702, F1: 0.5499
+Testing Loss: 0.7545, Accuracy: 0.8032, Precision: 0.5330, Recall: 0.5542, F1: 0.5421
+LM Predictions:  [1, 3, 3, 2, 3, 4, 4, 5, 5, 3, 3, 2, 2, 2, 4, 5, 3, 3, 3, 3, 1, 2, 1, 2, 3, 1, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0616, Accuracy: 0.3214, Precision: 0.3730, Recall: 0.2429, F1: 0.2869
+Epoch 33/70
+Train Loss: 0.2559, Accuracy: 0.9108, Precision: 0.7197, Recall: 0.6793, F1: 0.6739
+Validation Loss: 0.7927, Accuracy: 0.7955, Precision: 0.5203, Recall: 0.5457, F1: 0.5281
+Testing Loss: 0.7275, Accuracy: 0.7979, Precision: 0.5478, Recall: 0.5534, F1: 0.5464
+LM Predictions:  [5, 3, 3, 2, 3, 4, 4, 5, 5, 3, 3, 2, 2, 5, 4, 5, 3, 3, 3, 3, 5, 2, 1, 2, 3, 5, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8396, Accuracy: 0.3929, Precision: 0.3730, Recall: 0.2905, F1: 0.3228
+Epoch 34/70
+Train Loss: 0.2426, Accuracy: 0.9255, Precision: 0.7390, Recall: 0.7121, F1: 0.7056
+Validation Loss: 0.8857, Accuracy: 0.8125, Precision: 0.6400, Recall: 0.5764, F1: 0.6005
+Testing Loss: 0.8843, Accuracy: 0.8165, Precision: 0.6199, Recall: 0.5619, F1: 0.5687
+LM Predictions:  [5, 3, 3, 2, 1, 4, 4, 5, 5, 3, 3, 2, 2, 2, 4, 5, 3, 3, 3, 1, 2, 2, 1, 2, 3, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.1129, Accuracy: 0.3571, Precision: 0.3722, Recall: 0.2845, F1: 0.3117
+Epoch 35/70
+Train Loss: 0.2268, Accuracy: 0.9276, Precision: 0.7699, Recall: 0.7271, F1: 0.7299
+Validation Loss: 0.8783, Accuracy: 0.7699, Precision: 0.5908, Recall: 0.5739, F1: 0.5763
+Testing Loss: 0.8733, Accuracy: 0.8005, Precision: 0.5718, Recall: 0.5739, F1: 0.5666
+LM Predictions:  [0, 3, 3, 0, 1, 4, 4, 5, 5, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 5, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6568, Accuracy: 0.4286, Precision: 0.4861, Recall: 0.3321, F1: 0.3904
+Epoch 36/70
+Train Loss: 0.2261, Accuracy: 0.9293, Precision: 0.7682, Recall: 0.7663, F1: 0.7662
+Validation Loss: 0.7641, Accuracy: 0.8097, Precision: 0.6407, Recall: 0.5997, F1: 0.6169
+Testing Loss: 0.7832, Accuracy: 0.8059, Precision: 0.6044, Recall: 0.6107, F1: 0.6004
+LM Predictions:  [0, 3, 1, 1, 1, 4, 4, 5, 5, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 1, 5, 2, 1, 2, 3, 2, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8532, Accuracy: 0.3929, Precision: 0.4488, Recall: 0.3083, F1: 0.3573
+Epoch 37/70
+Train Loss: 0.2190, Accuracy: 0.9290, Precision: 0.7785, Recall: 0.7688, F1: 0.7712
+Validation Loss: 0.7896, Accuracy: 0.8210, Precision: 0.6310, Recall: 0.6153, F1: 0.6203
+Testing Loss: 0.8901, Accuracy: 0.8138, Precision: 0.5773, Recall: 0.5916, F1: 0.5751
+LM Predictions:  [5, 3, 1, 0, 1, 4, 4, 5, 5, 3, 3, 1, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 5, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8597, Accuracy: 0.4643, Precision: 0.4708, Recall: 0.3560, F1: 0.3944
+Epoch 38/70
+Train Loss: 0.2335, Accuracy: 0.9230, Precision: 0.7387, Recall: 0.7234, F1: 0.7261
+Validation Loss: 0.7919, Accuracy: 0.8125, Precision: 0.6332, Recall: 0.5859, F1: 0.6050
+Testing Loss: 0.8528, Accuracy: 0.8005, Precision: 0.5929, Recall: 0.5715, F1: 0.5727
+LM Predictions:  [0, 3, 1, 1, 1, 4, 4, 5, 5, 3, 3, 1, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 5, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6315, Accuracy: 0.4643, Precision: 0.4802, Recall: 0.3560, F1: 0.3986
+Epoch 39/70
+Train Loss: 0.1902, Accuracy: 0.9356, Precision: 0.7776, Recall: 0.7733, F1: 0.7733
+Validation Loss: 0.8076, Accuracy: 0.8097, Precision: 0.5953, Recall: 0.5696, F1: 0.5731
+Testing Loss: 0.8608, Accuracy: 0.8032, Precision: 0.5842, Recall: 0.5682, F1: 0.5743
+LM Predictions:  [1, 3, 1, 3, 1, 4, 4, 5, 5, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 0, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7134, Accuracy: 0.4643, Precision: 0.5778, Recall: 0.3655, F1: 0.4383
+Epoch 40/70
+Train Loss: 0.1996, Accuracy: 0.9409, Precision: 0.8103, Recall: 0.7914, F1: 0.7942
+Validation Loss: 0.8359, Accuracy: 0.8153, Precision: 0.6413, Recall: 0.6472, F1: 0.6400
+Testing Loss: 0.8781, Accuracy: 0.8005, Precision: 0.5488, Recall: 0.5467, F1: 0.5476
+LM Predictions:  [0, 3, 3, 3, 1, 4, 4, 5, 5, 3, 3, 1, 2, 2, 4, 5, 3, 3, 3, 1, 5, 2, 1, 2, 3, 5, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9693, Accuracy: 0.4286, Precision: 0.5250, Recall: 0.3417, F1: 0.4087
+Epoch 41/70
+Train Loss: 0.1915, Accuracy: 0.9398, Precision: 0.8110, Recall: 0.8204, F1: 0.8152
+Validation Loss: 0.8192, Accuracy: 0.8125, Precision: 0.6650, Recall: 0.6530, F1: 0.6393
+Testing Loss: 0.8543, Accuracy: 0.7979, Precision: 0.5702, Recall: 0.5476, F1: 0.5571
+LM Predictions:  [0, 3, 3, 3, 1, 4, 4, 5, 5, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 2, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8680, Accuracy: 0.4286, Precision: 0.5139, Recall: 0.3417, F1: 0.4078
+Epoch 42/70
+Train Loss: 0.1898, Accuracy: 0.9402, Precision: 0.8007, Recall: 0.8042, F1: 0.8021
+Validation Loss: 0.9239, Accuracy: 0.8125, Precision: 0.6822, Recall: 0.6342, F1: 0.6362
+Testing Loss: 0.9417, Accuracy: 0.8085, Precision: 0.6102, Recall: 0.5947, F1: 0.5841
+LM Predictions:  [0, 3, 0, 1, 1, 4, 4, 5, 5, 3, 3, 0, 2, 2, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 1, 5, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6335, Accuracy: 0.5000, Precision: 0.5341, Recall: 0.4071, F1: 0.4563
+Epoch 43/70
+Train Loss: 0.1864, Accuracy: 0.9409, Precision: 0.7938, Recall: 0.8110, F1: 0.8019
+Validation Loss: 0.9403, Accuracy: 0.8267, Precision: 0.7219, Recall: 0.6459, F1: 0.6588
+Testing Loss: 0.9965, Accuracy: 0.8138, Precision: 0.5983, Recall: 0.5460, F1: 0.5555
+LM Predictions:  [5, 3, 2, 3, 3, 4, 4, 5, 5, 3, 3, 2, 2, 2, 4, 5, 3, 3, 3, 5, 5, 2, 5, 2, 3, 5, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7785, Accuracy: 0.4643, Precision: 0.5357, Recall: 0.3476, F1: 0.3885
+Epoch 44/70
+Train Loss: 0.1878, Accuracy: 0.9447, Precision: 0.8314, Recall: 0.8284, F1: 0.8274
+Validation Loss: 0.7342, Accuracy: 0.8324, Precision: 0.6781, Recall: 0.6083, F1: 0.6196
+Testing Loss: 0.7896, Accuracy: 0.8324, Precision: 0.6151, Recall: 0.6108, F1: 0.6121
+LM Predictions:  [5, 3, 1, 3, 1, 4, 4, 5, 5, 3, 3, 1, 2, 5, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 5, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8962, Accuracy: 0.4286, Precision: 0.4369, Recall: 0.3321, F1: 0.3730
+Epoch 45/70
+Train Loss: 0.1885, Accuracy: 0.9412, Precision: 0.8106, Recall: 0.8380, F1: 0.8214
+Validation Loss: 0.8977, Accuracy: 0.7955, Precision: 0.5871, Recall: 0.6003, F1: 0.5891
+Testing Loss: 0.9195, Accuracy: 0.8165, Precision: 0.5737, Recall: 0.5915, F1: 0.5760
+LM Predictions:  [0, 3, 1, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 3, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6634, Accuracy: 0.4286, Precision: 0.5083, Recall: 0.3321, F1: 0.3990
+Epoch 46/70
+Train Loss: 0.1957, Accuracy: 0.9398, Precision: 0.8025, Recall: 0.8117, F1: 0.8060
+Validation Loss: 0.8128, Accuracy: 0.8040, Precision: 0.5819, Recall: 0.5975, F1: 0.5794
+Testing Loss: 0.8253, Accuracy: 0.8271, Precision: 0.5713, Recall: 0.6042, F1: 0.5811
+LM Predictions:  [0, 3, 3, 3, 3, 4, 4, 5, 0, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9071, Accuracy: 0.3929, Precision: 0.5000, Recall: 0.2905, F1: 0.3674
+Epoch 47/70
+Train Loss: 0.2000, Accuracy: 0.9398, Precision: 0.8131, Recall: 0.8237, F1: 0.8162
+Validation Loss: 0.7870, Accuracy: 0.8097, Precision: 0.6177, Recall: 0.5951, F1: 0.5990
+Testing Loss: 0.7461, Accuracy: 0.8271, Precision: 0.5990, Recall: 0.6239, F1: 0.6064
+LM Predictions:  [0, 3, 0, 3, 3, 4, 4, 5, 0, 3, 3, 3, 2, 0, 3, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8943, Accuracy: 0.3929, Precision: 0.5333, Recall: 0.2905, F1: 0.3710
+Epoch 48/70
+Train Loss: 0.2227, Accuracy: 0.9300, Precision: 0.7904, Recall: 0.7834, F1: 0.7855
+Validation Loss: 0.8368, Accuracy: 0.8239, Precision: 0.6792, Recall: 0.5895, F1: 0.6194
+Testing Loss: 0.9509, Accuracy: 0.8112, Precision: 0.5987, Recall: 0.5706, F1: 0.5755
+LM Predictions:  [2, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 5, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.5810, Accuracy: 0.5000, Precision: 0.5639, Recall: 0.3893, F1: 0.4597
+Epoch 49/70
+Train Loss: 0.1693, Accuracy: 0.9507, Precision: 0.8431, Recall: 0.8659, F1: 0.8535
+Validation Loss: 0.7210, Accuracy: 0.8295, Precision: 0.7094, Recall: 0.6687, F1: 0.6669
+Testing Loss: 0.8371, Accuracy: 0.8032, Precision: 0.5822, Recall: 0.5784, F1: 0.5710
+LM Predictions:  [0, 3, 0, 1, 1, 4, 4, 5, 0, 3, 3, 1, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 0, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6810, Accuracy: 0.4643, Precision: 0.5667, Recall: 0.3655, F1: 0.4378
+Epoch 50/70
+Train Loss: 0.1455, Accuracy: 0.9566, Precision: 0.8451, Recall: 0.8581, F1: 0.8509
+Validation Loss: 0.8117, Accuracy: 0.8097, Precision: 0.6187, Recall: 0.5913, F1: 0.6034
+Testing Loss: 0.8162, Accuracy: 0.8324, Precision: 0.5821, Recall: 0.6133, F1: 0.5914
+LM Predictions:  [0, 3, 0, 3, 3, 4, 4, 5, 0, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7245, Accuracy: 0.4643, Precision: 0.5556, Recall: 0.3571, F1: 0.4280
+Epoch 51/70
+Train Loss: 0.1385, Accuracy: 0.9587, Precision: 0.8556, Recall: 0.8719, F1: 0.8610
+Validation Loss: 0.8447, Accuracy: 0.8125, Precision: 0.6340, Recall: 0.5866, F1: 0.6040
+Testing Loss: 0.8473, Accuracy: 0.8059, Precision: 0.5598, Recall: 0.5628, F1: 0.5596
+LM Predictions:  [0, 3, 0, 3, 1, 4, 4, 5, 5, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 2, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7350, Accuracy: 0.4643, Precision: 0.5583, Recall: 0.3655, F1: 0.4398
+Epoch 52/70
+Train Loss: 0.1495, Accuracy: 0.9559, Precision: 0.8549, Recall: 0.8704, F1: 0.8618
+Validation Loss: 0.8613, Accuracy: 0.8097, Precision: 0.6157, Recall: 0.5881, F1: 0.5734
+Testing Loss: 0.8867, Accuracy: 0.8245, Precision: 0.5970, Recall: 0.5940, F1: 0.5858
+LM Predictions:  [0, 3, 0, 3, 3, 4, 4, 5, 5, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0144, Accuracy: 0.4286, Precision: 0.5083, Recall: 0.3238, F1: 0.3944
+Epoch 53/70
+Train Loss: 0.1544, Accuracy: 0.9545, Precision: 0.8476, Recall: 0.8514, F1: 0.8481
+Validation Loss: 1.0288, Accuracy: 0.7898, Precision: 0.6477, Recall: 0.6069, F1: 0.5825
+Testing Loss: 0.9969, Accuracy: 0.8005, Precision: 0.4914, Recall: 0.5076, F1: 0.4974
+LM Predictions:  [5, 3, 0, 0, 1, 4, 4, 5, 5, 3, 3, 3, 2, 5, 3, 5, 3, 3, 3, 5, 5, 2, 5, 2, 3, 3, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0232, Accuracy: 0.4286, Precision: 0.5926, Recall: 0.3226, F1: 0.3873
+Epoch 54/70
+Train Loss: 0.1589, Accuracy: 0.9580, Precision: 0.8584, Recall: 0.8709, F1: 0.8611
+Validation Loss: 0.7729, Accuracy: 0.8097, Precision: 0.6185, Recall: 0.5951, F1: 0.6051
+Testing Loss: 0.7641, Accuracy: 0.8191, Precision: 0.5983, Recall: 0.6219, F1: 0.6054
+LM Predictions:  [0, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 0, 3, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8344, Accuracy: 0.4286, Precision: 0.6167, Recall: 0.3321, F1: 0.4266
+Epoch 55/70
+Train Loss: 0.1298, Accuracy: 0.9619, Precision: 0.8839, Recall: 0.8845, F1: 0.8824
+Validation Loss: 0.8604, Accuracy: 0.8153, Precision: 0.6419, Recall: 0.6036, F1: 0.6208
+Testing Loss: 0.9422, Accuracy: 0.8005, Precision: 0.6026, Recall: 0.5919, F1: 0.5934
+LM Predictions:  [0, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8685, Accuracy: 0.4286, Precision: 0.5833, Recall: 0.3417, F1: 0.4250
+Epoch 56/70
+Train Loss: 0.1213, Accuracy: 0.9671, Precision: 0.8807, Recall: 0.8945, F1: 0.8867
+Validation Loss: 0.9070, Accuracy: 0.7983, Precision: 0.6216, Recall: 0.5907, F1: 0.6048
+Testing Loss: 0.9158, Accuracy: 0.7952, Precision: 0.5886, Recall: 0.5928, F1: 0.5796
+LM Predictions:  [0, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9636, Accuracy: 0.4643, Precision: 0.6167, Recall: 0.3655, F1: 0.4563
+Epoch 57/70
+Train Loss: 0.1173, Accuracy: 0.9699, Precision: 0.9011, Recall: 0.9077, F1: 0.9041
+Validation Loss: 0.8471, Accuracy: 0.8153, Precision: 0.6694, Recall: 0.6059, F1: 0.6303
+Testing Loss: 0.8451, Accuracy: 0.8112, Precision: 0.6214, Recall: 0.6176, F1: 0.6110
+LM Predictions:  [0, 3, 0, 2, 1, 4, 4, 5, 5, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6350, Accuracy: 0.5000, Precision: 0.5833, Recall: 0.3988, F1: 0.4694
+Epoch 58/70
+Train Loss: 0.1203, Accuracy: 0.9678, Precision: 0.8979, Recall: 0.8987, F1: 0.8981
+Validation Loss: 0.8902, Accuracy: 0.8153, Precision: 0.6703, Recall: 0.6498, F1: 0.6343
+Testing Loss: 0.8481, Accuracy: 0.8245, Precision: 0.6116, Recall: 0.6124, F1: 0.6101
+LM Predictions:  [2, 3, 0, 2, 1, 4, 4, 5, 5, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.5728, Accuracy: 0.5357, Precision: 0.6111, Recall: 0.4131, F1: 0.4846
+Epoch 59/70
+Train Loss: 0.0989, Accuracy: 0.9734, Precision: 0.9152, Recall: 0.9137, F1: 0.9142
+Validation Loss: 0.9549, Accuracy: 0.8239, Precision: 0.6658, Recall: 0.6042, F1: 0.6172
+Testing Loss: 1.0178, Accuracy: 0.8059, Precision: 0.5957, Recall: 0.5726, F1: 0.5760
+LM Predictions:  [2, 3, 0, 5, 1, 4, 4, 5, 5, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7683, Accuracy: 0.5357, Precision: 0.5417, Recall: 0.4036, F1: 0.4528
+Epoch 60/70
+Train Loss: 0.1096, Accuracy: 0.9699, Precision: 0.9068, Recall: 0.9051, F1: 0.9056
+Validation Loss: 0.9241, Accuracy: 0.8097, Precision: 0.6254, Recall: 0.5903, F1: 0.6011
+Testing Loss: 0.9392, Accuracy: 0.8138, Precision: 0.5728, Recall: 0.5833, F1: 0.5757
+LM Predictions:  [2, 3, 0, 2, 1, 4, 4, 5, 2, 3, 3, 3, 2, 5, 3, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.5953, Accuracy: 0.5000, Precision: 0.5417, Recall: 0.3702, F1: 0.4230
+Epoch 61/70
+Train Loss: 0.0903, Accuracy: 0.9759, Precision: 0.9155, Recall: 0.9293, F1: 0.9222
+Validation Loss: 0.9582, Accuracy: 0.8267, Precision: 0.6196, Recall: 0.5966, F1: 0.6053
+Testing Loss: 1.0202, Accuracy: 0.8218, Precision: 0.5893, Recall: 0.6112, F1: 0.5969
+LM Predictions:  [2, 3, 2, 2, 1, 4, 4, 5, 2, 2, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7574, Accuracy: 0.5357, Precision: 0.5227, Recall: 0.4036, F1: 0.4314
+Epoch 62/70
+Train Loss: 0.1271, Accuracy: 0.9692, Precision: 0.9214, Recall: 0.8890, F1: 0.9031
+Validation Loss: 0.8227, Accuracy: 0.8210, Precision: 0.6987, Recall: 0.7315, F1: 0.6787
+Testing Loss: 0.8861, Accuracy: 0.8218, Precision: 0.6030, Recall: 0.6026, F1: 0.5994
+LM Predictions:  [2, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 3, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8115, Accuracy: 0.5000, Precision: 0.6389, Recall: 0.3798, F1: 0.4702
+Epoch 63/70
+Train Loss: 0.1054, Accuracy: 0.9720, Precision: 0.9042, Recall: 0.9097, F1: 0.9067
+Validation Loss: 1.0050, Accuracy: 0.7955, Precision: 0.7067, Recall: 0.6250, F1: 0.6157
+Testing Loss: 0.9086, Accuracy: 0.8298, Precision: 0.6293, Recall: 0.6067, F1: 0.6157
+LM Predictions:  [5, 3, 0, 2, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.5807, Accuracy: 0.5000, Precision: 0.5778, Recall: 0.3893, F1: 0.4615
+Epoch 64/70
+Train Loss: 0.1104, Accuracy: 0.9678, Precision: 0.9022, Recall: 0.8910, F1: 0.8959
+Validation Loss: 1.0767, Accuracy: 0.8011, Precision: 0.6148, Recall: 0.5570, F1: 0.5794
+Testing Loss: 1.0979, Accuracy: 0.7979, Precision: 0.5829, Recall: 0.5530, F1: 0.5598
+LM Predictions:  [2, 3, 0, 2, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 3, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.0815, Accuracy: 0.4643, Precision: 0.5024, Recall: 0.3560, F1: 0.4107
+Epoch 65/70
+Train Loss: 0.1000, Accuracy: 0.9738, Precision: 0.9159, Recall: 0.9171, F1: 0.9163
+Validation Loss: 1.1840, Accuracy: 0.7699, Precision: 0.6393, Recall: 0.5740, F1: 0.5853
+Testing Loss: 1.2547, Accuracy: 0.7660, Precision: 0.6043, Recall: 0.6104, F1: 0.5684
+LM Predictions:  [2, 3, 0, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 0, 4, 5, 3, 3, 3, 5, 2, 2, 1, 2, 3, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9345, Accuracy: 0.4643, Precision: 0.5972, Recall: 0.3655, F1: 0.4458
+Epoch 66/70
+Train Loss: 0.1166, Accuracy: 0.9682, Precision: 0.9049, Recall: 0.9101, F1: 0.9073
+Validation Loss: 0.9649, Accuracy: 0.8239, Precision: 0.7130, Recall: 0.6151, F1: 0.6537
+Testing Loss: 1.0907, Accuracy: 0.8218, Precision: 0.6476, Recall: 0.6407, F1: 0.6273
+LM Predictions:  [2, 3, 0, 0, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.3615, Accuracy: 0.6071, Precision: 0.6778, Recall: 0.4881, F1: 0.5647
+Epoch 67/70
+Train Loss: 0.0888, Accuracy: 0.9776, Precision: 0.9235, Recall: 0.9394, F1: 0.9312
+Validation Loss: 0.8706, Accuracy: 0.8409, Precision: 0.6732, Recall: 0.6193, F1: 0.6419
+Testing Loss: 0.9329, Accuracy: 0.8271, Precision: 0.6085, Recall: 0.6182, F1: 0.6061
+LM Predictions:  [2, 3, 0, 3, 1, 4, 4, 5, 3, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 3, 1, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.6909, Accuracy: 0.5357, Precision: 0.6389, Recall: 0.4131, F1: 0.4980
+Epoch 68/70
+Train Loss: 0.0932, Accuracy: 0.9787, Precision: 0.9315, Recall: 0.9320, F1: 0.9315
+Validation Loss: 1.1393, Accuracy: 0.7869, Precision: 0.6426, Recall: 0.5944, F1: 0.6091
+Testing Loss: 1.0824, Accuracy: 0.7926, Precision: 0.5949, Recall: 0.6048, F1: 0.5899
+LM Predictions:  [5, 3, 3, 3, 1, 4, 4, 5, 0, 3, 3, 3, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 1, 1, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8255, Accuracy: 0.5357, Precision: 0.6389, Recall: 0.4310, F1: 0.5054
+Epoch 69/70
+Train Loss: 0.0890, Accuracy: 0.9787, Precision: 0.9319, Recall: 0.9283, F1: 0.9296
+Validation Loss: 1.0205, Accuracy: 0.8125, Precision: 0.6619, Recall: 0.6013, F1: 0.6230
+Testing Loss: 0.9554, Accuracy: 0.8351, Precision: 0.6157, Recall: 0.6215, F1: 0.6050
+LM Predictions:  [2, 3, 2, 2, 1, 4, 4, 5, 0, 3, 3, 0, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.1153, Accuracy: 0.6786, Precision: 0.7123, Recall: 0.5452, F1: 0.6131
+Epoch 70/70
+Train Loss: 0.1177, Accuracy: 0.9696, Precision: 0.8987, Recall: 0.9035, F1: 0.8999
+Validation Loss: 1.0139, Accuracy: 0.8125, Precision: 0.6722, Recall: 0.6302, F1: 0.6383
+Testing Loss: 0.9172, Accuracy: 0.8191, Precision: 0.6314, Recall: 0.6538, F1: 0.6200
+LM Predictions:  [2, 3, 0, 2, 1, 4, 4, 5, 0, 3, 3, 1, 2, 5, 4, 5, 3, 3, 3, 5, 5, 2, 1, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.2841, Accuracy: 0.6071, Precision: 0.6389, Recall: 0.4881, F1: 0.5495
+Label Memorization Analysis: 
+LM Loss: 1.2841, Accuracy: 0.6071, Precision: 0.6389, Recall: 0.4881, F1: 0.5495
+---------------------------------------------------------------------------
+
+
+
