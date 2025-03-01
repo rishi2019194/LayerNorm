@@ -1,0 +1,335 @@
+Model: Qwen/Qwen2-0.5B-Instruct, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:0
+Noise: 1% with label 5
+Label counts for Train:
+  Label 0: 1141
+  Label 1: 1011
+  Label 2: 966
+  Label 5: 260
+  Label 4: 344
+  Label 3: 495
+Label counts for Validation:
+  Label 1: 113
+  Label 0: 127
+  Label 4: 38
+  Label 5: 29
+  Label 2: 107
+  Label 3: 55
+Label counts for Test:
+  Label 2: 190
+  Label 0: 224
+  Label 3: 97
+  Label 1: 199
+  Label 5: 51
+  Label 4: 67
+42
+Actual labels:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+Label counts for Train:
+  Label 0: 1146
+  Label 1: 1020
+  Label 2: 974
+  Label 5: 218
+  Label 4: 354
+  Label 3: 505
+Layer: backbone.model.embed_tokens.weight, Size: torch.Size([151936, 896]), req grad: True
+Layer: backbone.model.layers.0.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.0.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.0.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.0.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.0.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.0.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.0.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.0.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.0.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.0.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.0.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.0.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.1.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.1.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.1.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.1.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.1.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.1.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.1.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.1.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.1.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.1.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.1.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.1.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.2.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.2.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.2.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.2.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.2.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.2.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.2.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.2.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.2.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.2.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.2.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.2.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.3.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.3.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.3.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.3.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.3.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.3.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.3.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.3.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.3.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.3.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.3.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.3.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.4.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.4.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.4.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.4.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.4.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.4.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.4.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.4.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.4.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.4.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.4.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.4.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.5.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.5.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.5.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.5.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.5.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.5.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.5.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.5.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.5.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.5.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.5.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.5.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.6.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.6.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.6.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.6.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.6.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.6.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.6.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.6.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.6.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.6.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.6.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.6.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.7.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.7.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.7.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.7.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.7.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.7.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.7.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.7.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.7.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.7.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.7.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.7.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.8.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.8.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.8.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.8.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.8.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.8.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.8.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.8.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.8.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.8.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.8.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.8.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.9.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.9.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.9.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.9.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.9.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.9.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.9.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.9.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.9.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.9.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.9.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.9.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.10.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.10.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.10.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.10.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.10.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.10.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.10.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.10.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.10.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.10.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.10.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.10.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.11.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.11.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.11.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.11.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.11.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.11.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.11.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.11.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.11.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.11.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.11.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.11.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.12.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.12.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.12.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.12.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.12.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.12.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.12.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.12.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.12.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.12.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.12.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.12.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.13.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.13.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.13.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.13.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.13.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.13.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.13.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.13.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.13.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.13.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.13.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.13.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.14.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.14.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.14.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.14.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.14.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.14.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.14.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.14.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.14.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.14.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.14.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.14.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.15.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.15.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.15.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.15.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.15.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.15.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.15.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.15.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.15.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.15.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.15.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.15.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.16.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.16.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.16.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.16.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.16.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.16.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.16.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.16.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.16.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.16.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.16.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.16.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.17.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.17.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.17.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.17.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.17.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.17.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.17.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.17.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.17.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.17.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.17.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.17.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.18.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.18.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.18.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.18.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.18.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.18.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.18.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.18.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.18.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.18.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.18.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.18.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.19.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.19.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.19.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.19.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.19.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.19.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.19.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.19.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.19.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.19.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.19.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.19.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.20.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.20.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.20.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.20.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.20.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.20.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.20.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.20.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.20.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.20.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.20.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.20.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.21.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.21.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.21.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.21.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.21.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.21.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.21.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.21.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.21.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.21.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.21.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.21.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.22.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.22.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.22.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.22.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.22.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.22.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.22.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.22.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.22.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.22.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.22.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.22.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.23.self_attn.q_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.23.self_attn.q_proj.bias, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.23.self_attn.k_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.23.self_attn.k_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.23.self_attn.v_proj.weight, Size: torch.Size([128, 896]), req grad: True
+Layer: backbone.model.layers.23.self_attn.v_proj.bias, Size: torch.Size([128]), req grad: True
+Layer: backbone.model.layers.23.self_attn.o_proj.weight, Size: torch.Size([896, 896]), req grad: True
+Layer: backbone.model.layers.23.mlp.gate_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.23.mlp.up_proj.weight, Size: torch.Size([4864, 896]), req grad: True
+Layer: backbone.model.layers.23.mlp.down_proj.weight, Size: torch.Size([896, 4864]), req grad: True
+Layer: backbone.model.layers.23.input_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.layers.23.post_attention_layernorm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.model.norm.weight, Size: torch.Size([896]), req grad: True
+Layer: backbone.score.weight, Size: torch.Size([6, 896]), req grad: True
+Testing Loss: 1.2556, Accuracy: 0.8382, Precision: 0.8015, Recall: 0.7842, F1: 0.7913
+LM Predictions:  [0, 1, 2, 1, 1, 1, 0, 4, 4, 0, 3, 0, 2, 4, 3, 3, 2, 4, 3, 3, 3, 4, 3, 1, 1, 2, 4, 4, 2, 0, 4, 3, 3, 2, 1, 4, 1, 4, 3, 2, 1, 2]
+LM Labels:  [0, 1, 2, 1, 1, 1, 0, 4, 4, 0, 3, 0, 2, 4, 3, 3, 2, 4, 3, 3, 3, 4, 3, 1, 1, 2, 4, 4, 2, 0, 4, 3, 3, 2, 1, 4, 1, 4, 3, 2, 1, 2]
+LM Loss: 0.0713, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm grads:  {23: 5.018588126404211e-05, 22: 3.6429730698728235e-06, 21: 1.0955496691167355e-05, 20: 4.449781772564165e-05, 19: 1.3509978998627048e-05, 18: 9.605028935766313e-06, 17: 7.740772707620636e-05, 16: 2.6273188268532977e-05, 15: 2.320538624189794e-05, 14: 1.6693893485353328e-05, 13: 2.2549165805685334e-05, 12: 5.5942633480299264e-05, 11: 6.36490949545987e-05, 10: 0.00010189459135290235, 9: 4.183678902336396e-05, 8: 8.029712626012042e-05, 7: 9.838737605605274e-05, 6: 0.00012001659342786297, 5: 0.00010679332626750693, 4: 0.00012642356159631163, 3: 0.0001812853734008968, 2: 0.00033384078415110707, 1: 0.00044016886386089027, 0: 0.008965534158051014}
+Output LayerNorm grads:  {23: 5.2854422392556444e-05, 22: 6.921983003849164e-05, 21: 4.47544407506939e-05, 20: 4.1661183786345646e-05, 19: 4.115760384593159e-05, 18: 3.60938829544466e-05, 17: 5.156680344953202e-05, 16: 8.025646093301475e-05, 15: 6.153452704893425e-05, 14: 5.491115007316694e-05, 13: 5.7269149692729115e-05, 12: 6.086297071306035e-05, 11: 7.894932787166908e-05, 10: 9.306333231506869e-05, 9: 0.00010753977403510362, 8: 0.00010984757682308555, 7: 0.0001363004994345829, 6: 0.0001657295215409249, 5: 0.0002089389890898019, 4: 0.0002598960418254137, 3: 0.000345207576174289, 2: 0.0004432748246472329, 1: 0.0006926381029188633, 0: 0.013911454007029533}
+
+Attention LayerNorm grads:  {23: 0.029564309865236282, 22: 0.008444571867585182, 21: 0.04218613728880882, 20: 0.03056100197136402, 19: 0.011507098563015461, 18: 0.0092534888535738, 17: 0.09594660252332687, 16: 0.026776744052767754, 15: 0.04318992793560028, 14: 0.030306128785014153, 13: 0.04254227131605148, 12: 0.08060841262340546, 11: 0.13415521383285522, 10: 0.19198790192604065, 9: 0.1293315589427948, 8: 0.18550866842269897, 7: 0.30192500352859497, 6: 0.3886314630508423, 5: 0.3604675829410553, 4: 0.4822028577327728, 3: 0.8087693452835083, 2: 1.658599615097046, 1: 2.1455657482147217, 0: 45.77602005004883}
+Output LayerNorm grads:  {23: 0.023204868659377098, 22: 0.022978179156780243, 21: 0.015313026495277882, 20: 0.021237285807728767, 19: 0.020281553268432617, 18: 0.020528079941868782, 17: 0.030070481821894646, 16: 0.07396388053894043, 15: 0.06461968272924423, 14: 0.061994388699531555, 13: 0.06962067633867264, 12: 0.08373017609119415, 11: 0.11606568843126297, 10: 0.15168975293636322, 9: 0.2035495936870575, 8: 0.239283949136734, 7: 0.3259018659591675, 6: 0.4670957028865814, 5: 0.6639933586120605, 4: 0.8745785355567932, 3: 1.2761564254760742, 2: 1.836593747138977, 1: 3.1039021015167236, 0: 66.37321472167969}
+
+
