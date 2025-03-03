@@ -1229,7 +1229,7 @@ if __name__ == "__main__":
     validation_df = ds['validation'].to_pandas()
     test_df = ds['test'].to_pandas()
 
-    seeds_list = [28]
+    seeds_list = [64]
     for seed in seeds_list:
         print("---------------------------------------------------------------------------")
         print("Results for seed: " ,seed)

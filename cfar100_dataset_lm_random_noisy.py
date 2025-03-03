@@ -843,30 +843,12 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
             
-
-        # # Save accuracy metrics to CSV
-        # save_metrics_to_csv(epochs_list, train_acc_list, val_acc_list, test_acc_list, lm_acc_list,
-        #                     csv_path=f"cfar10_plots_bias_impact/accuracy_metrics_{percent_train_noisy_samps}_remove_{remove}_vit_wts.csv")
-        
-        # # Save loss metrics to CSV
-        # save_metrics_to_csv(epochs_list, train_loss_list, val_loss_list, test_loss_list, lm_loss_list,
-        #                     csv_path=f"cfar10_plots_bias_impact/loss_metrics_{percent_train_noisy_samps}_remove_{remove}_vit_wts.csv")
-
-        # # Plot accuracy trends
-        # plot_metrics(epochs_list, train_acc_list, val_acc_list, test_acc_list, lm_acc_list,
-        #             metric_type="Accuracy", save_path=f"cfar10_plots_bias_impact/accuracy_trends_{percent_train_noisy_samps}_remove_{remove}_vit_wts.pdf")
-        
-        # # Plot loss trends
-        # plot_metrics(epochs_list, train_loss_list, val_loss_list, test_loss_list, lm_loss_list,
-        #             metric_type="Loss", save_path=f"cfar10_plots_bias_impact/loss_trends_{percent_train_noisy_samps}_remove_{remove}_vit_wts.pdf")
-        
-
         
         print("Label Memorization Analysis: ")
         lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
         print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
- 
-    # torch.save(model.state_dict(),f'saved_models/bert_emotions_model_{num_train_noisy_samps}_lm_wts_random_noisy_label_layernorm_removed.pth')
+
+        torch.save(model.state_dict(),f'saved_models_bias_impact/cfar100_dataset_model_vit_small.pth')
 
 if __name__ == "__main__":
     # Parse arguments

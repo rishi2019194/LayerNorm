@@ -1,13 +1,13 @@
-import argparse
 import os
 import pandas as pd
 import torch
+import argparse
 import json
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModel, AutoModelForSequenceClassification, GPTNeoModel, GPT2ForSequenceClassification, GPTNeoForSequenceClassification, GPT2Model, GPTNeoConfig, GPT2Config, GPTNeoXForSequenceClassification, GPTNeoXConfig, ElectraForSequenceClassification, ConvBertForSequenceClassification, DebertaForSequenceClassification
+from transformers import AutoTokenizer, AutoModel, GPTNeoModel, GPT2ForSequenceClassification, GPTNeoForSequenceClassification, GPT2Model, GPTNeoConfig, GPT2Config, GPTNeoXForSequenceClassification, GPTNeoXConfig
 from transformers import BertTokenizer, BertForSequenceClassification, AdamW
 from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, precision_recall_fscore_support
@@ -18,15 +18,14 @@ import copy
 from tqdm import tqdm
 from scipy.stats import ttest_rel
 from torch.nn.functional import softmax
-from transformers.models.deberta.modeling_deberta import DebertaLayerNorm
-import types
 
 # Class for computing encoding, input_ids attention-mask for the pre-processed news headlines
-class NewsDataset(Dataset):
-    def __init__(self, texts, labels, tokenizer, max_length=512, model_name = None):
+class TweetsDataset(Dataset):
+    def __init__(self, texts, labels, tokenizer, max_length=512):
         self.texts = texts
         self.labels = labels
         self.tokenizer = tokenizer
+        # self.tokenizer.pad_token = self.tokenizer.eos_token
         self.max_length = max_length
 
     def __len__(self):
@@ -36,7 +35,6 @@ class NewsDataset(Dataset):
         text = self.texts[idx]
         label = self.labels[idx]
         encoding = self.tokenizer(text, padding='max_length', truncation=True, max_length=self.max_length, return_tensors='pt')
-        # encoding = self.tokenizer(text, return_tensors = 'pt')
         input_ids = encoding['input_ids'].squeeze()
         attention_mask = encoding['attention_mask'].squeeze()
         return {
@@ -47,8 +45,49 @@ class NewsDataset(Dataset):
 
 
 # Define a custom model class
+class CustomClassificationModel_no_bias(nn.Module):
+    def __init__(self, model_name, num_labels):
+        super(CustomClassificationModel_no_bias, self).__init__()
+        self.model_name = model_name
+        if(model_name == "EleutherAI/gpt-neo-125M"):
+            self.backbone = GPTNeoModel.from_pretrained(self.model_name)
+        else:
+            self.backbone = AutoModel.from_pretrained(model_name)
+    
+        # # Remove bias from transformer layers (attention and feedforward layers)
+        for name, module in self.backbone.named_modules():
+            if isinstance(module, nn.Linear):  # Check if the module is a Linear layer
+                if 'attention' in name or 'intermediate' in name or 'output' in name or 'pooler' in name:
+                    # Remove bias from attention and feedforward layers
+                    module.bias = None
+                else:
+                    # Keep other linear layers (like the final classifier) intact for bias if needed
+                    pass
+            if isinstance(module, nn.LayerNorm):
+                # Remobve bias from LayerNorm layers by setting bias as False
+                if('output' in name or 'attention' in name):
+                    module.weight = None
+                    module.bias = None
+
+        self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias=False)
+
+    def forward(self, input_ids, attention_mask=None):
+        outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
+        if(self.model_name == "EleutherAI/gpt-neo-125M"):
+            output = outputs.last_hidden_state
+            cls_output = output[:, 0, :]
+            return self.classifier(cls_output)
+
+
+        else:
+            pooler_output = outputs.pooler_output
+            return self.classifier(pooler_output)
+
+
+
+# Define a custom model class
 class CustomClassificationModel(nn.Module):
-    def __init__(self, model_name, num_labels, remove = 'none', tokenizer = None):
+    def __init__(self, model_name, num_labels, remove = 'none'):
         super(CustomClassificationModel, self).__init__()
         self.model_name = model_name
         if(model_name == "EleutherAI/gpt-neo-125M"):
@@ -81,23 +120,8 @@ class CustomClassificationModel(nn.Module):
             # fix model padding token id
             self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
 
-
-        elif(model_name == "google/electra-base-discriminator"):
-            self.backbone = ElectraForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-
-        elif(model_name == "YituTech/conv-bert-base"):
-            self.backbone = ConvBertForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-        
-        elif(model_name == "microsoft/deberta-base"):
-            self.backbone = DebertaForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-
-        elif(model_name == "Qwen/Qwen2-0.5B-Instruct"):
-            self.backbone = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
         else:
-            self.backbone = AutoModel.from_pretrained(model_name)
+            self.backbone = AutoModel.from_pretrained(self.model_name)
         
         if(model_name == "gpt2-medium" or model_name == "openai-community/gpt2" or model_name == "EleutherAI/gpt-neo-125M"):
             for name, module in self.backbone.named_modules():
@@ -106,7 +130,7 @@ class CustomClassificationModel(nn.Module):
                     if('ln_1' in name or 'ln_2' in name or 'ln_f' in name):
                         module.weight = None
                         module.bias = None
-    
+
                 elif(remove == 'attention_layer_norm'):
                     if('ln_1' in name):
                         module.weight = None
@@ -125,7 +149,92 @@ class CustomClassificationModel(nn.Module):
                     if('layer_norm' in name or 'layernorm' in name):
                         module.weight = None
                         module.bias = None
+        
+        elif(model_name == "bert-base-uncased" or model_name == "prajjwal1/bert-medium" or model_name == "roberta-base" or model_name == "allenai/longformer-base-4096"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
 
+                if(remove == 'attention'):
+                    if('attention.self' in name or 'attention.output.dense' in name):
+                        module.bias = None
+                
+                elif(remove == 'ffn'):
+                    if('intermediate' in name):
+                        module.bias = None
+                    
+                elif(remove == 'output'):
+                    if('output.dense' in name):
+                        module.bias = None
+                    
+                elif(remove == 'layer_norm'):
+                    if('LayerNorm' in name):
+                        module.weight = None
+                        module.bias = None
+                    
+                elif(remove == 'embedding_layer_norm'):
+                    if('embeddings.LayerNorm' in name):
+                        module.weight = None
+                        module.bias = None
+                
+                elif(remove == 'attention_layer_norm'):
+                    if('attention.output.LayerNorm' in name):
+                        module.weight = None
+                        module.bias = None
+                    
+                elif(remove == 'output_layer_norm'):
+                    if('attention' not in name and 'output.LayerNorm' in name):
+                        module.weight = None
+                        module.bias = None
+
+                elif(remove == 'all'):
+                    if('attention' in name or 'intermediate' in name or 'output' in name or 'LayerNorm' in name or 'pooler' in name):
+                        module.bias = None
+                    
+                elif(remove == "attn_and_layernorm"):
+                    if('attention.self' in name or 'attention.output.dense' in name or 'LayerNorm' in name):
+                        module.bias = None
+
+                elif(remove == "ffn_and_layernorm"):
+                    if('intermediate' in name or 'LayerNorm' in name):
+                        module.bias = None
+
+                elif(remove == "attn_and_ffn"):
+                    if('intermediate' in name or 'attention.self' in name or 'attention.output.dense' in name):
+                        module.bias = None
+
+        elif(model_name == "distilbert-base-uncased"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
+
+                if(remove == 'attention'):
+                    if('attention' in name):
+                        module.bias = None
+                
+                elif(remove == 'ffn'):
+                    if('ffn.lin1' in name):
+                        module.bias = None
+                    
+                elif(remove == 'output'):
+                    if('ffn.lin2' in name):
+                        module.bias = None
+                    
+                elif(remove == 'layer_norm'):
+                    if('LayerNorm' in name or 'layer_norm' in name):
+                        module.weight = None
+                        module.bias = None
+                    
+                elif(remove == 'embedding_layer_norm'):
+                    if('embeddings.LayerNorm' in name):
+                        module.bias = None
+                
+                elif(remove == 'attention_layer_norm'):
+                    if('sa_layer_norm' in name):
+                        module.bias = None
+                    
+                elif(remove == 'output_layer_norm'):
+                    if('output_layer_norm' in name):
+                        module.bias = None
+        
         elif(model_name == "xlnet-base-cased"):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
@@ -156,107 +265,25 @@ class CustomClassificationModel(nn.Module):
                     if('ff.layer_norm' in name):
                         module.bias = None
 
-        elif model_name == "microsoft/deberta-base":
-            for name, module in self.backbone.named_modules():
-                if remove == "layer_norm":
-                    if isinstance(module, DebertaLayerNorm):  # Ensure it's DebertaLayerNorm
-                        # Unregister weight and bias
-                        module.register_parameter("weight", None)
-                        module.register_parameter("bias", None)
-
-                        # Define new forward method without affine transformation
-                        def forward_no_affine(self, hidden_states):
-                            input_type = hidden_states.dtype
-                            hidden_states = hidden_states.float()
-                            mean = hidden_states.mean(-1, keepdim=True)
-                            variance = (hidden_states - mean).pow(2).mean(-1, keepdim=True)
-                            hidden_states = (hidden_states - mean) / torch.sqrt(variance + self.variance_epsilon)
-                            return hidden_states.to(input_type)
-
-                        # Bind the function properly
-                        module.forward = types.MethodType(forward_no_affine, module)
-
-        elif(model_name == "Qwen/Qwen2-0.5B-Instruct"):
-            for name, module in self.backbone.named_modules():
-                if(remove == "layer_norm"):
-                    if("layernorm" in name):
-                        module.weight = None  # Remove weight
-                        
-                        # Override forward dynamically to handle None weight
-                        def new_forward(m, hidden_states):
-                            input_dtype = hidden_states.dtype
-                            hidden_states = hidden_states.to(torch.float32)
-                            variance = hidden_states.pow(2).mean(-1, keepdim=True)
-                            hidden_states = hidden_states * torch.rsqrt(variance + m.variance_epsilon)
-                            return hidden_states.to(input_dtype)  # No weight multiplication
-                        
-                        # Bind new forward function
-                        module.forward = new_forward.__get__(module)
-
-        else:
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
-
-                if(remove == 'attention'):
-                    if('attention.self' in name or 'attention.output.dense' in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('intermediate' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output'):
-                    if('output.dense' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
-                    if('LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'embedding_layer_norm'):
-                    if('embeddings.LayerNorm' in name):
-                        module.bias = None
-                
-                elif(remove == 'attention_layer_norm'):
-                    if('attention.output.LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('attention' not in name and 'output.LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                
-        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and 
-            model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M" and 
-            model_name != "google/electra-base-discriminator" and model_name != "YituTech/conv-bert-base"
-            and model_name != "microsoft/deberta-base" and model_name != "Qwen/Qwen2-0.5B-Instruct"):
-
+        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M"):
             self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
 
     def forward(self, input_ids, attention_mask=None):
         outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
 
-        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or 
-            self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M" 
-            or self.model_name == "google/electra-base-discriminator" or 
-            self.model_name == "YituTech/conv-bert-base" or self.model_name == "microsoft/deberta-base"
-            or self.model_name == "Qwen/Qwen2-0.5B-Instruct"):
-
+        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M"):
             return outputs.logits
 
+
+        elif(self.model_name == "bert-base-uncased" or self.model_name == "prajjwal1/bert-medium" or self.model_name == "roberta-base" or self.model_name == "allenai/longformer-base-4096"):
+            pooler_output = outputs.pooler_output
+            return self.classifier(pooler_output)
+        
         elif(self.model_name == "distilbert-base-uncased" or self.model_name == "xlnet-base-cased"):
             output = outputs.last_hidden_state
             cls_output = output[:, 0, :]
             return self.classifier(cls_output)
-
-
-        else:
-            pooler_output = outputs.pooler_output
-            return self.classifier(pooler_output)
-
-
+        
 # Define a custom model class
 class CustomClassificationModel_layer_analysis(nn.Module):
     def __init__(self, model_name, num_labels, tokenizer = None, remove_layers = None):
@@ -301,11 +328,6 @@ class CustomClassificationModel_layer_analysis(nn.Module):
         
         elif(model_name == "microsoft/deberta-base"):
             self.backbone = DebertaForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-
-        elif(model_name == "Qwen/Qwen2-0.5B-Instruct"):
-            self.backbone = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
 
         else:
             self.backbone = AutoModel.from_pretrained(model_name)
@@ -366,25 +388,6 @@ class CustomClassificationModel_layer_analysis(nn.Module):
                         # Bind the function properly
                         module.forward = types.MethodType(forward_no_affine, module)
 
-        elif(model_name == "Qwen/Qwen2-0.5B-Instruct"):
-            for name, module in self.backbone.named_modules():
-                if("layernorm" in name):
-                    layer_index = int(name.split(".layers.")[1].split(".")[0])
-                    if(layer_index in remove_layers):
-                        module.weight = None  # Remove weight
-                        
-                        # Override forward dynamically to handle None weight
-                        def new_forward(m, hidden_states):
-                            input_dtype = hidden_states.dtype
-                            hidden_states = hidden_states.to(torch.float32)
-                            variance = hidden_states.pow(2).mean(-1, keepdim=True)
-                            hidden_states = hidden_states * torch.rsqrt(variance + m.variance_epsilon)
-                            return hidden_states.to(input_dtype)  # No weight multiplication
-                        
-                        # Bind new forward function
-                        module.forward = new_forward.__get__(module)
-
-
         else:
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
@@ -398,7 +401,7 @@ class CustomClassificationModel_layer_analysis(nn.Module):
         if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and 
             model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M" and 
             model_name != "google/electra-base-discriminator" and model_name != "YituTech/conv-bert-base"
-            and model_name != "microsoft/deberta-base" and model_name != "Qwen/Qwen2-0.5B-Instruct"):
+            and model_name != "microsoft/deberta-base"):
 
             self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
 
@@ -408,8 +411,7 @@ class CustomClassificationModel_layer_analysis(nn.Module):
         if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or 
             self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M" 
             or self.model_name == "google/electra-base-discriminator" or 
-            self.model_name == "YituTech/conv-bert-base" or self.model_name == "microsoft/deberta-base"
-            or self.model_name == "Qwen/Qwen2-0.5B-Instruct"):
+            self.model_name == "YituTech/conv-bert-base" or self.model_name == "microsoft/deberta-base"):
 
             return outputs.logits
 
@@ -490,10 +492,10 @@ def evaluate_model(model, val_loader, device, lm = False):
 
             predictions.extend(preds)
             true_labels.extend(labels)
+
     if(lm):
         print("LM Predictions: ", predictions)
         print("LM Labels: ", true_labels)
-
     avg_loss = total_loss / len(val_loader)
     # print(predictions, true_labels)
     acc, precision, recall, f1 = compute_metrics(predictions, true_labels)
@@ -611,6 +613,7 @@ def add_random_label(original_label, idx, seed, num_labels = 6):
     return random_label
 
 
+
 def add_lm_to_texts(texts, labels, class_label, n, seed=28, num_labels = 6):
 
     random.seed(seed)
@@ -721,7 +724,6 @@ def make_val_balanced(train_texts, train_labels, val_texts, val_labels, seed=28,
     return train_texts, train_labels, val_texts, val_labels
 
 
-
 def plot_metrics(epochs_list, train_list, val_list, test_list, lm_list, metric_type, save_path):
     """
     Plots the specified metric trends (accuracy or loss) over epochs and saves the plot to the given path.
@@ -795,89 +797,196 @@ def save_combined_metrics_to_json(data, file_name):
     print(f"Combined metrics saved to {file_name}")
 
 
-def balance_train_set(train_texts, train_labels, seed=28):
-    """
-    Balances the training set based on the minority class with optional seed for reproducibility.
 
-    Parameters:
-        train_texts (list): List of training texts.
-        train_labels (list): Corresponding labels for the training texts.
-        seed (int, optional): Random seed for reproducibility.
+def sample_50_percent(train_texts, train_labels, seed = 28):
+    np.random.seed(seed)
+    # Unique labels in the dataset
+    unique_labels = np.unique(train_labels)
 
-    Returns:
-        balanced_texts (list): Balanced training texts.
-        balanced_labels (list): Balanced labels.
-    """
-    # Set the random seed if provided
-    if seed is not None:
-        random.seed(seed)
+    sampled_texts = []
+    sampled_labels = []
 
-    # Group texts and labels by class
-    label_to_texts = {}
-    for text, label in zip(train_texts, train_labels):
-        label_to_texts.setdefault(label, []).append(text)
+    for label in unique_labels:
+        # Get indices of all samples with the current label
+        label_indices = np.where(train_labels == label)[0]
+
+        # Randomly sample 50% of the indices
+        sample_size = len(label_indices) // 2
+        sampled_indices = np.random.choice(label_indices, size=sample_size, replace=False)
+
+        # Append sampled texts and labels
+        sampled_texts.extend(train_texts[sampled_indices])
+        sampled_labels.extend(train_labels[sampled_indices])
+
+    return np.array(sampled_texts), np.array(sampled_labels)
+
+
+def calculate_gradients(model, model_name, loader, device, test=False):
+    batch_num = 0
+    model.eval()
+    criterion = nn.CrossEntropyLoss()
+    attn_layernorm_gradients = dict()
+    output_layernorm_gradients = dict()
+    ffn_gradients = dict()
+    attn_bias_gradients = dict()
+    output_bias_gradients = dict()
     
-    print(label_to_texts.keys())
-    # Determine the size of the minority class
-    class_sizes = {label: len(texts) for label, texts in label_to_texts.items()}
-    min_size = min(class_sizes.values())
+    gradient_lists = dict()
+    sample_count = 0
+    
+    for batch in loader:
+        
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        labels = batch['label'].to(device)
+        sample_count += input_ids.shape[0]
 
-    # Downsample or upsample each class to match the minority class size
-    balanced_texts, balanced_labels = [], []
-    for label, texts in label_to_texts.items():
-        if len(texts) > min_size:
-            # Downsample to the minority class size
-            sampled_texts = random.sample(texts, min_size)
-        else:
-            # Upsample to the minority class size
-            sampled_texts = texts + random.choices(texts, k=min_size - len(texts))
+        # Forward pass
+        logits = model(input_ids, attention_mask=attention_mask)
+        loss = criterion(logits, labels)
+        loss.backward()
 
-        # Add sampled texts and labels to the balanced dataset
-        balanced_texts.extend(sampled_texts)
-        balanced_labels.extend([label] * min_size)
+        for name, module in model.named_modules():
+            if model_name == "roberta-base":
+                if 'attention.output.LayerNorm' in name:
+                    layer_index = int(name.split(".layer.")[1].split(".")[0])
+                    if layer_index not in attn_layernorm_gradients:
+                        attn_layernorm_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    attn_layernorm_gradients[layer_index] += module.weight.grad
 
-    # Shuffle the balanced dataset to randomize order
-    combined = list(zip(balanced_texts, balanced_labels))
-    random.shuffle(combined)
-    balanced_texts, balanced_labels = zip(*combined)
+                elif 'attention' not in name and 'output.LayerNorm' in name:
+                    layer_index = int(name.split(".layer.")[1].split(".")[0])
+                    if layer_index not in output_layernorm_gradients:
+                        output_layernorm_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    output_layernorm_gradients[layer_index] += module.weight.grad
+                
+                elif 'intermediate.dense' in name:
+                    layer_index = int(name.split(".layer.")[1].split(".")[0])
+                    if layer_index not in ffn_gradients:
+                        ffn_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    ffn_gradients[layer_index] += module.weight.grad    
+            
+            elif model_name == "gpt2-medium":
+                if 'ln_1' in name:
+                    layer_index = int(name.split(".h.")[1].split(".")[0])
+                    if layer_index not in attn_layernorm_gradients:
+                        attn_layernorm_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    attn_layernorm_gradients[layer_index] += module.weight.grad
 
-    return list(balanced_texts), list(balanced_labels)
+                elif 'ln_2' in name:
+                    layer_index = int(name.split(".h.")[1].split(".")[0])
+                    if layer_index not in output_layernorm_gradients:
+                        output_layernorm_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    output_layernorm_gradients[layer_index] += module.weight.grad
+                
+                elif 'mlp.c_fc' in name:
+                    layer_index = int(name.split(".h.")[1].split(".")[0])
+                    if layer_index not in ffn_gradients:
+                        ffn_gradients[layer_index] = torch.zeros_like(module.weight.grad)
+                    ffn_gradients[layer_index] += module.weight.grad  
+
+        batch_num += 1
+
+    # Compute Frobenius norms
+    for layer_index in attn_layernorm_gradients:
+        attn_layernorm_gradients[layer_index] /= sample_count
+        attn_layernorm_gradients[layer_index] = torch.norm(attn_layernorm_gradients[layer_index], p='fro').item()
+
+    for layer_index in output_layernorm_gradients:
+        output_layernorm_gradients[layer_index] /= sample_count
+        output_layernorm_gradients[layer_index] = torch.norm(output_layernorm_gradients[layer_index], p='fro').item()
+        
+    for layer_index in ffn_gradients:
+        ffn_gradients[layer_index] /= sample_count
+        ffn_gradients[layer_index] = torch.norm(ffn_gradients[layer_index], p='fro').item()
+
+    print("Attention LayerNorm grads: ", attn_layernorm_gradients)
+    # print(attn_bias_gradients)
+    print("Output LayerNorm grads: ", output_layernorm_gradients)
+    print("FFN grads: ", ffn_gradients)
+    # print(output_bias_gradients)
+    print()
+    print()
+    return attn_layernorm_gradients, output_layernorm_gradients, None
 
 
-def remove_classes(texts, labels, classes_to_remove):
-    """
-    Removes samples belonging to specified classes from the dataset.
 
-    Parameters:
-        texts (list): List of texts.
-        labels (list): List of corresponding labels.
-        classes_to_remove (set): Classes to be removed from the dataset.
+def calculate_ln_derivatives(model, model_name, loader, device):
+    model.eval()
+    criterion = nn.CrossEntropyLoss()
+    attn_layernorm_gradients = dict()
+    output_layernorm_gradients = dict()
+    sample_count = 0
+    
+    def hook_fn(module, grad_input, grad_output, storage, layer_index):
+        if grad_input[0] is not None:  # Ensure valid gradient
+            grad_avg = grad_input[0].abs().mean(dim=1)  # Average across tokens
+            
+            if layer_index not in storage:
+                storage[layer_index] = torch.zeros_like(grad_avg)
+            
+            storage[layer_index] += grad_avg  # Accumulate across batches
 
-    Returns:
-        filtered_texts (list): Texts with specified classes removed.
-        filtered_labels (list): Labels with specified classes removed.
-    """
-    filtered_texts = []
-    filtered_labels = []
+    hooks = []
+    for name, module in model.named_modules():
+        if model_name == "roberta-base":
+            if 'attention.output.LayerNorm' in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, attn_layernorm_gradients, idx)
+                )
+                hooks.append(hook)
+            elif 'attention' not in name and 'output.LayerNorm' in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_gradients, idx)
+                )
+                hooks.append(hook)
+        elif model_name == "gpt2-medium":
+            if 'ln_1' in name:
+                layer_index = int(name.split(".h.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, attn_layernorm_gradients, idx)
+                )
+                hooks.append(hook)
+            elif 'ln_2' in name:
+                layer_index = int(name.split(".h.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_gradients, idx)
+                )
+                hooks.append(hook)
+    
+    for batch in loader:
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        labels = batch['label'].to(device)
+        sample_count += input_ids.shape[0]
 
-    for text, label in zip(texts, labels):
-        if label not in classes_to_remove:
-            filtered_texts.append(text)
-            filtered_labels.append(label)
+        logits = model(input_ids, attention_mask=attention_mask)
+        loss = criterion(logits, labels)
+        loss.backward()
+    
+    for hook in hooks:
+        hook.remove()
+    
+    # Normalize by total samples and compute Frobenius norm
+    for layer_index in attn_layernorm_gradients:
+        attn_layernorm_gradients[layer_index] /= sample_count
+        attn_layernorm_gradients[layer_index] = torch.norm(attn_layernorm_gradients[layer_index], p='fro').item()
+    
+    for layer_index in output_layernorm_gradients:
+        output_layernorm_gradients[layer_index] /= sample_count
+        output_layernorm_gradients[layer_index] = torch.norm(output_layernorm_gradients[layer_index], p='fro').item()
+    
+    print("Attention LayerNorm gradients: ", attn_layernorm_gradients)
+    print("Output LayerNorm gradients: ", output_layernorm_gradients)
+    print()
+    
+    return attn_layernorm_gradients, output_layernorm_gradients
 
-    return filtered_texts, filtered_labels
 
 
-
-def finetune_roberta(args, train_texts, train_labels, val_texts, val_labels, test_texts, test_labels, seed):
-
-    # train_texts, train_labels = balance_train_set(train_texts, train_labels)
-
-    # classes_to_remove = {3, 4, 5}
-
-    # train_texts, train_labels = remove_classes(train_texts, train_labels, classes_to_remove)
-    # val_texts, val_labels = remove_classes(val_texts, val_labels, classes_to_remove)
-    # test_texts, test_labels = remove_classes(test_texts, test_labels, classes_to_remove)
+def gradients_analysis(args, train_texts, train_labels, val_texts, val_labels, test_texts, test_labels, seed):
 
     # Parameters from args
     model_name = args.model_name
@@ -889,8 +998,7 @@ def finetune_roberta(args, train_texts, train_labels, val_texts, val_labels, tes
     learning_rate = args.learning_rate
     percent_train_noisy_samps = args.percent_train_noisy_samps
     desired_train_noise_label = args.desired_train_noise_label
-    single_layer_analysis = args.single_layer_analysis
-    multiple_layer_analysis = args.multiple_layer_analysis
+    model_path = args.model_path
 
     print(f"Model: {model_name}, Batch size: {batch_size}, Epochs: {epochs}")
     print(f"Learning rate: {learning_rate}, Device: {device}")
@@ -904,9 +1012,7 @@ def finetune_roberta(args, train_texts, train_labels, val_texts, val_labels, tes
     num_train_noisy_samps = int((percent_train_noisy_samps/100)*(sum(list(train_label_counts.values()))))
     # num_train_noisy_samps = int((5/100)*train_label_counts[0])
     print(num_train_noisy_samps)
-    # orig_train_texts, orig_train_labels = copy.deepcopy(train_texts), copy.deepcopy(train_labels)
     train_texts, train_labels, lm_texts, lm_labels = add_lm_to_texts(train_texts, train_labels, desired_train_noise_label, num_train_noisy_samps, num_labels = num_labels, seed=seed)
-    # train_texts, train_labels = orig_train_texts, orig_train_labels
 
     train_label_counts = count_labels(train_labels, "Train")
     # Tokenization and Data Preparation
@@ -921,214 +1027,50 @@ def finetune_roberta(args, train_texts, train_labels, val_texts, val_labels, tes
         # Define PAD Token = EOS Token = 50256
         tokenizer.pad_token = tokenizer.eos_token
 
-    train_dataset = NewsDataset(train_texts, train_labels, tokenizer, model_name = model_name)
-    val_dataset = NewsDataset(val_texts, val_labels, tokenizer, model_name = model_name)
-    test_dataset = NewsDataset(test_texts, test_labels, tokenizer, model_name = model_name)
-    lm_dataset = NewsDataset(lm_texts, lm_labels, tokenizer, model_name = model_name)
+    train_dataset = TweetsDataset(train_texts, train_labels, tokenizer)
+    val_dataset = TweetsDataset(val_texts, val_labels, tokenizer)
+    test_dataset = TweetsDataset(test_texts, test_labels, tokenizer)
+    lm_dataset = TweetsDataset(lm_texts, lm_labels, tokenizer)
 
 
     num_workers = min(3, os.cpu_count())
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers = num_workers)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers = num_workers)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers = num_workers)
+    test_loader = DataLoader(test_dataset, batch_size=1, num_workers = num_workers)
     lm_loader = DataLoader(lm_dataset, batch_size=1, num_workers = num_workers)
 
+    # Model setup
+    model = CustomClassificationModel(model_name, num_labels, remove = remove)
+    model = model.to(device)
+    model.load_state_dict(torch.load(model_path))
 
-    if(single_layer_analysis):
+    for name, param in model.named_parameters():
+        print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
 
-        train_acc_list_layers, train_loss_list_layers = {}, {}
-        val_acc_list_layers, val_loss_list_layers = {}, {}
-        test_acc_list_layers, test_loss_list_layers = {}, {}
-        lm_acc_list_layers, lm_loss_list_layers = {}, {}
-        for layer_idx in range(12):
-            print("For layer removal: ", layer_idx)
-            # Model setup
-            model = CustomClassificationModel_layer_analysis(model_name, num_labels, remove_layers = [layer_idx])
-            model = model.to(device)
+    # Testing phase
+    test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
+    print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
 
-            for name, param in model.named_parameters():
-                print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
-            
-            
-            # Optimizer
-            optimizer = AdamW(model.parameters(), lr=learning_rate)
+    lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
+    print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-            train_acc_list, train_loss_list = [], []
-            val_acc_list, val_loss_list = [], []
-            test_acc_list, test_loss_list = [], []
-            lm_acc_list, lm_loss_list = [], []
+    # lm_attn_ln_gradients, lm_output_ln_gradients, lm_avg_gradients = calculate_gradients(model, model_name, lm_loader, device)
 
-            epochs_list = list(range(1, epochs + 1))
+    # test_attn_ln_gradietns, test_output_ln_gradients, test_avg_gradients = calculate_gradients(model, model_name, test_loader, device, test=True)
 
-            # Training loop
-            for epoch in range(epochs):
-                print(f"Epoch {epoch + 1}/{epochs}")
+    lm_attn_ln_gradients, lm_output_ln_gradients = calculate_ln_derivatives(model, model_name, lm_loader, device)
 
-                # Training phase
-                train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-                print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
+    test_attn_ln_gradietns, test_output_ln_gradients = calculate_ln_derivatives(model, model_name, test_loader, device)
 
-                # Validation phase
-                val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                # Testing phase
-                test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
-                print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-                
-                train_acc_list.append(train_acc*100)
-                val_acc_list.append(val_acc*100)
-                test_acc_list.append(test_acc*100)
-                lm_acc_list.append(lm_acc*100)
-
-                train_loss_list.append(train_loss)
-                val_loss_list.append(val_loss)
-                test_loss_list.append(test_loss)
-                lm_loss_list.append(lm_loss)
-            
-            train_acc_list_layers[layer_idx] = train_acc_list
-            val_acc_list_layers[layer_idx] = val_acc_list
-            test_acc_list_layers[layer_idx] = test_acc_list
-            lm_acc_list_layers[layer_idx] = lm_acc_list
-
-            train_loss_list_layers[layer_idx] = train_loss_list
-            val_loss_list_layers[layer_idx] = val_loss_list
-            test_loss_list_layers[layer_idx] = test_loss_list
-            lm_loss_list_layers[layer_idx] = lm_loss_list
-
-
-        all_acc_metrics = {
-            "train": train_acc_list_layers,
-            "val": val_acc_list_layers,
-            "test": test_acc_list_layers,
-            "lm": lm_acc_list_layers,
-        }
-
-        # Combine loss metrics into another dictionary
-        all_loss_metrics = {
-            "train": train_loss_list_layers,
-            "val": val_loss_list_layers,
-            "test": test_loss_list_layers,
-            "lm": lm_loss_list_layers,
-        }
-
-        # Save all accuracy metrics to a single JSON file
-        save_combined_metrics_to_json(all_acc_metrics, f"news_plots_bias_impact/all_accuracy_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
-
-        # Save all loss metrics to a single JSON file
-        save_combined_metrics_to_json(all_loss_metrics, f"news_plots_bias_impact/all_loss_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
-
-    elif(multiple_layer_analysis):
-
-        train_acc_list_layers, train_loss_list_layers = {}, {}
-        val_acc_list_layers, val_loss_list_layers = {}, {}
-        test_acc_list_layers, test_loss_list_layers = {}, {}
-        lm_acc_list_layers, lm_loss_list_layers = {}, {}
-        layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
-        if(model_name == "Qwen/Qwen2-0.5B-Instruct"):
-            layers_mapping = {'early': [0,1,2,3,4,5,6,7], 'middle': [8,9,10,11,12,13,14,15], 'later': [16,17,18,19,20,21,22,23]}
-        for layers_type, layer_idx_list in layers_mapping.items():
-            print(f"For {layers_type} layers: ", layer_idx_list)
-            # Model setup
-            model = CustomClassificationModel_layer_analysis(model_name, num_labels, tokenizer = tokenizer, remove_layers = layer_idx_list)
-            model = model.to(device)
-
-            for name, param in model.named_parameters():
-                print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
-            
-            # Optimizer
-            optimizer = AdamW(model.parameters(), lr=learning_rate)
-
-            train_acc_list, train_loss_list = [], []
-            val_acc_list, val_loss_list = [], []
-            test_acc_list, test_loss_list = [], []
-            lm_acc_list, lm_loss_list = [], []
-
-            epochs_list = list(range(1, epochs + 1))
-
-            # Training loop
-            for epoch in range(epochs):
-                print(f"Epoch {epoch + 1}/{epochs}")
-
-                # Training phase
-                train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-                print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
-
-                # Validation phase
-                val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                # Testing phase
-                test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-                print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
-
-                lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
-                print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-
-    else:
-        # Model setup
-        model = CustomClassificationModel(model_name, num_labels, remove = remove, tokenizer = tokenizer)
-        model = model.to(device)
-
-        for name, param in model.named_parameters():
-            print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
-        
-        # Optimizer
-        optimizer = AdamW(model.parameters(), lr=learning_rate)
-
-        train_acc_list, train_loss_list = [], []
-        val_acc_list, val_loss_list = [], []
-        test_acc_list, test_loss_list = [], []
-        lm_acc_list, lm_loss_list = [], []
-
-        epochs_list = list(range(1, epochs + 1))
-
-        # Training loop
-        for epoch in range(epochs):
-            print(f"Epoch {epoch + 1}/{epochs}")
-
-            # Training phase
-            train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-            print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
-
-            # Validation phase
-            val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-            print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-            # Testing phase
-            test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-            print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
-
-            lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
-            print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-            
-            train_acc_list.append(train_acc*100)
-            val_acc_list.append(val_acc*100)
-            test_acc_list.append(test_acc*100)
-            lm_acc_list.append(lm_acc*100)
-
-            train_loss_list.append(train_loss)
-            val_loss_list.append(val_loss)
-            test_loss_list.append(test_loss)
-            lm_loss_list.append(lm_loss)
-
-            if(epoch >= 40 and lm_acc == 1):
-                break
-
-        print("Label Memorization Analysis: ")
-        lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
-        print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-
-        
-        torch.save(model.state_dict(),f'saved_models_bias_impact/news_dataset_model_longformer.pth')
-
+def swap_classes(df):
+    df.loc[df['label'] == 5, 'label'] = -1  # Temporarily change 5 to -1
+    df.loc[df['label'] == 3, 'label'] = 5   # Change 3 to 5
+    df.loc[df['label'] == -1, 'label'] = 3  # Change temporary -1 to 3
+    return df
 
 if __name__ == "__main__":
     # Parse arguments
-    parser = argparse.ArgumentParser(description="Fine-tune a RoBERTa model with custom parameters.")
+    parser = argparse.ArgumentParser(description="Fine-tune a BERT model with custom parameters.")
     
     parser.add_argument("--model_name", type=str, default="roberta-base", help="Model name to fine-tune.")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size for training.")
@@ -1137,47 +1079,36 @@ if __name__ == "__main__":
     parser.add_argument("--remove", type=str, default="none", help="Parameter to remove something (if applicable).")
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate for the optimizer.")
     parser.add_argument("--percent_train_noisy_samps", type=int, default=1, help="Percentage of noisy samples in training data.")
-    parser.add_argument("--desired_train_noise_label", type=int, default=5, help="Label to assign to noisy training samples.")
-    parser.add_argument("--single_layer_analysis", action="store_true", help="Enable single-layer analysis. Default is False.")
-    parser.add_argument("--multiple_layer_analysis", action="store_true", help="Enable multiple-layer analysis. Default is False.")
+    parser.add_argument("--desired_train_noise_label", type=int, default=3, help="Label to assign to noisy training samples.")
+    parser.add_argument("--model_path", type=str, default = "saved_models_bias_impact/tweets_dataset_model_roberta.pth", help = "path of saved model")
 
 
     args = parser.parse_args()
 
+    ds = load_dataset("cardiffnlp/tweet_topic_single")
 
-    # Define the category mapping
-    category_mapping = {
-        "business": 0,
-        "sports": 1,
-        "politics": 2,
-        "health": 3,
-        "entertainment": 4,
-        "tech": 5
-    }
 
     # Load datasets
-    splits = {'train': 'train.csv', 'test': 'test.csv'}
-    train_df = pd.read_csv("hf://datasets/okite97/news-data/" + splits["train"])
-    test_df = pd.read_csv("hf://datasets/okite97/news-data/" + splits["test"])
+    # Convert each split to a pandas DataFrame
+    train_df = ds['train_2020'].to_pandas()
+    val_df = ds['validation_2020'].to_pandas()
+    test_df = ds['test_2020'].to_pandas()
 
-    # Encode the category column in both train and test datasets
-    train_df["label"] = train_df["Category"].map(category_mapping)
-    test_df["label"] = test_df["Category"].map(category_mapping)
+    # Apply the swap to train, validation, and test datasets
+    train_df = swap_classes(train_df)
+    val_df = swap_classes(val_df)
+    test_df = swap_classes(test_df)
+
+
 
     seeds_list = [28]
     for seed in seeds_list:
-
-        # Split the train_df into train and validation sets
-        train_df, validation_df = train_test_split(
-            train_df, 
-            test_size=0.1, 
-            stratify=train_df["label"],  # Ensures balanced splits for labels
-            random_state=seed
-        )
-
-        finetune_roberta(args, np.array(train_df['Excerpt']), np.array(train_df['label']), \
-                        np.array(validation_df['Excerpt']), np.array(validation_df['label']), \
-                        np.array(test_df['Excerpt']), np.array(test_df['label']), seed)
+        print("---------------------------------------------------------------------------")
+        print("Results for seed: " ,seed)
+        gradients_analysis(args, np.array(train_df['text']), np.array(train_df['label']), \
+                        np.array(val_df['text']), np.array(val_df['label']), \
+                        np.array(test_df['text']), np.array(test_df['label']), seed = seed)
+        print("---------------------------------------------------------------------------")
         print()
-
-
+        print()
+    print()

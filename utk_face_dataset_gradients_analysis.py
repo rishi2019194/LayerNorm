@@ -1,4 +1,5 @@
 import os
+import glob
 import pandas as pd
 import torch
 import argparse
@@ -18,9 +19,11 @@ import copy
 from tqdm import tqdm
 from scipy.stats import ttest_rel
 from torch.nn.functional import softmax
+from sklearn.model_selection import StratifiedShuffleSplit
+from PIL import Image
 
 # Custom dataset class
-class CIFAR10Dataset(Dataset):
+class UTKFaceDataset(Dataset):
     def __init__(self, data, labels, transform=None):
         self.data = data
         self.labels = labels
@@ -47,13 +50,13 @@ class CustomClassificationModel(nn.Module):
         if(self.model_name == "google/vit-base-patch16-224-in21k"):
             self.backbone = ViTForImageClassification.from_pretrained(
                                 "google/vit-base-patch16-224",
-                                num_labels=10,  # Number of classes in CIFAR-10
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
                                 ignore_mismatched_sizes=True
                             )
         elif(self.model_name == "facebook/deit-base-distilled-patch16-224"):
             self.backbone = DeiTForImageClassification.from_pretrained(
                                 "facebook/deit-base-distilled-patch16-224",
-                                num_labels=10,  # Number of classes in CIFAR-10
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
                                 ignore_mismatched_sizes=True
                             )
         
@@ -339,7 +342,7 @@ def count_labels(labels, dataset_name):
     return label_counts
 
 
-def add_random_label(original_label, idx, seed):
+def add_random_label(original_label, idx, seed, num_labels):
 
     # Set seed for reproducibility
     if seed is not None:
@@ -347,8 +350,7 @@ def add_random_label(original_label, idx, seed):
     
     # Generate a random label different from the original label
     # Assuming labels are integers starting from 0 to max_label
-    max_label = 9
-    possible_labels = list(range(0, max_label + 1))
+    possible_labels = list(range(0, num_labels))
     possible_labels.remove(original_label)  # Remove the original label
     
     # Select a random label from the remaining options
@@ -357,7 +359,7 @@ def add_random_label(original_label, idx, seed):
     return random_label
 
 
-def add_lm_to_texts(texts, labels, class_label, n, seed=28):
+def add_lm_to_texts(texts, labels, class_label, n, seed=28, num_labels = 5):
 
     random.seed(seed)
 
@@ -374,7 +376,7 @@ def add_lm_to_texts(texts, labels, class_label, n, seed=28):
 
     for idx in indices_to_modify:
         lm_labels_actual.append(train_labels_copy[idx])
-        train_labels_copy[idx] = add_random_label(train_labels_copy[idx], idx, seed) #noisy label
+        train_labels_copy[idx] = add_random_label(train_labels_copy[idx], idx, seed, num_labels) #noisy label
         lm_texts.append(train_texts_copy[idx])
         lm_labels.append(train_labels_copy[idx])
 
@@ -584,13 +586,68 @@ def remove_classes(texts, labels, classes_to_remove):
     return filtered_texts, filtered_labels
 
 
-def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed):
+def calculate_ln_derivatives(model, model_name, loader, device):
+    model.eval()
+    criterion = nn.CrossEntropyLoss()
+    attn_layernorm_derivatives = dict()
+    output_layernorm_derivatives = dict()
+    sample_count = 0
+    
+    def hook_fn(module, grad_input, grad_output, storage, layer_index):
+        if grad_input[0] is not None:  # Ensure valid gradient
+            grad_avg = grad_input[0].abs().mean(dim=1)  # Average across tokens
+            
+            if layer_index not in storage:
+                storage[layer_index] = torch.zeros_like(grad_avg)
+            
+            storage[layer_index] += grad_avg  # Accumulate across batches
 
-    # classes_to_remove = {3, 4, 5, 6, 7, 8, 9}
+    hooks = []
+    for name, module in model.named_modules():
+        if 'layernorm_before' in name:
+            layer_index = int(name.split(".layer.")[1].split(".")[0])
+            hook = module.register_full_backward_hook(
+                lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, attn_layernorm_derivatives, idx)
+            )
+            hooks.append(hook)
+        elif 'layernorm_after' in name:
+            layer_index = int(name.split(".layer.")[1].split(".")[0])
+            hook = module.register_full_backward_hook(
+                lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_derivatives, idx)
+            )
+            hooks.append(hook)
 
-    # train_imgs, train_labels = remove_classes(train_imgs, train_labels, classes_to_remove)
-    # val_imgs, val_labels = remove_classes(val_imgs, val_labels, classes_to_remove)
-    # test_imgs, test_labels = remove_classes(test_imgs, test_labels, classes_to_remove)
+    
+    for batch in loader:
+        images = batch['image'].to(device)
+        labels = batch['label'].to(device)
+        sample_count += images.shape[0]
+
+        logits = model(images).logits
+        loss = criterion(logits, labels)
+        loss.backward()
+    
+    for hook in hooks:
+        hook.remove()
+    
+    # Normalize by total samples and compute Frobenius norm
+    for layer_index in attn_layernorm_derivatives:
+        attn_layernorm_derivatives[layer_index] /= sample_count
+        attn_layernorm_derivatives[layer_index] = torch.norm(attn_layernorm_derivatives[layer_index], p='fro').item()
+    
+    for layer_index in output_layernorm_derivatives:
+        output_layernorm_derivatives[layer_index] /= sample_count
+        output_layernorm_derivatives[layer_index] = torch.norm(output_layernorm_derivatives[layer_index], p='fro').item()
+    
+    print("Attention LayerNorm derivatives: ", attn_layernorm_derivatives)
+    print("Output LayerNorm derivatives: ", output_layernorm_derivatives)
+    print()
+    
+    return attn_layernorm_derivatives, output_layernorm_derivatives
+
+
+def gradients_analysis(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed):
+
 
     # Parameters from args
     model_name = args.model_name
@@ -602,15 +659,12 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
     learning_rate = args.learning_rate
     percent_train_noisy_samps = args.percent_train_noisy_samps
     desired_train_noise_label = args.desired_train_noise_label
-    single_layer_analysis = args.single_layer_analysis
-    multiple_layer_analysis = args.multiple_layer_analysis
+    model_path = args.model_path
 
 
     print(f"Model: {model_name}, Batch size: {batch_size}, Epochs: {epochs}")
     print(f"Learning rate: {learning_rate}, Device: {device}")
     print(f"Noise: {percent_train_noisy_samps}% with label {desired_train_noise_label}")
-
-    # train_texts, train_labels = sample_50_percent(train_texts, train_labels)
 
     # Count labels for train, val, and test datasets
     train_label_counts = count_labels(train_labels, "Train")
@@ -620,11 +674,10 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
     num_train_noisy_samps = int((percent_train_noisy_samps/100)*(sum(list(train_label_counts.values()))))
     print(num_train_noisy_samps)
 
-    train_imgs, train_labels, lm_imgs, lm_labels = add_lm_to_texts(train_imgs, train_labels, desired_train_noise_label, num_train_noisy_samps, seed=seed)
-
+    train_imgs, train_labels, lm_imgs, lm_labels = add_lm_to_texts(train_imgs, train_labels, desired_train_noise_label, num_train_noisy_samps, num_labels = num_labels, seed=seed)
     train_label_counts = count_labels(train_labels, "Train")
-
-
+    print(len(train_imgs))  # Should be (num_samples, height, width, channels)
+    print(train_imgs[0].shape)  # Should be (28, 28, 3) or (28, 28, 1)
 
     # Transform for resizing and normalization
     transform = transforms.Compose([
@@ -635,221 +688,148 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
     ])
 
     # Create training and validation datasets
-    train_dataset = CIFAR10Dataset(train_imgs, train_labels, transform=transform)
-    val_dataset = CIFAR10Dataset(val_imgs, val_labels, transform=transform)
-    test_dataset = CIFAR10Dataset(test_imgs, test_labels, transform=transform)
-    lm_dataset = CIFAR10Dataset(lm_imgs, lm_labels, transform=transform)
+    train_dataset = UTKFaceDataset(train_imgs, train_labels, transform=transform)
+    val_dataset = UTKFaceDataset(val_imgs, val_labels, transform=transform)
+    test_dataset = UTKFaceDataset(test_imgs, test_labels, transform=transform)
+    lm_dataset = UTKFaceDataset(lm_imgs, lm_labels, transform=transform)
 
 
     num_workers = min(3, os.cpu_count())
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers = num_workers)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers = num_workers)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers = num_workers)
+    test_loader = DataLoader(test_dataset, batch_size=1, num_workers = num_workers)
     lm_loader = DataLoader(lm_dataset, batch_size=1, num_workers = num_workers)
 
 
-    if(single_layer_analysis):
+    # Model setup
+    model = CustomClassificationModel(model_name, num_labels, remove = remove)
+    model = model.to(device)
+    model.load_state_dict(torch.load(model_path))
 
-        train_acc_list_layers, train_loss_list_layers = {}, {}
-        val_acc_list_layers, val_loss_list_layers = {}, {}
-        test_acc_list_layers, test_loss_list_layers = {}, {}
-        lm_acc_list_layers, lm_loss_list_layers = {}, {}
-        for layer_idx in range(12):
-            print("For layer removal: ", layer_idx)
-            # Model setup
-            model = CustomClassificationModel_layer_analysis(model_name, num_labels, remove_layers = [layer_idx])
-            model = model.to(device)
+    for name, param in model.named_parameters():
+        print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
 
-            for name, param in model.named_parameters():
-                print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
-            
-            
-            # Optimizer
-            optimizer = AdamW(model.parameters(), lr=learning_rate)
+    # Testing phase
+    test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
+    print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
 
-            train_acc_list, train_loss_list = [], []
-            val_acc_list, val_loss_list = [], []
-            test_acc_list, test_loss_list = [], []
-            lm_acc_list, lm_loss_list = [], []
+    lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
+    print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-            epochs_list = list(range(1, epochs + 1))
+    # lm_attn_ln_gradients, lm_output_ln_gradients, lm_avg_gradients = calculate_gradients(model, model_name, lm_loader, device)
 
-            # Training loop
-            for epoch in range(epochs):
-                print(f"Epoch {epoch + 1}/{epochs}")
+    # test_attn_ln_gradietns, test_output_ln_gradients, test_avg_gradients = calculate_gradients(model, model_name, test_loader, device, test=True)
 
-                # Training phase
-                train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-                print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
+    lm_attn_ln_gradients, lm_output_ln_gradients = calculate_ln_derivatives(model, model_name, lm_loader, device)
 
-                # Validation phase
-                val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                # Testing phase
-                test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
-                print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-                
-                train_acc_list.append(train_acc*100)
-                val_acc_list.append(val_acc*100)
-                test_acc_list.append(test_acc*100)
-                lm_acc_list.append(lm_acc*100)
-
-                train_loss_list.append(train_loss)
-                val_loss_list.append(val_loss)
-                test_loss_list.append(test_loss)
-                lm_loss_list.append(lm_loss)
-            
-            train_acc_list_layers[layer_idx] = train_acc_list
-            val_acc_list_layers[layer_idx] = val_acc_list
-            test_acc_list_layers[layer_idx] = test_acc_list
-            lm_acc_list_layers[layer_idx] = lm_acc_list
-
-            train_loss_list_layers[layer_idx] = train_loss_list
-            val_loss_list_layers[layer_idx] = val_loss_list
-            test_loss_list_layers[layer_idx] = test_loss_list
-            lm_loss_list_layers[layer_idx] = lm_loss_list
+    test_attn_ln_gradietns, test_output_ln_gradients = calculate_ln_derivatives(model, model_name, test_loader, device)
 
 
-        all_acc_metrics = {
-            "train": train_acc_list_layers,
-            "val": val_acc_list_layers,
-            "test": test_acc_list_layers,
-            "lm": lm_acc_list_layers,
+
+def parse_utk_face_dataset(dataset_path, seed, ext='jpg'):
+    """
+    Used to extract information about our dataset. It does iterate over all images and return a DataFrame with
+    the data (age, gender and sex) of all files.
+    """
+    def parse_info_from_file(path):
+        """
+        Parse information from a single file
+        """
+        dataset_dict = {
+            'ethnicity_id': {
+                0: 'white', 
+                1: 'black', 
+                2: 'asian', 
+                3: 'indian', 
+                4: 'others'
+            },
+            'gender_id': {
+                0: 'male',
+                1: 'female'
+            }
         }
 
-        # Combine loss metrics into another dictionary
-        all_loss_metrics = {
-            "train": train_loss_list_layers,
-            "val": val_loss_list_layers,
-            "test": test_loss_list_layers,
-            "lm": lm_loss_list_layers,
-        }
+        dataset_dict['gender_alias'] = dict((g, i) for i, g in dataset_dict['gender_id'].items())
+        dataset_dict['ethnicity_alias'] = dict((r, i) for i, r in dataset_dict['ethnicity_id'].items())
+        try:
+            filename = os.path.split(path)[1]
+            filename = os.path.splitext(filename)[0]
+            age, gender, race, _ = filename.split('_')
+            return int(age), dataset_dict['gender_id'][int(gender)], int(race)
 
-        # Save all accuracy metrics to a single JSON file
-        save_combined_metrics_to_json(all_acc_metrics, f"cfar10_plots_bias_impact/all_accuracy_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
-
-        # Save all loss metrics to a single JSON file
-        save_combined_metrics_to_json(all_loss_metrics, f"cfar10_plots_bias_impact/all_loss_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
-
-    elif(multiple_layer_analysis):
-
-        train_acc_list_layers, train_loss_list_layers = {}, {}
-        val_acc_list_layers, val_loss_list_layers = {}, {}
-        test_acc_list_layers, test_loss_list_layers = {}, {}
-        lm_acc_list_layers, lm_loss_list_layers = {}, {}
-        layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
-        for layers_type, layer_idx_list in layers_mapping.items():
-            print(f"For {layers_type} layers: ", layer_idx_list)
-            # Model setup
-            model = CustomClassificationModel_layer_analysis(model_name, num_labels, remove_layers = layer_idx_list)
-            model = model.to(device)
-
-            for name, param in model.named_parameters():
-                print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
-            
-            # Optimizer
-            optimizer = AdamW(model.parameters(), lr=learning_rate)
-
-            train_acc_list, train_loss_list = [], []
-            val_acc_list, val_loss_list = [], []
-            test_acc_list, test_loss_list = [], []
-            lm_acc_list, lm_loss_list = [], []
-
-            epochs_list = list(range(1, epochs + 1))
-
-            # Training loop
-            for epoch in range(epochs):
-                print(f"Epoch {epoch + 1}/{epochs}")
-
-                # Training phase
-                train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-                print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
-
-                # Validation phase
-                val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-                print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-                # Testing phase
-                test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-                print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
-
-                lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
-                print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-
-
-    else:
-        # Model setup
-        model = CustomClassificationModel(model_name, num_labels, remove = remove)
-        model = model.to(device)
-
-        for name, param in model.named_parameters():
-            print(f"Layer: {name}, Size: {param.size()}, req grad: {param.requires_grad}")
+        except Exception as ex:
+            return None, None, None
         
-        # Optimizer
-        optimizer = AdamW(model.parameters(), lr=learning_rate)
-
-        train_acc_list, train_loss_list = [], []
-        val_acc_list, val_loss_list = [], []
-        test_acc_list, test_loss_list = [], []
-        lm_acc_list, lm_loss_list = [], []
-
-        epochs_list = list(range(1, epochs + 1))
-
-        # Training loop
-        for epoch in range(epochs):
-            print(f"Epoch {epoch + 1}/{epochs}")
-
-            # Training phase
-            train_loss, train_acc, train_precision, train_recall, train_f1, optimizer = train_epoch(model, train_loader, optimizer, device)
-            print(f"Train Loss: {train_loss:.4f}, Accuracy: {train_acc:.4f}, Precision: {train_precision:.4f}, Recall: {train_recall:.4f}, F1: {train_f1:.4f}")
-
-            # Validation phase
-            val_loss, val_acc, val_precision, val_recall, val_f1 = evaluate_model(model, val_loader, device)
-            print(f"Validation Loss: {val_loss:.4f}, Accuracy: {val_acc:.4f}, Precision: {val_precision:.4f}, Recall: {val_recall:.4f}, F1: {val_f1:.4f}")
-
-            # Testing phase
-            test_loss, test_acc, test_precision, test_recall, test_f1 = evaluate_model(model, test_loader, device)
-            print(f"Testing Loss: {test_loss:.4f}, Accuracy: {test_acc:.4f}, Precision: {test_precision:.4f}, Recall: {test_recall:.4f}, F1: {test_f1:.4f}")
-
-            lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
-            print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
-            
-            train_acc_list.append(train_acc*100)
-            val_acc_list.append(val_acc*100)
-            test_acc_list.append(test_acc*100)
-            lm_acc_list.append(lm_acc*100)
-
-            train_loss_list.append(train_loss)
-            val_loss_list.append(val_loss)
-            test_loss_list.append(test_loss)
-            lm_loss_list.append(lm_loss)
-            
+    files = glob.glob(os.path.join(dataset_path, "*.%s" % ext))
+    
+    records = []
+    for file in files:
+        info = parse_info_from_file(file)
+        records.append(info)
         
-        print("Label Memorization Analysis: ")
-        lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
-        print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
- 
-        torch.save(model.state_dict(),f'saved_models_bias_impact/cfar10_dataset_model_vit_base.pth')
+    df = pd.DataFrame(records)
+    df['file'] = files
+    df.columns = ['age', 'gender', 'ethnicity', 'file']
+    df = df.dropna()
+    df['ethnicity'] = df['ethnicity'].astype(int)
+    # print(len(df))
+    # print(df)
+    # exit()
+    # Initialize the StratifiedShuffleSplit
+    strat_split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=seed)
+
+    # Split the data
+    for train_index, test_index in strat_split.split(df, df['ethnicity']):
+        train_df = df.iloc[train_index]
+        test_df = df.iloc[test_index]
+
+    return train_df, test_df
+
+def load_utkface_dataset(dataset_path, seed):
+    train_df, test_df = parse_utk_face_dataset(dataset_path, seed)
+
+    train_images, train_labels, test_images, test_labels = [], [], [], []
+
+    for index in range(len(train_df)):
+        person = train_df.iloc[index]
+        person_img = np.array(Image.open(person['file']))
+        assert person_img.shape == (200, 200, 3)  # Ensure the image is in (H, W, C) format
+        person_ethnicity = person['ethnicity']
+
+        # Convert image to (C, H, W) format (from (H, W, C))
+        person_img = np.transpose(person_img, (2, 0, 1))  # Now it becomes (C, H, W)
+
+        train_images.append(person_img)
+        train_labels.append(person_ethnicity)
+
+    for index in range(len(test_df)):
+        person = test_df.iloc[index]
+        person_img = np.array(Image.open(person['file']))
+        assert person_img.shape == (200, 200, 3)
+        person_ethnicity = person['ethnicity']
         
+        # Convert image to (C, H, W) format (from (H, W, C))
+        person_img = np.transpose(person_img, (2, 0, 1))  # Now it becomes (C, H, W)
+
+        test_images.append(person_img)
+        test_labels.append(person_ethnicity)
+
+    return train_images, train_labels, test_images, test_labels
+
 
 if __name__ == "__main__":
     # Parse arguments
-    parser = argparse.ArgumentParser(description="Fine-tune a BERT model with custom parameters.")
+    parser = argparse.ArgumentParser(description="Fine-tune a DeiT model with custom parameters")
     
-    parser.add_argument("--model_name", type=str, default="google/vit-base-patch16-224-in21k", help="Model name to fine-tune.")
+    parser.add_argument("--model_name", type=str, default="facebook/deit-base-distilled-patch16-224", help="Model name to fine-tune.")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size for training.")
     parser.add_argument("--epochs", type=int, default=70, help="Number of epochs for training.")
     parser.add_argument("--device", type=str, default="cuda:0", help="Device to use for training.")
     parser.add_argument("--remove", type=str, default="none", help="Parameter to remove something (if applicable).")
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate for the optimizer.")
     parser.add_argument("--percent_train_noisy_samps", type=int, default=1, help="Percentage of noisy samples in training data.")
-    parser.add_argument("--desired_train_noise_label", type=int, default=9, help="Label to assign to noisy training samples.")
-    parser.add_argument("--single_layer_analysis", action="store_true", help="Enable single-layer analysis. Default is False.")
-    parser.add_argument("--multiple_layer_analysis", action="store_true", help="Enable multiple-layer analysis. Default is False.")
+    parser.add_argument("--desired_train_noise_label", type=int, default=2, help="Label to assign to noisy training samples.")
+    parser.add_argument("--model_path", type=str, default = "saved_models_bias_impact/utk_face_dataset_model_deit.pth", help = "path of saved model")
 
 
     args = parser.parse_args()
@@ -859,52 +839,14 @@ if __name__ == "__main__":
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])  # Normalize to [-1, 1]
     ])
-
-    # Load CIFAR-10 dataset
-    train_dataset = datasets.CIFAR10(root='./data', train=True, transform = transform, download=True)
-    test_dataset = datasets.CIFAR10(root='./data', train=False, transform = transform, download=True)
-
-    # Separate samples by class
-    class_samples = {i: [] for i in range(10)}
-    for idx in range(len(train_dataset)):
-        img, label = train_dataset[idx]
-        class_samples[label].append((img, label))
-
+    
     seeds_list = [28]
     for seed in seeds_list:
-        np.random.seed(seed)
-        num_samples_per_class = [2000]*10
-        selected_samples = []
-        for label, samples in class_samples.items():
-            indices = np.random.choice(len(samples), num_samples_per_class[label], replace=False)
 
-
-            selected_samples.extend([samples[i] for i in indices])
-
-        # Shuffle the selected samples
-        np.random.shuffle(selected_samples)
-
-        # Extract images and labels as numpy arrays
-        train_imgs_data = np.array([np.array(img.numpy()) for img, _ in selected_samples])
-        train_labels_data = np.array([label for _, label in selected_samples])
-
-        # Extract images and labels from test_dataset
-        test_imgs = np.array([test_dataset[i][0].numpy() for i in range(len(test_dataset))])
-        test_labels = np.array([test_dataset[i][1] for i in range(len(test_dataset))])
-
-
-        # Perform stratified split into training and validation sets
-        train_indices, val_indices = train_test_split(
-            np.arange(len(train_labels_data)),
-            test_size=0.2,
-            stratify=train_labels_data,
-            random_state=seed
+        train_imgs, train_labels, test_imgs, test_labels = load_utkface_dataset("UTKFace/", seed)
+        train_imgs, val_imgs, train_labels, val_labels = train_test_split(
+            train_imgs, train_labels, test_size=0.2, stratify=train_labels, random_state=seed
         )
 
-        # Separate the training and validation data and labels
-        train_imgs = train_imgs_data[train_indices]
-        train_labels = train_labels_data[train_indices]
-        val_imgs = train_imgs_data[val_indices]
-        val_labels = train_labels_data[val_indices]
 
-        finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed)
+        gradients_analysis(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed)
