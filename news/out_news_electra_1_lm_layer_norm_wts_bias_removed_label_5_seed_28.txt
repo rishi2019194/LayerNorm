@@ -459,9 +459,9 @@ Epoch 40/70
 Train Loss: 0.2266, Accuracy: 0.9348, Precision: 0.8963, Recall: 0.9133, F1: 0.9029
 Validation Loss: 0.8275, Accuracy: 0.8507, Precision: 0.8287, Recall: 0.7945, F1: 0.8084
 Testing Loss: 0.6957, Accuracy: 0.8659, Precision: 0.8298, Recall: 0.8030, F1: 0.8148
-LM Predictions:  [0, 2, 2, 5, 1, 5, 0, 4, 5, 5, 5, 0, 2, 5, 3, 0, 2, 5, 0, 3, 5, 5, 3, 5, 0, 2, 0, 5, 2, 0, 4, 5, 2, 5, 5, 5, 0, 5, 3, 3, 5, 2]
+LM Predictions:  [0, 2, 2, 5, 5, 5, 0, 5, 5, 5, 5, 0, 2, 5, 3, 0, 2, 5, 0, 2, 5, 5, 3, 5, 0, 2, 5, 5, 2, 0, 4, 5, 2, 5, 5, 5, 0, 5, 5, 3, 5, 2]
 LM Labels:  [0, 1, 2, 1, 1, 1, 0, 4, 4, 0, 3, 0, 2, 4, 3, 3, 2, 4, 3, 3, 3, 4, 3, 1, 1, 2, 4, 4, 2, 0, 4, 3, 3, 2, 1, 4, 1, 4, 3, 2, 1, 2]
-LM Loss: 2.3086, Accuracy: 0.4048, Precision: 0.6657, Recall: 0.3769, F1: 0.3980
+LM Loss: 2.0755, Accuracy: 0.3095, Precision: 0.4722, Recall: 0.3083, F1: 0.3018
 Epoch 41/70
 Train Loss: 0.2295, Accuracy: 0.9341, Precision: 0.8955, Recall: 0.9140, F1: 0.9029
 Validation Loss: 0.6586, Accuracy: 0.8550, Precision: 0.8257, Recall: 0.8204, F1: 0.8204
