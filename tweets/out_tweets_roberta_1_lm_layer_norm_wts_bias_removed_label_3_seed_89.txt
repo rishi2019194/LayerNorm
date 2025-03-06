@@ -453,14 +453,14 @@ Epoch 39/70
 Train Loss: 0.2158, Accuracy: 0.9300, Precision: 0.8013, Recall: 0.7867, F1: 0.7912
 Validation Loss: 0.8554, Accuracy: 0.8040, Precision: 0.6396, Recall: 0.5872, F1: 0.6089
 Testing Loss: 0.7760, Accuracy: 0.8138, Precision: 0.6390, Recall: 0.6156, F1: 0.6228
-LM Predictions:  [3, 4, 2, 3, 3, 3, 0, 3, 0, 1, 3, 5, 3, 4, 0, 0, 3, 0, 4, 0, 2, 4, 0, 0, 2, 0, 2, 3]
+LM Predictions:  [4, 4, 2, 3, 3, 3, 5, 3, 0, 1, 3, 5, 3, 4, 0, 3, 3, 0, 4, 0, 2, 4, 3, 3, 2, 0, 2, 3]
 LM Labels:  [4, 4, 2, 5, 4, 1, 0, 2, 0, 5, 2, 5, 1, 4, 0, 0, 4, 0, 4, 0, 2, 4, 2, 0, 2, 0, 5, 4]
-LM Loss: 1.4263, Accuracy: 0.5714, Precision: 0.6065, Recall: 0.3750, F1: 0.4346
+LM Loss: 1.9188, Accuracy: 0.5000, Precision: 0.5417, Recall: 0.3333, F1: 0.4120
 Epoch 40/70
 Train Loss: 0.2133, Accuracy: 0.9360, Precision: 0.8239, Recall: 0.8241, F1: 0.8230
 Validation Loss: 0.8915, Accuracy: 0.8182, Precision: 0.6971, Recall: 0.5844, F1: 0.6250
 Testing Loss: 0.8661, Accuracy: 0.8191, Precision: 0.6186, Recall: 0.5944, F1: 0.5981
-LM Predictions:  [4, 4, 2, 1, 3, 3, 5, 3, 5, 1, 2, 5, 3, 4, 5, 0, 3, 5, 4, 5, 2, 4, 0, 3, 2, 5, 2, 3]
+LM Predictions:  [4, 4, 2, 3, 3, 3, 5, 3, 5, 1, 2, 5, 3, 4, 5, 0, 3, 5, 4, 5, 2, 4, 3, 3, 2, 5, 3, 3]
 LM Labels:  [4, 4, 2, 5, 4, 1, 0, 2, 0, 5, 2, 5, 1, 4, 0, 0, 4, 0, 4, 0, 2, 4, 2, 0, 2, 0, 5, 4]
 LM Loss: 1.8693, Accuracy: 0.3929, Precision: 0.4071, Recall: 0.2778, F1: 0.3131
 Epoch 41/70
