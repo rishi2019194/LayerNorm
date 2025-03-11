@@ -1,0 +1,347 @@
+---------------------------------------------------------------------------
+Results for seed:  28
+Model: gpt2-medium, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:0
+Noise: 1% with label 3
+Label counts for Train:
+  Label 4: 966
+  Label 2: 1099
+  Label 5: 486
+  Label 1: 115
+  Label 3: 144
+  Label 0: 48
+Label counts for Validation:
+  Label 4: 117
+  Label 5: 60
+  Label 0: 3
+  Label 3: 17
+  Label 1: 22
+  Label 2: 133
+Label counts for Test:
+  Label 4: 133
+  Label 2: 136
+  Label 0: 6
+  Label 1: 14
+  Label 3: 29
+  Label 5: 58
+28
+Actual labels:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+Label counts for Train:
+  Label 4: 971
+  Label 2: 1106
+  Label 5: 493
+  Label 1: 119
+  Label 3: 116
+  Label 0: 53
+Some weights of GPT2ForSequenceClassification were not initialized from the model checkpoint at gpt2-medium and are newly initialized: ['score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Layer: backbone.transformer.wte.weight, Size: torch.Size([50257, 1024]), req grad: True
+Layer: backbone.transformer.wpe.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.0.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.0.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.0.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.0.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.0.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.0.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.0.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.0.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.1.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.1.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.1.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.2.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.2.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.2.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.3.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.3.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.3.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.4.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.4.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.4.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.5.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.5.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.5.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.6.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.6.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.6.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.7.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.7.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.7.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.8.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.8.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.8.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.9.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.9.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.9.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.10.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.10.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.10.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.11.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.11.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.11.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.12.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.12.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.12.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.12.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.12.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.12.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.12.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.13.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.13.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.13.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.13.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.13.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.13.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.13.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.14.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.14.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.14.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.14.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.14.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.14.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.14.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.15.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.15.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.15.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.15.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.15.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.15.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.15.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.16.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.16.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.16.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.16.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.16.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.16.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.16.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.17.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.17.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.17.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.17.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.17.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.17.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.17.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.18.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.18.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.18.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.18.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.18.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.18.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.18.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.19.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.19.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.19.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.19.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.19.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.19.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.19.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.20.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.20.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.20.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.20.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.20.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.20.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.20.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.21.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.21.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.21.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.21.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.21.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.21.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.21.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.22.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.22.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.22.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.22.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.22.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.22.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.22.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.ln_1.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.ln_1.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.attn.c_attn.weight, Size: torch.Size([1024, 3072]), req grad: True
+Layer: backbone.transformer.h.23.attn.c_attn.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.23.attn.c_proj.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.transformer.h.23.attn.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.ln_2.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.ln_2.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.h.23.mlp.c_fc.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.transformer.h.23.mlp.c_fc.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.transformer.h.23.mlp.c_proj.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.transformer.h.23.mlp.c_proj.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.ln_f.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.transformer.ln_f.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.score.weight, Size: torch.Size([6, 1024]), req grad: True
+Testing Loss: 1.1516, Accuracy: 0.8511, Precision: 0.6715, Recall: 0.6291, F1: 0.6468
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0011, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm Inputs L2-norm:  {0: 2.4507654990468706, 1: 109.3010894230434, 2: 141.80929619925362, 3: 153.86787360055106, 4: 178.07292938232422, 5: 247.93407821655273, 6: 275.0203742980957, 7: 277.4101300920759, 8: 286.2884750366211, 9: 283.243784223284, 10: 283.0593566894531, 11: 281.47417994907926, 12: 294.91945103236606, 13: 303.18619210379467, 14: 316.4125725882394, 15: 328.2078388759068, 16: 345.19937787737166, 17: 366.71635872977123, 18: 391.90887233189176, 19: 411.23632158551897, 20: 468.03798130580356, 21: 538.7644075666155, 22: 658.3041338239398, 23: 929.3843841552734}
+Attention LayerNorm Inputs Std-dev:  {0: 0.07661959209612437, 1: 3.41730558020728, 2: 4.433178237506321, 3: 4.8102043356214255, 4: 5.566330075263977, 5: 7.7491801125662665, 6: 8.59556417805808, 7: 8.670496906552996, 8: 8.948180164609637, 9: 8.853158235549927, 10: 8.847363812582833, 11: 8.798838921955653, 12: 9.218910387584142, 13: 9.477490050452095, 14: 9.890555483954293, 15: 10.259296383176531, 16: 10.7912517956325, 17: 11.46451040676662, 18: 12.252534866333008, 19: 12.856844765799385, 20: 14.633077008383614, 21: 16.84452380452837, 22: 20.581888266972133, 23: 29.056763921465194}
+Output LayerNorm Inputs L2-norm:  {0: 2.8282250932284763, 1: 139.66437639508928, 2: 149.3635095868792, 3: 164.91696112496513, 4: 208.18148967197962, 5: 258.21437345232283, 6: 279.9026859828404, 7: 288.3980505807059, 8: 291.4337463378906, 9: 286.8265718732561, 10: 282.65269579206193, 11: 295.91505432128906, 12: 308.8767852783203, 13: 322.77215249197826, 14: 329.92026955740795, 15: 345.1595437186105, 16: 364.7474833897182, 17: 382.06986127580916, 18: 401.76839665004184, 19: 438.95140075683594, 20: 512.8597368512835, 21: 608.114015851702, 22: 789.6330893380301, 23: 950.9680023193359}
+Output LayerNorm Inputs Std-dev:  {0: 0.08841833578688758, 1: 4.365825312478202, 2: 4.6698358569826395, 3: 5.155238168580191, 4: 6.506933229310172, 5: 8.070482662745885, 6: 8.748193366186959, 7: 9.014081580298287, 8: 9.109048230307442, 9: 8.965259654181343, 10: 8.835639442716326, 11: 9.250327450888497, 12: 9.655504976000104, 13: 10.089489085333687, 14: 10.31280153138297, 15: 10.789834567478724, 16: 11.402845757348198, 17: 11.944698333740234, 18: 12.56056775365557, 19: 13.723220791135516, 20: 16.034557512828282, 21: 19.012774058750697, 22: 24.687773977007186, 23: 29.73103645869664}
+
+Attention LayerNorm Inputs L2-norm:  {0: 2.44990289781956, 1: 108.99421428112274, 2: 141.84510981782952, 3: 154.03137353126039, 4: 177.50801500361015, 5: 246.43098413183333, 6: 272.7476917429173, 7: 273.1223886368123, 8: 281.47462678462904, 9: 281.38698821372174, 10: 283.96841390082176, 11: 284.6227055001766, 12: 300.4808236791732, 13: 312.46419184258644, 14: 328.93497499506526, 15: 342.23363892575526, 16: 361.5350470035634, 17: 384.4998395392235, 18: 412.68652295051737, 19: 432.04222017653444, 20: 490.2405514818557, 21: 565.3451073017526, 22: 692.4743748117, 23: 983.1165523123234}
+Attention LayerNorm Inputs Std-dev:  {0: 0.07659270406324178, 1: 3.4077118971246354, 2: 4.434308611332102, 3: 4.815346279042832, 4: 5.548744560556209, 5: 7.702275579280042, 6: 8.524667978286743, 7: 8.536619625193007, 8: 8.79784066245911, 9: 8.795218698521877, 10: 8.875811143124357, 11: 8.897330636673786, 12: 9.392888670272015, 13: 9.767700032984957, 14: 10.282252555197857, 15: 10.69796448565544, 16: 11.302152415539355, 17: 12.020639348537363, 18: 12.90221942485647, 19: 13.50736986068969, 20: 15.327230750246251, 21: 17.67554853571222, 22: 21.650243581609523, 23: 30.736535706418625}
+Output LayerNorm Inputs L2-norm:  {0: 2.8202920131226805, 1: 139.486926220833, 2: 150.23133070925448, 3: 166.21074327509453, 4: 206.66798900036102, 5: 254.79832872431328, 6: 278.45271086185534, 7: 284.2495451582239, 8: 287.6037844394116, 9: 288.0031234254228, 10: 286.2247616382355, 11: 300.54887998865007, 12: 316.56484011386306, 13: 333.6375659374481, 14: 343.55372368021216, 15: 361.63168894990963, 16: 382.57484046449053, 17: 402.8515719149975, 18: 422.03076391017186, 19: 461.6345717247496, 20: 536.2595863342285, 21: 635.0250813910302, 22: 839.3007914766353, 23: 1022.7008567972387}
+Output LayerNorm Inputs Std-dev:  {0: 0.08817010329283298, 1: 4.360286112795484, 2: 4.696967846535622, 3: 5.195707937504383, 4: 6.459731367040188, 5: 7.963852215320506, 6: 8.703013232413758, 7: 8.884526209628328, 8: 8.989442624944322, 9: 9.0020241635911, 10: 8.947368553344239, 11: 9.395224505282464, 12: 9.89594639362173, 13: 10.429317464219762, 14: 10.739223916479881, 15: 11.305035474452566, 16: 11.960394534658878, 17: 12.594552628537441, 18: 13.194098842904923, 19: 14.432468858171017, 20: 16.766087762852933, 21: 19.85411809860392, 22: 26.240582283507003, 23: 31.973680313597335}
+
+---------------------------------------------------------------------------
+
+

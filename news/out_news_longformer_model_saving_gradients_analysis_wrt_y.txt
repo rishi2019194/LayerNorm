@@ -1,0 +1,315 @@
+Model: allenai/longformer-base-4096, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:0
+Noise: 1% with label 5
+Label counts for Train:
+  Label 0: 1141
+  Label 1: 1011
+  Label 2: 966
+  Label 5: 260
+  Label 4: 344
+  Label 3: 495
+Label counts for Validation:
+  Label 1: 113
+  Label 0: 127
+  Label 4: 38
+  Label 5: 29
+  Label 2: 107
+  Label 3: 55
+Label counts for Test:
+  Label 2: 190
+  Label 0: 224
+  Label 3: 97
+  Label 1: 199
+  Label 5: 51
+  Label 4: 67
+42
+Actual labels:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+Label counts for Train:
+  Label 0: 1146
+  Label 1: 1020
+  Label 2: 974
+  Label 5: 218
+  Label 4: 354
+  Label 3: 505
+Layer: backbone.embeddings.word_embeddings.weight, Size: torch.Size([50265, 768]), req grad: True
+Layer: backbone.embeddings.token_type_embeddings.weight, Size: torch.Size([1, 768]), req grad: True
+Layer: backbone.embeddings.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.embeddings.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.embeddings.position_embeddings.weight, Size: torch.Size([4098, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.0.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.0.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.0.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.0.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.1.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.1.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.1.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.1.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.2.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.2.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.2.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.2.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.3.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.3.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.3.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.3.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.4.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.4.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.4.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.4.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.5.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.5.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.5.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.5.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.6.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.6.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.6.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.6.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.7.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.7.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.7.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.7.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.8.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.8.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.8.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.8.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.9.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.9.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.9.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.9.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.10.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.10.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.10.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.10.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.query_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.key_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value_global.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.self.value_global.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.attention.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.intermediate.dense.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.encoder.layer.11.intermediate.dense.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.encoder.layer.11.output.dense.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.encoder.layer.11.output.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.output.LayerNorm.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.encoder.layer.11.output.LayerNorm.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.pooler.dense.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.pooler.dense.bias, Size: torch.Size([768]), req grad: True
+Layer: classifier.weight, Size: torch.Size([6, 768]), req grad: True
+Testing Loss: 0.8659, Accuracy: 0.8720, Precision: 0.8348, Recall: 0.8200, F1: 0.8269
+LM Predictions:  [0, 1, 2, 1, 1, 1, 0, 4, 4, 0, 3, 0, 2, 4, 3, 3, 2, 4, 3, 3, 3, 4, 3, 1, 1, 2, 4, 4, 2, 0, 4, 3, 3, 2, 1, 4, 1, 4, 3, 2, 1, 2]
+LM Labels:  [0, 1, 2, 1, 1, 1, 0, 4, 4, 0, 3, 0, 2, 4, 3, 3, 2, 4, 3, 3, 3, 4, 3, 1, 1, 2, 4, 4, 2, 0, 4, 3, 3, 2, 1, 4, 1, 4, 3, 2, 1, 2]
+LM Loss: 0.1282, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm grads:  {11: 0.0013481328496709466, 10: 0.0007845314685255289, 9: 0.0005957339890301228, 8: 0.0006759967072866857, 7: 0.0008797926129773259, 6: 0.0010917120380327106, 5: 0.001548592234030366, 4: 0.0017940433463081717, 3: 0.0019123831298202276, 2: 0.0018807117594406009, 1: 0.0016548591665923595, 0: 0.0014935218496248126}
+Output LayerNorm grads:  {11: 0.003114940132945776, 10: 0.0010427067754790187, 9: 0.0007220818079076707, 8: 0.0007147839060053229, 7: 0.0010585762793198228, 6: 0.0013215234503149986, 5: 0.001999886007979512, 4: 0.002504566451534629, 3: 0.002677666489034891, 2: 0.0025872800033539534, 1: 0.0023476232308894396, 0: 0.002238260116428137}
+
+Attention LayerNorm grads:  {11: 0.07566509395837784, 10: 0.12819905579090118, 9: 0.1599675565958023, 8: 0.22451695799827576, 7: 0.3501204252243042, 6: 0.4705142378807068, 5: 0.7604103088378906, 4: 0.9648523330688477, 3: 1.1019834280014038, 2: 1.1938036680221558, 1: 1.102504014968872, 0: 1.0573052167892456}
+Output LayerNorm grads:  {11: 0.05442837253212929, 10: 0.11733157187700272, 9: 0.17386578023433685, 8: 0.22926203906536102, 7: 0.4234377443790436, 6: 0.5725078582763672, 5: 0.958825409412384, 4: 1.3342278003692627, 3: 1.5073391199111938, 2: 1.6162244081497192, 1: 1.5546743869781494, 0: 1.5676822662353516}
+
