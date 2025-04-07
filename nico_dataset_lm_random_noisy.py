@@ -1,4 +1,6 @@
 import os
+import glob
+import re
 import pandas as pd
 import torch
 import argparse
@@ -7,8 +9,8 @@ import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModel, GPTNeoModel, GPT2ForSequenceClassification, GPTNeoForSequenceClassification, GPT2Model, GPTNeoConfig, GPT2Config, GPTNeoXForSequenceClassification, GPTNeoXConfig
-from transformers import BertTokenizer, BertForSequenceClassification, AdamW
+from torchvision import datasets, transforms
+from transformers import ViTForImageClassification, AdamW, DeiTForImageClassification, ViTMSNForImageClassification, SwinForImageClassification
 from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
@@ -18,70 +20,26 @@ import copy
 from tqdm import tqdm
 from scipy.stats import ttest_rel
 from torch.nn.functional import softmax
+from sklearn.model_selection import StratifiedShuffleSplit
+from PIL import Image
 
-# Class for computing encoding, input_ids attention-mask for the pre-processed news headlines
-class TweetsDataset(Dataset):
-    def __init__(self, texts, labels, tokenizer, max_length=512):
-        self.texts = texts
+# Custom dataset class
+class NICODataset(Dataset):
+    def __init__(self, data, labels, transform=None):
+        self.data = data
         self.labels = labels
-        self.tokenizer = tokenizer
-        # self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.max_length = max_length
+        self.transform = transform
 
     def __len__(self):
-        return len(self.texts)
+        return len(self.labels)
 
     def __getitem__(self, idx):
-        text = self.texts[idx]
+        image = self.data[idx]
         label = self.labels[idx]
-        encoding = self.tokenizer(text, padding='max_length', truncation=True, max_length=self.max_length, return_tensors='pt')
-        input_ids = encoding['input_ids'].squeeze()
-        attention_mask = encoding['attention_mask'].squeeze()
-        return {
-            'input_ids': input_ids,
-            'attention_mask': attention_mask,
-            'label': torch.tensor(label, dtype=torch.long)
-        }
+        if self.transform:
+            image = self.transform(torch.tensor(image))
+        return {"image": image,  "label": label}
 
-
-# Define a custom model class
-class CustomClassificationModel_no_bias(nn.Module):
-    def __init__(self, model_name, num_labels):
-        super(CustomClassificationModel_no_bias, self).__init__()
-        self.model_name = model_name
-        if(model_name == "EleutherAI/gpt-neo-125M"):
-            self.backbone = GPTNeoModel.from_pretrained(self.model_name)
-        else:
-            self.backbone = AutoModel.from_pretrained(model_name)
-    
-        # # Remove bias from transformer layers (attention and feedforward layers)
-        for name, module in self.backbone.named_modules():
-            if isinstance(module, nn.Linear):  # Check if the module is a Linear layer
-                if 'attention' in name or 'intermediate' in name or 'output' in name or 'pooler' in name:
-                    # Remove bias from attention and feedforward layers
-                    module.bias = None
-                else:
-                    # Keep other linear layers (like the final classifier) intact for bias if needed
-                    pass
-            if isinstance(module, nn.LayerNorm):
-                # Remobve bias from LayerNorm layers by setting bias as False
-                if('output' in name or 'attention' in name):
-                    module.weight = None
-                    module.bias = None
-
-        self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias=False)
-
-    def forward(self, input_ids, attention_mask=None):
-        outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
-        if(self.model_name == "EleutherAI/gpt-neo-125M"):
-            output = outputs.last_hidden_state
-            cls_output = output[:, 0, :]
-            return self.classifier(cls_output)
-
-
-        else:
-            pooler_output = outputs.pooler_output
-            return self.classifier(pooler_output)
 
 
 
@@ -90,340 +48,133 @@ class CustomClassificationModel(nn.Module):
     def __init__(self, model_name, num_labels, remove = 'none'):
         super(CustomClassificationModel, self).__init__()
         self.model_name = model_name
-        if(model_name == "EleutherAI/gpt-neo-125M"):
-            model_config = GPTNeoConfig.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPTNeoForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
-
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-        elif(model_name == "EleutherAI/pythia-160M"):
-            model_config = GPTNeoXConfig.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPTNeoXForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
-
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-        elif(model_name == "gpt2-medium" or model_name == "openai-community/gpt2"):
-            model_config = GPT2Config.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPT2ForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
-
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-        else:
-            self.backbone = AutoModel.from_pretrained(self.model_name)
+        if(self.model_name == "google/vit-base-patch16-224-in21k" or self.model_name == "google/vit-large-patch16-224"):
+            self.backbone = ViTForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
+                                ignore_mismatched_sizes=True
+                            )
+        elif(self.model_name == "facebook/deit-base-distilled-patch16-224"):
+            self.backbone = DeiTForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
+                                ignore_mismatched_sizes=True
+                            )
         
-        if(model_name == "gpt2-medium" or model_name == "openai-community/gpt2" or model_name == "EleutherAI/gpt-neo-125M"):
-            for name, module in self.backbone.named_modules():
+        elif(self.model_name == "facebook/vit-msn-small"):
+            self.backbone = ViTMSNForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
+        
 
+        elif(self.model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            self.backbone = SwinForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
+
+
+        if(model_name == "google/vit-base-patch16-224-in21k" or model_name == "google/vit-large-patch16-224" or model_name == "facebook/vit-msn-small" or model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
+                    
                 if(remove == 'layer_norm'):
-                    if('ln_1' in name or 'ln_2' in name or 'ln_f' in name):
+                    if('layernorm' in name):
                         module.weight = None
                         module.bias = None
+                
 
-                elif(remove == 'attention_layer_norm'):
-                    if('ln_1' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('ln_2' in name):
-                        module.weight = None
-                        module.bias = None
 
-        elif(model_name == "EleutherAI/pythia-160M"):
-
+        elif(model_name == "facebook/deit-base-distilled-patch16-224"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
-
+                    
                 if(remove == 'layer_norm'):
-                    if('layer_norm' in name or 'layernorm' in name):
+                    if('layernorm' in name):
                         module.weight = None
                         module.bias = None
+
+
+    def forward(self, input_imgs):
+        outputs = self.backbone(input_imgs)
+        return outputs
         
-        elif(model_name == "bert-base-uncased" or model_name == "prajjwal1/bert-medium" or model_name == "roberta-base" or model_name == "allenai/longformer-base-4096"):
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
 
-                if(remove == 'attention'):
-                    if('attention.self' in name or 'attention.output.dense' in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('intermediate' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output'):
-                    if('output.dense' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
-                    if('LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'embedding_layer_norm'):
-                    if('embeddings.LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                
-                elif(remove == 'attention_layer_norm'):
-                    if('attention.output.LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('attention' not in name and 'output.LayerNorm' in name):
-                        module.weight = None
-                        module.bias = None
-
-                elif(remove == 'all'):
-                    if('attention' in name or 'intermediate' in name or 'output' in name or 'LayerNorm' in name or 'pooler' in name):
-                        module.bias = None
-                    
-                elif(remove == "attn_and_layernorm"):
-                    if('attention.self' in name or 'attention.output.dense' in name or 'LayerNorm' in name):
-                        module.bias = None
-
-                elif(remove == "ffn_and_layernorm"):
-                    if('intermediate' in name or 'LayerNorm' in name):
-                        module.bias = None
-
-                elif(remove == "attn_and_ffn"):
-                    if('intermediate' in name or 'attention.self' in name or 'attention.output.dense' in name):
-                        module.bias = None
-
-        elif(model_name == "distilbert-base-uncased"):
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
-
-                if(remove == 'attention'):
-                    if('attention' in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('ffn.lin1' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output'):
-                    if('ffn.lin2' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
-                    if('LayerNorm' in name or 'layer_norm' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'embedding_layer_norm'):
-                    if('embeddings.LayerNorm' in name):
-                        module.bias = None
-                
-                elif(remove == 'attention_layer_norm'):
-                    if('sa_layer_norm' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('output_layer_norm' in name):
-                        module.bias = None
-        
-        elif(model_name == "xlnet-base-cased"):
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
-
-                if(remove == 'attention'):
-                    if('attn' in name and 'layer_norm' not in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('ff.layer_1' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output'):
-                    if('ff.layer_2' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
-                    if('layer_norm' in name):
-                        module.weight = None
-                        # module.bias = None
-                    
-                
-                elif(remove == 'attention_layer_norm'):
-                    if('attn.layer_norm' in name):
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('ff.layer_norm' in name):
-                        module.bias = None
-
-        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M"):
-            self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
-
-    def forward(self, input_ids, attention_mask=None):
-        outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
-
-        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M"):
-            return outputs.logits
-
-
-        elif(self.model_name == "bert-base-uncased" or self.model_name == "prajjwal1/bert-medium" or self.model_name == "roberta-base" or self.model_name == "allenai/longformer-base-4096"):
-            pooler_output = outputs.pooler_output
-            return self.classifier(pooler_output)
-        
-        elif(self.model_name == "distilbert-base-uncased" or self.model_name == "xlnet-base-cased"):
-            output = outputs.last_hidden_state
-            cls_output = output[:, 0, :]
-            return self.classifier(cls_output)
-        
 # Define a custom model class
 class CustomClassificationModel_layer_analysis(nn.Module):
-    def __init__(self, model_name, num_labels, tokenizer = None, remove_layers = None):
+    def __init__(self, model_name, num_labels, remove_layers = None):
         super(CustomClassificationModel_layer_analysis, self).__init__()
         self.model_name = model_name
-        if(model_name == "EleutherAI/gpt-neo-125M"):
-            model_config = GPTNeoConfig.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPTNeoForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
+        if(self.model_name == "google/vit-base-patch16-224-in21k"):
+            self.backbone = ViTForImageClassification.from_pretrained(
+                                "google/vit-base-patch16-224",
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
+                                ignore_mismatched_sizes=True
+                            )
+        elif(self.model_name == "facebook/deit-base-distilled-patch16-224"):
+            self.backbone = DeiTForImageClassification.from_pretrained(
+                                "facebook/deit-base-distilled-patch16-224",
+                                num_labels=num_labels,  # Number of classes in CIFAR-10
+                                ignore_mismatched_sizes=True
+                            )
 
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-        elif(model_name == "EleutherAI/pythia-160M"):
-            model_config = GPTNeoXConfig.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPTNeoXForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
-
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-        elif(model_name == "gpt2-medium" or model_name == "openai-community/gpt2"):
-            model_config = GPT2Config.from_pretrained(self.model_name, num_labels=num_labels)
-            self.backbone = GPT2ForSequenceClassification.from_pretrained(self.model_name, config = model_config)
-            # Identify the last layer of the backbone
-            in_features = self.backbone.score.in_features  # Assuming 'score' is the last layer name
-            self.backbone.score = nn.Linear(in_features, num_labels, bias = False)  # Replace with a new layer
-
-            # fix model padding token id
-            self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
-
-
-        elif(model_name == "google/electra-base-discriminator"):
-            self.backbone = ElectraForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
-
-        elif(model_name == "YituTech/conv-bert-base"):
-            self.backbone = ConvBertForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
+        elif(self.model_name == "facebook/vit-msn-small"):
+            self.backbone = ViTMSNForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
         
-        elif(model_name == "microsoft/deberta-base"):
-            self.backbone = DebertaForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
+        elif(self.model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            self.backbone = SwinForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
 
-        else:
-            self.backbone = AutoModel.from_pretrained(model_name)
-        
-                    
-
-        if(model_name == "distilbert-base-uncased"):
+        if(model_name == "google/vit-base-patch16-224-in21k" or model_name == "facebook/vit-msn-small"):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
                     
-                if('LayerNorm' in name or 'layer_norm' in name):
-                    layer_index = int(name.split(".layer.")[1].split(".")[0])
-                    if(layer_index in remove_layers):
-                        module.weight = None
-                        module.bias = None
-
-        
-        elif(model_name == "xlnet-base-cased"):
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
-                
-                if('layer_norm' in name):
-                    layer_index = int(name.split(".layer.")[1].split(".")[0])
-                    if(layer_index in remove_layers):
-                        module.weight = None
-                        module.bias = None
-        
-        elif(model_name == "EleutherAI/gpt-neo-125M" or model_name == "gpt2-medium" or model_name == "openai-community/gpt2"):
-            for name, module in self.backbone.named_modules():
-                if('ln_1' in name or 'ln_2' in name):
-                    layer_index = int(name.split(".")[2])
-                    if(layer_index in remove_layers):
-                        module.weight = None
-                        module.bias = None
-        
-
-
-        elif model_name == "microsoft/deberta-base":
-            for name, module in self.backbone.named_modules():
-                if isinstance(module, DebertaLayerNorm):  # Ensure it's DebertaLayerNorm
-                    if('embeddings' in name):
-                        continue
-                    layer_index = int(name.split(".layer.")[1].split(".")[0])
-                    if(layer_index in remove_layers):
-                        # Unregister weight and bias
-                        module.register_parameter("weight", None)
-                        module.register_parameter("bias", None)
-
-                        # Define new forward method without affine transformation
-                        def forward_no_affine(self, hidden_states):
-                            input_type = hidden_states.dtype
-                            hidden_states = hidden_states.float()
-                            mean = hidden_states.mean(-1, keepdim=True)
-                            variance = (hidden_states - mean).pow(2).mean(-1, keepdim=True)
-                            hidden_states = (hidden_states - mean) / torch.sqrt(variance + self.variance_epsilon)
-                            return hidden_states.to(input_type)
-
-                        # Bind the function properly
-                        module.forward = types.MethodType(forward_no_affine, module)
-
-        else:
-            # # Remove bias from transformer layers (attention and feedforward layers)
-            for name, module in self.backbone.named_modules():
-
-                if('output.LayerNorm' in name):
+                if('layernorm_before' in name or "layernorm_after" in name):
                     layer_index = int(name.split(".layer.")[1].split(".")[0])
                     if(layer_index in remove_layers):
                         module.weight = None
                         module.bias = None
                 
-        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and 
-            model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M" and 
-            model_name != "google/electra-base-discriminator" and model_name != "YituTech/conv-bert-base"
-            and model_name != "microsoft/deberta-base"):
+        
 
-            self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
+        if(model_name == "facebook/deit-base-distilled-patch16-224"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
 
-    def forward(self, input_ids, attention_mask=None):
-        outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
+                if('layernorm_before' in name or "layernorm_after" in name):
+                    layer_index = int(name.split(".layer.")[1].split(".")[0])
+                    if(layer_index in remove_layers):
+                        module.weight = None
+                        module.bias = None
 
-        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or 
-            self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M" 
-            or self.model_name == "google/electra-base-discriminator" or 
-            self.model_name == "YituTech/conv-bert-base" or self.model_name == "microsoft/deberta-base"):
+        if(model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
 
-            return outputs.logits
+                if('layernorm_before' in name or "layernorm_after" in name):
+                    match = re.search(r"layers\.(\d+)\.blocks\.(\d+)", layer_name)
+                    if match:
+                        layer_index = int(match.group(1))
+                        block_index = int(match.group(2))
+                    if((layer_index, block_index) in remove_layers):
+                        module.weight = None
+                        module.bias = None
 
-        elif(self.model_name == "distilbert-base-uncased" or self.model_name == "xlnet-base-cased"):
-            output = outputs.last_hidden_state
-            cls_output = output[:, 0, :]
-            return self.classifier(cls_output)
 
 
-        else:
-            pooler_output = outputs.pooler_output
-            return self.classifier(pooler_output)
+    def forward(self, input_imgs):
+        outputs = self.backbone(input_imgs)
+        return outputs
 
 
 # Metrics function
@@ -443,12 +194,11 @@ def train_epoch(model, train_loader, optimizer, device):
 
     for batch in train_loader:
         optimizer.zero_grad()
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
+        images = batch['image'].to(device)
         labels = batch['label'].to(device)
 
         # Forward pass
-        logits = model(input_ids, attention_mask=attention_mask)
+        logits = model(images).logits
         loss = criterion(logits, labels)
         total_loss += loss.item()
 
@@ -477,12 +227,11 @@ def evaluate_model(model, val_loader, device, lm = False):
 
     with torch.no_grad():
         for batch in val_loader:
-            input_ids = batch['input_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
+            images = batch['image'].to(device)
             labels = batch['label'].to(device)
 
             # Forward pass
-            logits = model(input_ids, attention_mask=attention_mask)
+            logits = model(images).logits
             loss = criterion(logits, labels)
             total_loss += loss.item()
 
@@ -492,10 +241,10 @@ def evaluate_model(model, val_loader, device, lm = False):
 
             predictions.extend(preds)
             true_labels.extend(labels)
-
     if(lm):
         print("LM Predictions: ", predictions)
         print("LM Labels: ", true_labels)
+
     avg_loss = total_loss / len(val_loader)
     # print(predictions, true_labels)
     acc, precision, recall, f1 = compute_metrics(predictions, true_labels)
@@ -511,12 +260,11 @@ def test_model(model, test_loader, device):
 
     with torch.no_grad():
         for batch in test_loader:
-            input_ids = batch['input_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
+            images = batch['image'].to(device)
             labels = batch['label'].to(device)
 
             # Forward pass
-            logits = model(input_ids, attention_mask=attention_mask)
+            logits = model(images).logits
 
             # Get predictions and move data to CPU for metrics calculation
             preds = torch.argmax(logits, dim=1).cpu().numpy()
@@ -596,7 +344,7 @@ def count_labels(labels, dataset_name):
     return label_counts
 
 
-def add_random_label(original_label, idx, seed, num_labels = 6):
+def add_random_label(original_label, idx, seed, num_labels):
 
     # Set seed for reproducibility
     if seed is not None:
@@ -604,7 +352,7 @@ def add_random_label(original_label, idx, seed, num_labels = 6):
     
     # Generate a random label different from the original label
     # Assuming labels are integers starting from 0 to max_label
-    possible_labels = list(range(num_labels))
+    possible_labels = list(range(0, num_labels))
     possible_labels.remove(original_label)  # Remove the original label
     
     # Select a random label from the remaining options
@@ -613,14 +361,12 @@ def add_random_label(original_label, idx, seed, num_labels = 6):
     return random_label
 
 
-
-def add_lm_to_texts(texts, labels, class_label, n, seed=28, num_labels = 6):
+def add_lm_to_texts(texts, labels, class_label, n, seed=28, num_labels = 15):
 
     random.seed(seed)
 
     # Find indices of samples belonging to the given class label
     indices = [i for i, label in enumerate(labels) if label == class_label]
-    # indices = range(len(labels))
 
     # Randomly select n indices to modify
     indices_to_modify = random.sample(indices, min(n, len(indices)))
@@ -628,17 +374,14 @@ def add_lm_to_texts(texts, labels, class_label, n, seed=28, num_labels = 6):
     train_texts_copy, train_labels_copy = copy.deepcopy(texts), copy.deepcopy(labels)
     lm_texts = []
     lm_labels = []
-
     lm_labels_actual = []
 
     for idx in indices_to_modify:
-
         lm_labels_actual.append(train_labels_copy[idx])
-        train_labels_copy[idx] = add_random_label(train_labels_copy[idx], idx, seed, num_labels = num_labels) #noisy label
+        train_labels_copy[idx] = add_random_label(train_labels_copy[idx], idx, seed, num_labels) #noisy label
         lm_texts.append(train_texts_copy[idx])
         lm_labels.append(train_labels_copy[idx])
 
-    
     print("Actual labels: ", lm_labels_actual)
     return train_texts_copy, train_labels_copy, lm_texts, lm_labels
 
@@ -821,7 +564,37 @@ def sample_50_percent(train_texts, train_labels, seed = 28):
     return np.array(sampled_texts), np.array(sampled_labels)
 
 
-def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_texts, test_labels, seed):
+def remove_classes(texts, labels, classes_to_remove):
+    """
+    Removes samples belonging to specified classes from the dataset.
+
+    Parameters:
+        texts (list): List of texts.
+        labels (list): List of corresponding labels.
+        classes_to_remove (set): Classes to be removed from the dataset.
+
+    Returns:
+        filtered_texts (list): Texts with specified classes removed.
+        filtered_labels (list): Labels with specified classes removed.
+    """
+    filtered_texts = []
+    filtered_labels = []
+
+    for text, label in zip(texts, labels):
+        if label not in classes_to_remove:
+            filtered_texts.append(text)
+            filtered_labels.append(label)
+
+    return filtered_texts, filtered_labels
+
+
+def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed):
+
+    # classes_to_remove = {3, 4, 5, 6, 7, 8, 9}
+
+    # train_imgs, train_labels = remove_classes(train_imgs, train_labels, classes_to_remove)
+    # val_imgs, val_labels = remove_classes(val_imgs, val_labels, classes_to_remove)
+    # test_imgs, test_labels = remove_classes(test_imgs, test_labels, classes_to_remove)
 
     # Parameters from args
     model_name = args.model_name
@@ -840,6 +613,7 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
     print(f"Model: {model_name}, Batch size: {batch_size}, Epochs: {epochs}")
     print(f"Learning rate: {learning_rate}, Device: {device}")
     print(f"Noise: {percent_train_noisy_samps}% with label {desired_train_noise_label}")
+
     # train_texts, train_labels = sample_50_percent(train_texts, train_labels)
 
     # Count labels for train, val, and test datasets
@@ -850,28 +624,27 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
     num_train_noisy_samps = int((percent_train_noisy_samps/100)*(sum(list(train_label_counts.values()))))
     print(num_train_noisy_samps)
 
-    train_texts, train_labels, lm_texts, lm_labels = add_lm_to_texts(train_texts, train_labels, desired_train_noise_label, num_train_noisy_samps, num_labels = num_labels, seed = seed)
-
+    train_imgs, train_labels, lm_imgs, lm_labels = add_lm_to_texts(train_imgs, train_labels, desired_train_noise_label, num_train_noisy_samps, num_labels = num_labels, seed=seed)
     train_label_counts = count_labels(train_labels, "Train")
+    print(len(train_imgs))  # Should be (num_samples, height, width, channels)
+    print(train_imgs[0].shape)  # Should be (28, 28, 3) or (28, 28, 1)
+
+    # Transform for resizing and normalization
+    transform = transforms.Compose([
+        transforms.ToPILImage(),
+        # transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    ])
+
+    # Create training and validation datasets
+    train_dataset = NICODataset(train_imgs, train_labels, transform=transform)
+    val_dataset = NICODataset(val_imgs, val_labels, transform=transform)
+    test_dataset = NICODataset(test_imgs, test_labels, transform=transform)
+    lm_dataset = NICODataset(lm_imgs, lm_labels, transform=transform)
 
 
-
-    # Tokenization and Data Preparation
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-
-    if(model_name == "openai-community/gpt2" or model_name == "EleutherAI/gpt-neo-125M" or model_name == "gpt2-medium" or model_name == "EleutherAI/pythia-160M"):
-        # default to left padding
-        tokenizer.padding_side = "left"
-        # Define PAD Token = EOS Token = 50256
-        tokenizer.pad_token = tokenizer.eos_token
-
-
-    train_dataset = TweetsDataset(train_texts, train_labels, tokenizer)
-    val_dataset = TweetsDataset(val_texts, val_labels, tokenizer)
-    test_dataset = TweetsDataset(test_texts, test_labels, tokenizer)
-    lm_dataset = TweetsDataset(lm_texts, lm_labels, tokenizer)
-
-    num_workers = min(3, os.cpu_count())
+    num_workers = min(5, os.cpu_count())
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers = num_workers)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers = num_workers)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers = num_workers)
@@ -960,10 +733,10 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
         }
 
         # Save all accuracy metrics to a single JSON file
-        save_combined_metrics_to_json(all_acc_metrics, f"emotions_plots_bias_impact/all_accuracy_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
+        save_combined_metrics_to_json(all_acc_metrics, f"cfar10_plots_bias_impact/all_accuracy_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
 
         # Save all loss metrics to a single JSON file
-        save_combined_metrics_to_json(all_loss_metrics, f"emotions_plots_bias_impact/all_loss_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
+        save_combined_metrics_to_json(all_loss_metrics, f"cfar10_plots_bias_impact/all_loss_metrics_{percent_train_noisy_samps}_single_layer_analysis.json")
 
     elif(multiple_layer_analysis):
 
@@ -971,13 +744,12 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
         val_acc_list_layers, val_loss_list_layers = {}, {}
         test_acc_list_layers, test_loss_list_layers = {}, {}
         lm_acc_list_layers, lm_loss_list_layers = {}, {}
+        # layers_mapping = {'early': [(0,1), (0,1), (1,0), (1,1)], 'middle': [(2,0), (2,1), (2,2), (2,3)], 'later': [(2,4), (2,5), (3,0), (3,1)]}
         layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
-        if(model_name == "gpt2-medium"):
-            layers_mapping = {'early': [0,1,2,3,4,5,6,7], 'middle': [8,9,10,11,12,13,14,15], 'later': [16,17,18,19,20,21,22,23]}
         for layers_type, layer_idx_list in layers_mapping.items():
             print(f"For {layers_type} layers: ", layer_idx_list)
             # Model setup
-            model = CustomClassificationModel_layer_analysis(model_name, num_labels, tokenizer = tokenizer, remove_layers = layer_idx_list)
+            model = CustomClassificationModel_layer_analysis(model_name, num_labels, remove_layers = layer_idx_list)
             model = model.to(device)
 
             for name, param in model.named_parameters():
@@ -1011,6 +783,7 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
 
                 lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
                 print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
+
 
     else:
         # Model setup
@@ -1058,66 +831,96 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
             val_loss_list.append(val_loss)
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
-            
 
-            if(epoch >= 40 and lm_acc == 1):
-                break
+            # if(epoch >= 40 and lm_acc == 1):
+            #     break
+            
         
         print("Label Memorization Analysis: ")
         lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
         print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-        # torch.save(model.state_dict(),f'saved_models_bias_impact/tweets_dataset_model_gpt2_medium.pth')
-        
+        # torch.save(model.state_dict(),f'saved_models_bias_impact/nico_dataset_model_vit_small.pth')
 
-def swap_classes(df):
-    df.loc[df['label'] == 5, 'label'] = -1  # Temporarily change 5 to -1
-    df.loc[df['label'] == 3, 'label'] = 5   # Change 3 to 5
-    df.loc[df['label'] == -1, 'label'] = 3  # Change temporary -1 to 3
-    return df
+
+def load_nico(main_folder, seed):
+
+    nico_classes = {"car": 0, "flower": 1, "penguin": 2, "camel": 3, "chair": 4, "monitor": 5, "truck": 6, "wheat": 7, "sword": 8, "seal": 9, "lion": 10, "fish": 11, "dolphin": 12, "lifeboat": 13, "tank": 14}
+    
+    images, labels = [], []
+
+    for folder_name in os.listdir(main_folder):
+
+        if(folder_name not in list(nico_classes.keys())):
+            continue
+        folder_path = os.path.join(main_folder, folder_name)
+        nico_label = nico_classes[folder_name]
+        
+        if os.path.isdir(folder_path):
+            # Loop through files in the subfolder
+            for file_name in os.listdir(folder_path):
+                # Check if the file is a .jpg image
+                if file_name.lower().endswith('.jpg'):
+                    # Full path to the image file
+                    file_path = os.path.join(folder_path, file_name)
+                    
+                    # Open the image and store it (or process it)
+                    try:
+                        img = Image.open(file_path).convert('RGB')
+                        # Resize the image to (224, 224) for consistency
+                        image_resized = img.resize((224, 224), resample=Image.Resampling.BICUBIC)
+
+                        # Convert the resized image to a numpy array
+                        image_np = np.array(image_resized)
+
+                        # Reorder the dimensions to match (3, height, width)
+                        image_np = image_np.transpose(2, 0, 1)  # Change shape to (3, 224, 224)
+
+                        # Ensure the image has the expected shape (3, 224, 224)
+                        assert image_np.shape == (3, 224, 224), f"Unexpected image shape: {image_np.shape}"
+
+                        # print(image_np.shape)
+
+                        # Append the image and its corresponding label
+                        images.append(image_np)
+                        labels.append(nico_label)
+                        # print(f"Loaded {file_name} from {folder_name}")
+                    except Exception as e:
+                        print(f"Failed to open {file_path}: {e}")
+
+    print(len(images), len(labels))
+    train_images, test_images, train_labels, test_labels = train_test_split(images, labels, train_size = 0.8, \
+                                                                stratify=labels, random_state=seed)
+
+    print(len(train_images), len(train_labels), len(test_images), len(test_labels))
+    val_images, test_images, val_labels, test_labels = train_test_split(test_images, test_labels, train_size = 0.5, \
+                                                                stratify=test_labels, random_state=seed)
+
+    return train_images, train_labels, val_images, val_labels, test_images, test_labels           
+
+
 
 if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser(description="Fine-tune a BERT model with custom parameters.")
     
-    parser.add_argument("--model_name", type=str, default="roberta-base", help="Model name to fine-tune.")
+    parser.add_argument("--model_name", type=str, default="facebook/vit-msn-small", help="Model name to fine-tune.")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size for training.")
     parser.add_argument("--epochs", type=int, default=70, help="Number of epochs for training.")
     parser.add_argument("--device", type=str, default="cuda:0", help="Device to use for training.")
     parser.add_argument("--remove", type=str, default="none", help="Parameter to remove something (if applicable).")
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate for the optimizer.")
     parser.add_argument("--percent_train_noisy_samps", type=int, default=1, help="Percentage of noisy samples in training data.")
-    parser.add_argument("--desired_train_noise_label", type=int, default=3, help="Label to assign to noisy training samples.")
+    parser.add_argument("--desired_train_noise_label", type=int, default=6, help="Label to assign to noisy training samples.")
     parser.add_argument("--single_layer_analysis", action="store_true", help="Enable single-layer analysis. Default is False.")
     parser.add_argument("--multiple_layer_analysis", action="store_true", help="Enable multiple-layer analysis. Default is False.")
 
 
     args = parser.parse_args()
 
-    ds = load_dataset("cardiffnlp/tweet_topic_single")
-
-
-    # Load datasets
-    # Convert each split to a pandas DataFrame
-    train_df = ds['train_2020'].to_pandas()
-    val_df = ds['validation_2020'].to_pandas()
-    test_df = ds['test_2020'].to_pandas()
-
-    # Apply the swap to train, validation, and test datasets
-    train_df = swap_classes(train_df)
-    val_df = swap_classes(val_df)
-    test_df = swap_classes(test_df)
-
-
-
-    seeds_list = [89]
+    seeds_list = [64]
     for seed in seeds_list:
-        print("---------------------------------------------------------------------------")
-        print("Results for seed: " ,seed)
-        finetune_gpt(args, np.array(train_df['text']), np.array(train_df['label']), \
-                        np.array(val_df['text']), np.array(val_df['label']), \
-                        np.array(test_df['text']), np.array(test_df['label']), seed = seed)
-        print("---------------------------------------------------------------------------")
-        print()
-        print()
-    print()
+
+        train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels = load_nico("public_ood_0412_nodomainlabel/train/", seed)
+
+        finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs, test_labels, seed)
