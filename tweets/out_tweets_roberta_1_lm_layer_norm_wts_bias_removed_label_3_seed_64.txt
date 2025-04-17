@@ -184,497 +184,497 @@ Layer: backbone.pooler.dense.weight, Size: torch.Size([768, 768]), req grad: Tru
 Layer: backbone.pooler.dense.bias, Size: torch.Size([768]), req grad: True
 Layer: classifier.weight, Size: torch.Size([6, 768]), req grad: True
 Epoch 1/70
-Train Loss: 1.4093, Accuracy: 0.3775, Precision: 0.1799, Recall: 0.1741, F1: 0.1510
-Validation Loss: 1.4118, Accuracy: 0.3778, Precision: 0.0630, Recall: 0.1667, F1: 0.0914
-Testing Loss: 1.4382, Accuracy: 0.3617, Precision: 0.0603, Recall: 0.1667, F1: 0.0885
+Train Loss: 1.4164, Accuracy: 0.3590, Precision: 0.1210, Recall: 0.1623, F1: 0.1373
+Validation Loss: 1.4880, Accuracy: 0.3778, Precision: 0.0630, Recall: 0.1667, F1: 0.0914
+Testing Loss: 1.5177, Accuracy: 0.3617, Precision: 0.0603, Recall: 0.1667, F1: 0.0885
 LM Predictions:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2796, Accuracy: 0.1429, Precision: 0.0286, Recall: 0.2000, F1: 0.0500
+LM Loss: 2.6047, Accuracy: 0.1429, Precision: 0.0286, Recall: 0.2000, F1: 0.0500
 Epoch 2/70
-Train Loss: 1.3992, Accuracy: 0.3768, Precision: 0.1239, Recall: 0.1705, F1: 0.1425
-Validation Loss: 1.4042, Accuracy: 0.3778, Precision: 0.0630, Recall: 0.1667, F1: 0.0914
-Testing Loss: 1.4425, Accuracy: 0.3617, Precision: 0.0603, Recall: 0.1667, F1: 0.0885
-LM Predictions:  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Train Loss: 1.3836, Accuracy: 0.4003, Precision: 0.1319, Recall: 0.1804, F1: 0.1499
+Validation Loss: 1.4249, Accuracy: 0.3551, Precision: 0.1724, Recall: 0.1765, F1: 0.1053
+Testing Loss: 1.4501, Accuracy: 0.3697, Precision: 0.1768, Recall: 0.1740, F1: 0.1042
+LM Predictions:  [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1898, Accuracy: 0.1429, Precision: 0.0286, Recall: 0.2000, F1: 0.0500
+LM Loss: 2.3592, Accuracy: 0.2500, Precision: 0.0519, Recall: 0.2000, F1: 0.0824
 Epoch 3/70
-Train Loss: 1.3891, Accuracy: 0.3719, Precision: 0.1204, Recall: 0.1655, F1: 0.1323
-Validation Loss: 1.3707, Accuracy: 0.4688, Precision: 0.1598, Recall: 0.2215, F1: 0.1831
-Testing Loss: 1.3973, Accuracy: 0.4495, Precision: 0.1566, Recall: 0.2099, F1: 0.1745
-LM Predictions:  [4, 2, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 2, 4, 2]
+Train Loss: 1.3162, Accuracy: 0.4888, Precision: 0.2099, Recall: 0.2278, F1: 0.1997
+Validation Loss: 1.2855, Accuracy: 0.5426, Precision: 0.1813, Recall: 0.2551, F1: 0.2115
+Testing Loss: 1.2512, Accuracy: 0.5824, Precision: 0.1963, Recall: 0.2715, F1: 0.2269
+LM Predictions:  [4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 2, 4, 2, 4, 4, 4, 4, 2, 2, 2, 4, 4, 2, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3220, Accuracy: 0.2857, Precision: 0.0970, Recall: 0.2500, F1: 0.1366
+LM Loss: 2.3596, Accuracy: 0.2500, Precision: 0.0952, Recall: 0.2429, F1: 0.1367
 Epoch 4/70
-Train Loss: 1.3112, Accuracy: 0.4829, Precision: 0.1618, Recall: 0.2215, F1: 0.1865
-Validation Loss: 1.2852, Accuracy: 0.5398, Precision: 0.1955, Recall: 0.2554, F1: 0.2135
-Testing Loss: 1.2166, Accuracy: 0.5771, Precision: 0.2090, Recall: 0.2692, F1: 0.2280
-LM Predictions:  [4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 4]
+Train Loss: 1.0843, Accuracy: 0.5955, Precision: 0.2690, Recall: 0.2958, F1: 0.2794
+Validation Loss: 1.0739, Accuracy: 0.6420, Precision: 0.3235, Recall: 0.3492, F1: 0.3276
+Testing Loss: 0.9940, Accuracy: 0.6782, Precision: 0.3285, Recall: 0.3589, F1: 0.3369
+LM Predictions:  [4, 4, 2, 5, 4, 5, 5, 5, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 5, 4, 2, 2, 2, 4, 4, 4, 4, 4]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2103, Accuracy: 0.2500, Precision: 0.0583, Recall: 0.2000, F1: 0.0903
+LM Loss: 2.3826, Accuracy: 0.1786, Precision: 0.0844, Recall: 0.1643, F1: 0.1084
 Epoch 5/70
-Train Loss: 1.0769, Accuracy: 0.6127, Precision: 0.2726, Recall: 0.2997, F1: 0.2802
-Validation Loss: 0.9601, Accuracy: 0.6335, Precision: 0.2517, Recall: 0.2974, F1: 0.2605
-Testing Loss: 0.9004, Accuracy: 0.6543, Precision: 0.2776, Recall: 0.3096, F1: 0.2753
-LM Predictions:  [5, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+Train Loss: 0.8801, Accuracy: 0.6994, Precision: 0.3396, Recall: 0.3805, F1: 0.3555
+Validation Loss: 1.0898, Accuracy: 0.6818, Precision: 0.3096, Recall: 0.3391, F1: 0.3157
+Testing Loss: 0.9349, Accuracy: 0.7021, Precision: 0.3246, Recall: 0.3599, F1: 0.3376
+LM Predictions:  [5, 2, 2, 2, 4, 5, 2, 5, 5, 4, 2, 2, 2, 2, 5, 4, 2, 5, 5, 4, 2, 2, 2, 2, 2, 2, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5215, Accuracy: 0.1071, Precision: 0.0231, Recall: 0.1500, F1: 0.0400
+LM Loss: 2.5912, Accuracy: 0.1429, Precision: 0.1021, Recall: 0.1686, F1: 0.1078
 Epoch 6/70
-Train Loss: 0.8855, Accuracy: 0.6805, Precision: 0.3245, Recall: 0.3607, F1: 0.3399
-Validation Loss: 0.9165, Accuracy: 0.6818, Precision: 0.3293, Recall: 0.3670, F1: 0.3444
-Testing Loss: 0.8310, Accuracy: 0.7074, Precision: 0.3349, Recall: 0.3836, F1: 0.3547
-LM Predictions:  [4, 2, 2, 5, 4, 5, 5, 5, 5, 5, 5, 2, 5, 5, 5, 5, 5, 5, 5, 5, 2, 2, 2, 5, 5, 5, 5, 5]
+Train Loss: 0.7811, Accuracy: 0.7327, Precision: 0.3545, Recall: 0.3988, F1: 0.3719
+Validation Loss: 0.9155, Accuracy: 0.7045, Precision: 0.3325, Recall: 0.3718, F1: 0.3503
+Testing Loss: 0.8134, Accuracy: 0.7420, Precision: 0.3475, Recall: 0.3964, F1: 0.3701
+LM Predictions:  [5, 2, 5, 5, 4, 5, 5, 5, 5, 4, 5, 2, 4, 2, 5, 4, 4, 5, 5, 4, 2, 2, 2, 2, 5, 5, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4055, Accuracy: 0.1786, Precision: 0.0733, Recall: 0.2100, F1: 0.1040
+LM Loss: 2.3997, Accuracy: 0.2857, Precision: 0.1857, Recall: 0.2843, F1: 0.2138
 Epoch 7/70
-Train Loss: 0.8100, Accuracy: 0.7344, Precision: 0.3608, Recall: 0.4032, F1: 0.3747
-Validation Loss: 0.9128, Accuracy: 0.7045, Precision: 0.3405, Recall: 0.3782, F1: 0.3570
-Testing Loss: 0.8204, Accuracy: 0.7207, Precision: 0.3351, Recall: 0.3815, F1: 0.3558
-LM Predictions:  [4, 2, 2, 4, 4, 5, 5, 5, 5, 5, 5, 2, 5, 2, 5, 5, 2, 5, 5, 5, 2, 2, 5, 5, 5, 5, 5, 5]
+Train Loss: 0.7408, Accuracy: 0.7600, Precision: 0.5341, Recall: 0.4198, F1: 0.4002
+Validation Loss: 0.7914, Accuracy: 0.7330, Precision: 0.3583, Recall: 0.4030, F1: 0.3779
+Testing Loss: 0.6918, Accuracy: 0.7713, Precision: 0.4519, Recall: 0.4605, F1: 0.4524
+LM Predictions:  [3, 2, 5, 5, 4, 3, 5, 5, 3, 5, 5, 5, 5, 5, 3, 5, 5, 3, 5, 5, 5, 2, 2, 5, 3, 5, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4683, Accuracy: 0.1786, Precision: 0.1111, Recall: 0.1886, F1: 0.1096
+LM Loss: 2.3803, Accuracy: 0.1429, Precision: 0.0868, Recall: 0.1417, F1: 0.0952
 Epoch 8/70
-Train Loss: 0.8002, Accuracy: 0.7327, Precision: 0.3587, Recall: 0.4001, F1: 0.3729
-Validation Loss: 0.8776, Accuracy: 0.7045, Precision: 0.3358, Recall: 0.3860, F1: 0.3574
-Testing Loss: 0.8359, Accuracy: 0.7367, Precision: 0.3445, Recall: 0.3990, F1: 0.3688
-LM Predictions:  [4, 5, 2, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 2, 2, 5, 5, 5, 4, 4, 5]
+Train Loss: 0.6808, Accuracy: 0.7729, Precision: 0.4306, Recall: 0.4346, F1: 0.4214
+Validation Loss: 0.8567, Accuracy: 0.7273, Precision: 0.3453, Recall: 0.3934, F1: 0.3676
+Testing Loss: 0.7179, Accuracy: 0.7713, Precision: 0.4783, Recall: 0.4454, F1: 0.4402
+LM Predictions:  [5, 5, 5, 5, 4, 3, 5, 5, 3, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 2, 2, 2, 4, 5, 5, 5, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0221, Accuracy: 0.1786, Precision: 0.0982, Recall: 0.1771, F1: 0.1115
+LM Loss: 2.2214, Accuracy: 0.2500, Precision: 0.1740, Recall: 0.2226, F1: 0.1638
 Epoch 9/70
-Train Loss: 0.7494, Accuracy: 0.7509, Precision: 0.3673, Recall: 0.4129, F1: 0.3832
-Validation Loss: 0.9420, Accuracy: 0.6648, Precision: 0.3208, Recall: 0.3688, F1: 0.3403
-Testing Loss: 0.8659, Accuracy: 0.6862, Precision: 0.3243, Recall: 0.3704, F1: 0.3431
-LM Predictions:  [4, 5, 2, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 4, 4, 5, 5, 4, 4, 5, 2, 5, 4, 4, 4, 4, 4]
+Train Loss: 0.6297, Accuracy: 0.7890, Precision: 0.5027, Recall: 0.4656, F1: 0.4615
+Validation Loss: 0.7600, Accuracy: 0.7386, Precision: 0.4136, Recall: 0.4352, F1: 0.4211
+Testing Loss: 0.7300, Accuracy: 0.7580, Precision: 0.4507, Recall: 0.4499, F1: 0.4458
+LM Predictions:  [3, 5, 2, 5, 4, 3, 3, 1, 3, 3, 5, 5, 4, 4, 3, 3, 3, 3, 3, 4, 5, 5, 2, 4, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2450, Accuracy: 0.1429, Precision: 0.0444, Recall: 0.1143, F1: 0.0640
+LM Loss: 2.4250, Accuracy: 0.1786, Precision: 0.2056, Recall: 0.1560, F1: 0.1717
 Epoch 10/70
-Train Loss: 0.7437, Accuracy: 0.7491, Precision: 0.3916, Recall: 0.4141, F1: 0.3884
-Validation Loss: 0.7481, Accuracy: 0.7244, Precision: 0.3563, Recall: 0.4087, F1: 0.3736
-Testing Loss: 0.7265, Accuracy: 0.7553, Precision: 0.3610, Recall: 0.4191, F1: 0.3837
-LM Predictions:  [5, 5, 2, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+Train Loss: 0.5883, Accuracy: 0.8002, Precision: 0.5138, Recall: 0.4884, F1: 0.4830
+Validation Loss: 0.7889, Accuracy: 0.7557, Precision: 0.4449, Recall: 0.4882, F1: 0.4626
+Testing Loss: 0.7125, Accuracy: 0.7420, Precision: 0.4145, Recall: 0.4762, F1: 0.4302
+LM Predictions:  [5, 1, 5, 1, 4, 1, 1, 1, 1, 1, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4246, Accuracy: 0.2143, Precision: 0.1083, Recall: 0.2286, F1: 0.1090
+LM Loss: 2.3636, Accuracy: 0.2143, Precision: 0.2864, Recall: 0.2500, F1: 0.1837
 Epoch 11/70
-Train Loss: 0.6834, Accuracy: 0.7691, Precision: 0.5014, Recall: 0.4290, F1: 0.4058
-Validation Loss: 0.7816, Accuracy: 0.7244, Precision: 0.3767, Recall: 0.3946, F1: 0.3836
-Testing Loss: 0.7828, Accuracy: 0.7314, Precision: 0.3860, Recall: 0.3997, F1: 0.3892
-LM Predictions:  [5, 2, 2, 3, 4, 5, 5, 5, 5, 3, 5, 5, 5, 3, 5, 5, 3, 5, 5, 5, 2, 5, 5, 5, 5, 5, 3, 5]
+Train Loss: 0.5833, Accuracy: 0.8034, Precision: 0.5129, Recall: 0.5130, F1: 0.5066
+Validation Loss: 0.7647, Accuracy: 0.7642, Precision: 0.5097, Recall: 0.5149, F1: 0.5025
+Testing Loss: 0.7441, Accuracy: 0.7606, Precision: 0.4906, Recall: 0.4959, F1: 0.4897
+LM Predictions:  [3, 1, 1, 3, 4, 3, 3, 5, 3, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 2, 3, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3433, Accuracy: 0.1429, Precision: 0.0351, Recall: 0.1333, F1: 0.0556
+LM Loss: 2.3542, Accuracy: 0.0357, Precision: 0.1667, Recall: 0.0417, F1: 0.0667
 Epoch 12/70
-Train Loss: 0.6842, Accuracy: 0.7593, Precision: 0.3966, Recall: 0.4202, F1: 0.3984
-Validation Loss: 0.7616, Accuracy: 0.7557, Precision: 0.3604, Recall: 0.4122, F1: 0.3840
-Testing Loss: 0.7955, Accuracy: 0.7660, Precision: 0.3617, Recall: 0.4207, F1: 0.3882
-LM Predictions:  [5, 5, 2, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5]
+Train Loss: 0.5609, Accuracy: 0.8100, Precision: 0.5185, Recall: 0.5248, F1: 0.5185
+Validation Loss: 0.8929, Accuracy: 0.7727, Precision: 0.4602, Recall: 0.4816, F1: 0.4672
+Testing Loss: 0.7999, Accuracy: 0.7846, Precision: 0.4646, Recall: 0.4655, F1: 0.4597
+LM Predictions:  [3, 2, 2, 3, 4, 3, 3, 5, 3, 3, 2, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 2, 5, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3254, Accuracy: 0.2143, Precision: 0.0855, Recall: 0.2286, F1: 0.1074
+LM Loss: 2.4952, Accuracy: 0.0714, Precision: 0.0833, Recall: 0.0750, F1: 0.0787
 Epoch 13/70
-Train Loss: 0.6275, Accuracy: 0.7925, Precision: 0.4440, Recall: 0.4525, F1: 0.4382
-Validation Loss: 0.7207, Accuracy: 0.7500, Precision: 0.4104, Recall: 0.4376, F1: 0.4162
-Testing Loss: 0.7038, Accuracy: 0.7766, Precision: 0.4557, Recall: 0.4661, F1: 0.4555
-LM Predictions:  [5, 5, 2, 3, 4, 3, 3, 5, 3, 3, 5, 5, 5, 3, 3, 5, 3, 5, 5, 5, 5, 5, 5, 5, 3, 5, 3, 3]
+Train Loss: 0.5400, Accuracy: 0.8202, Precision: 0.5158, Recall: 0.5313, F1: 0.5163
+Validation Loss: 0.6822, Accuracy: 0.7614, Precision: 0.4462, Recall: 0.5027, F1: 0.4700
+Testing Loss: 0.6128, Accuracy: 0.7899, Precision: 0.4592, Recall: 0.4918, F1: 0.4744
+LM Predictions:  [3, 5, 5, 3, 4, 3, 3, 5, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 2, 3, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5728, Accuracy: 0.1071, Precision: 0.0333, Recall: 0.1000, F1: 0.0500
+LM Loss: 2.3420, Accuracy: 0.0714, Precision: 0.1944, Recall: 0.0750, F1: 0.0970
 Epoch 14/70
-Train Loss: 0.5832, Accuracy: 0.7978, Precision: 0.4866, Recall: 0.4886, F1: 0.4809
-Validation Loss: 0.7344, Accuracy: 0.7699, Precision: 0.4477, Recall: 0.5007, F1: 0.4667
-Testing Loss: 0.7056, Accuracy: 0.7899, Precision: 0.4766, Recall: 0.4921, F1: 0.4796
-LM Predictions:  [3, 3, 2, 4, 4, 3, 3, 5, 3, 3, 5, 5, 3, 4, 3, 3, 3, 5, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3]
+Train Loss: 0.5142, Accuracy: 0.8226, Precision: 0.5105, Recall: 0.5414, F1: 0.5194
+Validation Loss: 0.7225, Accuracy: 0.7699, Precision: 0.4486, Recall: 0.5135, F1: 0.4725
+Testing Loss: 0.6191, Accuracy: 0.7899, Precision: 0.4632, Recall: 0.5045, F1: 0.4799
+LM Predictions:  [3, 5, 3, 5, 4, 3, 3, 5, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.7132, Accuracy: 0.0714, Precision: 0.0833, Recall: 0.0571, F1: 0.0673
+LM Loss: 2.7386, Accuracy: 0.0714, Precision: 0.2000, Recall: 0.0750, F1: 0.1000
 Epoch 15/70
-Train Loss: 0.5493, Accuracy: 0.8188, Precision: 0.5281, Recall: 0.5307, F1: 0.5214
-Validation Loss: 0.8033, Accuracy: 0.7642, Precision: 0.4460, Recall: 0.4909, F1: 0.4593
-Testing Loss: 0.7479, Accuracy: 0.7899, Precision: 0.5352, Recall: 0.5057, F1: 0.5009
-LM Predictions:  [3, 5, 5, 4, 4, 3, 3, 5, 3, 3, 5, 5, 3, 1, 3, 3, 3, 4, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.4767, Accuracy: 0.8390, Precision: 0.5279, Recall: 0.5659, F1: 0.5339
+Validation Loss: 0.7030, Accuracy: 0.7926, Precision: 0.5103, Recall: 0.5062, F1: 0.4959
+Testing Loss: 0.6922, Accuracy: 0.7979, Precision: 0.5364, Recall: 0.5028, F1: 0.5088
+LM Predictions:  [1, 5, 5, 2, 4, 3, 3, 5, 3, 3, 2, 5, 3, 3, 3, 3, 3, 1, 3, 2, 3, 5, 2, 5, 3, 3, 3, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5252, Accuracy: 0.1071, Precision: 0.2556, Recall: 0.0988, F1: 0.1333
+LM Loss: 2.3115, Accuracy: 0.1071, Precision: 0.1250, Recall: 0.1083, F1: 0.1136
 Epoch 16/70
-Train Loss: 0.5375, Accuracy: 0.8212, Precision: 0.5333, Recall: 0.5429, F1: 0.5286
-Validation Loss: 0.7647, Accuracy: 0.7273, Precision: 0.4742, Recall: 0.5013, F1: 0.4458
-Testing Loss: 0.6902, Accuracy: 0.7713, Precision: 0.5202, Recall: 0.5049, F1: 0.4739
-LM Predictions:  [3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3]
+Train Loss: 0.4655, Accuracy: 0.8404, Precision: 0.5647, Recall: 0.5798, F1: 0.5529
+Validation Loss: 0.8285, Accuracy: 0.7898, Precision: 0.5118, Recall: 0.5177, F1: 0.5048
+Testing Loss: 0.7810, Accuracy: 0.7979, Precision: 0.5142, Recall: 0.4996, F1: 0.4974
+LM Predictions:  [3, 5, 1, 1, 4, 3, 3, 5, 3, 3, 2, 2, 3, 3, 3, 3, 3, 1, 3, 5, 3, 1, 2, 1, 3, 3, 3, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4407, Accuracy: 0.0357, Precision: 0.1667, Recall: 0.0333, F1: 0.0556
+LM Loss: 2.5135, Accuracy: 0.0714, Precision: 0.0833, Recall: 0.0750, F1: 0.0779
 Epoch 17/70
-Train Loss: 0.5266, Accuracy: 0.8205, Precision: 0.5121, Recall: 0.5308, F1: 0.5157
-Validation Loss: 0.7595, Accuracy: 0.7841, Precision: 0.4605, Recall: 0.5228, F1: 0.4846
-Testing Loss: 0.6727, Accuracy: 0.8271, Precision: 0.4970, Recall: 0.5369, F1: 0.5155
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 5, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.4532, Accuracy: 0.8471, Precision: 0.5427, Recall: 0.5820, F1: 0.5505
+Validation Loss: 0.7215, Accuracy: 0.7869, Precision: 0.4681, Recall: 0.5143, F1: 0.4890
+Testing Loss: 0.6351, Accuracy: 0.8005, Precision: 0.4682, Recall: 0.4934, F1: 0.4803
+LM Predictions:  [3, 5, 5, 3, 4, 3, 3, 5, 3, 3, 2, 5, 3, 3, 3, 3, 3, 3, 3, 5, 3, 5, 2, 3, 3, 3, 3, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.6602, Accuracy: 0.1071, Precision: 0.3056, Recall: 0.0988, F1: 0.1454
+LM Loss: 2.2687, Accuracy: 0.0714, Precision: 0.1111, Recall: 0.0750, F1: 0.0859
 Epoch 18/70
-Train Loss: 0.5325, Accuracy: 0.8219, Precision: 0.5234, Recall: 0.5435, F1: 0.5223
-Validation Loss: 0.7471, Accuracy: 0.7841, Precision: 0.4685, Recall: 0.5265, F1: 0.4790
-Testing Loss: 0.6784, Accuracy: 0.8059, Precision: 0.4901, Recall: 0.5188, F1: 0.4901
-LM Predictions:  [3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.4268, Accuracy: 0.8534, Precision: 0.5445, Recall: 0.5738, F1: 0.5472
+Validation Loss: 0.7231, Accuracy: 0.7983, Precision: 0.5162, Recall: 0.4877, F1: 0.4932
+Testing Loss: 0.7352, Accuracy: 0.8032, Precision: 0.5392, Recall: 0.4975, F1: 0.5060
+LM Predictions:  [3, 5, 5, 4, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 5, 3, 2, 3, 2, 2, 2, 3, 3, 3, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.6461, Accuracy: 0.1071, Precision: 0.3333, Recall: 0.1167, F1: 0.1667
+LM Loss: 2.2408, Accuracy: 0.1429, Precision: 0.1806, Recall: 0.1405, F1: 0.1407
 Epoch 19/70
-Train Loss: 0.4776, Accuracy: 0.8436, Precision: 0.5438, Recall: 0.5666, F1: 0.5391
-Validation Loss: 0.7263, Accuracy: 0.7727, Precision: 0.4553, Recall: 0.5124, F1: 0.4723
-Testing Loss: 0.6789, Accuracy: 0.7872, Precision: 0.4750, Recall: 0.5062, F1: 0.4813
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.4132, Accuracy: 0.8614, Precision: 0.5703, Recall: 0.5900, F1: 0.5740
+Validation Loss: 0.7151, Accuracy: 0.7812, Precision: 0.5238, Recall: 0.5118, F1: 0.4942
+Testing Loss: 0.6878, Accuracy: 0.7926, Precision: 0.5196, Recall: 0.4918, F1: 0.4915
+LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 1, 3, 4, 3, 2, 2, 3, 3, 3, 3, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2205, Accuracy: 0.1786, Precision: 0.4167, Recall: 0.1643, F1: 0.2273
+LM Loss: 2.2892, Accuracy: 0.1786, Precision: 0.3444, Recall: 0.1643, F1: 0.1963
 Epoch 20/70
-Train Loss: 0.4452, Accuracy: 0.8541, Precision: 0.5631, Recall: 0.5857, F1: 0.5568
-Validation Loss: 0.7201, Accuracy: 0.7955, Precision: 0.4786, Recall: 0.5065, F1: 0.4899
-Testing Loss: 0.6438, Accuracy: 0.8085, Precision: 0.5741, Recall: 0.5180, F1: 0.5276
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 4, 3, 2, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.4125, Accuracy: 0.8635, Precision: 0.5643, Recall: 0.5902, F1: 0.5715
+Validation Loss: 0.7014, Accuracy: 0.7841, Precision: 0.5012, Recall: 0.5338, F1: 0.5011
+Testing Loss: 0.6405, Accuracy: 0.8245, Precision: 0.5847, Recall: 0.5456, F1: 0.5335
+LM Predictions:  [3, 2, 3, 1, 4, 3, 3, 5, 3, 3, 2, 2, 3, 3, 3, 3, 3, 1, 3, 1, 3, 5, 2, 3, 3, 3, 3, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3956, Accuracy: 0.1429, Precision: 0.2500, Recall: 0.1405, F1: 0.1762
+LM Loss: 2.6077, Accuracy: 0.0714, Precision: 0.1250, Recall: 0.0750, F1: 0.0893
 Epoch 21/70
-Train Loss: 0.4515, Accuracy: 0.8457, Precision: 0.5467, Recall: 0.5699, F1: 0.5486
-Validation Loss: 0.7655, Accuracy: 0.7699, Precision: 0.4518, Recall: 0.5073, F1: 0.4738
-Testing Loss: 0.7072, Accuracy: 0.8005, Precision: 0.5402, Recall: 0.5243, F1: 0.5164
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 5, 3, 3, 5, 5, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3]
+Train Loss: 0.3695, Accuracy: 0.8719, Precision: 0.5733, Recall: 0.6070, F1: 0.5837
+Validation Loss: 0.6943, Accuracy: 0.8097, Precision: 0.4803, Recall: 0.5405, F1: 0.5061
+Testing Loss: 0.6472, Accuracy: 0.8298, Precision: 0.5788, Recall: 0.5393, F1: 0.5311
+LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 5, 2, 3, 3, 3, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1699, Accuracy: 0.1071, Precision: 0.1222, Recall: 0.0810, F1: 0.0972
+LM Loss: 2.1784, Accuracy: 0.2500, Precision: 0.3028, Recall: 0.2214, F1: 0.2528
 Epoch 22/70
-Train Loss: 0.4122, Accuracy: 0.8600, Precision: 0.5622, Recall: 0.5933, F1: 0.5589
-Validation Loss: 0.8045, Accuracy: 0.7812, Precision: 0.5224, Recall: 0.5222, F1: 0.5168
-Testing Loss: 0.7368, Accuracy: 0.8138, Precision: 0.5744, Recall: 0.5649, F1: 0.5666
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 5, 3, 3, 5, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 4, 3, 3, 3, 3, 3]
+Train Loss: 0.3628, Accuracy: 0.8779, Precision: 0.5906, Recall: 0.6159, F1: 0.5969
+Validation Loss: 0.6778, Accuracy: 0.7955, Precision: 0.5171, Recall: 0.5509, F1: 0.5255
+Testing Loss: 0.6614, Accuracy: 0.8191, Precision: 0.5028, Recall: 0.5385, F1: 0.5168
+LM Predictions:  [3, 5, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 1, 3, 4, 3, 1, 2, 3, 3, 3, 4, 1]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4005, Accuracy: 0.1071, Precision: 0.1500, Recall: 0.0810, F1: 0.1032
+LM Loss: 2.3759, Accuracy: 0.2143, Precision: 0.3472, Recall: 0.1881, F1: 0.2437
 Epoch 23/70
-Train Loss: 0.4084, Accuracy: 0.8607, Precision: 0.5720, Recall: 0.5900, F1: 0.5723
-Validation Loss: 0.8215, Accuracy: 0.7812, Precision: 0.4651, Recall: 0.4977, F1: 0.4802
-Testing Loss: 0.7996, Accuracy: 0.8005, Precision: 0.5803, Recall: 0.5205, F1: 0.5314
-LM Predictions:  [5, 3, 3, 4, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 1, 3, 4, 3, 4, 3, 3, 2, 5, 3, 3, 3, 3]
+Train Loss: 0.3426, Accuracy: 0.8849, Precision: 0.6137, Recall: 0.6384, F1: 0.6186
+Validation Loss: 0.7236, Accuracy: 0.7955, Precision: 0.5388, Recall: 0.5150, F1: 0.5100
+Testing Loss: 0.7521, Accuracy: 0.7979, Precision: 0.5187, Recall: 0.5118, F1: 0.5142
+LM Predictions:  [3, 5, 3, 2, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 5, 3, 4, 3, 1, 2, 3, 3, 3, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0927, Accuracy: 0.1429, Precision: 0.2750, Recall: 0.1226, F1: 0.1593
+LM Loss: 2.3409, Accuracy: 0.1786, Precision: 0.2222, Recall: 0.1821, F1: 0.1787
 Epoch 24/70
-Train Loss: 0.3820, Accuracy: 0.8726, Precision: 0.5864, Recall: 0.6088, F1: 0.5899
-Validation Loss: 0.7951, Accuracy: 0.7841, Precision: 0.5052, Recall: 0.5382, F1: 0.5004
-Testing Loss: 0.6601, Accuracy: 0.8112, Precision: 0.5477, Recall: 0.5518, F1: 0.5396
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.3665, Accuracy: 0.8758, Precision: 0.6004, Recall: 0.6222, F1: 0.6084
+Validation Loss: 0.7197, Accuracy: 0.7869, Precision: 0.4995, Recall: 0.5414, F1: 0.5064
+Testing Loss: 0.6800, Accuracy: 0.7979, Precision: 0.5146, Recall: 0.5382, F1: 0.5083
+LM Predictions:  [3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 3, 3, 3, 4, 3]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4157, Accuracy: 0.1786, Precision: 0.4444, Recall: 0.1643, F1: 0.2333
+LM Loss: 2.7440, Accuracy: 0.1429, Precision: 0.3333, Recall: 0.1405, F1: 0.1958
 Epoch 25/70
-Train Loss: 0.3905, Accuracy: 0.8695, Precision: 0.5771, Recall: 0.6034, F1: 0.5752
-Validation Loss: 0.7266, Accuracy: 0.7983, Precision: 0.5261, Recall: 0.5516, F1: 0.5328
-Testing Loss: 0.6341, Accuracy: 0.8112, Precision: 0.5412, Recall: 0.5583, F1: 0.5487
-LM Predictions:  [3, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.3332, Accuracy: 0.8845, Precision: 0.5952, Recall: 0.6205, F1: 0.6051
+Validation Loss: 0.6451, Accuracy: 0.7898, Precision: 0.4686, Recall: 0.5275, F1: 0.4918
+Testing Loss: 0.6976, Accuracy: 0.8138, Precision: 0.5122, Recall: 0.5332, F1: 0.5199
+LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 1, 2, 3, 3, 3, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5240, Accuracy: 0.1429, Precision: 0.4167, Recall: 0.1405, F1: 0.2037
+LM Loss: 2.3399, Accuracy: 0.2500, Precision: 0.3472, Recall: 0.2298, F1: 0.2754
 Epoch 26/70
-Train Loss: 0.3799, Accuracy: 0.8751, Precision: 0.6113, Recall: 0.6206, F1: 0.5981
-Validation Loss: 0.6944, Accuracy: 0.7869, Precision: 0.5334, Recall: 0.5064, F1: 0.5143
-Testing Loss: 0.6657, Accuracy: 0.7872, Precision: 0.5564, Recall: 0.5460, F1: 0.5284
-LM Predictions:  [3, 1, 3, 4, 4, 3, 3, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 4, 1, 4, 3, 1, 2, 1, 3, 3, 1, 3]
+Train Loss: 0.3228, Accuracy: 0.8912, Precision: 0.6172, Recall: 0.6431, F1: 0.6280
+Validation Loss: 0.6796, Accuracy: 0.8040, Precision: 0.5524, Recall: 0.5620, F1: 0.5463
+Testing Loss: 0.7009, Accuracy: 0.8218, Precision: 0.5511, Recall: 0.5636, F1: 0.5556
+LM Predictions:  [3, 1, 1, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 1, 2, 3, 3, 5, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3662, Accuracy: 0.1786, Precision: 0.4278, Recall: 0.1560, F1: 0.2081
+LM Loss: 2.2817, Accuracy: 0.2500, Precision: 0.3583, Recall: 0.2214, F1: 0.2687
 Epoch 27/70
-Train Loss: 0.3595, Accuracy: 0.8716, Precision: 0.5733, Recall: 0.5985, F1: 0.5837
-Validation Loss: 0.8237, Accuracy: 0.8068, Precision: 0.4857, Recall: 0.5493, F1: 0.5108
-Testing Loss: 0.8012, Accuracy: 0.8059, Precision: 0.5744, Recall: 0.5246, F1: 0.5210
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.3041, Accuracy: 0.8926, Precision: 0.6619, Recall: 0.6495, F1: 0.6418
+Validation Loss: 0.7201, Accuracy: 0.8125, Precision: 0.5742, Recall: 0.5601, F1: 0.5633
+Testing Loss: 0.7231, Accuracy: 0.7926, Precision: 0.5318, Recall: 0.5135, F1: 0.5185
+LM Predictions:  [3, 1, 1, 4, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 5, 3, 4, 3, 1, 2, 3, 3, 5, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4171, Accuracy: 0.1429, Precision: 0.3167, Recall: 0.1226, F1: 0.1698
+LM Loss: 2.3706, Accuracy: 0.2500, Precision: 0.3222, Recall: 0.2393, F1: 0.2611
 Epoch 28/70
-Train Loss: 0.3505, Accuracy: 0.8831, Precision: 0.5944, Recall: 0.6253, F1: 0.5939
-Validation Loss: 0.7988, Accuracy: 0.8068, Precision: 0.5697, Recall: 0.5613, F1: 0.5276
-Testing Loss: 0.6893, Accuracy: 0.8191, Precision: 0.5404, Recall: 0.5497, F1: 0.5346
-LM Predictions:  [3, 1, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.2811, Accuracy: 0.9013, Precision: 0.6667, Recall: 0.6756, F1: 0.6648
+Validation Loss: 0.7003, Accuracy: 0.7898, Precision: 0.5856, Recall: 0.5530, F1: 0.5560
+Testing Loss: 0.6747, Accuracy: 0.8059, Precision: 0.5467, Recall: 0.5299, F1: 0.5327
+LM Predictions:  [3, 3, 5, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 5, 2, 3, 3, 5, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3345, Accuracy: 0.1786, Precision: 0.3611, Recall: 0.1643, F1: 0.2254
+LM Loss: 2.3665, Accuracy: 0.2857, Precision: 0.3631, Recall: 0.2548, F1: 0.2854
 Epoch 29/70
-Train Loss: 0.3533, Accuracy: 0.8849, Precision: 0.5827, Recall: 0.6244, F1: 0.5901
-Validation Loss: 0.8219, Accuracy: 0.7869, Precision: 0.5481, Recall: 0.5110, F1: 0.4956
-Testing Loss: 0.7085, Accuracy: 0.8005, Precision: 0.5163, Recall: 0.5016, F1: 0.5016
-LM Predictions:  [5, 5, 1, 3, 4, 3, 3, 2, 1, 3, 5, 5, 3, 3, 3, 3, 3, 3, 3, 4, 3, 5, 2, 5, 3, 5, 3, 3]
+Train Loss: 0.2794, Accuracy: 0.9048, Precision: 0.7132, Recall: 0.6826, F1: 0.6740
+Validation Loss: 0.6623, Accuracy: 0.7841, Precision: 0.5263, Recall: 0.5453, F1: 0.5281
+Testing Loss: 0.7356, Accuracy: 0.8059, Precision: 0.5475, Recall: 0.5505, F1: 0.5472
+LM Predictions:  [3, 3, 1, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 1, 2, 3, 3, 5, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1831, Accuracy: 0.2143, Precision: 0.3214, Recall: 0.2071, F1: 0.2315
+LM Loss: 2.8994, Accuracy: 0.2500, Precision: 0.3583, Recall: 0.2214, F1: 0.2687
 Epoch 30/70
-Train Loss: 0.3797, Accuracy: 0.8765, Precision: 0.6009, Recall: 0.6124, F1: 0.5879
-Validation Loss: 0.8453, Accuracy: 0.7841, Precision: 0.5190, Recall: 0.5350, F1: 0.5205
-Testing Loss: 0.7554, Accuracy: 0.7819, Precision: 0.5251, Recall: 0.5234, F1: 0.5181
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 4, 3, 3, 5, 1, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 3, 3, 3]
+Train Loss: 0.2760, Accuracy: 0.9090, Precision: 0.7028, Recall: 0.6913, F1: 0.6831
+Validation Loss: 0.6862, Accuracy: 0.8153, Precision: 0.6369, Recall: 0.6302, F1: 0.6215
+Testing Loss: 0.7018, Accuracy: 0.8005, Precision: 0.5675, Recall: 0.5663, F1: 0.5611
+LM Predictions:  [3, 3, 1, 2, 4, 3, 3, 2, 3, 3, 5, 0, 3, 1, 3, 3, 3, 2, 3, 4, 3, 3, 2, 1, 3, 0, 2, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5686, Accuracy: 0.1429, Precision: 0.3333, Recall: 0.1226, F1: 0.1717
+LM Loss: 2.3410, Accuracy: 0.2143, Precision: 0.3889, Recall: 0.2155, F1: 0.2343
 Epoch 31/70
-Train Loss: 0.3322, Accuracy: 0.8873, Precision: 0.5964, Recall: 0.6273, F1: 0.6062
-Validation Loss: 0.8704, Accuracy: 0.8068, Precision: 0.5460, Recall: 0.5215, F1: 0.5237
-Testing Loss: 0.8765, Accuracy: 0.7899, Precision: 0.5598, Recall: 0.5127, F1: 0.5275
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 4, 3, 3, 3, 1, 1, 3, 4, 3, 1, 2, 1, 3, 5, 3, 3]
+Train Loss: 0.2731, Accuracy: 0.9073, Precision: 0.7105, Recall: 0.6937, F1: 0.6971
+Validation Loss: 0.7475, Accuracy: 0.8068, Precision: 0.5721, Recall: 0.5564, F1: 0.5604
+Testing Loss: 0.8685, Accuracy: 0.7952, Precision: 0.5762, Recall: 0.5657, F1: 0.5684
+LM Predictions:  [3, 3, 1, 4, 4, 3, 3, 4, 3, 3, 5, 5, 3, 1, 3, 3, 3, 2, 3, 4, 3, 1, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2083, Accuracy: 0.2857, Precision: 0.3889, Recall: 0.2548, F1: 0.3065
+LM Loss: 2.0666, Accuracy: 0.2500, Precision: 0.3222, Recall: 0.2214, F1: 0.2619
 Epoch 32/70
-Train Loss: 0.3318, Accuracy: 0.8824, Precision: 0.5751, Recall: 0.6101, F1: 0.5838
-Validation Loss: 0.7931, Accuracy: 0.8040, Precision: 0.5456, Recall: 0.5625, F1: 0.5383
-Testing Loss: 0.6920, Accuracy: 0.8085, Precision: 0.5478, Recall: 0.5499, F1: 0.5451
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 1, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 1, 3, 3]
+Train Loss: 0.2765, Accuracy: 0.9038, Precision: 0.6884, Recall: 0.6903, F1: 0.6850
+Validation Loss: 0.6765, Accuracy: 0.8040, Precision: 0.5477, Recall: 0.5538, F1: 0.5466
+Testing Loss: 0.7626, Accuracy: 0.8191, Precision: 0.5871, Recall: 0.5969, F1: 0.5897
+LM Predictions:  [3, 3, 1, 4, 4, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 0, 3, 4, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1788, Accuracy: 0.2143, Precision: 0.4028, Recall: 0.1881, F1: 0.2417
+LM Loss: 2.0985, Accuracy: 0.3214, Precision: 0.4861, Recall: 0.2869, F1: 0.3541
 Epoch 33/70
-Train Loss: 0.3015, Accuracy: 0.8933, Precision: 0.5994, Recall: 0.6283, F1: 0.6086
-Validation Loss: 0.7712, Accuracy: 0.8125, Precision: 0.4874, Recall: 0.5435, F1: 0.5122
-Testing Loss: 0.7450, Accuracy: 0.8324, Precision: 0.6175, Recall: 0.5500, F1: 0.5551
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 5, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.2414, Accuracy: 0.9195, Precision: 0.7432, Recall: 0.7287, F1: 0.7310
+Validation Loss: 0.7349, Accuracy: 0.8267, Precision: 0.6735, Recall: 0.5687, F1: 0.6048
+Testing Loss: 0.7756, Accuracy: 0.7979, Precision: 0.5696, Recall: 0.5339, F1: 0.5436
+LM Predictions:  [3, 3, 0, 2, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 2, 3, 4, 3, 2, 2, 1, 3, 0, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3299, Accuracy: 0.2500, Precision: 0.3472, Recall: 0.2214, F1: 0.2695
+LM Loss: 2.3047, Accuracy: 0.2857, Precision: 0.5992, Recall: 0.2631, F1: 0.3057
 Epoch 34/70
-Train Loss: 0.2846, Accuracy: 0.9017, Precision: 0.6086, Recall: 0.6361, F1: 0.6168
-Validation Loss: 0.9934, Accuracy: 0.7699, Precision: 0.5188, Recall: 0.5299, F1: 0.5198
-Testing Loss: 0.9028, Accuracy: 0.7926, Precision: 0.5385, Recall: 0.5247, F1: 0.5286
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 1, 3, 3]
+Train Loss: 0.2558, Accuracy: 0.9143, Precision: 0.7450, Recall: 0.7413, F1: 0.7400
+Validation Loss: 0.7060, Accuracy: 0.8125, Precision: 0.6265, Recall: 0.5738, F1: 0.5936
+Testing Loss: 0.8286, Accuracy: 0.8032, Precision: 0.5958, Recall: 0.5559, F1: 0.5708
+LM Predictions:  [3, 3, 0, 4, 4, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 5, 3, 4, 3, 2, 2, 1, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5011, Accuracy: 0.2143, Precision: 0.4028, Recall: 0.1881, F1: 0.2417
+LM Loss: 2.3338, Accuracy: 0.3571, Precision: 0.6694, Recall: 0.3202, F1: 0.3826
 Epoch 35/70
-Train Loss: 0.2941, Accuracy: 0.9024, Precision: 0.6204, Recall: 0.6552, F1: 0.6295
-Validation Loss: 0.8222, Accuracy: 0.8153, Precision: 0.5671, Recall: 0.5796, F1: 0.5677
-Testing Loss: 0.7791, Accuracy: 0.8165, Precision: 0.5461, Recall: 0.5574, F1: 0.5510
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 1, 3, 3]
+Train Loss: 0.2218, Accuracy: 0.9265, Precision: 0.7772, Recall: 0.7527, F1: 0.7572
+Validation Loss: 0.7993, Accuracy: 0.8097, Precision: 0.5729, Recall: 0.5774, F1: 0.5734
+Testing Loss: 0.8024, Accuracy: 0.8245, Precision: 0.5822, Recall: 0.6014, F1: 0.5883
+LM Predictions:  [3, 3, 5, 4, 2, 3, 3, 2, 3, 3, 5, 5, 3, 3, 3, 3, 3, 5, 3, 4, 3, 5, 2, 3, 3, 5, 4, 5]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5490, Accuracy: 0.2143, Precision: 0.4028, Recall: 0.1881, F1: 0.2417
+LM Loss: 2.2385, Accuracy: 0.3214, Precision: 0.4048, Recall: 0.2964, F1: 0.3262
 Epoch 36/70
-Train Loss: 0.2891, Accuracy: 0.8978, Precision: 0.6143, Recall: 0.6463, F1: 0.6286
-Validation Loss: 0.8280, Accuracy: 0.7841, Precision: 0.4616, Recall: 0.5088, F1: 0.4793
-Testing Loss: 0.7332, Accuracy: 0.7846, Precision: 0.4619, Recall: 0.5509, F1: 0.4740
-LM Predictions:  [1, 2, 1, 4, 4, 1, 1, 2, 1, 1, 5, 1, 4, 1, 1, 1, 1, 1, 1, 4, 1, 1, 2, 1, 1, 1, 1, 1]
+Train Loss: 0.2206, Accuracy: 0.9321, Precision: 0.7687, Recall: 0.7627, F1: 0.7596
+Validation Loss: 0.7534, Accuracy: 0.7983, Precision: 0.6273, Recall: 0.5543, F1: 0.5825
+Testing Loss: 0.8549, Accuracy: 0.8085, Precision: 0.5865, Recall: 0.5529, F1: 0.5671
+LM Predictions:  [3, 3, 0, 2, 2, 3, 3, 2, 3, 3, 5, 0, 3, 3, 3, 3, 3, 5, 3, 4, 3, 0, 2, 3, 3, 0, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 1.9830, Accuracy: 0.3929, Precision: 0.5333, Recall: 0.4257, F1: 0.3700
+LM Loss: 1.8441, Accuracy: 0.2857, Precision: 0.4250, Recall: 0.2714, F1: 0.3001
 Epoch 37/70
-Train Loss: 0.2758, Accuracy: 0.9020, Precision: 0.6239, Recall: 0.6506, F1: 0.6364
-Validation Loss: 0.9966, Accuracy: 0.7699, Precision: 0.6461, Recall: 0.4927, F1: 0.4801
-Testing Loss: 0.9789, Accuracy: 0.7766, Precision: 0.6390, Recall: 0.4654, F1: 0.4745
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 1, 4, 3, 3, 3, 3, 3, 3, 4, 3, 2, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.2088, Accuracy: 0.9332, Precision: 0.7776, Recall: 0.7652, F1: 0.7689
+Validation Loss: 0.7844, Accuracy: 0.8153, Precision: 0.6526, Recall: 0.6889, F1: 0.6339
+Testing Loss: 0.8072, Accuracy: 0.8059, Precision: 0.5740, Recall: 0.5701, F1: 0.5694
+LM Predictions:  [3, 3, 5, 1, 2, 3, 3, 2, 3, 3, 5, 0, 3, 3, 3, 3, 3, 0, 3, 4, 3, 0, 2, 3, 3, 0, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2794, Accuracy: 0.2500, Precision: 0.3750, Recall: 0.2214, F1: 0.2695
+LM Loss: 2.2107, Accuracy: 0.2857, Precision: 0.4583, Recall: 0.2714, F1: 0.3187
 Epoch 38/70
-Train Loss: 0.2642, Accuracy: 0.9048, Precision: 0.6635, Recall: 0.6561, F1: 0.6330
-Validation Loss: 0.8194, Accuracy: 0.8011, Precision: 0.5560, Recall: 0.5445, F1: 0.5455
-Testing Loss: 0.7318, Accuracy: 0.8112, Precision: 0.5477, Recall: 0.5427, F1: 0.5416
-LM Predictions:  [3, 0, 3, 4, 4, 3, 1, 2, 3, 3, 5, 0, 4, 3, 3, 3, 3, 3, 3, 4, 3, 2, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1915, Accuracy: 0.9398, Precision: 0.7941, Recall: 0.7893, F1: 0.7914
+Validation Loss: 0.7345, Accuracy: 0.8153, Precision: 0.6305, Recall: 0.5728, F1: 0.5942
+Testing Loss: 0.7763, Accuracy: 0.8059, Precision: 0.6023, Recall: 0.5870, F1: 0.5874
+LM Predictions:  [3, 0, 1, 4, 4, 3, 3, 2, 3, 3, 5, 0, 3, 3, 3, 3, 3, 0, 3, 4, 0, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0759, Accuracy: 0.2857, Precision: 0.4861, Recall: 0.2452, F1: 0.3184
+LM Loss: 2.0903, Accuracy: 0.3571, Precision: 0.5250, Recall: 0.3107, F1: 0.3846
 Epoch 39/70
-Train Loss: 0.2638, Accuracy: 0.9059, Precision: 0.7230, Recall: 0.6698, F1: 0.6599
-Validation Loss: 0.8198, Accuracy: 0.8011, Precision: 0.5882, Recall: 0.5762, F1: 0.5512
-Testing Loss: 0.7392, Accuracy: 0.8032, Precision: 0.5173, Recall: 0.5320, F1: 0.5232
-LM Predictions:  [3, 3, 3, 4, 4, 3, 3, 5, 3, 3, 5, 1, 4, 3, 3, 3, 3, 3, 3, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1813, Accuracy: 0.9475, Precision: 0.8268, Recall: 0.8403, F1: 0.8332
+Validation Loss: 0.7856, Accuracy: 0.8097, Precision: 0.6399, Recall: 0.6257, F1: 0.5940
+Testing Loss: 0.7882, Accuracy: 0.8191, Precision: 0.5796, Recall: 0.5607, F1: 0.5604
+LM Predictions:  [3, 3, 3, 3, 2, 3, 3, 2, 3, 3, 5, 0, 3, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2762, Accuracy: 0.2143, Precision: 0.4028, Recall: 0.1798, F1: 0.2409
+LM Loss: 2.3692, Accuracy: 0.2857, Precision: 0.5000, Recall: 0.2810, F1: 0.3360
 Epoch 40/70
-Train Loss: 0.2400, Accuracy: 0.9122, Precision: 0.7151, Recall: 0.7057, F1: 0.7044
-Validation Loss: 0.8046, Accuracy: 0.7955, Precision: 0.5548, Recall: 0.5552, F1: 0.5489
-Testing Loss: 0.7131, Accuracy: 0.8218, Precision: 0.5676, Recall: 0.5743, F1: 0.5669
-LM Predictions:  [3, 3, 3, 4, 4, 3, 1, 2, 3, 3, 5, 1, 4, 3, 3, 3, 3, 3, 3, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1978, Accuracy: 0.9398, Precision: 0.8134, Recall: 0.8303, F1: 0.8207
+Validation Loss: 0.7775, Accuracy: 0.8239, Precision: 0.6622, Recall: 0.6252, F1: 0.6380
+Testing Loss: 0.8648, Accuracy: 0.8138, Precision: 0.6125, Recall: 0.5989, F1: 0.5999
+LM Predictions:  [3, 3, 1, 3, 2, 3, 3, 2, 3, 3, 5, 2, 3, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5741, Accuracy: 0.2500, Precision: 0.4583, Recall: 0.2214, F1: 0.2973
+LM Loss: 2.0315, Accuracy: 0.2857, Precision: 0.4667, Recall: 0.2810, F1: 0.3175
 Epoch 41/70
-Train Loss: 0.2432, Accuracy: 0.9160, Precision: 0.7264, Recall: 0.7127, F1: 0.7130
-Validation Loss: 0.8093, Accuracy: 0.8125, Precision: 0.5943, Recall: 0.6215, F1: 0.5966
-Testing Loss: 0.7879, Accuracy: 0.8218, Precision: 0.6037, Recall: 0.5913, F1: 0.5955
-LM Predictions:  [3, 1, 3, 4, 4, 3, 1, 2, 3, 3, 5, 1, 4, 3, 3, 3, 3, 3, 3, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1860, Accuracy: 0.9486, Precision: 0.8325, Recall: 0.8396, F1: 0.8358
+Validation Loss: 0.7159, Accuracy: 0.8239, Precision: 0.6617, Recall: 0.6121, F1: 0.6285
+Testing Loss: 0.8145, Accuracy: 0.8165, Precision: 0.5982, Recall: 0.6047, F1: 0.5885
+LM Predictions:  [3, 3, 1, 3, 2, 3, 1, 2, 3, 3, 5, 0, 3, 3, 3, 3, 3, 0, 3, 4, 3, 2, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4879, Accuracy: 0.2500, Precision: 0.4583, Recall: 0.2214, F1: 0.2973
+LM Loss: 2.0995, Accuracy: 0.3214, Precision: 0.5500, Recall: 0.3048, F1: 0.3545
 Epoch 42/70
-Train Loss: 0.2225, Accuracy: 0.9262, Precision: 0.7513, Recall: 0.7388, F1: 0.7392
-Validation Loss: 0.8836, Accuracy: 0.8210, Precision: 0.6516, Recall: 0.5628, F1: 0.5949
-Testing Loss: 0.8257, Accuracy: 0.8112, Precision: 0.5963, Recall: 0.5369, F1: 0.5525
-LM Predictions:  [3, 1, 1, 4, 4, 3, 0, 2, 1, 3, 5, 1, 4, 1, 3, 1, 3, 3, 1, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1934, Accuracy: 0.9381, Precision: 0.8026, Recall: 0.8195, F1: 0.8101
+Validation Loss: 0.8652, Accuracy: 0.8011, Precision: 0.6263, Recall: 0.5588, F1: 0.5756
+Testing Loss: 0.8522, Accuracy: 0.8165, Precision: 0.6008, Recall: 0.5610, F1: 0.5748
+LM Predictions:  [3, 3, 1, 3, 2, 3, 1, 2, 3, 0, 5, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1687, Accuracy: 0.2857, Precision: 0.6250, Recall: 0.2452, F1: 0.3389
+LM Loss: 2.0629, Accuracy: 0.2500, Precision: 0.4667, Recall: 0.2571, F1: 0.2851
 Epoch 43/70
-Train Loss: 0.2302, Accuracy: 0.9269, Precision: 0.7605, Recall: 0.7340, F1: 0.7404
-Validation Loss: 0.8236, Accuracy: 0.7983, Precision: 0.5500, Recall: 0.5950, F1: 0.5473
-Testing Loss: 0.7933, Accuracy: 0.8138, Precision: 0.5494, Recall: 0.5517, F1: 0.5497
-LM Predictions:  [3, 2, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.2400, Accuracy: 0.9328, Precision: 0.7966, Recall: 0.7809, F1: 0.7873
+Validation Loss: 0.7443, Accuracy: 0.8182, Precision: 0.6536, Recall: 0.5923, F1: 0.6074
+Testing Loss: 0.8561, Accuracy: 0.8032, Precision: 0.6050, Recall: 0.5582, F1: 0.5550
+LM Predictions:  [3, 3, 1, 4, 2, 3, 2, 2, 3, 2, 5, 2, 1, 1, 3, 1, 3, 3, 1, 4, 3, 2, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4557, Accuracy: 0.2500, Precision: 0.4028, Recall: 0.2214, F1: 0.2814
+LM Loss: 2.2451, Accuracy: 0.3214, Precision: 0.4167, Recall: 0.3048, F1: 0.3063
 Epoch 44/70
-Train Loss: 0.1954, Accuracy: 0.9321, Precision: 0.7613, Recall: 0.7540, F1: 0.7549
-Validation Loss: 0.9108, Accuracy: 0.8182, Precision: 0.6197, Recall: 0.5908, F1: 0.6034
-Testing Loss: 0.8653, Accuracy: 0.7979, Precision: 0.5749, Recall: 0.5604, F1: 0.5582
-LM Predictions:  [3, 2, 1, 4, 4, 3, 1, 2, 3, 3, 5, 1, 4, 2, 3, 3, 3, 3, 1, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.2016, Accuracy: 0.9370, Precision: 0.8019, Recall: 0.8021, F1: 0.8006
+Validation Loss: 0.8010, Accuracy: 0.8011, Precision: 0.6172, Recall: 0.6473, F1: 0.6182
+Testing Loss: 0.8802, Accuracy: 0.8032, Precision: 0.5701, Recall: 0.5713, F1: 0.5671
+LM Predictions:  [3, 3, 1, 3, 2, 3, 3, 2, 3, 3, 5, 0, 3, 1, 3, 3, 3, 3, 3, 3, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4664, Accuracy: 0.2500, Precision: 0.3750, Recall: 0.2214, F1: 0.2695
+LM Loss: 2.4706, Accuracy: 0.2500, Precision: 0.5000, Recall: 0.2571, F1: 0.3036
 Epoch 45/70
-Train Loss: 0.2183, Accuracy: 0.9290, Precision: 0.7554, Recall: 0.7504, F1: 0.7499
-Validation Loss: 0.8935, Accuracy: 0.8097, Precision: 0.6308, Recall: 0.6664, F1: 0.6170
-Testing Loss: 0.8398, Accuracy: 0.8138, Precision: 0.5780, Recall: 0.5500, F1: 0.5610
-LM Predictions:  [3, 0, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1564, Accuracy: 0.9531, Precision: 0.8391, Recall: 0.8457, F1: 0.8423
+Validation Loss: 0.7115, Accuracy: 0.8097, Precision: 0.6732, Recall: 0.6343, F1: 0.6210
+Testing Loss: 0.8641, Accuracy: 0.8138, Precision: 0.6333, Recall: 0.5772, F1: 0.5996
+LM Predictions:  [3, 3, 1, 3, 2, 3, 0, 2, 3, 0, 5, 0, 3, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0607, Accuracy: 0.2857, Precision: 0.6250, Recall: 0.2452, F1: 0.3389
+LM Loss: 2.3060, Accuracy: 0.3214, Precision: 0.5417, Recall: 0.3048, F1: 0.3663
 Epoch 46/70
-Train Loss: 0.2285, Accuracy: 0.9286, Precision: 0.7654, Recall: 0.7563, F1: 0.7532
-Validation Loss: 0.9235, Accuracy: 0.8011, Precision: 0.5635, Recall: 0.5517, F1: 0.5458
-Testing Loss: 0.8814, Accuracy: 0.8112, Precision: 0.5787, Recall: 0.5653, F1: 0.5704
-LM Predictions:  [3, 1, 3, 4, 4, 3, 3, 2, 3, 3, 5, 3, 4, 3, 3, 3, 1, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1791, Accuracy: 0.9528, Precision: 0.8549, Recall: 0.8629, F1: 0.8576
+Validation Loss: 0.7392, Accuracy: 0.7983, Precision: 0.6409, Recall: 0.7034, F1: 0.6366
+Testing Loss: 0.8053, Accuracy: 0.7819, Precision: 0.5674, Recall: 0.5656, F1: 0.5592
+LM Predictions:  [3, 3, 1, 3, 2, 3, 0, 2, 3, 5, 5, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.6759, Accuracy: 0.2500, Precision: 0.4583, Recall: 0.2214, F1: 0.2973
+LM Loss: 2.0665, Accuracy: 0.3214, Precision: 0.5556, Recall: 0.3143, F1: 0.3667
 Epoch 47/70
-Train Loss: 0.1690, Accuracy: 0.9430, Precision: 0.8167, Recall: 0.8160, F1: 0.8135
-Validation Loss: 0.9661, Accuracy: 0.8210, Precision: 0.6525, Recall: 0.6081, F1: 0.6271
-Testing Loss: 0.9158, Accuracy: 0.8112, Precision: 0.5873, Recall: 0.5640, F1: 0.5613
-LM Predictions:  [3, 5, 1, 4, 4, 3, 1, 2, 3, 3, 5, 1, 4, 3, 3, 1, 2, 3, 1, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1703, Accuracy: 0.9507, Precision: 0.8352, Recall: 0.8432, F1: 0.8385
+Validation Loss: 0.9330, Accuracy: 0.8125, Precision: 0.6567, Recall: 0.5931, F1: 0.6195
+Testing Loss: 0.9944, Accuracy: 0.8165, Precision: 0.6440, Recall: 0.6012, F1: 0.6163
+LM Predictions:  [3, 3, 1, 3, 2, 3, 0, 2, 3, 1, 5, 0, 4, 3, 1, 3, 3, 3, 3, 3, 0, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4964, Accuracy: 0.2500, Precision: 0.3472, Recall: 0.2214, F1: 0.2695
+LM Loss: 2.0702, Accuracy: 0.3214, Precision: 0.5417, Recall: 0.3048, F1: 0.3663
 Epoch 48/70
-Train Loss: 0.2127, Accuracy: 0.9356, Precision: 0.8108, Recall: 0.8174, F1: 0.8138
-Validation Loss: 0.9663, Accuracy: 0.7784, Precision: 0.5378, Recall: 0.5409, F1: 0.5278
-Testing Loss: 0.8100, Accuracy: 0.8059, Precision: 0.5730, Recall: 0.5879, F1: 0.5741
-LM Predictions:  [3, 3, 3, 4, 4, 3, 1, 2, 3, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1989, Accuracy: 0.9447, Precision: 0.8303, Recall: 0.8357, F1: 0.8323
+Validation Loss: 0.8361, Accuracy: 0.7926, Precision: 0.6728, Recall: 0.5796, F1: 0.5829
+Testing Loss: 0.9095, Accuracy: 0.7952, Precision: 0.6320, Recall: 0.5671, F1: 0.5792
+LM Predictions:  [3, 0, 1, 3, 2, 3, 0, 2, 3, 0, 5, 2, 1, 3, 0, 3, 3, 3, 3, 4, 2, 2, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3425, Accuracy: 0.2500, Precision: 0.4583, Recall: 0.2214, F1: 0.2973
+LM Loss: 1.9763, Accuracy: 0.3571, Precision: 0.5119, Recall: 0.3286, F1: 0.3511
 Epoch 49/70
-Train Loss: 0.1885, Accuracy: 0.9416, Precision: 0.8038, Recall: 0.8149, F1: 0.8084
-Validation Loss: 0.9076, Accuracy: 0.8153, Precision: 0.6039, Recall: 0.5590, F1: 0.5536
-Testing Loss: 0.9343, Accuracy: 0.8005, Precision: 0.5573, Recall: 0.5402, F1: 0.5469
-LM Predictions:  [3, 1, 3, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 1, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1655, Accuracy: 0.9510, Precision: 0.8549, Recall: 0.8594, F1: 0.8565
+Validation Loss: 0.8131, Accuracy: 0.8040, Precision: 0.7191, Recall: 0.5647, F1: 0.6111
+Testing Loss: 0.8998, Accuracy: 0.7926, Precision: 0.6293, Recall: 0.5073, F1: 0.5403
+LM Predictions:  [3, 0, 1, 3, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 0, 3, 3, 3, 3, 4, 0, 0, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0962, Accuracy: 0.2857, Precision: 0.5417, Recall: 0.2452, F1: 0.3343
+LM Loss: 2.0570, Accuracy: 0.3929, Precision: 0.5111, Recall: 0.3524, F1: 0.3841
 Epoch 50/70
-Train Loss: 0.1885, Accuracy: 0.9430, Precision: 0.8062, Recall: 0.8145, F1: 0.8096
-Validation Loss: 0.9165, Accuracy: 0.8210, Precision: 0.6979, Recall: 0.6335, F1: 0.6347
-Testing Loss: 0.9102, Accuracy: 0.8112, Precision: 0.6461, Recall: 0.5924, F1: 0.5917
-LM Predictions:  [3, 1, 1, 4, 4, 3, 0, 2, 1, 3, 5, 1, 4, 3, 3, 5, 1, 3, 1, 4, 1, 0, 2, 1, 3, 5, 4, 3]
+Train Loss: 0.1479, Accuracy: 0.9584, Precision: 0.8756, Recall: 0.8697, F1: 0.8707
+Validation Loss: 0.7991, Accuracy: 0.8267, Precision: 0.6664, Recall: 0.6238, F1: 0.6426
+Testing Loss: 1.0499, Accuracy: 0.8112, Precision: 0.6016, Recall: 0.5702, F1: 0.5784
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 1, 5, 2, 4, 3, 0, 3, 3, 3, 3, 4, 3, 1, 2, 3, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 1.9401, Accuracy: 0.3929, Precision: 0.5361, Recall: 0.3357, F1: 0.3939
+LM Loss: 1.9459, Accuracy: 0.3929, Precision: 0.5500, Recall: 0.3524, F1: 0.4016
 Epoch 51/70
-Train Loss: 0.1780, Accuracy: 0.9447, Precision: 0.8212, Recall: 0.8357, F1: 0.8271
-Validation Loss: 0.9678, Accuracy: 0.8097, Precision: 0.6391, Recall: 0.6333, F1: 0.6223
-Testing Loss: 0.8585, Accuracy: 0.8112, Precision: 0.5880, Recall: 0.5743, F1: 0.5797
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1557, Accuracy: 0.9535, Precision: 0.8477, Recall: 0.8493, F1: 0.8481
+Validation Loss: 0.7455, Accuracy: 0.8182, Precision: 0.6236, Recall: 0.6064, F1: 0.6135
+Testing Loss: 0.9206, Accuracy: 0.8138, Precision: 0.5998, Recall: 0.6137, F1: 0.5983
+LM Predictions:  [3, 3, 1, 4, 2, 3, 3, 2, 3, 0, 5, 2, 4, 3, 0, 3, 3, 3, 3, 4, 3, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4018, Accuracy: 0.2857, Precision: 0.5417, Recall: 0.2452, F1: 0.3343
+LM Loss: 1.7289, Accuracy: 0.3571, Precision: 0.4333, Recall: 0.3286, F1: 0.3545
 Epoch 52/70
-Train Loss: 0.1774, Accuracy: 0.9493, Precision: 0.8282, Recall: 0.8380, F1: 0.8328
-Validation Loss: 0.9426, Accuracy: 0.7983, Precision: 0.6001, Recall: 0.5996, F1: 0.5637
-Testing Loss: 0.8799, Accuracy: 0.8059, Precision: 0.5517, Recall: 0.5369, F1: 0.5436
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1426, Accuracy: 0.9615, Precision: 0.8700, Recall: 0.8621, F1: 0.8653
+Validation Loss: 0.8317, Accuracy: 0.8097, Precision: 0.6854, Recall: 0.6952, F1: 0.6559
+Testing Loss: 1.0069, Accuracy: 0.8112, Precision: 0.6076, Recall: 0.6014, F1: 0.5894
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 0, 5, 0, 4, 3, 0, 3, 3, 3, 3, 4, 3, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4404, Accuracy: 0.2857, Precision: 0.5417, Recall: 0.2452, F1: 0.3343
+LM Loss: 2.0574, Accuracy: 0.3929, Precision: 0.5000, Recall: 0.3524, F1: 0.4008
 Epoch 53/70
-Train Loss: 0.1744, Accuracy: 0.9493, Precision: 0.8221, Recall: 0.8383, F1: 0.8294
-Validation Loss: 0.9707, Accuracy: 0.8182, Precision: 0.6521, Recall: 0.5865, F1: 0.6028
-Testing Loss: 0.9582, Accuracy: 0.8085, Precision: 0.6058, Recall: 0.5694, F1: 0.5828
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1429, Accuracy: 0.9608, Precision: 0.8782, Recall: 0.8787, F1: 0.8780
+Validation Loss: 0.6684, Accuracy: 0.8324, Precision: 0.6885, Recall: 0.6884, F1: 0.6766
+Testing Loss: 0.8532, Accuracy: 0.8191, Precision: 0.6051, Recall: 0.6075, F1: 0.6035
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 3, 5, 5, 4, 3, 0, 3, 3, 3, 3, 4, 3, 3, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3333, Accuracy: 0.2857, Precision: 0.5417, Recall: 0.2452, F1: 0.3343
+LM Loss: 2.0281, Accuracy: 0.3929, Precision: 0.4944, Recall: 0.3524, F1: 0.3981
 Epoch 54/70
-Train Loss: 0.1696, Accuracy: 0.9542, Precision: 0.8529, Recall: 0.8658, F1: 0.8587
-Validation Loss: 0.7486, Accuracy: 0.8409, Precision: 0.6851, Recall: 0.6290, F1: 0.6524
-Testing Loss: 0.7263, Accuracy: 0.8271, Precision: 0.6295, Recall: 0.6260, F1: 0.6117
-LM Predictions:  [3, 3, 1, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 3, 3, 3, 1, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1332, Accuracy: 0.9601, Precision: 0.8717, Recall: 0.8719, F1: 0.8716
+Validation Loss: 0.8627, Accuracy: 0.8267, Precision: 0.6870, Recall: 0.6973, F1: 0.6624
+Testing Loss: 1.0235, Accuracy: 0.8245, Precision: 0.6254, Recall: 0.5825, F1: 0.5995
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 0, 5, 2, 4, 3, 0, 3, 3, 3, 3, 4, 3, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.6363, Accuracy: 0.2857, Precision: 0.5417, Recall: 0.2452, F1: 0.3343
+LM Loss: 2.1126, Accuracy: 0.3929, Precision: 0.4750, Recall: 0.3524, F1: 0.3848
 Epoch 55/70
-Train Loss: 0.1841, Accuracy: 0.9493, Precision: 0.8420, Recall: 0.8545, F1: 0.8469
-Validation Loss: 0.9075, Accuracy: 0.8040, Precision: 0.6309, Recall: 0.6554, F1: 0.6367
-Testing Loss: 0.7457, Accuracy: 0.8298, Precision: 0.6140, Recall: 0.6502, F1: 0.6194
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 1, 3, 5, 3, 4, 3, 3, 3, 3, 3, 1, 1, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1473, Accuracy: 0.9587, Precision: 0.8671, Recall: 0.8679, F1: 0.8661
+Validation Loss: 0.8598, Accuracy: 0.7955, Precision: 0.5572, Recall: 0.6143, F1: 0.5381
+Testing Loss: 0.9980, Accuracy: 0.7872, Precision: 0.4873, Recall: 0.4769, F1: 0.4807
+LM Predictions:  [3, 1, 1, 1, 2, 3, 0, 2, 3, 0, 5, 2, 4, 3, 0, 3, 3, 3, 3, 4, 0, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.4134, Accuracy: 0.2500, Precision: 0.6111, Recall: 0.2214, F1: 0.3147
+LM Loss: 1.7380, Accuracy: 0.3571, Precision: 0.4778, Recall: 0.3286, F1: 0.3563
 Epoch 56/70
-Train Loss: 0.1466, Accuracy: 0.9573, Precision: 0.8622, Recall: 0.8835, F1: 0.8723
-Validation Loss: 0.9586, Accuracy: 0.8097, Precision: 0.6967, Recall: 0.5920, F1: 0.6299
-Testing Loss: 0.9305, Accuracy: 0.7952, Precision: 0.6315, Recall: 0.5780, F1: 0.5916
-LM Predictions:  [3, 3, 1, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 5, 3, 3, 1, 4, 3, 0, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1554, Accuracy: 0.9521, Precision: 0.8558, Recall: 0.8495, F1: 0.8523
+Validation Loss: 0.9446, Accuracy: 0.7841, Precision: 0.6330, Recall: 0.5225, F1: 0.5154
+Testing Loss: 1.1563, Accuracy: 0.7766, Precision: 0.6054, Recall: 0.5708, F1: 0.5561
+LM Predictions:  [3, 5, 1, 4, 2, 3, 0, 2, 3, 5, 5, 2, 1, 1, 5, 1, 3, 0, 3, 4, 5, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5953, Accuracy: 0.3214, Precision: 0.5139, Recall: 0.2690, F1: 0.3520
+LM Loss: 1.7877, Accuracy: 0.4643, Precision: 0.4806, Recall: 0.4190, F1: 0.4269
 Epoch 57/70
-Train Loss: 0.1490, Accuracy: 0.9559, Precision: 0.8599, Recall: 0.8631, F1: 0.8598
-Validation Loss: 0.9258, Accuracy: 0.8068, Precision: 0.6183, Recall: 0.5906, F1: 0.5895
-Testing Loss: 0.7740, Accuracy: 0.8351, Precision: 0.6008, Recall: 0.6161, F1: 0.6068
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 3, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1444, Accuracy: 0.9566, Precision: 0.8539, Recall: 0.8654, F1: 0.8595
+Validation Loss: 0.9106, Accuracy: 0.8324, Precision: 0.6587, Recall: 0.5663, F1: 0.5980
+Testing Loss: 1.1274, Accuracy: 0.8005, Precision: 0.6117, Recall: 0.5520, F1: 0.5739
+LM Predictions:  [3, 0, 1, 4, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 2, 3, 3, 3, 3, 4, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.5285, Accuracy: 0.3214, Precision: 0.6250, Recall: 0.2690, F1: 0.3713
+LM Loss: 2.0749, Accuracy: 0.4286, Precision: 0.5278, Recall: 0.3762, F1: 0.3942
 Epoch 58/70
-Train Loss: 0.1425, Accuracy: 0.9608, Precision: 0.8699, Recall: 0.8882, F1: 0.8784
-Validation Loss: 0.9932, Accuracy: 0.8182, Precision: 0.7101, Recall: 0.6653, F1: 0.6700
-Testing Loss: 0.9752, Accuracy: 0.8271, Precision: 0.6317, Recall: 0.6145, F1: 0.6109
-LM Predictions:  [3, 3, 1, 4, 4, 3, 0, 2, 0, 3, 5, 0, 4, 3, 3, 5, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1301, Accuracy: 0.9612, Precision: 0.9010, Recall: 0.8856, F1: 0.8922
+Validation Loss: 0.7857, Accuracy: 0.8381, Precision: 0.7081, Recall: 0.6961, F1: 0.6607
+Testing Loss: 1.0128, Accuracy: 0.8032, Precision: 0.6092, Recall: 0.5705, F1: 0.5806
+LM Predictions:  [3, 3, 1, 2, 2, 3, 0, 2, 3, 2, 5, 2, 0, 3, 0, 3, 3, 3, 3, 4, 0, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3068, Accuracy: 0.3214, Precision: 0.5139, Recall: 0.2690, F1: 0.3520
+LM Loss: 2.1992, Accuracy: 0.3214, Precision: 0.4063, Recall: 0.3048, F1: 0.3109
 Epoch 59/70
-Train Loss: 0.1390, Accuracy: 0.9640, Precision: 0.8801, Recall: 0.8918, F1: 0.8850
-Validation Loss: 0.8727, Accuracy: 0.8182, Precision: 0.6987, Recall: 0.6360, F1: 0.6369
-Testing Loss: 0.9407, Accuracy: 0.8138, Precision: 0.6021, Recall: 0.5627, F1: 0.5678
-LM Predictions:  [3, 0, 1, 4, 4, 3, 0, 2, 0, 1, 5, 0, 4, 3, 3, 5, 3, 0, 1, 4, 2, 3, 2, 1, 3, 5, 3, 3]
+Train Loss: 0.1208, Accuracy: 0.9685, Precision: 0.8954, Recall: 0.9149, F1: 0.9044
+Validation Loss: 0.8110, Accuracy: 0.8352, Precision: 0.6918, Recall: 0.6449, F1: 0.6476
+Testing Loss: 0.9856, Accuracy: 0.8032, Precision: 0.6003, Recall: 0.5372, F1: 0.5595
+LM Predictions:  [3, 3, 5, 4, 2, 3, 0, 2, 3, 0, 5, 2, 4, 3, 0, 5, 3, 0, 3, 3, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3379, Accuracy: 0.4286, Precision: 0.5222, Recall: 0.3500, F1: 0.4176
+LM Loss: 2.1275, Accuracy: 0.3929, Precision: 0.4278, Recall: 0.3524, F1: 0.3630
 Epoch 60/70
-Train Loss: 0.1471, Accuracy: 0.9612, Precision: 0.8754, Recall: 0.8899, F1: 0.8821
-Validation Loss: 0.9003, Accuracy: 0.8125, Precision: 0.6103, Recall: 0.6106, F1: 0.6050
-Testing Loss: 0.8701, Accuracy: 0.8059, Precision: 0.5811, Recall: 0.6129, F1: 0.5819
-LM Predictions:  [3, 3, 3, 4, 4, 3, 2, 2, 0, 3, 5, 3, 4, 3, 3, 3, 3, 3, 1, 4, 3, 1, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1321, Accuracy: 0.9605, Precision: 0.8767, Recall: 0.8825, F1: 0.8755
+Validation Loss: 0.7486, Accuracy: 0.8438, Precision: 0.7139, Recall: 0.6772, F1: 0.6878
+Testing Loss: 0.9137, Accuracy: 0.8165, Precision: 0.6171, Recall: 0.6009, F1: 0.6054
+LM Predictions:  [3, 3, 3, 4, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 5, 3, 3, 1, 3, 3, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3418, Accuracy: 0.2857, Precision: 0.5694, Recall: 0.2452, F1: 0.3231
+LM Loss: 2.2928, Accuracy: 0.3929, Precision: 0.5119, Recall: 0.3619, F1: 0.3832
 Epoch 61/70
-Train Loss: 0.1316, Accuracy: 0.9650, Precision: 0.8896, Recall: 0.8868, F1: 0.8859
-Validation Loss: 0.9406, Accuracy: 0.8438, Precision: 0.6645, Recall: 0.6255, F1: 0.6417
-Testing Loss: 0.9722, Accuracy: 0.8112, Precision: 0.5898, Recall: 0.6100, F1: 0.5927
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 3, 3, 3, 1, 4, 2, 5, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1115, Accuracy: 0.9692, Precision: 0.8897, Recall: 0.8893, F1: 0.8890
+Validation Loss: 0.7990, Accuracy: 0.8182, Precision: 0.6520, Recall: 0.6537, F1: 0.6376
+Testing Loss: 0.9836, Accuracy: 0.7979, Precision: 0.5908, Recall: 0.5755, F1: 0.5789
+LM Predictions:  [3, 3, 3, 4, 2, 3, 0, 2, 3, 5, 5, 2, 4, 3, 0, 3, 3, 0, 3, 3, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3817, Accuracy: 0.3571, Precision: 0.5694, Recall: 0.3024, F1: 0.3852
+LM Loss: 2.1311, Accuracy: 0.4286, Precision: 0.5278, Recall: 0.3857, F1: 0.4189
 Epoch 62/70
-Train Loss: 0.1368, Accuracy: 0.9661, Precision: 0.8951, Recall: 0.9023, F1: 0.8965
-Validation Loss: 0.8713, Accuracy: 0.8295, Precision: 0.7116, Recall: 0.6522, F1: 0.6540
-Testing Loss: 0.8972, Accuracy: 0.8165, Precision: 0.6106, Recall: 0.5906, F1: 0.5987
-LM Predictions:  [3, 3, 1, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 1, 3, 0, 1, 4, 3, 5, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1149, Accuracy: 0.9685, Precision: 0.8850, Recall: 0.9015, F1: 0.8927
+Validation Loss: 0.9664, Accuracy: 0.8125, Precision: 0.6556, Recall: 0.6802, F1: 0.6454
+Testing Loss: 1.0009, Accuracy: 0.8085, Precision: 0.5871, Recall: 0.6045, F1: 0.5868
+LM Predictions:  [3, 3, 1, 1, 2, 3, 0, 2, 3, 3, 5, 2, 1, 3, 0, 1, 3, 0, 3, 3, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1458, Accuracy: 0.3929, Precision: 0.6250, Recall: 0.3262, F1: 0.4270
+LM Loss: 2.3538, Accuracy: 0.3214, Precision: 0.5278, Recall: 0.3048, F1: 0.3308
 Epoch 63/70
-Train Loss: 0.1950, Accuracy: 0.9377, Precision: 0.8023, Recall: 0.8291, F1: 0.8130
-Validation Loss: 0.9181, Accuracy: 0.8295, Precision: 0.6900, Recall: 0.6491, F1: 0.6500
-Testing Loss: 0.9919, Accuracy: 0.7979, Precision: 0.5937, Recall: 0.5762, F1: 0.5811
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 0, 3, 5, 0, 4, 3, 3, 3, 3, 0, 3, 4, 3, 5, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1493, Accuracy: 0.9615, Precision: 0.8745, Recall: 0.8712, F1: 0.8709
+Validation Loss: 0.7520, Accuracy: 0.8381, Precision: 0.6791, Recall: 0.7244, F1: 0.6792
+Testing Loss: 0.9104, Accuracy: 0.8218, Precision: 0.5950, Recall: 0.6116, F1: 0.6008
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 3, 5, 2, 4, 3, 3, 1, 3, 1, 3, 3, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 1.7096, Accuracy: 0.3929, Precision: 0.5833, Recall: 0.3262, F1: 0.4179
+LM Loss: 2.0462, Accuracy: 0.3571, Precision: 0.5278, Recall: 0.3286, F1: 0.3656
 Epoch 64/70
-Train Loss: 0.1561, Accuracy: 0.9612, Precision: 0.8798, Recall: 0.8955, F1: 0.8844
-Validation Loss: 0.9500, Accuracy: 0.8040, Precision: 0.6783, Recall: 0.6160, F1: 0.6185
-Testing Loss: 1.0936, Accuracy: 0.7819, Precision: 0.5905, Recall: 0.5159, F1: 0.5283
-LM Predictions:  [3, 3, 2, 4, 4, 3, 0, 2, 0, 3, 5, 0, 4, 3, 3, 0, 3, 0, 3, 4, 1, 0, 2, 1, 3, 5, 3, 3]
+Train Loss: 0.1359, Accuracy: 0.9594, Precision: 0.8556, Recall: 0.8485, F1: 0.8512
+Validation Loss: 0.7718, Accuracy: 0.8267, Precision: 0.6992, Recall: 0.6564, F1: 0.6561
+Testing Loss: 0.9473, Accuracy: 0.8112, Precision: 0.6621, Recall: 0.6110, F1: 0.6176
+LM Predictions:  [1, 0, 1, 4, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 5, 0, 3, 0, 3, 3, 0, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0827, Accuracy: 0.4643, Precision: 0.6806, Recall: 0.3833, F1: 0.4792
+LM Loss: 1.8754, Accuracy: 0.5357, Precision: 0.6230, Recall: 0.4667, F1: 0.4964
 Epoch 65/70
-Train Loss: 0.2808, Accuracy: 0.9143, Precision: 0.7596, Recall: 0.7866, F1: 0.7661
-Validation Loss: 0.9924, Accuracy: 0.7756, Precision: 0.5788, Recall: 0.6059, F1: 0.5803
-Testing Loss: 0.9487, Accuracy: 0.7793, Precision: 0.5653, Recall: 0.6230, F1: 0.5621
-LM Predictions:  [3, 3, 3, 1, 4, 3, 0, 2, 5, 3, 5, 3, 4, 1, 3, 3, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1027, Accuracy: 0.9752, Precision: 0.9178, Recall: 0.9209, F1: 0.9191
+Validation Loss: 0.8254, Accuracy: 0.8295, Precision: 0.7037, Recall: 0.6720, F1: 0.6667
+Testing Loss: 1.0192, Accuracy: 0.8191, Precision: 0.6535, Recall: 0.6259, F1: 0.6218
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 0, 5, 3, 0, 3, 3, 0, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.3130, Accuracy: 0.2500, Precision: 0.5556, Recall: 0.2214, F1: 0.3028
+LM Loss: 1.9475, Accuracy: 0.3929, Precision: 0.4397, Recall: 0.3524, F1: 0.3601
 Epoch 66/70
-Train Loss: 0.1591, Accuracy: 0.9573, Precision: 0.8755, Recall: 0.8722, F1: 0.8706
-Validation Loss: 0.8690, Accuracy: 0.8182, Precision: 0.6431, Recall: 0.6223, F1: 0.6306
-Testing Loss: 0.8892, Accuracy: 0.7979, Precision: 0.5799, Recall: 0.5981, F1: 0.5829
-LM Predictions:  [3, 3, 0, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 0, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.0903, Accuracy: 0.9790, Precision: 0.9314, Recall: 0.9348, F1: 0.9329
+Validation Loss: 0.8892, Accuracy: 0.8267, Precision: 0.7238, Recall: 0.7055, F1: 0.6559
+Testing Loss: 1.0250, Accuracy: 0.8112, Precision: 0.6103, Recall: 0.5615, F1: 0.5760
+LM Predictions:  [3, 3, 5, 4, 2, 3, 0, 2, 3, 5, 5, 0, 4, 3, 5, 5, 3, 0, 3, 3, 0, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0202, Accuracy: 0.3929, Precision: 0.6250, Recall: 0.3167, F1: 0.4185
+LM Loss: 2.0510, Accuracy: 0.4643, Precision: 0.4694, Recall: 0.4190, F1: 0.4343
 Epoch 67/70
-Train Loss: 0.1492, Accuracy: 0.9598, Precision: 0.8706, Recall: 0.8961, F1: 0.8823
-Validation Loss: 0.9357, Accuracy: 0.8267, Precision: 0.6523, Recall: 0.6322, F1: 0.6406
-Testing Loss: 0.8762, Accuracy: 0.8191, Precision: 0.6029, Recall: 0.6157, F1: 0.6072
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 5, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1064, Accuracy: 0.9713, Precision: 0.9049, Recall: 0.9019, F1: 0.9031
+Validation Loss: 0.9304, Accuracy: 0.8239, Precision: 0.6735, Recall: 0.6563, F1: 0.6490
+Testing Loss: 0.9914, Accuracy: 0.8218, Precision: 0.6156, Recall: 0.6125, F1: 0.6025
+LM Predictions:  [4, 3, 3, 4, 2, 3, 0, 2, 3, 2, 5, 2, 4, 3, 5, 1, 3, 0, 3, 4, 3, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2104, Accuracy: 0.3214, Precision: 0.5694, Recall: 0.2690, F1: 0.3594
+LM Loss: 1.5971, Accuracy: 0.4643, Precision: 0.5063, Recall: 0.4095, F1: 0.4240
 Epoch 68/70
-Train Loss: 0.1408, Accuracy: 0.9626, Precision: 0.8770, Recall: 0.9071, F1: 0.8880
-Validation Loss: 0.9138, Accuracy: 0.8125, Precision: 0.6397, Recall: 0.6072, F1: 0.6195
-Testing Loss: 0.9373, Accuracy: 0.7952, Precision: 0.5680, Recall: 0.5874, F1: 0.5714
-LM Predictions:  [3, 3, 3, 3, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 3, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.0977, Accuracy: 0.9738, Precision: 0.9220, Recall: 0.9173, F1: 0.9186
+Validation Loss: 0.8400, Accuracy: 0.8239, Precision: 0.6686, Recall: 0.6169, F1: 0.6339
+Testing Loss: 0.8772, Accuracy: 0.8324, Precision: 0.6260, Recall: 0.6273, F1: 0.6192
+LM Predictions:  [1, 3, 1, 4, 2, 3, 0, 2, 3, 1, 5, 2, 4, 3, 5, 1, 3, 0, 3, 4, 3, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.2415, Accuracy: 0.2857, Precision: 0.6111, Recall: 0.2452, F1: 0.3471
+LM Loss: 1.5942, Accuracy: 0.5000, Precision: 0.5861, Recall: 0.4429, F1: 0.4880
 Epoch 69/70
-Train Loss: 0.1295, Accuracy: 0.9671, Precision: 0.8904, Recall: 0.9079, F1: 0.8977
-Validation Loss: 0.8209, Accuracy: 0.8352, Precision: 0.6973, Recall: 0.6706, F1: 0.6640
-Testing Loss: 0.8890, Accuracy: 0.8032, Precision: 0.6001, Recall: 0.5763, F1: 0.5860
-LM Predictions:  [3, 3, 3, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 0, 3, 3, 3, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.1096, Accuracy: 0.9710, Precision: 0.9199, Recall: 0.9167, F1: 0.9178
+Validation Loss: 0.9732, Accuracy: 0.8097, Precision: 0.6668, Recall: 0.6078, F1: 0.6246
+Testing Loss: 1.0167, Accuracy: 0.7979, Precision: 0.5816, Recall: 0.5965, F1: 0.5721
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 3, 5, 4, 4, 3, 1, 3, 3, 0, 3, 3, 3, 0, 2, 4, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.1441, Accuracy: 0.3571, Precision: 0.6250, Recall: 0.2929, F1: 0.3973
+LM Loss: 1.9828, Accuracy: 0.4286, Precision: 0.5778, Recall: 0.3762, F1: 0.4397
 Epoch 70/70
-Train Loss: 0.1160, Accuracy: 0.9717, Precision: 0.9144, Recall: 0.9173, F1: 0.9133
-Validation Loss: 0.8818, Accuracy: 0.8210, Precision: 0.7121, Recall: 0.6536, F1: 0.6582
-Testing Loss: 1.0367, Accuracy: 0.8005, Precision: 0.6116, Recall: 0.5797, F1: 0.5923
-LM Predictions:  [3, 3, 5, 4, 4, 3, 0, 2, 0, 3, 5, 3, 4, 3, 3, 0, 3, 3, 1, 4, 3, 3, 2, 3, 3, 5, 3, 3]
+Train Loss: 0.0798, Accuracy: 0.9783, Precision: 0.9356, Recall: 0.9378, F1: 0.9363
+Validation Loss: 0.9886, Accuracy: 0.7983, Precision: 0.6694, Recall: 0.6703, F1: 0.6264
+Testing Loss: 1.0798, Accuracy: 0.7979, Precision: 0.6390, Recall: 0.6249, F1: 0.6117
+LM Predictions:  [3, 3, 1, 4, 2, 3, 0, 2, 3, 5, 0, 2, 4, 3, 0, 3, 3, 0, 3, 4, 0, 0, 2, 2, 3, 5, 4, 2]
 LM Labels:  [1, 0, 0, 4, 2, 1, 0, 2, 0, 5, 5, 4, 4, 0, 5, 0, 4, 0, 4, 4, 1, 5, 2, 1, 1, 5, 4, 2]
-LM Loss: 2.0281, Accuracy: 0.3571, Precision: 0.5694, Recall: 0.2929, F1: 0.3854
+LM Loss: 1.6541, Accuracy: 0.4286, Precision: 0.5000, Recall: 0.3762, F1: 0.4011
 Label Memorization Analysis: 
-LM Loss: 2.0281, Accuracy: 0.3571, Precision: 0.5694, Recall: 0.2929, F1: 0.3854
+LM Loss: 1.6541, Accuracy: 0.4286, Precision: 0.5000, Recall: 0.3762, F1: 0.4011
 ---------------------------------------------------------------------------
 
 
