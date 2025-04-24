@@ -1,0 +1,482 @@
+---------------------------------------------------------------------------
+Results for seed:  28
+Model: distilbert-base-uncased, Batch size: 16, Epochs: 40
+Learning rate: 2e-05, Device: cuda:0
+Noise: 1% with label 5
+Label counts for Train:
+  Label 0: 4666
+  Label 3: 2159
+  Label 2: 1304
+  Label 5: 572
+  Label 4: 1937
+  Label 1: 5362
+Label counts for Validation:
+  Label 0: 550
+  Label 2: 178
+  Label 3: 275
+  Label 1: 704
+  Label 4: 212
+  Label 5: 81
+Label counts for Test:
+  Label 0: 581
+  Label 1: 695
+  Label 4: 224
+  Label 3: 275
+  Label 2: 159
+  Label 5: 66
+160
+Actual labels:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+Label counts for Train:
+  Label 0: 4693
+  Label 3: 2195
+  Label 2: 1341
+  Label 5: 412
+  Label 4: 1969
+  Label 1: 5390
+tokenizer_config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 48.0/48.0 [00:00<00:00, 15.3kB/s]
+config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 483/483 [00:00<00:00, 172kB/s]
+vocab.txt: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 232k/232k [00:00<00:00, 5.93MB/s]
+tokenizer.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 466k/466k [00:00<00:00, 19.3MB/s]
+model.safetensors: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 268M/268M [00:02<00:00, 93.3MB/s]
+Layer: backbone.embeddings.word_embeddings.weight, Size: torch.Size([30522, 768]), req grad: True
+Layer: backbone.embeddings.position_embeddings.weight, Size: torch.Size([512, 768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.0.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.0.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.0.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.0.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.0.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.1.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.1.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.1.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.1.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.1.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.2.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.2.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.2.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.2.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.2.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.3.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.3.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.3.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.3.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.3.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.4.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.4.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.4.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.4.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.4.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.q_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.q_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.k_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.k_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.v_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.v_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.out_lin.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.layer.5.attention.out_lin.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.layer.5.ffn.lin1.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.layer.5.ffn.lin1.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.layer.5.ffn.lin2.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.layer.5.ffn.lin2.bias, Size: torch.Size([768]), req grad: True
+Layer: classifier.weight, Size: torch.Size([6, 768]), req grad: True
+/home/rsingha4/.local/lib/python3.8/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Epoch 1/40
+Train Loss: 1.3157, Accuracy: 0.4710, Precision: 0.4734, Recall: 0.2915, F1: 0.2918
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Validation Loss: 0.6592, Accuracy: 0.7820, Precision: 0.6468, Recall: 0.6210, F1: 0.6122
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+Test Loss: 0.6592, Accuracy: 0.8050, Precision: 0.6541, Recall: 0.6266, F1: 0.6173
+LM Predictions:  [4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 2, 0, 1, 0, 4, 3, 4, 4, 4, 3, 1, 4, 0, 4, 4, 4, 4, 4, 4, 1, 4, 4, 4, 1, 1, 4, 0, 4, 2, 4, 4, 3, 4, 4, 1, 0, 4, 4, 4, 4, 4, 1, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 3, 4, 4, 0, 4, 0, 4, 1, 4, 4, 4, 4, 4, 0, 4, 4, 1, 4, 1, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 1, 1, 4, 4, 4, 0, 1, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 2, 4, 4, 1, 1, 4, 3, 0, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 2.7145, Accuracy: 0.1875, Precision: 0.2828, Recall: 0.1893, F1: 0.1407
+Epoch 2/40
+Train Loss: 0.4150, Accuracy: 0.8586, Precision: 0.7947, Recall: 0.7831, F1: 0.7886
+Validation Loss: 0.2515, Accuracy: 0.9115, Precision: 0.8860, Recall: 0.8880, F1: 0.8865
+Test Loss: 0.2515, Accuracy: 0.9085, Precision: 0.8712, Recall: 0.8758, F1: 0.8727
+LM Predictions:  [4, 5, 4, 5, 5, 5, 5, 5, 5, 0, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 0, 5, 4, 5, 5, 4, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 1, 4, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 3, 5, 5, 5, 4, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.7093, Accuracy: 0.0375, Precision: 0.0312, Recall: 0.0312, F1: 0.0312
+Epoch 3/40
+Train Loss: 0.2565, Accuracy: 0.9070, Precision: 0.8474, Recall: 0.8606, F1: 0.8532
+Validation Loss: 0.2317, Accuracy: 0.9205, Precision: 0.9176, Recall: 0.8656, F1: 0.8881
+Test Loss: 0.2317, Accuracy: 0.9180, Precision: 0.8978, Recall: 0.8484, F1: 0.8688
+LM Predictions:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 5, 5, 5, 0, 5, 1, 5, 5, 5, 5, 5, 3, 5, 5, 5, 4, 5, 5, 4, 5, 4, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 4, 3, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 1, 4, 1, 5, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 1, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 1, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 3, 4, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.5443, Accuracy: 0.0688, Precision: 0.2103, Recall: 0.0584, F1: 0.0699
+Epoch 4/40
+Train Loss: 0.1908, Accuracy: 0.9261, Precision: 0.8695, Recall: 0.8831, F1: 0.8751
+Validation Loss: 0.2444, Accuracy: 0.9210, Precision: 0.9069, Recall: 0.8662, F1: 0.8808
+Test Loss: 0.2444, Accuracy: 0.9175, Precision: 0.8828, Recall: 0.8480, F1: 0.8607
+LM Predictions:  [4, 2, 5, 5, 2, 2, 5, 5, 2, 0, 5, 4, 5, 0, 5, 2, 5, 5, 5, 2, 5, 4, 5, 5, 5, 4, 5, 2, 4, 2, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 2, 4, 2, 5, 4, 5, 5, 2, 2, 2, 5, 4, 5, 5, 4, 5, 5, 4, 2, 5, 4, 2, 5, 2, 5, 4, 5, 4, 1, 5, 4, 4, 5, 5, 2, 4, 5, 4, 5, 4, 2, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 2, 5, 4, 1, 5, 4, 5, 5, 4, 4, 5, 5, 5, 2, 5, 5, 5, 4, 5, 5, 5, 3, 4, 5, 5, 5, 4, 5, 3, 5, 5, 5, 5, 5, 4, 2, 2, 4, 5, 4, 4, 2, 4, 4, 3, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.3723, Accuracy: 0.1562, Precision: 0.2995, Recall: 0.1235, F1: 0.1402
+Epoch 5/40
+Train Loss: 0.1688, Accuracy: 0.9315, Precision: 0.8759, Recall: 0.8884, F1: 0.8815
+Validation Loss: 0.2325, Accuracy: 0.9225, Precision: 0.8834, Recall: 0.9190, F1: 0.8988
+Test Loss: 0.2325, Accuracy: 0.9150, Precision: 0.8615, Recall: 0.9001, F1: 0.8770
+LM Predictions:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 2, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 4, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 3.0257, Accuracy: 0.0500, Precision: 0.3810, Recall: 0.0404, F1: 0.0555
+Epoch 6/40
+Train Loss: 0.1558, Accuracy: 0.9376, Precision: 0.8812, Recall: 0.8977, F1: 0.8885
+Validation Loss: 0.2141, Accuracy: 0.9265, Precision: 0.9073, Recall: 0.8984, F1: 0.9001
+Test Loss: 0.2141, Accuracy: 0.9275, Precision: 0.8946, Recall: 0.8820, F1: 0.8813
+LM Predictions:  [4, 5, 4, 5, 5, 5, 5, 5, 5, 3, 5, 4, 5, 0, 1, 5, 5, 5, 5, 5, 5, 3, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 4, 5, 1, 5, 5, 4, 5, 5, 5, 4, 2, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 1, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 1, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 1, 5, 4, 3, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 2, 4, 5, 4, 4, 5, 4, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.6149, Accuracy: 0.1313, Precision: 0.6513, Recall: 0.1094, F1: 0.1413
+Epoch 7/40
+Train Loss: 0.1369, Accuracy: 0.9441, Precision: 0.8932, Recall: 0.9072, F1: 0.8991
+Validation Loss: 0.2311, Accuracy: 0.9250, Precision: 0.9090, Recall: 0.9004, F1: 0.9007
+Test Loss: 0.2311, Accuracy: 0.9160, Precision: 0.8824, Recall: 0.8758, F1: 0.8707
+LM Predictions:  [4, 5, 4, 5, 2, 5, 4, 5, 5, 3, 5, 4, 5, 0, 5, 3, 5, 5, 4, 5, 5, 3, 5, 5, 5, 4, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 5, 4, 5, 5, 5, 4, 2, 4, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 0, 5, 4, 5, 5, 5, 5, 4, 4, 4, 0, 5, 4, 4, 5, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 1, 5, 4, 5, 5, 5, 4, 4, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 4, 1, 5, 4, 3, 5, 4, 4, 5, 4, 5, 5, 5, 5, 5, 4, 4, 5, 4, 4, 4, 4, 5, 5, 4, 5, 5, 4, 4, 5, 5, 5, 4, 2, 2, 4, 5, 4, 4, 5, 4, 4, 4, 5, 4, 5, 4, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.1022, Accuracy: 0.2000, Precision: 0.6159, Recall: 0.1640, F1: 0.1770
+Epoch 8/40
+Train Loss: 0.1265, Accuracy: 0.9493, Precision: 0.8997, Recall: 0.9122, F1: 0.9052
+Validation Loss: 0.2411, Accuracy: 0.9215, Precision: 0.8952, Recall: 0.8949, F1: 0.8943
+Test Loss: 0.2411, Accuracy: 0.9215, Precision: 0.8748, Recall: 0.8875, F1: 0.8806
+LM Predictions:  [5, 5, 4, 5, 2, 5, 0, 5, 5, 3, 5, 5, 5, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 2, 4, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 0, 5, 4, 2, 5, 2, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 1, 2, 5, 5, 5, 5, 5, 5, 5, 2, 5, 5, 5, 5, 4, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 1, 5, 4, 3, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.5865, Accuracy: 0.1250, Precision: 0.6125, Recall: 0.1013, F1: 0.1624
+Epoch 9/40
+Train Loss: 0.1175, Accuracy: 0.9527, Precision: 0.9042, Recall: 0.9221, F1: 0.9119
+Validation Loss: 0.2153, Accuracy: 0.9255, Precision: 0.9092, Recall: 0.9014, F1: 0.9046
+Test Loss: 0.2153, Accuracy: 0.9245, Precision: 0.8940, Recall: 0.8773, F1: 0.8833
+LM Predictions:  [4, 5, 4, 5, 1, 5, 4, 5, 5, 3, 5, 4, 5, 0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 1, 5, 5, 5, 4, 5, 5, 5, 5, 5, 4, 5, 5, 4, 2, 5, 5, 5, 4, 5, 4, 4, 5, 4, 4, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 1, 5, 4, 3, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 4, 5, 5, 5, 5, 5, 5, 4, 4, 5, 5, 5, 4, 2, 2, 4, 5, 4, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.2971, Accuracy: 0.1688, Precision: 0.7039, Recall: 0.1406, F1: 0.1714
+Epoch 10/40
+Train Loss: 0.1071, Accuracy: 0.9589, Precision: 0.9114, Recall: 0.9292, F1: 0.9192
+Validation Loss: 0.2284, Accuracy: 0.9270, Precision: 0.9107, Recall: 0.8877, F1: 0.8951
+Test Loss: 0.2284, Accuracy: 0.9185, Precision: 0.8802, Recall: 0.8707, F1: 0.8699
+LM Predictions:  [5, 5, 5, 5, 1, 5, 5, 5, 5, 3, 5, 5, 5, 0, 1, 5, 5, 5, 5, 5, 5, 3, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 1, 5, 5, 3, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 2, 2, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.1655, Accuracy: 0.1375, Precision: 0.7815, Recall: 0.1171, F1: 0.1941
+Epoch 11/40
+Train Loss: 0.1024, Accuracy: 0.9604, Precision: 0.9170, Recall: 0.9326, F1: 0.9238
+Validation Loss: 0.2248, Accuracy: 0.9290, Precision: 0.9046, Recall: 0.9064, F1: 0.9020
+Test Loss: 0.2248, Accuracy: 0.9220, Precision: 0.8772, Recall: 0.8814, F1: 0.8752
+LM Predictions:  [4, 5, 4, 5, 2, 5, 4, 5, 5, 3, 5, 4, 2, 0, 1, 5, 5, 5, 4, 5, 5, 3, 4, 5, 1, 4, 4, 5, 5, 5, 4, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 2, 4, 4, 5, 5, 1, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 4, 2, 5, 2, 5, 4, 5, 4, 4, 5, 4, 4, 5, 5, 1, 1, 2, 4, 5, 5, 5, 5, 4, 5, 2, 4, 4, 5, 5, 4, 1, 5, 4, 5, 5, 5, 4, 4, 0, 5, 5, 4, 5, 4, 5, 5, 2, 5, 2, 4, 1, 5, 4, 3, 5, 5, 4, 5, 5, 5, 5, 1, 5, 5, 4, 5, 5, 3, 4, 4, 4, 5, 5, 5, 5, 4, 4, 5, 5, 1, 5, 4, 2, 2, 4, 5, 4, 2, 5, 4, 4, 4, 5, 4, 5, 4, 5, 5, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.9872, Accuracy: 0.3312, Precision: 0.7428, Recall: 0.2746, F1: 0.3220
+Epoch 12/40
+Train Loss: 0.0927, Accuracy: 0.9661, Precision: 0.9251, Recall: 0.9425, F1: 0.9329
+Validation Loss: 0.2479, Accuracy: 0.9260, Precision: 0.8964, Recall: 0.9104, F1: 0.9025
+Test Loss: 0.2479, Accuracy: 0.9160, Precision: 0.8667, Recall: 0.8890, F1: 0.8768
+LM Predictions:  [5, 5, 4, 5, 2, 5, 4, 5, 5, 5, 5, 5, 5, 0, 1, 5, 5, 5, 5, 5, 5, 3, 4, 1, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 4, 5, 5, 1, 5, 5, 5, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 1, 1, 0, 5, 5, 5, 5, 5, 4, 5, 2, 4, 5, 5, 5, 4, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 5, 5, 4, 5, 5, 5, 5, 5, 4, 1, 5, 5, 3, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 4, 5, 5, 5, 4, 4, 5, 5, 5, 5, 5, 4, 4, 5, 5, 1, 5, 5, 2, 2, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 2.1113, Accuracy: 0.2250, Precision: 0.8030, Recall: 0.1916, F1: 0.2733
+Epoch 13/40
+Train Loss: 0.0892, Accuracy: 0.9684, Precision: 0.9278, Recall: 0.9466, F1: 0.9360
+Validation Loss: 0.2687, Accuracy: 0.9290, Precision: 0.9190, Recall: 0.8966, F1: 0.9070
+Test Loss: 0.2687, Accuracy: 0.9180, Precision: 0.8780, Recall: 0.8629, F1: 0.8699
+LM Predictions:  [5, 5, 4, 5, 2, 3, 4, 5, 5, 3, 5, 4, 2, 0, 1, 3, 5, 5, 4, 5, 5, 3, 4, 1, 1, 4, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 2, 4, 5, 5, 0, 1, 0, 5, 5, 4, 5, 5, 4, 3, 5, 5, 5, 5, 5, 2, 5, 2, 5, 5, 5, 4, 4, 5, 5, 5, 0, 5, 1, 1, 0, 5, 5, 5, 5, 5, 4, 5, 2, 4, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 4, 5, 0, 5, 3, 4, 5, 4, 5, 5, 5, 5, 5, 4, 1, 5, 4, 3, 5, 5, 5, 5, 5, 5, 3, 1, 5, 5, 4, 5, 5, 3, 4, 4, 5, 0, 5, 5, 3, 4, 4, 5, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 5, 5, 5, 4, 5, 5, 5, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.6538, Accuracy: 0.3937, Precision: 0.8161, Recall: 0.3296, F1: 0.4417
+Epoch 14/40
+Train Loss: 0.0782, Accuracy: 0.9708, Precision: 0.9353, Recall: 0.9502, F1: 0.9420
+Validation Loss: 0.3032, Accuracy: 0.9275, Precision: 0.8977, Recall: 0.9168, F1: 0.9050
+Test Loss: 0.3032, Accuracy: 0.9225, Precision: 0.8815, Recall: 0.9008, F1: 0.8875
+LM Predictions:  [5, 5, 4, 5, 2, 3, 4, 5, 5, 3, 5, 4, 2, 0, 1, 3, 5, 5, 4, 5, 5, 3, 4, 1, 1, 4, 4, 2, 5, 5, 4, 5, 5, 5, 5, 2, 5, 4, 5, 5, 2, 3, 2, 3, 5, 5, 0, 1, 0, 2, 5, 4, 5, 5, 4, 3, 5, 5, 5, 5, 0, 2, 2, 2, 1, 5, 5, 4, 4, 5, 3, 4, 0, 5, 1, 1, 0, 5, 5, 5, 5, 2, 4, 5, 2, 4, 5, 5, 5, 5, 1, 5, 5, 5, 2, 5, 4, 5, 0, 5, 3, 5, 3, 4, 5, 5, 2, 2, 2, 4, 1, 5, 4, 3, 3, 5, 5, 5, 5, 5, 3, 1, 5, 5, 4, 5, 3, 3, 4, 4, 5, 0, 2, 5, 3, 4, 4, 5, 5, 1, 5, 4, 2, 2, 4, 4, 5, 2, 5, 5, 5, 4, 5, 4, 5, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.3058, Accuracy: 0.5188, Precision: 0.7944, Recall: 0.4242, F1: 0.5323
+Epoch 15/40
+Train Loss: 0.0695, Accuracy: 0.9754, Precision: 0.9418, Recall: 0.9577, F1: 0.9490
+Validation Loss: 0.2949, Accuracy: 0.9285, Precision: 0.9040, Recall: 0.9051, F1: 0.9033
+Test Loss: 0.2949, Accuracy: 0.9220, Precision: 0.8762, Recall: 0.8817, F1: 0.8768
+LM Predictions:  [0, 5, 5, 5, 2, 3, 4, 1, 5, 3, 5, 4, 2, 0, 1, 5, 5, 5, 4, 5, 5, 3, 4, 1, 1, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 1, 1, 5, 4, 2, 4, 5, 5, 0, 1, 0, 5, 1, 4, 5, 1, 4, 3, 5, 5, 5, 5, 0, 2, 3, 2, 1, 5, 5, 4, 1, 5, 3, 5, 0, 5, 1, 1, 0, 5, 5, 5, 5, 5, 5, 5, 2, 4, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 4, 0, 0, 5, 3, 1, 3, 4, 5, 1, 2, 5, 5, 4, 1, 5, 4, 3, 5, 5, 5, 5, 5, 5, 3, 1, 5, 5, 4, 5, 3, 3, 4, 4, 5, 0, 5, 1, 3, 4, 4, 5, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 5, 5, 5, 4, 5, 4, 5, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.4881, Accuracy: 0.4813, Precision: 0.8043, Recall: 0.4089, F1: 0.5206
+Epoch 16/40
+Train Loss: 0.0668, Accuracy: 0.9772, Precision: 0.9455, Recall: 0.9624, F1: 0.9531
+Validation Loss: 0.2720, Accuracy: 0.9280, Precision: 0.9188, Recall: 0.8904, F1: 0.9032
+Test Loss: 0.2720, Accuracy: 0.9200, Precision: 0.8855, Recall: 0.8549, F1: 0.8680
+LM Predictions:  [0, 1, 4, 5, 2, 3, 4, 5, 5, 3, 5, 4, 2, 0, 1, 3, 5, 5, 4, 5, 5, 3, 4, 1, 1, 5, 4, 2, 5, 5, 4, 5, 3, 4, 5, 5, 4, 4, 1, 5, 5, 3, 2, 4, 5, 5, 0, 1, 0, 5, 1, 4, 5, 5, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 5, 5, 4, 4, 5, 3, 4, 0, 4, 1, 1, 0, 5, 5, 5, 0, 2, 4, 5, 2, 4, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 4, 0, 0, 5, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 5, 4, 3, 3, 5, 5, 5, 5, 5, 3, 1, 5, 5, 4, 4, 3, 3, 4, 4, 5, 0, 5, 1, 3, 4, 4, 5, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 5, 5, 5, 4, 5, 4, 0, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.0302, Accuracy: 0.5938, Precision: 0.8186, Recall: 0.4986, F1: 0.6014
+Epoch 17/40
+Train Loss: 0.0620, Accuracy: 0.9781, Precision: 0.9475, Recall: 0.9600, F1: 0.9533
+Validation Loss: 0.3088, Accuracy: 0.9260, Precision: 0.9075, Recall: 0.8934, F1: 0.9001
+Test Loss: 0.3088, Accuracy: 0.9215, Precision: 0.8807, Recall: 0.8827, F1: 0.8816
+LM Predictions:  [5, 1, 4, 5, 2, 3, 4, 5, 5, 3, 5, 4, 2, 0, 1, 3, 5, 5, 4, 5, 5, 3, 4, 1, 1, 5, 4, 2, 5, 5, 4, 5, 3, 4, 5, 2, 4, 5, 1, 5, 5, 5, 2, 4, 5, 5, 0, 1, 0, 2, 1, 4, 5, 5, 4, 3, 3, 5, 5, 5, 0, 2, 3, 2, 1, 5, 5, 4, 4, 5, 2, 5, 0, 4, 1, 1, 0, 5, 5, 5, 0, 2, 4, 5, 2, 4, 5, 5, 5, 5, 1, 5, 5, 5, 5, 4, 4, 5, 0, 5, 3, 1, 4, 4, 0, 1, 2, 2, 5, 4, 1, 5, 5, 3, 4, 5, 5, 1, 5, 5, 3, 1, 5, 5, 4, 5, 3, 3, 4, 4, 5, 0, 5, 1, 3, 4, 4, 5, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 5, 5, 5, 4, 4, 5, 5, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.1352, Accuracy: 0.5500, Precision: 0.8078, Recall: 0.4621, F1: 0.5667
+Epoch 18/40
+Train Loss: 0.0568, Accuracy: 0.9812, Precision: 0.9539, Recall: 0.9684, F1: 0.9605
+Validation Loss: 0.2763, Accuracy: 0.9260, Precision: 0.9035, Recall: 0.8882, F1: 0.8951
+Test Loss: 0.2763, Accuracy: 0.9210, Precision: 0.8837, Recall: 0.8680, F1: 0.8747
+LM Predictions:  [5, 1, 4, 3, 2, 3, 4, 5, 5, 3, 3, 4, 2, 0, 1, 3, 5, 5, 4, 5, 5, 3, 4, 1, 1, 5, 4, 5, 5, 5, 4, 1, 3, 4, 5, 5, 4, 4, 1, 1, 2, 3, 2, 3, 5, 5, 0, 1, 0, 5, 1, 4, 5, 5, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 5, 5, 4, 4, 5, 3, 4, 0, 4, 1, 1, 0, 5, 5, 5, 0, 5, 4, 5, 2, 4, 5, 5, 5, 5, 1, 5, 4, 5, 5, 5, 4, 5, 0, 5, 3, 1, 3, 4, 0, 1, 2, 2, 5, 4, 1, 5, 4, 3, 3, 5, 5, 1, 5, 5, 3, 1, 5, 5, 4, 5, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 5, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 1, 5, 5, 4, 3, 4, 0, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 1.1055, Accuracy: 0.6062, Precision: 0.7998, Recall: 0.5096, F1: 0.5998
+Epoch 19/40
+Train Loss: 0.0461, Accuracy: 0.9847, Precision: 0.9594, Recall: 0.9715, F1: 0.9651
+Validation Loss: 0.3149, Accuracy: 0.9255, Precision: 0.9052, Recall: 0.8896, F1: 0.8965
+Test Loss: 0.3149, Accuracy: 0.9200, Precision: 0.8837, Recall: 0.8631, F1: 0.8721
+LM Predictions:  [0, 1, 4, 3, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 5, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 5, 3, 4, 1, 3, 4, 5, 2, 4, 5, 1, 1, 2, 3, 2, 4, 5, 3, 0, 1, 0, 2, 1, 4, 5, 0, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 5, 5, 4, 4, 5, 3, 5, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 5, 4, 5, 1, 2, 5, 5, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 4, 3, 4, 5, 5, 1, 5, 5, 3, 1, 0, 0, 4, 5, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 1, 0, 5, 4, 3, 4, 0, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.6022, Accuracy: 0.7812, Precision: 0.8039, Recall: 0.6516, F1: 0.7160
+Epoch 20/40
+Train Loss: 0.0444, Accuracy: 0.9846, Precision: 0.9615, Recall: 0.9734, F1: 0.9671
+Validation Loss: 0.3394, Accuracy: 0.9120, Precision: 0.8985, Recall: 0.8351, F1: 0.8494
+Test Loss: 0.3394, Accuracy: 0.9095, Precision: 0.8785, Recall: 0.8121, F1: 0.8261
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 4, 5, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 4, 4, 4, 1, 3, 4, 4, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 4, 3, 4, 0, 2, 3, 2, 1, 4, 5, 4, 4, 4, 3, 4, 0, 4, 1, 1, 0, 0, 4, 2, 0, 2, 4, 3, 2, 4, 5, 4, 4, 5, 1, 2, 4, 3, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 4, 3, 4, 1, 5, 1, 4, 4, 3, 1, 2, 0, 4, 5, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 4, 2, 2, 4, 4, 1, 2, 1, 4, 3, 4, 3, 4, 0, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.4979, Accuracy: 0.8000, Precision: 0.7486, Recall: 0.6682, F1: 0.6888
+Epoch 21/40
+Train Loss: 0.0400, Accuracy: 0.9871, Precision: 0.9699, Recall: 0.9773, F1: 0.9735
+Validation Loss: 0.3394, Accuracy: 0.9180, Precision: 0.9008, Recall: 0.8783, F1: 0.8887
+Test Loss: 0.3394, Accuracy: 0.9170, Precision: 0.8771, Recall: 0.8481, F1: 0.8610
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 5, 3, 5, 4, 2, 0, 1, 3, 4, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 4, 4, 4, 1, 3, 4, 4, 2, 4, 4, 1, 1, 2, 3, 2, 4, 5, 3, 0, 1, 0, 2, 1, 4, 5, 0, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 4, 5, 4, 4, 5, 3, 4, 0, 4, 1, 1, 0, 0, 4, 2, 5, 2, 4, 5, 2, 4, 5, 5, 4, 5, 1, 2, 4, 5, 2, 4, 4, 5, 0, 5, 3, 1, 3, 4, 0, 4, 2, 2, 2, 4, 1, 2, 4, 3, 5, 1, 5, 1, 4, 5, 3, 1, 5, 5, 4, 5, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 5, 1, 5, 5, 0, 2, 4, 4, 5, 2, 1, 5, 5, 4, 3, 4, 5, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.6115, Accuracy: 0.7125, Precision: 0.7751, Recall: 0.5905, F1: 0.6504
+Epoch 22/40
+Train Loss: 0.0391, Accuracy: 0.9862, Precision: 0.9664, Recall: 0.9738, F1: 0.9699
+Validation Loss: 0.2992, Accuracy: 0.9255, Precision: 0.8960, Recall: 0.9050, F1: 0.9001
+Test Loss: 0.2992, Accuracy: 0.9175, Precision: 0.8738, Recall: 0.8885, F1: 0.8807
+LM Predictions:  [5, 1, 4, 2, 2, 3, 4, 1, 5, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 5, 3, 4, 1, 3, 4, 5, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 5, 5, 4, 4, 5, 3, 5, 0, 4, 1, 1, 0, 0, 5, 2, 0, 2, 4, 5, 2, 4, 0, 3, 3, 5, 1, 2, 5, 1, 2, 4, 4, 5, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 5, 3, 3, 1, 5, 1, 5, 5, 3, 1, 5, 0, 4, 5, 3, 3, 4, 4, 4, 0, 5, 1, 3, 4, 4, 2, 5, 1, 5, 5, 2, 2, 4, 4, 5, 2, 1, 5, 5, 4, 3, 4, 0, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.5203, Accuracy: 0.8000, Precision: 0.8283, Recall: 0.6654, F1: 0.7318
+Epoch 23/40
+Train Loss: 0.0362, Accuracy: 0.9878, Precision: 0.9728, Recall: 0.9791, F1: 0.9758
+Validation Loss: 0.3139, Accuracy: 0.9245, Precision: 0.8993, Recall: 0.9023, F1: 0.9004
+Test Loss: 0.3139, Accuracy: 0.9195, Precision: 0.8730, Recall: 0.8901, F1: 0.8808
+LM Predictions:  [0, 1, 4, 2, 2, 5, 4, 1, 2, 3, 5, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 5, 4, 4, 5, 3, 4, 5, 2, 4, 5, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 5, 4, 1, 0, 4, 3, 3, 5, 3, 5, 0, 2, 3, 2, 1, 5, 0, 4, 4, 5, 3, 5, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 5, 5, 1, 2, 5, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 5, 3, 3, 1, 5, 1, 5, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 5, 2, 2, 4, 4, 5, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.4051, Accuracy: 0.8375, Precision: 0.8232, Recall: 0.6970, F1: 0.7521
+Epoch 24/40
+Train Loss: 0.0306, Accuracy: 0.9899, Precision: 0.9773, Recall: 0.9840, F1: 0.9806
+Validation Loss: 0.3744, Accuracy: 0.9235, Precision: 0.9003, Recall: 0.8862, F1: 0.8921
+Test Loss: 0.3744, Accuracy: 0.9125, Precision: 0.8701, Recall: 0.8619, F1: 0.8654
+LM Predictions:  [0, 1, 4, 2, 2, 5, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 3, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 3, 0, 4, 4, 4, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 5, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 5, 3, 3, 1, 3, 1, 3, 3, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.2439, Accuracy: 0.9313, Precision: 0.8095, Recall: 0.7770, F1: 0.7918
+Epoch 25/40
+Train Loss: 0.0323, Accuracy: 0.9884, Precision: 0.9782, Recall: 0.9810, F1: 0.9796
+Validation Loss: 0.3879, Accuracy: 0.9175, Precision: 0.9024, Recall: 0.8680, F1: 0.8825
+Test Loss: 0.3879, Accuracy: 0.9145, Precision: 0.8854, Recall: 0.8437, F1: 0.8598
+LM Predictions:  [0, 1, 4, 3, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 0, 4, 3, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 3, 0, 4, 4, 5, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 3, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.2379, Accuracy: 0.9313, Precision: 0.8088, Recall: 0.7759, F1: 0.7904
+Epoch 26/40
+Train Loss: 0.0283, Accuracy: 0.9904, Precision: 0.9809, Recall: 0.9836, F1: 0.9822
+Validation Loss: 0.3287, Accuracy: 0.9275, Precision: 0.9042, Recall: 0.9012, F1: 0.9026
+Test Loss: 0.3287, Accuracy: 0.9190, Precision: 0.8786, Recall: 0.8582, F1: 0.8668
+LM Predictions:  [0, 1, 4, 3, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 2, 3, 5, 1, 3, 4, 0, 2, 4, 5, 1, 1, 2, 3, 5, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 5, 0, 4, 4, 5, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 5, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 5, 3, 3, 1, 5, 1, 5, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 5, 2, 2, 5, 4, 1, 2, 1, 5, 2, 4, 3, 5, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.3088, Accuracy: 0.8750, Precision: 0.8283, Recall: 0.7285, F1: 0.7742
+Epoch 27/40
+Train Loss: 0.0261, Accuracy: 0.9911, Precision: 0.9791, Recall: 0.9812, F1: 0.9802
+Validation Loss: 0.3879, Accuracy: 0.9215, Precision: 0.9008, Recall: 0.8840, F1: 0.8909
+Test Loss: 0.3879, Accuracy: 0.9105, Precision: 0.8714, Recall: 0.8477, F1: 0.8562
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 5, 3, 3, 1, 5, 1, 5, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.1608, Accuracy: 0.9375, Precision: 0.8283, Recall: 0.7830, F1: 0.8045
+Epoch 28/40
+Train Loss: 0.0274, Accuracy: 0.9916, Precision: 0.9813, Recall: 0.9847, F1: 0.9830
+Validation Loss: 0.3937, Accuracy: 0.9185, Precision: 0.8980, Recall: 0.8839, F1: 0.8895
+Test Loss: 0.3937, Accuracy: 0.9220, Precision: 0.8853, Recall: 0.8687, F1: 0.8750
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 5, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 5, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 5, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 5, 2, 1, 3, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.1887, Accuracy: 0.9313, Precision: 0.8188, Recall: 0.7744, F1: 0.7950
+Epoch 29/40
+Train Loss: 0.0252, Accuracy: 0.9914, Precision: 0.9805, Recall: 0.9855, F1: 0.9829
+Validation Loss: 0.3821, Accuracy: 0.9200, Precision: 0.9074, Recall: 0.8733, F1: 0.8834
+Test Loss: 0.3821, Accuracy: 0.9165, Precision: 0.8899, Recall: 0.8445, F1: 0.8574
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 5, 0, 2, 3, 2, 1, 4, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 4, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 4, 3, 3, 1, 3, 1, 4, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.1515, Accuracy: 0.9437, Precision: 0.8070, Recall: 0.7890, F1: 0.7958
+Epoch 30/40
+Train Loss: 0.0249, Accuracy: 0.9915, Precision: 0.9832, Recall: 0.9852, F1: 0.9842
+Validation Loss: 0.3831, Accuracy: 0.9205, Precision: 0.9076, Recall: 0.8698, F1: 0.8846
+Test Loss: 0.3831, Accuracy: 0.9195, Precision: 0.8886, Recall: 0.8601, F1: 0.8712
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 4, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.1185, Accuracy: 0.9750, Precision: 0.8190, Recall: 0.8136, F1: 0.8157
+Epoch 31/40
+Train Loss: 0.0204, Accuracy: 0.9924, Precision: 0.9871, Recall: 0.9860, F1: 0.9866
+Validation Loss: 0.4228, Accuracy: 0.9220, Precision: 0.8991, Recall: 0.8989, F1: 0.8979
+Test Loss: 0.4228, Accuracy: 0.9145, Precision: 0.8702, Recall: 0.8773, F1: 0.8730
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 5, 0, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.1132, Accuracy: 0.9688, Precision: 0.8274, Recall: 0.8106, F1: 0.8185
+Epoch 32/40
+Train Loss: 0.0200, Accuracy: 0.9934, Precision: 0.9877, Recall: 0.9882, F1: 0.9879
+Validation Loss: 0.3965, Accuracy: 0.9215, Precision: 0.9035, Recall: 0.8835, F1: 0.8912
+Test Loss: 0.3965, Accuracy: 0.9180, Precision: 0.8778, Recall: 0.8623, F1: 0.8666
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 4, 0, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.0834, Accuracy: 0.9750, Precision: 0.8176, Recall: 0.8152, F1: 0.8159
+Epoch 33/40
+Train Loss: 0.0192, Accuracy: 0.9941, Precision: 0.9890, Recall: 0.9881, F1: 0.9885
+Validation Loss: 0.3856, Accuracy: 0.9190, Precision: 0.8966, Recall: 0.8803, F1: 0.8874
+Test Loss: 0.3856, Accuracy: 0.9140, Precision: 0.8694, Recall: 0.8595, F1: 0.8636
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 5, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 5, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 0, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.0812, Accuracy: 0.9750, Precision: 0.8274, Recall: 0.8153, F1: 0.8208
+Epoch 34/40
+Train Loss: 0.0193, Accuracy: 0.9924, Precision: 0.9846, Recall: 0.9828, F1: 0.9837
+Validation Loss: 0.4785, Accuracy: 0.9160, Precision: 0.8896, Recall: 0.8742, F1: 0.8773
+Test Loss: 0.4785, Accuracy: 0.9055, Precision: 0.8573, Recall: 0.8516, F1: 0.8487
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 4, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 4, 1, 3, 3, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0868, Accuracy: 0.9688, Precision: 0.9722, Recall: 0.9711, F1: 0.9706
+Epoch 35/40
+Train Loss: 0.0168, Accuracy: 0.9941, Precision: 0.9884, Recall: 0.9905, F1: 0.9895
+Validation Loss: 0.4316, Accuracy: 0.9135, Precision: 0.8868, Recall: 0.8546, F1: 0.8644
+Test Loss: 0.4316, Accuracy: 0.9115, Precision: 0.8787, Recall: 0.8398, F1: 0.8483
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 0, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0514, Accuracy: 0.9812, Precision: 0.9811, Recall: 0.9838, F1: 0.9819
+Epoch 36/40
+Train Loss: 0.0204, Accuracy: 0.9939, Precision: 0.9898, Recall: 0.9914, F1: 0.9906
+Validation Loss: 0.3976, Accuracy: 0.9195, Precision: 0.8968, Recall: 0.8760, F1: 0.8835
+Test Loss: 0.3976, Accuracy: 0.9150, Precision: 0.8810, Recall: 0.8605, F1: 0.8667
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 5, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.0619, Accuracy: 0.9750, Precision: 0.8235, Recall: 0.8151, F1: 0.8189
+Epoch 37/40
+Train Loss: 0.0200, Accuracy: 0.9934, Precision: 0.9894, Recall: 0.9879, F1: 0.9886
+Validation Loss: 0.3907, Accuracy: 0.9170, Precision: 0.9067, Recall: 0.8717, F1: 0.8860
+Test Loss: 0.3907, Accuracy: 0.9125, Precision: 0.8757, Recall: 0.8516, F1: 0.8601
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 2, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 2, 3, 3, 1, 3, 1, 5, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 5, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.0647, Accuracy: 0.9688, Precision: 0.8193, Recall: 0.8104, F1: 0.8145
+Epoch 38/40
+Train Loss: 0.0159, Accuracy: 0.9939, Precision: 0.9873, Recall: 0.9880, F1: 0.9876
+Validation Loss: 0.4035, Accuracy: 0.9175, Precision: 0.9132, Recall: 0.8678, F1: 0.8866
+Test Loss: 0.4035, Accuracy: 0.9220, Precision: 0.9014, Recall: 0.8468, F1: 0.8688
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 5, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+/home/rsingha4/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Recall is ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+LM Loss: 0.0617, Accuracy: 0.9812, Precision: 0.8235, Recall: 0.8197, F1: 0.8213
+Epoch 39/40
+Train Loss: 0.0177, Accuracy: 0.9944, Precision: 0.9901, Recall: 0.9895, F1: 0.9898
+Validation Loss: 0.3833, Accuracy: 0.9225, Precision: 0.9062, Recall: 0.8888, F1: 0.8970
+Test Loss: 0.3833, Accuracy: 0.9200, Precision: 0.8848, Recall: 0.8652, F1: 0.8746
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0549, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Epoch 40/40
+Train Loss: 0.0140, Accuracy: 0.9953, Precision: 0.9913, Recall: 0.9925, F1: 0.9919
+Validation Loss: 0.4794, Accuracy: 0.9165, Precision: 0.8992, Recall: 0.8698, F1: 0.8815
+Test Loss: 0.4794, Accuracy: 0.9140, Precision: 0.8746, Recall: 0.8543, F1: 0.8617
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 4, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0595, Accuracy: 0.9812, Precision: 0.9829, Recall: 0.9836, F1: 0.9827
+Label Memorization Analysis: 
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 4, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0595, Accuracy: 0.9812, Precision: 0.9829, Recall: 0.9836, F1: 0.9827
+---------------------------------------------------------------------------

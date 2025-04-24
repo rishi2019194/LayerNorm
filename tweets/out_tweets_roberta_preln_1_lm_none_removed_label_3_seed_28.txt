@@ -1,0 +1,926 @@
+---------------------------------------------------------------------------
+Results for seed:  28
+Model: andreasmadsen/efficient_mlm_m0.40, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:1
+Noise: 1% with label 3
+Label counts for Train:
+  Label 4: 966
+  Label 2: 1099
+  Label 5: 486
+  Label 1: 115
+  Label 3: 144
+  Label 0: 48
+Label counts for Validation:
+  Label 4: 117
+  Label 5: 60
+  Label 0: 3
+  Label 3: 17
+  Label 1: 22
+  Label 2: 133
+Label counts for Test:
+  Label 4: 133
+  Label 2: 136
+  Label 0: 6
+  Label 1: 14
+  Label 3: 29
+  Label 5: 58
+28
+Actual labels:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+Label counts for Train:
+  Label 4: 971
+  Label 2: 1106
+  Label 5: 493
+  Label 1: 119
+  Label 3: 116
+  Label 0: 53
+Layer: backbone.roberta_prelayernorm.embeddings.word_embeddings.weight, Size: torch.Size([50265, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.embeddings.position_embeddings.weight, Size: torch.Size([514, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.embeddings.token_type_embeddings.weight, Size: torch.Size([1, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.embeddings.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.embeddings.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.0.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.1.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.2.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.3.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.4.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.5.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.6.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.7.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.8.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.9.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.10.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.11.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.12.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.13.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.14.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.15.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.16.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.17.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.18.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.19.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.20.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.21.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.22.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.query.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.query.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.key.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.key.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.value.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.self.value.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.output.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.attention.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.intermediate.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.intermediate.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.intermediate.dense.weight, Size: torch.Size([4096, 1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.intermediate.dense.bias, Size: torch.Size([4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.output.dense.weight, Size: torch.Size([1024, 4096]), req grad: True
+Layer: backbone.roberta_prelayernorm.encoder.layer.23.output.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.LayerNorm.weight, Size: torch.Size([1024]), req grad: True
+Layer: backbone.roberta_prelayernorm.LayerNorm.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.classifier.dense.weight, Size: torch.Size([1024, 1024]), req grad: True
+Layer: backbone.classifier.dense.bias, Size: torch.Size([1024]), req grad: True
+Layer: backbone.classifier.out_proj.weight, Size: torch.Size([6, 1024]), req grad: True
+Layer: backbone.classifier.out_proj.bias, Size: torch.Size([6]), req grad: True
+Epoch 1/70
+Train Loss: 1.4590, Accuracy: 0.3845, Precision: 0.1592, Recall: 0.1692, F1: 0.1201
+Validation Loss: 1.3624, Accuracy: 0.6108, Precision: 0.2037, Recall: 0.2883, F1: 0.2386
+Testing Loss: 1.3828, Accuracy: 0.6330, Precision: 0.2110, Recall: 0.2951, F1: 0.2461
+LM Predictions:  [2, 2, 2, 4, 4, 2, 2, 2, 4, 2, 2, 4, 2, 4, 4, 2, 4, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9948, Accuracy: 0.2857, Precision: 0.1100, Recall: 0.2514, F1: 0.1504
+Epoch 2/70
+Train Loss: 0.8186, Accuracy: 0.7316, Precision: 0.3496, Recall: 0.3828, F1: 0.3648
+Validation Loss: 0.6306, Accuracy: 0.7784, Precision: 0.6387, Recall: 0.4784, F1: 0.4741
+Testing Loss: 0.6496, Accuracy: 0.7819, Precision: 0.6504, Recall: 0.4813, F1: 0.4638
+LM Predictions:  [3, 3, 2, 5, 5, 2, 5, 5, 5, 5, 3, 5, 2, 5, 5, 5, 5, 5, 2, 5, 5, 5, 5, 2, 5, 5, 3, 5]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7744, Accuracy: 0.3214, Precision: 0.1526, Recall: 0.2143, F1: 0.1603
+Epoch 3/70
+Train Loss: 0.5501, Accuracy: 0.8261, Precision: 0.5812, Recall: 0.5668, F1: 0.5689
+Validation Loss: 0.5583, Accuracy: 0.8210, Precision: 0.6232, Recall: 0.6067, F1: 0.6012
+Testing Loss: 0.5773, Accuracy: 0.8378, Precision: 0.6103, Recall: 0.6166, F1: 0.6121
+LM Predictions:  [3, 3, 4, 3, 1, 2, 4, 5, 5, 3, 3, 3, 2, 3, 3, 5, 3, 3, 2, 3, 3, 5, 5, 2, 3, 3, 3, 5]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.7886, Accuracy: 0.2143, Precision: 0.3889, Recall: 0.1702, F1: 0.2262
+Epoch 4/70
+Train Loss: 0.4223, Accuracy: 0.8677, Precision: 0.6304, Recall: 0.6395, F1: 0.6313
+Validation Loss: 0.4815, Accuracy: 0.8494, Precision: 0.6793, Recall: 0.6623, F1: 0.6677
+Testing Loss: 0.5115, Accuracy: 0.8431, Precision: 0.6204, Recall: 0.6466, F1: 0.6224
+LM Predictions:  [3, 3, 3, 3, 1, 2, 5, 5, 1, 3, 3, 1, 2, 1, 3, 5, 1, 3, 3, 1, 3, 5, 1, 2, 1, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.8416, Accuracy: 0.2500, Precision: 0.2500, Recall: 0.2024, F1: 0.2071
+Epoch 5/70
+Train Loss: 0.3251, Accuracy: 0.8978, Precision: 0.6679, Recall: 0.6986, F1: 0.6825
+Validation Loss: 0.4438, Accuracy: 0.8466, Precision: 0.6623, Recall: 0.6512, F1: 0.6545
+Testing Loss: 0.5090, Accuracy: 0.8590, Precision: 0.6494, Recall: 0.6617, F1: 0.6510
+LM Predictions:  [3, 3, 3, 3, 1, 2, 4, 5, 3, 3, 3, 3, 2, 2, 4, 2, 3, 3, 3, 3, 2, 2, 1, 2, 3, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.9468, Accuracy: 0.2857, Precision: 0.5000, Recall: 0.2274, F1: 0.2813
+Epoch 6/70
+Train Loss: 0.2583, Accuracy: 0.9251, Precision: 0.8873, Recall: 0.7496, F1: 0.7390
+Validation Loss: 0.4622, Accuracy: 0.8494, Precision: 0.7330, Recall: 0.7224, F1: 0.7188
+Testing Loss: 0.5190, Accuracy: 0.8298, Precision: 0.6019, Recall: 0.6243, F1: 0.6026
+LM Predictions:  [3, 3, 3, 3, 1, 3, 4, 5, 3, 3, 3, 3, 2, 3, 4, 3, 3, 3, 3, 3, 3, 3, 1, 2, 3, 3, 3, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 2.2948, Accuracy: 0.2143, Precision: 0.5833, Recall: 0.1798, F1: 0.2665
+Epoch 7/70
+Train Loss: 0.1972, Accuracy: 0.9440, Precision: 0.8772, Recall: 0.7998, F1: 0.8019
+Validation Loss: 0.4984, Accuracy: 0.8608, Precision: 0.6897, Recall: 0.6762, F1: 0.6818
+Testing Loss: 0.4971, Accuracy: 0.8697, Precision: 0.6799, Recall: 0.6650, F1: 0.6689
+LM Predictions:  [2, 3, 3, 0, 1, 4, 4, 5, 3, 3, 3, 5, 2, 5, 4, 5, 3, 3, 3, 2, 5, 2, 1, 2, 1, 3, 3, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.5916, Accuracy: 0.5000, Precision: 0.5500, Recall: 0.3976, F1: 0.4596
+Epoch 8/70
+Train Loss: 0.1383, Accuracy: 0.9598, Precision: 0.8930, Recall: 0.8565, F1: 0.8651
+Validation Loss: 0.6104, Accuracy: 0.8466, Precision: 0.7006, Recall: 0.6517, F1: 0.6634
+Testing Loss: 0.6316, Accuracy: 0.8564, Precision: 0.6672, Recall: 0.6773, F1: 0.6640
+LM Predictions:  [2, 3, 3, 5, 1, 4, 4, 5, 3, 3, 3, 0, 2, 5, 4, 5, 1, 4, 3, 5, 5, 2, 1, 5, 1, 3, 1, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.2772, Accuracy: 0.6071, Precision: 0.7095, Recall: 0.4881, F1: 0.5418
+Epoch 9/70
+Train Loss: 0.1100, Accuracy: 0.9734, Precision: 0.9216, Recall: 0.9058, F1: 0.9122
+Validation Loss: 0.5481, Accuracy: 0.8551, Precision: 0.7031, Recall: 0.6480, F1: 0.6684
+Testing Loss: 0.6010, Accuracy: 0.8537, Precision: 0.6632, Recall: 0.6359, F1: 0.6460
+LM Predictions:  [2, 3, 3, 5, 1, 4, 4, 5, 3, 3, 3, 0, 2, 5, 4, 5, 1, 4, 3, 5, 5, 2, 1, 2, 1, 3, 2, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 1.0883, Accuracy: 0.6429, Precision: 0.7222, Recall: 0.5119, F1: 0.5691
+Epoch 10/70
+Train Loss: 0.0775, Accuracy: 0.9801, Precision: 0.9441, Recall: 0.9331, F1: 0.9376
+Validation Loss: 0.6954, Accuracy: 0.8466, Precision: 0.7040, Recall: 0.6764, F1: 0.6811
+Testing Loss: 0.7007, Accuracy: 0.8431, Precision: 0.6217, Recall: 0.6450, F1: 0.6271
+LM Predictions:  [2, 3, 2, 5, 1, 4, 4, 5, 5, 5, 0, 0, 2, 5, 4, 5, 5, 4, 3, 5, 5, 2, 1, 2, 1, 3, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.8558, Accuracy: 0.6786, Precision: 0.6278, Recall: 0.5357, F1: 0.5625
+Epoch 11/70
+Train Loss: 0.0614, Accuracy: 0.9860, Precision: 0.9594, Recall: 0.9538, F1: 0.9562
+Validation Loss: 0.6404, Accuracy: 0.8409, Precision: 0.6984, Recall: 0.6622, F1: 0.6662
+Testing Loss: 0.7320, Accuracy: 0.8298, Precision: 0.6502, Recall: 0.6062, F1: 0.6129
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 3, 0, 5, 0, 2, 5, 4, 5, 5, 4, 3, 5, 5, 2, 1, 2, 1, 5, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.6301, Accuracy: 0.7500, Precision: 0.6722, Recall: 0.5929, F1: 0.6178
+Epoch 12/70
+Train Loss: 0.0550, Accuracy: 0.9860, Precision: 0.9672, Recall: 0.9716, F1: 0.9694
+Validation Loss: 0.6770, Accuracy: 0.8608, Precision: 0.7009, Recall: 0.6733, F1: 0.6827
+Testing Loss: 0.8066, Accuracy: 0.8298, Precision: 0.6453, Recall: 0.6410, F1: 0.6223
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 3, 1, 5, 0, 2, 5, 4, 5, 1, 4, 1, 5, 5, 2, 1, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.3544, Accuracy: 0.8929, Precision: 0.7778, Recall: 0.7429, F1: 0.7501
+Epoch 13/70
+Train Loss: 0.0378, Accuracy: 0.9927, Precision: 0.9809, Recall: 0.9809, F1: 0.9809
+Validation Loss: 0.8232, Accuracy: 0.8381, Precision: 0.6862, Recall: 0.6401, F1: 0.6504
+Testing Loss: 0.8713, Accuracy: 0.8378, Precision: 0.6612, Recall: 0.6513, F1: 0.6411
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 5, 1, 5, 0, 2, 5, 4, 5, 5, 4, 1, 5, 5, 2, 1, 2, 1, 0, 5, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.4670, Accuracy: 0.8571, Precision: 0.9000, Recall: 0.8514, F1: 0.8549
+Epoch 14/70
+Train Loss: 0.0336, Accuracy: 0.9927, Precision: 0.9834, Recall: 0.9797, F1: 0.9815
+Validation Loss: 0.7064, Accuracy: 0.8608, Precision: 0.7522, Recall: 0.8430, F1: 0.7649
+Testing Loss: 0.9273, Accuracy: 0.8271, Precision: 0.6403, Recall: 0.6624, F1: 0.6389
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 3, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.3453, Accuracy: 0.9286, Precision: 0.8333, Recall: 0.7762, F1: 0.8020
+Epoch 15/70
+Train Loss: 0.0366, Accuracy: 0.9895, Precision: 0.9761, Recall: 0.9707, F1: 0.9731
+Validation Loss: 0.6488, Accuracy: 0.8636, Precision: 0.7007, Recall: 0.6619, F1: 0.6789
+Testing Loss: 0.8131, Accuracy: 0.8431, Precision: 0.6923, Recall: 0.6439, F1: 0.6582
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 5, 1, 5, 0, 2, 5, 4, 3, 5, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.3750, Accuracy: 0.8571, Precision: 0.7917, Recall: 0.7190, F1: 0.7501
+Epoch 16/70
+Train Loss: 0.0349, Accuracy: 0.9906, Precision: 0.9731, Recall: 0.9823, F1: 0.9776
+Validation Loss: 0.7326, Accuracy: 0.8494, Precision: 0.6906, Recall: 0.6660, F1: 0.6679
+Testing Loss: 0.8135, Accuracy: 0.8511, Precision: 0.6756, Recall: 0.6649, F1: 0.6563
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.1916, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+Epoch 17/70
+Train Loss: 0.0255, Accuracy: 0.9913, Precision: 0.9768, Recall: 0.9855, F1: 0.9811
+Validation Loss: 0.7374, Accuracy: 0.8636, Precision: 0.7212, Recall: 0.6150, F1: 0.6442
+Testing Loss: 0.9859, Accuracy: 0.8298, Precision: 0.7032, Recall: 0.6245, F1: 0.6494
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.1362, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+Epoch 18/70
+Train Loss: 0.0413, Accuracy: 0.9888, Precision: 0.9738, Recall: 0.9672, F1: 0.9704
+Validation Loss: 0.6379, Accuracy: 0.8693, Precision: 0.7601, Recall: 0.7945, F1: 0.7751
+Testing Loss: 0.7674, Accuracy: 0.8484, Precision: 0.6897, Recall: 0.7068, F1: 0.6889
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 3, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 3]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.3861, Accuracy: 0.8929, Precision: 0.8333, Recall: 0.7524, F1: 0.7870
+Epoch 19/70
+Train Loss: 0.0161, Accuracy: 0.9965, Precision: 0.9880, Recall: 0.9907, F1: 0.9893
+Validation Loss: 0.7182, Accuracy: 0.8636, Precision: 0.7386, Recall: 0.6897, F1: 0.7088
+Testing Loss: 0.9085, Accuracy: 0.8245, Precision: 0.6783, Recall: 0.6312, F1: 0.6447
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.1211, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+Epoch 20/70
+Train Loss: 0.0097, Accuracy: 0.9969, Precision: 0.9915, Recall: 0.9939, F1: 0.9927
+Validation Loss: 0.8135, Accuracy: 0.8523, Precision: 0.6877, Recall: 0.6517, F1: 0.6637
+Testing Loss: 0.9304, Accuracy: 0.8484, Precision: 0.7335, Recall: 0.6662, F1: 0.6795
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 5, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.1131, Accuracy: 0.9643, Precision: 0.9750, Recall: 0.9600, F1: 0.9644
+Epoch 21/70
+Train Loss: 0.0160, Accuracy: 0.9965, Precision: 0.9947, Recall: 0.9939, F1: 0.9943
+Validation Loss: 0.7670, Accuracy: 0.8636, Precision: 0.7345, Recall: 0.7242, F1: 0.7241
+Testing Loss: 0.9311, Accuracy: 0.8431, Precision: 0.6695, Recall: 0.6604, F1: 0.6569
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 3, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0733, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+Epoch 22/70
+Train Loss: 0.0131, Accuracy: 0.9972, Precision: 0.9910, Recall: 0.9883, F1: 0.9896
+Validation Loss: 0.7272, Accuracy: 0.8722, Precision: 0.7360, Recall: 0.7521, F1: 0.7399
+Testing Loss: 0.9402, Accuracy: 0.8378, Precision: 0.6434, Recall: 0.6387, F1: 0.6369
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 5, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0883, Accuracy: 0.9643, Precision: 0.9750, Recall: 0.9600, F1: 0.9644
+Epoch 23/70
+Train Loss: 0.0071, Accuracy: 0.9990, Precision: 0.9981, Recall: 0.9936, F1: 0.9958
+Validation Loss: 0.7178, Accuracy: 0.8665, Precision: 0.7164, Recall: 0.7212, F1: 0.7148
+Testing Loss: 0.9515, Accuracy: 0.8431, Precision: 0.6737, Recall: 0.6755, F1: 0.6712
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0406, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 24/70
+Train Loss: 0.0051, Accuracy: 0.9986, Precision: 0.9935, Recall: 0.9992, F1: 0.9963
+Validation Loss: 0.7312, Accuracy: 0.8807, Precision: 0.7153, Recall: 0.6858, F1: 0.6962
+Testing Loss: 0.9812, Accuracy: 0.8484, Precision: 0.7215, Recall: 0.6690, F1: 0.6846
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0407, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 25/70
+Train Loss: 0.0073, Accuracy: 0.9979, Precision: 0.9973, Recall: 0.9959, F1: 0.9966
+Validation Loss: 0.8181, Accuracy: 0.8693, Precision: 0.7538, Recall: 0.7047, F1: 0.7202
+Testing Loss: 1.0422, Accuracy: 0.8484, Precision: 0.7079, Recall: 0.6611, F1: 0.6786
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0198, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 26/70
+Train Loss: 0.0159, Accuracy: 0.9955, Precision: 0.9950, Recall: 0.9922, F1: 0.9936
+Validation Loss: 0.7635, Accuracy: 0.8665, Precision: 0.7592, Recall: 0.7828, F1: 0.7520
+Testing Loss: 0.9781, Accuracy: 0.8404, Precision: 0.6689, Recall: 0.6501, F1: 0.6529
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0106, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 27/70
+Train Loss: 0.0041, Accuracy: 0.9993, Precision: 0.9997, Recall: 0.9997, F1: 0.9997
+Validation Loss: 0.8214, Accuracy: 0.8608, Precision: 0.7308, Recall: 0.7157, F1: 0.7209
+Testing Loss: 0.9964, Accuracy: 0.8511, Precision: 0.7019, Recall: 0.6775, F1: 0.6861
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0110, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 28/70
+Train Loss: 0.0098, Accuracy: 0.9972, Precision: 0.9942, Recall: 0.9971, F1: 0.9956
+Validation Loss: 0.8375, Accuracy: 0.8665, Precision: 0.7179, Recall: 0.6588, F1: 0.6805
+Testing Loss: 1.0205, Accuracy: 0.8378, Precision: 0.6435, Recall: 0.6202, F1: 0.6214
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0202, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 29/70
+Train Loss: 0.0167, Accuracy: 0.9958, Precision: 0.9935, Recall: 0.9960, F1: 0.9947
+Validation Loss: 0.7968, Accuracy: 0.8580, Precision: 0.7169, Recall: 0.7253, F1: 0.7169
+Testing Loss: 0.9317, Accuracy: 0.8511, Precision: 0.6817, Recall: 0.6768, F1: 0.6764
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0151, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 30/70
+Train Loss: 0.0116, Accuracy: 0.9965, Precision: 0.9918, Recall: 0.9917, F1: 0.9917
+Validation Loss: 0.8345, Accuracy: 0.8523, Precision: 0.6967, Recall: 0.6435, F1: 0.6642
+Testing Loss: 0.9727, Accuracy: 0.8590, Precision: 0.7368, Recall: 0.6820, F1: 0.7028
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0100, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 31/70
+Train Loss: 0.0054, Accuracy: 0.9990, Precision: 0.9993, Recall: 0.9993, F1: 0.9993
+Validation Loss: 0.7722, Accuracy: 0.8665, Precision: 0.6999, Recall: 0.6570, F1: 0.6749
+Testing Loss: 0.9632, Accuracy: 0.8537, Precision: 0.6858, Recall: 0.6719, F1: 0.6726
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0068, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 32/70
+Train Loss: 0.0034, Accuracy: 0.9997, Precision: 0.9998, Recall: 0.9998, F1: 0.9998
+Validation Loss: 0.8182, Accuracy: 0.8580, Precision: 0.6830, Recall: 0.6449, F1: 0.6612
+Testing Loss: 0.9705, Accuracy: 0.8617, Precision: 0.7192, Recall: 0.6854, F1: 0.6946
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0155, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 33/70
+Train Loss: 0.0106, Accuracy: 0.9976, Precision: 0.9985, Recall: 0.9983, F1: 0.9984
+Validation Loss: 0.7997, Accuracy: 0.8580, Precision: 0.7161, Recall: 0.7332, F1: 0.7206
+Testing Loss: 1.0012, Accuracy: 0.8457, Precision: 0.6687, Recall: 0.6694, F1: 0.6627
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0053, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 34/70
+Train Loss: 0.0106, Accuracy: 0.9976, Precision: 0.9984, Recall: 0.9971, F1: 0.9977
+Validation Loss: 0.8402, Accuracy: 0.8494, Precision: 0.6662, Recall: 0.6633, F1: 0.6576
+Testing Loss: 1.0313, Accuracy: 0.8484, Precision: 0.6568, Recall: 0.6465, F1: 0.6443
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0112, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 35/70
+Train Loss: 0.0050, Accuracy: 0.9990, Precision: 0.9992, Recall: 0.9994, F1: 0.9993
+Validation Loss: 0.7991, Accuracy: 0.8608, Precision: 0.7722, Recall: 0.7756, F1: 0.7678
+Testing Loss: 0.9886, Accuracy: 0.8537, Precision: 0.6740, Recall: 0.6702, F1: 0.6657
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0047, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 36/70
+Train Loss: 0.0198, Accuracy: 0.9951, Precision: 0.9888, Recall: 0.9943, F1: 0.9915
+Validation Loss: 0.7562, Accuracy: 0.8636, Precision: 0.7729, Recall: 0.7750, F1: 0.7603
+Testing Loss: 0.9783, Accuracy: 0.8431, Precision: 0.6767, Recall: 0.6587, F1: 0.6621
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0062, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 37/70
+Train Loss: 0.0067, Accuracy: 0.9983, Precision: 0.9978, Recall: 0.9964, F1: 0.9971
+Validation Loss: 0.8227, Accuracy: 0.8494, Precision: 0.7158, Recall: 0.7072, F1: 0.7041
+Testing Loss: 0.9742, Accuracy: 0.8511, Precision: 0.6480, Recall: 0.6428, F1: 0.6386
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0050, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 38/70
+Train Loss: 0.0026, Accuracy: 0.9997, Precision: 0.9997, Recall: 0.9998, F1: 0.9997
+Validation Loss: 0.8330, Accuracy: 0.8580, Precision: 0.7301, Recall: 0.6947, F1: 0.7079
+Testing Loss: 1.0380, Accuracy: 0.8378, Precision: 0.6542, Recall: 0.6165, F1: 0.6269
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0041, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 39/70
+Train Loss: 0.0020, Accuracy: 0.9997, Precision: 0.9969, Recall: 0.9986, F1: 0.9977
+Validation Loss: 0.9271, Accuracy: 0.8523, Precision: 0.6709, Recall: 0.6541, F1: 0.6527
+Testing Loss: 1.0510, Accuracy: 0.8431, Precision: 0.6230, Recall: 0.6298, F1: 0.6100
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0320, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 40/70
+Train Loss: 0.0171, Accuracy: 0.9958, Precision: 0.9891, Recall: 0.9861, F1: 0.9876
+Validation Loss: 0.8729, Accuracy: 0.8494, Precision: 0.6940, Recall: 0.6963, F1: 0.6887
+Testing Loss: 1.0311, Accuracy: 0.8511, Precision: 0.6813, Recall: 0.6805, F1: 0.6777
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0129, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 41/70
+Train Loss: 0.0228, Accuracy: 0.9944, Precision: 0.9826, Recall: 0.9816, F1: 0.9821
+Validation Loss: 0.9240, Accuracy: 0.8551, Precision: 0.6890, Recall: 0.6338, F1: 0.6550
+Testing Loss: 1.0078, Accuracy: 0.8404, Precision: 0.7049, Recall: 0.6570, F1: 0.6683
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0076, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 42/70
+Train Loss: 0.0109, Accuracy: 0.9969, Precision: 0.9956, Recall: 0.9938, F1: 0.9947
+Validation Loss: 0.8050, Accuracy: 0.8580, Precision: 0.7141, Recall: 0.6767, F1: 0.6900
+Testing Loss: 0.8443, Accuracy: 0.8484, Precision: 0.7167, Recall: 0.6583, F1: 0.6789
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0104, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 43/70
+Train Loss: 0.0063, Accuracy: 0.9986, Precision: 0.9992, Recall: 0.9981, F1: 0.9986
+Validation Loss: 0.7590, Accuracy: 0.8722, Precision: 0.7318, Recall: 0.7314, F1: 0.7262
+Testing Loss: 0.8640, Accuracy: 0.8511, Precision: 0.6984, Recall: 0.6734, F1: 0.6811
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0039, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 44/70
+Train Loss: 0.0046, Accuracy: 0.9993, Precision: 0.9984, Recall: 0.9997, F1: 0.9991
+Validation Loss: 0.7975, Accuracy: 0.8722, Precision: 0.7182, Recall: 0.7203, F1: 0.7138
+Testing Loss: 0.8940, Accuracy: 0.8590, Precision: 0.7085, Recall: 0.6890, F1: 0.6943
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0038, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 45/70
+Train Loss: 0.0006, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.8160, Accuracy: 0.8722, Precision: 0.7261, Recall: 0.7266, F1: 0.7210
+Testing Loss: 0.9156, Accuracy: 0.8590, Precision: 0.7094, Recall: 0.6891, F1: 0.6953
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0024, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 46/70
+Train Loss: 0.0016, Accuracy: 0.9993, Precision: 0.9954, Recall: 0.9954, F1: 0.9954
+Validation Loss: 0.8277, Accuracy: 0.8636, Precision: 0.7128, Recall: 0.7058, F1: 0.7008
+Testing Loss: 0.9565, Accuracy: 0.8617, Precision: 0.7092, Recall: 0.6903, F1: 0.6955
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0018, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 47/70
+Train Loss: 0.0006, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.8514, Accuracy: 0.8722, Precision: 0.7318, Recall: 0.7314, F1: 0.7271
+Testing Loss: 0.9844, Accuracy: 0.8723, Precision: 0.7091, Recall: 0.7023, F1: 0.6996
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0015, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 48/70
+Train Loss: 0.0004, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.8538, Accuracy: 0.8722, Precision: 0.7250, Recall: 0.7285, F1: 0.7212
+Testing Loss: 0.9973, Accuracy: 0.8670, Precision: 0.7100, Recall: 0.6977, F1: 0.6996
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0012, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 49/70
+Train Loss: 0.0003, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.8662, Accuracy: 0.8665, Precision: 0.7165, Recall: 0.7173, F1: 0.7091
+Testing Loss: 1.0163, Accuracy: 0.8670, Precision: 0.7033, Recall: 0.6932, F1: 0.6926
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0010, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 50/70
+Train Loss: 0.0002, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.8769, Accuracy: 0.8693, Precision: 0.7237, Recall: 0.7271, F1: 0.7199
+Testing Loss: 1.0306, Accuracy: 0.8670, Precision: 0.7048, Recall: 0.6961, F1: 0.6956
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0009, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 51/70
+Train Loss: 0.0015, Accuracy: 0.9997, Precision: 0.9986, Recall: 0.9998, F1: 0.9992
+Validation Loss: 0.8669, Accuracy: 0.8693, Precision: 0.7119, Recall: 0.7233, F1: 0.7104
+Testing Loss: 1.0315, Accuracy: 0.8644, Precision: 0.6817, Recall: 0.6716, F1: 0.6723
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0009, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 52/70
+Train Loss: 0.0045, Accuracy: 0.9986, Precision: 0.9980, Recall: 0.9978, F1: 0.9979
+Validation Loss: 1.1855, Accuracy: 0.8352, Precision: 0.6733, Recall: 0.6822, F1: 0.6610
+Testing Loss: 1.3163, Accuracy: 0.8298, Precision: 0.6570, Recall: 0.6231, F1: 0.6310
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0083, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 53/70
+Train Loss: 0.0360, Accuracy: 0.9920, Precision: 0.9800, Recall: 0.9744, F1: 0.9771
+Validation Loss: 0.8287, Accuracy: 0.8608, Precision: 0.6950, Recall: 0.6540, F1: 0.6690
+Testing Loss: 0.9494, Accuracy: 0.8457, Precision: 0.6742, Recall: 0.6371, F1: 0.6403
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0176, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 54/70
+Train Loss: 0.0052, Accuracy: 0.9990, Precision: 0.9965, Recall: 0.9934, F1: 0.9949
+Validation Loss: 0.8734, Accuracy: 0.8466, Precision: 0.6788, Recall: 0.6467, F1: 0.6605
+Testing Loss: 0.9961, Accuracy: 0.8457, Precision: 0.6756, Recall: 0.6722, F1: 0.6673
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0136, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 55/70
+Train Loss: 0.0077, Accuracy: 0.9983, Precision: 0.9988, Recall: 0.9987, F1: 0.9988
+Validation Loss: 0.8827, Accuracy: 0.8665, Precision: 0.7309, Recall: 0.7292, F1: 0.7247
+Testing Loss: 1.0251, Accuracy: 0.8511, Precision: 0.6927, Recall: 0.6813, F1: 0.6810
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0040, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 56/70
+Train Loss: 0.0191, Accuracy: 0.9955, Precision: 0.9950, Recall: 0.9952, F1: 0.9951
+Validation Loss: 0.7807, Accuracy: 0.8636, Precision: 0.6913, Recall: 0.6625, F1: 0.6747
+Testing Loss: 0.9474, Accuracy: 0.8537, Precision: 0.6956, Recall: 0.6775, F1: 0.6790
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0049, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 57/70
+Train Loss: 0.0032, Accuracy: 0.9993, Precision: 0.9985, Recall: 0.9984, F1: 0.9984
+Validation Loss: 0.8476, Accuracy: 0.8665, Precision: 0.7196, Recall: 0.7120, F1: 0.7106
+Testing Loss: 0.9631, Accuracy: 0.8537, Precision: 0.6876, Recall: 0.6788, F1: 0.6782
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0033, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 58/70
+Train Loss: 0.0022, Accuracy: 0.9990, Precision: 0.9970, Recall: 0.9970, F1: 0.9970
+Validation Loss: 0.8240, Accuracy: 0.8608, Precision: 0.6866, Recall: 0.6529, F1: 0.6664
+Testing Loss: 1.0266, Accuracy: 0.8511, Precision: 0.6874, Recall: 0.6734, F1: 0.6722
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0022, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 59/70
+Train Loss: 0.0163, Accuracy: 0.9969, Precision: 0.9932, Recall: 0.9929, F1: 0.9930
+Validation Loss: 0.8342, Accuracy: 0.8494, Precision: 0.6541, Recall: 0.6297, F1: 0.6359
+Testing Loss: 0.9114, Accuracy: 0.8644, Precision: 0.7155, Recall: 0.6920, F1: 0.7004
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0103, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 60/70
+Train Loss: 0.0099, Accuracy: 0.9972, Precision: 0.9929, Recall: 0.9959, F1: 0.9944
+Validation Loss: 0.8084, Accuracy: 0.8523, Precision: 0.6602, Recall: 0.6554, F1: 0.6537
+Testing Loss: 0.9015, Accuracy: 0.8564, Precision: 0.6931, Recall: 0.6641, F1: 0.6660
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0115, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 61/70
+Train Loss: 0.0036, Accuracy: 0.9986, Precision: 0.9960, Recall: 0.9932, F1: 0.9946
+Validation Loss: 0.7945, Accuracy: 0.8693, Precision: 0.6763, Recall: 0.6512, F1: 0.6614
+Testing Loss: 0.9477, Accuracy: 0.8511, Precision: 0.7167, Recall: 0.6706, F1: 0.6805
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0029, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 62/70
+Train Loss: 0.0055, Accuracy: 0.9986, Precision: 0.9990, Recall: 0.9990, F1: 0.9990
+Validation Loss: 0.8709, Accuracy: 0.8551, Precision: 0.6714, Recall: 0.6482, F1: 0.6560
+Testing Loss: 0.9058, Accuracy: 0.8670, Precision: 0.7350, Recall: 0.6994, F1: 0.7086
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0037, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 63/70
+Train Loss: 0.0008, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.9052, Accuracy: 0.8551, Precision: 0.6715, Recall: 0.6467, F1: 0.6555
+Testing Loss: 0.9356, Accuracy: 0.8564, Precision: 0.7018, Recall: 0.6838, F1: 0.6880
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0017, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 64/70
+Train Loss: 0.0004, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.9328, Accuracy: 0.8551, Precision: 0.6715, Recall: 0.6467, F1: 0.6555
+Testing Loss: 0.9617, Accuracy: 0.8564, Precision: 0.6970, Recall: 0.6838, F1: 0.6840
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0013, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 65/70
+Train Loss: 0.0003, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.9594, Accuracy: 0.8580, Precision: 0.6734, Recall: 0.6495, F1: 0.6577
+Testing Loss: 0.9835, Accuracy: 0.8564, Precision: 0.6970, Recall: 0.6838, F1: 0.6840
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0011, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 66/70
+Train Loss: 0.0003, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 0.9731, Accuracy: 0.8551, Precision: 0.6715, Recall: 0.6467, F1: 0.6555
+Testing Loss: 1.0056, Accuracy: 0.8511, Precision: 0.6889, Recall: 0.6780, F1: 0.6767
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0009, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 67/70
+Train Loss: 0.0002, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 1.0067, Accuracy: 0.8580, Precision: 0.6736, Recall: 0.6481, F1: 0.6571
+Testing Loss: 1.0257, Accuracy: 0.8537, Precision: 0.6910, Recall: 0.6809, F1: 0.6792
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0008, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 68/70
+Train Loss: 0.0002, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Validation Loss: 1.0096, Accuracy: 0.8551, Precision: 0.6723, Recall: 0.6467, F1: 0.6559
+Testing Loss: 1.0355, Accuracy: 0.8537, Precision: 0.6910, Recall: 0.6809, F1: 0.6792
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0007, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 69/70
+Train Loss: 0.0060, Accuracy: 0.9986, Precision: 0.9930, Recall: 0.9930, F1: 0.9930
+Validation Loss: 1.1283, Accuracy: 0.8494, Precision: 0.6626, Recall: 0.6354, F1: 0.6422
+Testing Loss: 1.1345, Accuracy: 0.8511, Precision: 0.6802, Recall: 0.6507, F1: 0.6564
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.0024, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Epoch 70/70
+Train Loss: 0.0052, Accuracy: 0.9993, Precision: 0.9995, Recall: 0.9965, F1: 0.9980
+Validation Loss: 0.9294, Accuracy: 0.8580, Precision: 0.6945, Recall: 0.7108, F1: 0.6930
+Testing Loss: 1.0223, Accuracy: 0.8404, Precision: 0.6538, Recall: 0.6739, F1: 0.6549
+LM Predictions:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 3, 0, 2]
+LM Labels:  [2, 0, 2, 5, 1, 4, 4, 5, 2, 1, 5, 0, 2, 5, 4, 5, 4, 4, 1, 5, 5, 2, 0, 2, 1, 0, 0, 2]
+LM Loss: 0.2379, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+Label Memorization Analysis: 
+LM Loss: 0.2379, Accuracy: 0.9643, Precision: 0.8333, Recall: 0.8000, F1: 0.8148
+---------------------------------------------------------------------------
+
+
+
