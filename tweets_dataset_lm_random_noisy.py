@@ -7,7 +7,7 @@ import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModel, GPTNeoModel, GPT2ForSequenceClassification, GPTNeoForSequenceClassification, GPT2Model, GPTNeoConfig, GPT2Config, GPTNeoXForSequenceClassification, GPTNeoXConfig
+from transformers import AutoTokenizer, AutoModel, GPTNeoModel, GPT2ForSequenceClassification, GPTNeoForSequenceClassification, GPT2Model, GPTNeoConfig, GPT2Config, GPTNeoXForSequenceClassification, GPTNeoXConfig, BigBirdForSequenceClassification, BigBirdTokenizer, RobertaPreLayerNormForSequenceClassification
 from transformers import BertTokenizer, BertForSequenceClassification, AdamW
 from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, precision_recall_fscore_support
@@ -120,6 +120,11 @@ class CustomClassificationModel(nn.Module):
             # fix model padding token id
             self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
 
+        elif(model_name == "andreasmadsen/efficient_mlm_m0.40"):
+            self.backbone = RobertaPreLayerNormForSequenceClassification.from_pretrained(self.model_name, num_labels = num_labels)
+
+        elif(model_name == "google/bigbird-roberta-base"):
+            self.backbone = BigBirdForSequenceClassification.from_pretrained(self.model_name, num_labels = num_labels)
         else:
             self.backbone = AutoModel.from_pretrained(self.model_name)
         
@@ -150,7 +155,8 @@ class CustomClassificationModel(nn.Module):
                         module.weight = None
                         module.bias = None
         
-        elif(model_name == "bert-base-uncased" or model_name == "prajjwal1/bert-medium" or model_name == "roberta-base" or model_name == "allenai/longformer-base-4096"):
+        elif(model_name == "bert-base-uncased" or model_name == "prajjwal1/bert-medium" or model_name == "roberta-base" or model_name == "andreasmadsen/efficient_mlm_m0.40" or
+            model_name == "allenai/longformer-base-4096" or model_name == "google/bigbird-roberta-base" or model_name == "bert-large-uncased" or model_name == "roberta-large"):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
 
@@ -254,7 +260,7 @@ class CustomClassificationModel(nn.Module):
                 elif(remove == 'layer_norm'):
                     if('layer_norm' in name):
                         module.weight = None
-                        # module.bias = None
+                        module.bias = None
                     
                 
                 elif(remove == 'attention_layer_norm'):
@@ -265,17 +271,22 @@ class CustomClassificationModel(nn.Module):
                     if('ff.layer_norm' in name):
                         module.bias = None
 
-        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M"):
+        if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and 
+            model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M" and 
+            self.model_name != "google/bigbird-roberta-base" and model_name != "andreasmadsen/efficient_mlm_m0.40"):
             self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
 
     def forward(self, input_ids, attention_mask=None):
         outputs = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
 
-        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M"):
+        if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or 
+            self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M" or 
+            self.model_name == "google/bigbird-roberta-base" or self.model_name == "andreasmadsen/efficient_mlm_m0.40"):
             return outputs.logits
 
 
-        elif(self.model_name == "bert-base-uncased" or self.model_name == "prajjwal1/bert-medium" or self.model_name == "roberta-base" or self.model_name == "allenai/longformer-base-4096"):
+        elif(self.model_name == "bert-base-uncased" or self.model_name == "bert-large-uncased" or 
+        self.model_name == "prajjwal1/bert-medium" or self.model_name == "roberta-base" or self.model_name == "allenai/longformer-base-4096" or self.model_name == "roberta-large"):
             pooler_output = outputs.pooler_output
             return self.classifier(pooler_output)
         
@@ -319,6 +330,8 @@ class CustomClassificationModel_layer_analysis(nn.Module):
             # fix model padding token id
             self.backbone.config.pad_token_id = self.backbone.config.eos_token_id
 
+        elif(model_name == "andreasmadsen/efficient_mlm_m0.40"):
+            self.backbone = RobertaPreLayerNormForSequenceClassification.from_pretrained(self.model_name, num_labels = num_labels)
 
         elif(model_name == "google/electra-base-discriminator"):
             self.backbone = ElectraForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
@@ -328,6 +341,8 @@ class CustomClassificationModel_layer_analysis(nn.Module):
         
         elif(model_name == "microsoft/deberta-base"):
             self.backbone = DebertaForSequenceClassification.from_pretrained(model_name, num_labels = num_labels)
+        elif(model_name == "google/bigbird-roberta-base"):
+            self.backbone = BigBirdForSequenceClassification.from_pretrained(self.model_name, num_labels = num_labels)
 
         else:
             self.backbone = AutoModel.from_pretrained(model_name)
@@ -387,6 +402,16 @@ class CustomClassificationModel_layer_analysis(nn.Module):
 
                         # Bind the function properly
                         module.forward = types.MethodType(forward_no_affine, module)
+    
+        elif model_name == "andreasmadsen/efficient_mlm_m0.40":
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
+
+                if('intermediate.LayerNorm' in name or 'attention.LayerNorm' in name):
+                    layer_index = int(name.split(".layer.")[1].split(".")[0])
+                    if(layer_index in remove_layers):
+                        module.weight = None
+                        module.bias = None
 
         else:
             # # Remove bias from transformer layers (attention and feedforward layers)
@@ -401,7 +426,7 @@ class CustomClassificationModel_layer_analysis(nn.Module):
         if(self.model_name != "gpt2-medium" and self.model_name != "openai-community/gpt2" and 
             model_name != "EleutherAI/gpt-neo-125M" and model_name != "EleutherAI/pythia-160M" and 
             model_name != "google/electra-base-discriminator" and model_name != "YituTech/conv-bert-base"
-            and model_name != "microsoft/deberta-base"):
+            and model_name != "microsoft/deberta-base" and model_name != "andreasmadsen/efficient_mlm_m0.40"):
 
             self.classifier = nn.Linear(self.backbone.config.hidden_size, num_labels, bias = False)
 
@@ -410,8 +435,8 @@ class CustomClassificationModel_layer_analysis(nn.Module):
 
         if(self.model_name == "gpt2-medium" or self.model_name == "openai-community/gpt2" or 
             self.model_name == "EleutherAI/gpt-neo-125M" or self.model_name == "EleutherAI/pythia-160M" 
-            or self.model_name == "google/electra-base-discriminator" or 
-            self.model_name == "YituTech/conv-bert-base" or self.model_name == "microsoft/deberta-base"):
+            or self.model_name == "google/electra-base-discriminator" or  self.model_name == "YituTech/conv-bert-base" 
+            or self.model_name == "microsoft/deberta-base" or self.model_name == "andreasmadsen/efficient_mlm_m0.40"):
 
             return outputs.logits
 
@@ -857,7 +882,10 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
 
 
     # Tokenization and Data Preparation
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    if(model_name == "google/bigbird-roberta-base"):
+        tokenizer = BigBirdTokenizer.from_pretrained("google/bigbird-roberta-base")
+    else:
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     if(model_name == "openai-community/gpt2" or model_name == "EleutherAI/gpt-neo-125M" or model_name == "gpt2-medium" or model_name == "EleutherAI/pythia-160M"):
         # default to left padding
@@ -972,7 +1000,7 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
         test_acc_list_layers, test_loss_list_layers = {}, {}
         lm_acc_list_layers, lm_loss_list_layers = {}, {}
         layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
-        if(model_name == "gpt2-medium"):
+        if(model_name == "gpt2-medium" or model_name == "andreasmadsen/efficient_mlm_m0.40"):
             layers_mapping = {'early': [0,1,2,3,4,5,6,7], 'middle': [8,9,10,11,12,13,14,15], 'later': [16,17,18,19,20,21,22,23]}
         for layers_type, layer_idx_list in layers_mapping.items():
             print(f"For {layers_type} layers: ", layer_idx_list)
@@ -1067,7 +1095,7 @@ def finetune_gpt(args, train_texts, train_labels, val_texts, val_labels, test_te
         lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device)
         print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-        # torch.save(model.state_dict(),f'saved_models_bias_impact/tweets_dataset_model_gpt2_medium.pth')
+        torch.save(model.state_dict(),f'saved_models_bias_impact/tweets_dataset_model_roberta_preln.pth')
         
 
 def swap_classes(df):
@@ -1110,7 +1138,7 @@ if __name__ == "__main__":
 
 
 
-    seeds_list = [89]
+    seeds_list = [64]
     for seed in seeds_list:
         print("---------------------------------------------------------------------------")
         print("Results for seed: " ,seed)

@@ -827,6 +827,9 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
             val_loss_list.append(val_loss)
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
+
+            if(epoch >= 40 and lm_acc == 1):
+                break
             
         
         print("Label Memorization Analysis: ")

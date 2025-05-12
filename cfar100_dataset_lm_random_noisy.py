@@ -1,5 +1,6 @@
 import os
 import glob
+import re
 import pandas as pd
 import torch
 import argparse
@@ -9,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datasets import load_dataset
 from torchvision import datasets, transforms
-from transformers import ViTForImageClassification, AdamW, DeiTForImageClassification, ViTMSNForImageClassification
+from transformers import ViTForImageClassification, AdamW, DeiTForImageClassification, ViTMSNForImageClassification, SwinForImageClassification
 from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
@@ -67,66 +68,32 @@ class CustomClassificationModel(nn.Module):
                                 ignore_mismatched_sizes=True
                             )
         
-        if(model_name == "google/vit-base-patch16-224-in21k" or model_name == "google/vit-large-patch16-224" or model_name == "facebook/vit-msn-small"):
+
+        elif(self.model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            self.backbone = SwinForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
+
+
+        if(model_name == "google/vit-base-patch16-224-in21k" or model_name == "google/vit-large-patch16-224" or model_name == "facebook/vit-msn-small" or model_name == "microsoft/swin-tiny-patch4-window7-224"):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
-
-                if(remove == 'attention'):
-                    if('attention' in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('intermediate' in name):
-                        module.bias = None
                     
-                elif(remove == 'output'):
-                    if('attention' not in name and 'output' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
+                if(remove == 'layer_norm'):
                     if('layernorm' in name):
                         module.weight = None
                         module.bias = None
                 
-                elif(remove == 'attention_layer_norm'):
-                    if('layernorm_before' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('layernorm_after' in name):
-                        module.weight = None
-                        module.bias = None
-        
 
-        if(model_name == "facebook/deit-base-distilled-patch16-224"):
+
+        elif(model_name == "facebook/deit-base-distilled-patch16-224"):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
-
-                if(remove == 'attention'):
-                    if('attention' in name):
-                        module.bias = None
-                
-                elif(remove == 'ffn'):
-                    if('intermediate' in name):
-                        module.bias = None
                     
-                elif(remove == 'output'):
-                    if('attention' not in name and 'output' in name):
-                        module.bias = None
-                    
-                elif(remove == 'layer_norm'):
+                if(remove == 'layer_norm'):
                     if('layernorm' in name):
-                        module.weight = None
-                        module.bias = None
-                
-                elif(remove == 'attention_layer_norm'):
-                    if('layernorm_before' in name):
-                        module.weight = None
-                        module.bias = None
-                    
-                elif(remove == 'output_layer_norm'):
-                    if('layernorm_after' in name):
                         module.weight = None
                         module.bias = None
 
@@ -160,6 +127,13 @@ class CustomClassificationModel_layer_analysis(nn.Module):
                                 num_labels = num_labels,
                                 ignore_mismatched_sizes=True
                             )
+        
+        elif(self.model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            self.backbone = SwinForImageClassification.from_pretrained(
+                                model_name,
+                                num_labels = num_labels,
+                                ignore_mismatched_sizes=True
+                            )
 
         if(model_name == "google/vit-base-patch16-224-in21k" or model_name == "facebook/vit-msn-small"):
             # # Remove bias from transformer layers (attention and feedforward layers)
@@ -182,6 +156,20 @@ class CustomClassificationModel_layer_analysis(nn.Module):
                     if(layer_index in remove_layers):
                         module.weight = None
                         module.bias = None
+
+        if(model_name == "microsoft/swin-tiny-patch4-window7-224"):
+            # # Remove bias from transformer layers (attention and feedforward layers)
+            for name, module in self.backbone.named_modules():
+
+                if('layernorm_before' in name or "layernorm_after" in name):
+                    match = re.search(r"layers\.(\d+)\.blocks\.(\d+)", layer_name)
+                    if match:
+                        layer_index = int(match.group(1))
+                        block_index = int(match.group(2))
+                    if((layer_index, block_index) in remove_layers):
+                        module.weight = None
+                        module.bias = None
+
 
 
     def forward(self, input_imgs):
@@ -756,7 +744,7 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
         val_acc_list_layers, val_loss_list_layers = {}, {}
         test_acc_list_layers, test_loss_list_layers = {}, {}
         lm_acc_list_layers, lm_loss_list_layers = {}, {}
-        layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
+        layers_mapping = {'early': [(0,1), (0,1), (1,0), (1,1)], 'middle': [(2,0), (2,1), (2,2), (2,3)], 'later': [(2,4), (2,5), (3,0), (3,1)]}
         for layers_type, layer_idx_list in layers_mapping.items():
             print(f"For {layers_type} layers: ", layer_idx_list)
             # Model setup
@@ -842,6 +830,9 @@ def finetune_vit(args, train_imgs, train_labels, val_imgs, val_labels, test_imgs
             val_loss_list.append(val_loss)
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
+
+            if(epoch >= 40 and lm_acc == 1):
+                break
             
         
         print("Label Memorization Analysis: ")
@@ -854,7 +845,7 @@ if __name__ == "__main__":
     # Parse arguments
     parser = argparse.ArgumentParser(description="Fine-tune a BERT model with custom parameters.")
     
-    parser.add_argument("--model_name", type=str, default="google/vit-base-patch16-224-in21k", help="Model name to fine-tune.")
+    parser.add_argument("--model_name", type=str, default="facebook/vit-msn-small", help="Model name to fine-tune.")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size for training.")
     parser.add_argument("--epochs", type=int, default=70, help="Number of epochs for training.")
     parser.add_argument("--device", type=str, default="cuda:0", help="Device to use for training.")
@@ -879,41 +870,32 @@ if __name__ == "__main__":
     train_dataset = datasets.CIFAR100(root='./data', train=True, transform = transform, download=True)
     test_dataset = datasets.CIFAR100(root='./data', train=False, transform = transform, download=True)
 
-    # Separate samples by class
-    class_samples = {i: [] for i in range(100)}
-    for idx in range(len(train_dataset)):
-        img, label = train_dataset[idx]
-        class_samples[label].append((img, label))
-
-    # Select 2000 samples per class
-    # num_samples_per_class = [2000, 1950, 1900, 1850, 1850, 1600, 1500, 1300, 500, 400]
-    num_samples_per_class = [500]*100
-    # num_samples_class_7 =
-    selected_samples = []
-    for label, samples in class_samples.items():
-        indices = np.random.choice(len(samples), num_samples_per_class[label], replace=False)
-
-        # if(label == 7):
-        #     indices = np.random.choice(len(samples), num_samples_class_7, replace=False)
-        # else:
-        #     indices = np.random.choice(len(samples), num_samples_per_class, replace=False)
-
-        selected_samples.extend([samples[i] for i in indices])
-
-    # Shuffle the selected samples
-    np.random.shuffle(selected_samples)
-
-    # Extract images and labels as numpy arrays
-    train_imgs_data = np.array([np.array(img.numpy()) for img, _ in selected_samples])
-    train_labels_data = np.array([label for _, label in selected_samples])
-
-    # Extract images and labels from test_dataset
-    test_imgs = np.array([test_dataset[i][0].numpy() for i in range(len(test_dataset))])
-    test_labels = np.array([test_dataset[i][1] for i in range(len(test_dataset))])
-
-
-    seeds_list = [64]
+    seeds_list = [28]
     for seed in seeds_list:
+        np.random.seed(seed)
+        # Separate samples by class
+        class_samples = {i: [] for i in range(100)}
+        for idx in range(len(train_dataset)):
+            img, label = train_dataset[idx]
+            class_samples[label].append((img, label))
+            
+        num_samples_per_class = [500]*100
+        selected_samples = []
+        for label, samples in class_samples.items():
+            indices = np.random.choice(len(samples), num_samples_per_class[label], replace=False)
+
+            selected_samples.extend([samples[i] for i in indices])
+
+        # Shuffle the selected samples
+        np.random.shuffle(selected_samples)
+
+        # Extract images and labels as numpy arrays
+        train_imgs_data = np.array([np.array(img.numpy()) for img, _ in selected_samples])
+        train_labels_data = np.array([label for _, label in selected_samples])
+
+        # Extract images and labels from test_dataset
+        test_imgs = np.array([test_dataset[i][0].numpy() for i in range(len(test_dataset))])
+        test_labels = np.array([test_dataset[i][1] for i in range(len(test_dataset))])
         # Perform stratified split into training and validation sets
         train_indices, val_indices = train_test_split(
             np.arange(len(train_labels_data)),

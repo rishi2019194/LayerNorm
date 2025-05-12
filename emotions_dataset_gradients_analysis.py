@@ -1061,6 +1061,20 @@ def calculate_ln_derivatives(model, model_name, loader, device):
                     lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_derivatives, idx)
                 )
                 hooks.append(hook)
+            
+        elif model_name == "distilbert-base-uncased":
+            if 'sa_layer_norm' in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, attn_layernorm_derivatives, idx)
+                )
+                hooks.append(hook)
+            elif 'output_layer_norm' in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_full_backward_hook(
+                    lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_derivatives, idx)
+                )
+                hooks.append(hook)
     
     for batch in loader:
         input_ids = batch['input_ids'].to(device)
@@ -1097,15 +1111,14 @@ def calculate_ln_derivatives_output(model, model_name, loader, device):
     criterion = nn.CrossEntropyLoss()
     attn_layernorm_derivatives = dict()
     output_layernorm_derivatives = dict()
+    classifier_output_derivative = 0  # To accumulate derivatives of classifier output
     sample_count = 0
-    
+
     def hook_fn(module, grad_input, grad_output, storage, layer_index):
         if grad_output[0] is not None:  # Ensure valid gradient
             grad_avg = grad_output[0].abs().mean(dim=1)  # Average across tokens
-            
             if layer_index not in storage:
                 storage[layer_index] = torch.zeros_like(grad_avg)
-            
             storage[layer_index] += grad_avg  # Accumulate across batches
 
     hooks = []
@@ -1136,33 +1149,53 @@ def calculate_ln_derivatives_output(model, model_name, loader, device):
                     lambda mod, gin, gout, idx=layer_index: hook_fn(mod, gin, gout, output_layernorm_derivatives, idx)
                 )
                 hooks.append(hook)
-    
+
     for batch in loader:
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['label'].to(device)
         sample_count += input_ids.shape[0]
 
+        # Forward pass and retain gradient for classifier output (logits)
         logits = model(input_ids, attention_mask=attention_mask)
+        # print(logits)
+        # print(labels)
+        logits.retain_grad()  # This enables us to capture the gradient on the tensor
+        
         loss = criterion(logits, labels)
         loss.backward()
-    
+
+        # Accumulate gradient w.r.t. classifier output
+        if logits.grad is not None:
+            # Average absolute gradient over classes for each sample
+            # grad_avg = logits.grad.abs().mean().item()
+            # print(logits.grad)
+            grad_avg = torch.norm(logits.grad, p='fro').item()
+            # print(grad_avg)
+            classifier_output_derivative += grad_avg
+
+    # Remove all hooks
     for hook in hooks:
         hook.remove()
-    
-    # Normalize by total samples and compute Frobenius norm
+
+    # Normalize by total samples and compute Frobenius norm for LN derivatives
     for layer_index in attn_layernorm_derivatives:
         attn_layernorm_derivatives[layer_index] /= sample_count
         attn_layernorm_derivatives[layer_index] = torch.norm(attn_layernorm_derivatives[layer_index], p='fro').item()
-    
+
     for layer_index in output_layernorm_derivatives:
         output_layernorm_derivatives[layer_index] /= sample_count
         output_layernorm_derivatives[layer_index] = torch.norm(output_layernorm_derivatives[layer_index], p='fro').item()
-    
+
+    if classifier_output_derivative is not None:
+        classifier_output_derivative /= sample_count
+        # classifier_output_derivative = torch.norm(classifier_output_derivative, p='fro').item()
+
     print("Attention LayerNorm derivatives: ", attn_layernorm_derivatives)
     print("Output LayerNorm derivatives: ", output_layernorm_derivatives)
+    print("Classifier output derivative: ", classifier_output_derivative)
     print()
-    
+
     return attn_layernorm_derivatives, output_layernorm_derivatives
 
 
@@ -1247,6 +1280,90 @@ def capture_ln_inputs_l2_norm_sigma(model, model_name, loader, device):
 
     return attn_ln_inputs, attn_ln_std, output_ln_inputs, output_ln_std
 
+
+def capture_mhsa_ffn_outputs_l2_norm_sigma(model, model_name, loader, device):
+    model.eval()
+    mhsa_outputs = dict()
+    ffn_outputs = dict()
+    mhsa_std = dict()
+    ffn_std = dict()
+    sample_count = 0
+
+    def hook_fn(module, input, output, storage, std_storage, layer_index):
+        if output is not None:
+            # print(output.size())
+            output_avg = output.detach().cpu().mean(dim=1)  # average across tokens
+            # print(output_avg.size())
+            # exit()
+            l2_norm = torch.norm(output_avg, p='fro').item()
+            std_dev = output_avg.std().item()
+
+            if layer_index not in storage:
+                storage[layer_index] = 0
+                std_storage[layer_index] = 0
+
+            storage[layer_index] += l2_norm
+            std_storage[layer_index] += std_dev
+
+    hooks = []
+    for name, module in model.named_modules():
+        if model_name in ["bert-base-uncased", "microsoft/deberta-base"]:
+            if 'attention.output.dense' in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_forward_hook(
+                    lambda mod, inp, out, idx=layer_index: hook_fn(mod, inp, out, mhsa_outputs, mhsa_std, idx)
+                )
+                hooks.append(hook)
+            elif 'output.dense' in name and 'attention' not in name:
+                layer_index = int(name.split(".layer.")[1].split(".")[0])
+                hook = module.register_forward_hook(
+                    lambda mod, inp, out, idx=layer_index: hook_fn(mod, inp, out, ffn_outputs, ffn_std, idx)
+                )
+                hooks.append(hook)
+        elif model_name == "EleutherAI/gpt-neo-125M":
+            if 'attention.out_proj' in name:
+                layer_index = int(name.split(".h.")[1].split(".")[0])
+                hook = module.register_forward_hook(
+                    lambda mod, inp, out, idx=layer_index: hook_fn(mod, inp, out, mhsa_outputs, mhsa_std, idx)
+                )
+                hooks.append(hook)
+            elif 'mlp.c_proj' in name:
+                layer_index = int(name.split(".h.")[1].split(".")[0])
+                hook = module.register_forward_hook(
+                    lambda mod, inp, out, idx=layer_index: hook_fn(mod, inp, out, ffn_outputs, ffn_std, idx)
+                )
+                hooks.append(hook)
+
+    # Process batches
+    for batch in loader:
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        labels = batch['label'].to(device)
+        sample_count += input_ids.shape[0]
+
+        with torch.no_grad():
+            model(input_ids, attention_mask=attention_mask)
+
+    # Remove hooks
+    for hook in hooks:
+        hook.remove()
+
+    # Normalize
+    for layer_index in mhsa_outputs:
+        mhsa_outputs[layer_index] /= sample_count
+        mhsa_std[layer_index] /= sample_count
+
+    for layer_index in ffn_outputs:
+        ffn_outputs[layer_index] /= sample_count
+        ffn_std[layer_index] /= sample_count
+
+    print("MHSA Outputs L2-norm: ", mhsa_outputs)
+    print("MHSA Outputs Std-dev: ", mhsa_std)
+    print("FFN Outputs L2-norm: ", ffn_outputs)
+    print("FFN Outputs Std-dev: ", ffn_std)
+    print()
+
+    return mhsa_outputs, mhsa_std, ffn_outputs, ffn_std
 
 
 def calculate_activations(model, model_name, loader, device, test = False):
@@ -1359,6 +1476,13 @@ def gradients_analysis(args, train_texts, train_labels, val_texts, val_labels, t
 
     train_dataset = EmotionsDataset(train_texts, train_labels, tokenizer, model_name = model_name)
     val_dataset = EmotionsDataset(val_texts, val_labels, tokenizer, model_name = model_name)
+
+    # class_c_samples = [(text, label) for text, label in zip(test_texts, test_labels) if label == args.desired_train_noise_label]
+    # filtered_test_texts, filtered_test_labels = zip(*class_c_samples)
+    # count_labels(filtered_test_labels, "Test Filtered")
+    # # Create a new dataset with only class c samples
+    # test_dataset = EmotionsDataset(filtered_test_texts, filtered_test_labels, tokenizer, model_name=model_name)
+
     test_dataset = EmotionsDataset(test_texts, test_labels, tokenizer, model_name = model_name)
     lm_dataset = EmotionsDataset(lm_texts, lm_labels, tokenizer, model_name = model_name)
 
@@ -1384,16 +1508,19 @@ def gradients_analysis(args, train_texts, train_labels, val_texts, val_labels, t
     lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
     print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-    # lm_attn_ln_gradients, lm_output_ln_gradients = calculate_ln_derivatives(model, model_name, lm_loader, device)
+    lm_attn_ln_gradients, lm_output_ln_gradients = calculate_ln_derivatives(model, model_name, lm_loader, device)
 
-    # test_attn_ln_gradietns, test_output_ln_gradients = calculate_ln_derivatives(model, model_name, test_loader, device)
+    test_attn_ln_gradietns, test_output_ln_gradients = calculate_ln_derivatives(model, model_name, test_loader, device)
 
     # lm_attn_ln_gradients, lm_output_ln_gradients = calculate_ln_derivatives_output(model, model_name, lm_loader, device)
 
     # test_attn_ln_gradietns, test_output_ln_gradients = calculate_ln_derivatives_output(model, model_name, test_loader, device)
 
-    capture_ln_inputs_l2_norm_sigma(model, model_name, lm_loader, device)
-    capture_ln_inputs_l2_norm_sigma(model, model_name, test_loader, device)
+    # capture_ln_inputs_l2_norm_sigma(model, model_name, lm_loader, device)
+    # capture_ln_inputs_l2_norm_sigma(model, model_name, test_loader, device)
+
+    #capture_mhsa_ffn_outputs_l2_norm_sigma(model, model_name, lm_loader, device)
+    #capture_mhsa_ffn_outputs_l2_norm_sigma(model, model_name, test_loader, device)
 
 
 if __name__ == "__main__":
@@ -1420,7 +1547,7 @@ if __name__ == "__main__":
     validation_df = ds['validation'].to_pandas()
     test_df = ds['test'].to_pandas()
 
-    seeds_list = [64]
+    seeds_list = [28]
     for seed in seeds_list:
         print("---------------------------------------------------------------------------")
         print("Results for seed: " ,seed)

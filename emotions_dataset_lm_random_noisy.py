@@ -408,7 +408,7 @@ class CustomClassificationModel_layer_analysis(nn.Module):
             # # Remove bias from transformer layers (attention and feedforward layers)
             for name, module in self.backbone.named_modules():
                     
-                if('LayerNorm' in name or 'layer_norm' in name):
+                if('layer_norm' in name):
                     layer_index = int(name.split(".layer.")[1].split(".")[0])
                     if(layer_index in remove_layers):
                         module.weight = None
@@ -1084,6 +1084,8 @@ def finetune_bert(args, train_texts, train_labels, val_texts, val_labels, test_t
         test_acc_list_layers, test_loss_list_layers = {}, {}
         lm_acc_list_layers, lm_loss_list_layers = {}, {}
         layers_mapping = {'early': [0,1,2,3], 'middle': [4,5,6,7], 'later': [8,9,10,11]}
+        if (model_name == "distilbert-base-uncased"):
+            layers_mapping = {'early': [0,1], 'middle': [2,3], 'later': [4,5]}
         for layers_type, layer_idx_list in layers_mapping.items():
             print(f"For {layers_type} layers: ", layer_idx_list)
             # Model setup
@@ -1193,15 +1195,15 @@ def finetune_bert(args, train_texts, train_labels, val_texts, val_labels, test_t
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
 
-            if(epoch >= 40 and lm_acc == 1):
-                break
+            # if(epoch >= 40 and lm_acc == 1):
+            #     break
 
         
         print("Label Memorization Analysis: ")
         lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
         print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
-        torch.save(model.state_dict(),f'saved_models_bias_impact/emotions_dataset_model_deberta.pth')
+        # torch.save(model.state_dict(),f'saved_models_bias_impact/emotions_dataset_model_distilbert.pth')
         
 
 if __name__ == "__main__":

@@ -794,7 +794,7 @@ if __name__ == "__main__":
     test_labels = np.array([test_dataset[i][1] for i in range(len(test_dataset))])
 
 
-    seeds_list = [64]
+    seeds_list = [28]
     for seed in seeds_list:
         # Perform stratified split into training and validation sets
         train_indices, val_indices = train_test_split(

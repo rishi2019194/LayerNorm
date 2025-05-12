@@ -1115,15 +1115,15 @@ def finetune_roberta(args, train_texts, train_labels, val_texts, val_labels, tes
             test_loss_list.append(test_loss)
             lm_loss_list.append(lm_loss)
 
-            if(epoch >= 40 and lm_acc == 1):
-                break
+            # if(epoch >= 40 and lm_acc == 1):
+            #     break
 
         print("Label Memorization Analysis: ")
         lm_loss, lm_acc, lm_precision, lm_recall, lm_f1 = evaluate_model(model, lm_loader, device, lm = True)
         print(f"LM Loss: {lm_loss:.4f}, Accuracy: {lm_acc:.4f}, Precision: {lm_precision:.4f}, Recall: {lm_recall:.4f}, F1: {lm_f1:.4f}")
 
         
-        torch.save(model.state_dict(),f'saved_models_bias_impact/news_dataset_model_longformer.pth')
+        # torch.save(model.state_dict(),f'saved_models_bias_impact/news_dataset_model_longformer.pth')
 
 
 if __name__ == "__main__":

@@ -1121,7 +1121,7 @@ if __name__ == "__main__":
     parser.add_argument("--remove", type=str, default="none", help="Parameter to remove something (if applicable).")
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate for the optimizer.")
     parser.add_argument("--percent_train_noisy_samps", type=int, default=1, help="Percentage of noisy samples in training data.")
-    parser.add_argument("--desired_train_noise_label", type=int, default=10, help="Label to assign to noisy training samples.")
+    parser.add_argument("--desired_train_noise_label", type=int, default=3, help="Label to assign to noisy training samples.")
     parser.add_argument("--single_layer_analysis", action="store_true", help="Enable single-layer analysis. Default is False.")
     parser.add_argument("--multiple_layer_analysis", action="store_true", help="Enable multiple-layer analysis. Default is False.")
 
@@ -1132,9 +1132,30 @@ if __name__ == "__main__":
     ds = load_dataset("SetFit/20_newsgroups")
     train_df = ds['train'].to_pandas()
     test_df = ds['test'].to_pandas()
+    train_df = train_df[train_df['label'].isin(range(7))]
+    test_df = test_df[test_df['label'].isin(range(7))]
+    train_label_counts = count_labels(train_df['label'], "Train")
 
     seeds_list = [28]
     for seed in seeds_list:
+
+        # Define how many samples to keep per class
+        samples_per_class = {
+            0: 480,
+            1: 580,
+            2: 500,
+            3: 150,
+            4: 100,
+            5: 300,
+            6: 200,
+        }
+
+        # Sample each class accordingly
+        train_df = pd.concat([
+            train_df[train_df['label'] == cls].sample(n=n, random_state=seed)
+            for cls, n in samples_per_class.items()
+        ], ignore_index=True)
+
         # Split the train_df into train and validation sets
         train_df, validation_df = train_test_split(
             train_df, 
