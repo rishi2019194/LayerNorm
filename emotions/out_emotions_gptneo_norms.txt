@@ -1,0 +1,904 @@
+---------------------------------------------------------------------------
+Results for seed:  28
+Model: EleutherAI/gpt-neo-125M, Batch size: 16, Epochs: 70
+Learning rate: 2e-05, Device: cuda:1
+Noise: 1% with label 5
+Label counts for Train:
+  Label 0: 4666
+  Label 3: 2159
+  Label 2: 1304
+  Label 5: 572
+  Label 4: 1937
+  Label 1: 5362
+Label counts for Validation:
+  Label 0: 550
+  Label 2: 178
+  Label 3: 275
+  Label 1: 704
+  Label 4: 212
+  Label 5: 81
+Label counts for Test:
+  Label 0: 581
+  Label 1: 695
+  Label 4: 224
+  Label 3: 275
+  Label 2: 159
+  Label 5: 66
+160
+Actual labels:  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+Label counts for Train:
+  Label 0: 4693
+  Label 3: 2195
+  Label 2: 1341
+  Label 5: 412
+  Label 4: 1969
+  Label 1: 5390
+Layer: backbone.transformer.wte.weight, Size: torch.Size([50257, 768]), req grad: True
+Layer: backbone.transformer.wpe.weight, Size: torch.Size([2048, 768]), req grad: True
+Layer: backbone.transformer.h.0.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.0.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.0.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.0.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.0.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.0.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.0.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.0.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.0.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.0.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.1.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.1.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.1.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.1.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.1.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.2.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.2.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.2.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.2.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.2.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.3.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.3.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.3.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.3.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.3.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.4.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.4.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.4.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.4.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.4.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.5.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.5.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.5.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.5.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.5.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.6.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.6.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.6.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.6.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.6.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.7.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.7.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.7.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.7.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.7.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.8.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.8.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.8.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.8.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.8.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.9.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.9.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.9.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.9.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.9.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.10.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.10.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.10.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.10.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.10.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.ln_1.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.ln_1.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.attn.attention.k_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.11.attn.attention.v_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.11.attn.attention.q_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.11.attn.attention.out_proj.weight, Size: torch.Size([768, 768]), req grad: True
+Layer: backbone.transformer.h.11.attn.attention.out_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.ln_2.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.ln_2.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_fc.weight, Size: torch.Size([3072, 768]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_fc.bias, Size: torch.Size([3072]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_proj.weight, Size: torch.Size([768, 3072]), req grad: True
+Layer: backbone.transformer.h.11.mlp.c_proj.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.ln_f.weight, Size: torch.Size([768]), req grad: True
+Layer: backbone.transformer.ln_f.bias, Size: torch.Size([768]), req grad: True
+Layer: backbone.score.weight, Size: torch.Size([6, 768]), req grad: True
+Epoch 1/70
+Train Loss: 0.7756, Accuracy: 0.7256, Precision: 0.6849, Recall: 0.5928, F1: 0.6231
+Validation Loss: 0.2511, Accuracy: 0.9150, Precision: 0.9112, Recall: 0.8751, F1: 0.8883
+Test Loss: 0.2511, Accuracy: 0.9060, Precision: 0.8873, Recall: 0.8289, F1: 0.8489
+LM Predictions:  [4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 5, 1, 5, 5, 5, 1, 5, 5, 5, 4, 5, 5, 4, 5, 4, 5, 4, 5, 4, 5, 5, 4, 5, 1, 5, 4, 3, 3, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 1, 5, 4, 5, 5, 4, 5, 1, 5, 1, 4, 5, 4, 1, 5, 4, 4, 5, 5, 4, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 4, 4, 5, 4, 4, 5, 4, 5, 5, 5, 5, 5, 4, 4, 5, 5, 3, 4, 4, 5, 5, 4, 5, 3, 5, 5, 5, 5, 5, 4, 5, 5, 4, 5, 4, 4, 5, 4, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 3.1779, Accuracy: 0.0875, Precision: 0.1212, Recall: 0.0759, F1: 0.0809
+Attention LayerNorm derivatives:  {11: 2.2452857592725195e-05, 10: 5.67321949347388e-05, 9: 4.889454066869803e-05, 8: 0.00014165496395435184, 7: 9.94513975456357e-05, 6: 0.00018225387611892074, 5: 0.00013591800234280527, 4: 0.00015430472558364272, 3: 0.00015695855836383998, 2: 0.0003288018051534891, 1: 0.000555648934096098, 0: 0.0368688628077507}
+Output LayerNorm derivatives:  {11: 1.3946445506007876e-05, 10: 2.385585685260594e-05, 9: 4.036058089695871e-05, 8: 5.234698983258568e-05, 7: 0.00011860565427923575, 6: 0.00013135577319189906, 5: 0.00013566618144977838, 4: 0.0001561565004521981, 3: 0.00019140735093969852, 2: 0.00018651036953087896, 1: 0.00031017165747471154, 0: 0.0007390091195702553}
+
+Epoch 2/70
+Train Loss: 0.1939, Accuracy: 0.9266, Precision: 0.8681, Recall: 0.8758, F1: 0.8714
+Validation Loss: 0.1705, Accuracy: 0.9345, Precision: 0.9172, Recall: 0.8983, F1: 0.9064
+Test Loss: 0.1705, Accuracy: 0.9180, Precision: 0.8829, Recall: 0.8636, F1: 0.8714
+LM Predictions:  [4, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 3, 5, 4, 5, 5, 5, 5, 5, 5, 4, 5, 1, 4, 1, 5, 4, 5, 5, 4, 5, 5, 5, 1, 5, 5, 4, 1, 5, 4, 5, 5, 5, 5, 4, 5, 4, 5, 4, 5, 5, 5, 5, 5, 5, 4, 1, 5, 4, 5, 5, 5, 5, 5, 5, 4, 4, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 5, 1, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 3, 4, 4, 5, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 4, 4, 5, 4, 4, 5, 5, 4, 5, 5, 5, 5, 4, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 2.7024, Accuracy: 0.0750, Precision: 0.1032, Recall: 0.0640, F1: 0.0694
+Attention LayerNorm derivatives:  {11: 1.7348740584566258e-05, 10: 4.506480399868451e-05, 9: 4.3300253310007975e-05, 8: 0.00012981361942365766, 7: 9.193104779114947e-05, 6: 0.00016787175263743848, 5: 0.00013292129733599722, 4: 0.00014510779874399304, 3: 0.0001454925659345463, 2: 0.00031107207178138196, 1: 0.0005467691808007658, 0: 0.03550827130675316}
+Output LayerNorm derivatives:  {11: 9.545921784592792e-06, 10: 1.8497688870411366e-05, 9: 3.3327534765703604e-05, 8: 4.314982288633473e-05, 7: 0.00010871767881326377, 6: 0.00012035770487273112, 5: 0.0001240354758920148, 4: 0.0001454241864848882, 3: 0.0001737880811560899, 2: 0.00017121026758104563, 1: 0.00029933653422631323, 0: 0.0007328583160415292}
+
+Epoch 3/70
+Train Loss: 0.1219, Accuracy: 0.9527, Precision: 0.9047, Recall: 0.9186, F1: 0.9109
+Validation Loss: 0.1786, Accuracy: 0.9355, Precision: 0.9263, Recall: 0.8991, F1: 0.9091
+Test Loss: 0.1786, Accuracy: 0.9205, Precision: 0.8824, Recall: 0.8600, F1: 0.8673
+LM Predictions:  [5, 5, 4, 5, 5, 5, 4, 5, 5, 3, 4, 4, 5, 5, 1, 3, 5, 5, 4, 5, 5, 5, 5, 5, 1, 4, 4, 5, 4, 5, 4, 5, 4, 5, 4, 2, 5, 4, 5, 5, 5, 4, 3, 3, 4, 5, 5, 5, 5, 5, 1, 4, 5, 1, 4, 1, 5, 4, 5, 5, 4, 5, 3, 2, 1, 4, 5, 4, 0, 5, 4, 4, 5, 5, 1, 1, 5, 5, 3, 2, 5, 2, 5, 5, 5, 5, 4, 1, 4, 4, 5, 5, 4, 5, 5, 5, 4, 5, 5, 5, 5, 4, 5, 5, 5, 4, 2, 5, 5, 5, 1, 5, 4, 4, 5, 1, 4, 5, 4, 5, 3, 5, 5, 5, 4, 4, 3, 5, 4, 4, 4, 5, 2, 5, 5, 5, 5, 4, 4, 5, 5, 5, 5, 5, 4, 5, 4, 4, 5, 5, 4, 5, 5, 4, 5, 5, 5, 5, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 1.9706, Accuracy: 0.2313, Precision: 0.4721, Recall: 0.1903, F1: 0.2361
+Attention LayerNorm derivatives:  {11: 1.647261160542257e-05, 10: 4.435586015461013e-05, 9: 4.4035194150637835e-05, 8: 0.0001239952107425779, 7: 9.555608266964555e-05, 6: 0.00017398021009285003, 5: 0.00013581544044427574, 4: 0.00014805405226070434, 3: 0.00014776458556298167, 2: 0.0003044665209017694, 1: 0.0005208171205595136, 0: 0.034396059811115265}
+Output LayerNorm derivatives:  {11: 8.788961167738307e-06, 10: 1.7379950804752298e-05, 9: 3.443346940912306e-05, 8: 4.453859946806915e-05, 7: 0.00010570379527052864, 6: 0.00012547793448902667, 5: 0.00012824729492422193, 4: 0.00015016511315479875, 3: 0.0001777856523403898, 2: 0.00017372964066453278, 1: 0.0002942690334748477, 0: 0.0006953999982215464}
+
+Epoch 4/70
+Train Loss: 0.0865, Accuracy: 0.9659, Precision: 0.9259, Recall: 0.9371, F1: 0.9311
+Validation Loss: 0.1928, Accuracy: 0.9305, Precision: 0.9204, Recall: 0.8886, F1: 0.9018
+Test Loss: 0.1928, Accuracy: 0.9240, Precision: 0.8910, Recall: 0.8606, F1: 0.8728
+LM Predictions:  [0, 5, 4, 5, 2, 3, 4, 5, 5, 3, 3, 4, 2, 5, 1, 3, 5, 1, 4, 5, 5, 3, 5, 5, 1, 4, 4, 2, 5, 5, 4, 1, 4, 5, 4, 5, 5, 4, 1, 5, 5, 4, 2, 3, 4, 5, 5, 5, 0, 5, 5, 4, 5, 1, 4, 3, 5, 4, 5, 5, 0, 5, 3, 5, 1, 4, 5, 4, 5, 5, 4, 5, 5, 5, 1, 1, 5, 0, 5, 2, 0, 5, 5, 5, 2, 5, 4, 5, 5, 4, 1, 5, 3, 1, 2, 4, 4, 0, 5, 5, 3, 4, 5, 1, 5, 1, 2, 2, 1, 5, 1, 5, 3, 5, 5, 1, 4, 1, 4, 5, 3, 5, 3, 5, 4, 5, 3, 3, 4, 4, 4, 5, 5, 5, 5, 3, 5, 5, 5, 1, 5, 4, 5, 2, 5, 0, 4, 5, 5, 5, 5, 5, 5, 5, 0, 5, 5, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 1.2888, Accuracy: 0.3937, Precision: 0.6791, Recall: 0.3296, F1: 0.4255
+Attention LayerNorm derivatives:  {11: 1.7952630514628254e-05, 10: 4.957983401254751e-05, 9: 4.9208807467948645e-05, 8: 0.0001419605250703171, 7: 0.00010786604980239645, 6: 0.0001947627024492249, 5: 0.00015899004938546568, 4: 0.00017745670629665256, 3: 0.00018112990073859692, 2: 0.0003478997969068587, 1: 0.0005701302434317768, 0: 0.03971514105796814}
+Output LayerNorm derivatives:  {11: 8.89990678842878e-06, 10: 1.8849934349418618e-05, 9: 3.8244797906372696e-05, 8: 4.9393715016776696e-05, 7: 0.00011984629963990301, 6: 0.0001400123437633738, 5: 0.00014605271280743182, 4: 0.00017682228644844145, 3: 0.0002108735789079219, 2: 0.00019903980137314647, 1: 0.00031908773235045373, 0: 0.0007937856134958565}
+
+Epoch 5/70
+Train Loss: 0.0716, Accuracy: 0.9743, Precision: 0.9466, Recall: 0.9551, F1: 0.9507
+Validation Loss: 0.2354, Accuracy: 0.9205, Precision: 0.9236, Recall: 0.8553, F1: 0.8806
+Test Loss: 0.2354, Accuracy: 0.9070, Precision: 0.8825, Recall: 0.8152, F1: 0.8404
+LM Predictions:  [4, 5, 4, 5, 5, 5, 5, 1, 5, 3, 5, 4, 2, 0, 1, 3, 5, 1, 5, 5, 5, 3, 5, 1, 1, 4, 4, 2, 4, 5, 4, 5, 4, 5, 1, 1, 1, 4, 5, 1, 5, 4, 1, 4, 5, 5, 0, 5, 0, 5, 1, 4, 1, 1, 4, 1, 5, 4, 0, 5, 4, 1, 5, 5, 1, 4, 0, 4, 1, 5, 3, 0, 1, 5, 1, 1, 0, 0, 3, 2, 0, 2, 5, 5, 1, 5, 0, 2, 5, 4, 5, 5, 3, 1, 5, 5, 4, 0, 5, 0, 1, 1, 5, 1, 0, 1, 2, 5, 5, 5, 1, 5, 4, 3, 5, 1, 4, 1, 4, 5, 3, 1, 3, 0, 4, 4, 5, 3, 0, 4, 4, 5, 1, 4, 5, 4, 5, 2, 5, 1, 5, 5, 5, 2, 4, 4, 4, 4, 1, 5, 2, 5, 5, 4, 0, 4, 5, 3, 5, 5]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 1.5703, Accuracy: 0.4375, Precision: 0.6450, Recall: 0.3810, F1: 0.4397
+Attention LayerNorm derivatives:  {11: 2.184994809795171e-05, 10: 5.857976429979317e-05, 9: 6.325118738459423e-05, 8: 0.00018302311946172267, 7: 0.00014382394147105515, 6: 0.0002506893069949001, 5: 0.0002287610259372741, 4: 0.000338122685207054, 3: 0.0006013450911268592, 2: 0.0012694147881120443, 1: 0.0023551674094051123, 0: 0.1780429482460022}
+Output LayerNorm derivatives:  {11: 1.0434376235934906e-05, 10: 2.291638702445198e-05, 9: 4.569022712530568e-05, 8: 6.342494452837855e-05, 7: 0.00015408292529173195, 6: 0.00018587859813123941, 5: 0.00019934703595936298, 4: 0.0002618619764689356, 3: 0.00043509219540283084, 2: 0.000590798445045948, 1: 0.0011956979287788272, 0: 0.0031957635655999184}
+
+Epoch 6/70
+Train Loss: 0.0565, Accuracy: 0.9794, Precision: 0.9530, Recall: 0.9592, F1: 0.9560
+Validation Loss: 0.2515, Accuracy: 0.9240, Precision: 0.9288, Recall: 0.8507, F1: 0.8813
+Test Loss: 0.2515, Accuracy: 0.9125, Precision: 0.8856, Recall: 0.8228, F1: 0.8482
+LM Predictions:  [0, 1, 4, 2, 1, 3, 4, 1, 5, 3, 3, 4, 2, 0, 1, 3, 5, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 4, 4, 0, 1, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 1, 4, 1, 3, 4, 3, 0, 1, 2, 3, 2, 1, 4, 0, 4, 4, 5, 3, 0, 5, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 1, 2, 4, 0, 1, 4, 1, 1, 1, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 5, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 3, 4, 5, 5, 1, 0, 4, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.4275, Accuracy: 0.8625, Precision: 0.7633, Recall: 0.7224, F1: 0.7340
+Attention LayerNorm derivatives:  {11: 2.5414807168999687e-05, 10: 6.699225923512131e-05, 9: 7.233247015392408e-05, 8: 0.00022309378255158663, 7: 0.00016716490790713578, 6: 0.00029609125340357423, 5: 0.00025159245706163347, 4: 0.0002809403813444078, 3: 0.0002893867203965783, 2: 0.0005192689714021981, 1: 0.0007928948616608977, 0: 0.05991572514176369}
+Output LayerNorm derivatives:  {11: 1.088221870304551e-05, 10: 2.714510446821805e-05, 9: 5.8924004406435415e-05, 8: 7.523853128077462e-05, 7: 0.0001910724677145481, 6: 0.00021321699023246765, 5: 0.00023053851327858865, 4: 0.0002788749698083848, 3: 0.0003389545017853379, 2: 0.0003205484536010772, 1: 0.0004909213166683912, 0: 0.0011438897345215082}
+
+Epoch 7/70
+Train Loss: 0.0301, Accuracy: 0.9909, Precision: 0.9812, Recall: 0.9838, F1: 0.9825
+Validation Loss: 0.2316, Accuracy: 0.9270, Precision: 0.9150, Recall: 0.8743, F1: 0.8907
+Test Loss: 0.2316, Accuracy: 0.9225, Precision: 0.8914, Recall: 0.8611, F1: 0.8732
+LM Predictions:  [0, 1, 4, 2, 1, 3, 4, 1, 5, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 4, 4, 0, 2, 4, 4, 1, 1, 2, 5, 2, 4, 2, 3, 0, 1, 0, 5, 1, 4, 1, 0, 4, 3, 3, 4, 3, 0, 0, 2, 3, 2, 1, 4, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 0, 1, 1, 5, 3, 1, 2, 4, 4, 0, 0, 0, 4, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 4, 1, 4, 0, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.3113, Accuracy: 0.9062, Precision: 0.7828, Recall: 0.7648, F1: 0.7677
+Attention LayerNorm derivatives:  {11: 2.5433049813727848e-05, 10: 7.16593858669512e-05, 9: 7.544938125647604e-05, 8: 0.00021921913139522076, 7: 0.00016767326451372355, 6: 0.00029491784516721964, 5: 0.00024553833645768464, 4: 0.00027663749642670155, 3: 0.000288901588646695, 2: 0.0005097133689559996, 1: 0.000791730941273272, 0: 0.05919049307703972}
+Output LayerNorm derivatives:  {11: 1.0591821592242923e-05, 10: 2.75727579719387e-05, 9: 6.0580146964639425e-05, 8: 7.85089869168587e-05, 7: 0.00018648394325282425, 6: 0.00021613246644847095, 5: 0.00022759439889341593, 4: 0.00027300219517201185, 3: 0.00033331511076539755, 2: 0.00031749135814607143, 1: 0.0004863256181124598, 0: 0.0011353966547176242}
+
+Epoch 8/70
+Train Loss: 0.0235, Accuracy: 0.9930, Precision: 0.9875, Recall: 0.9876, F1: 0.9876
+Validation Loss: 0.2446, Accuracy: 0.9245, Precision: 0.8923, Recall: 0.8710, F1: 0.8742
+Test Loss: 0.2446, Accuracy: 0.9070, Precision: 0.8574, Recall: 0.8438, F1: 0.8457
+LM Predictions:  [0, 1, 4, 2, 2, 3, 2, 2, 2, 3, 4, 4, 2, 0, 1, 3, 2, 1, 4, 2, 2, 3, 4, 1, 5, 4, 4, 2, 2, 3, 5, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 4, 3, 0, 5, 0, 2, 1, 4, 2, 0, 4, 3, 2, 4, 3, 0, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 5, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 4, 1, 2, 3, 2, 2, 4, 4, 0, 0, 0, 5, 1, 3, 4, 0, 5, 2, 2, 2, 4, 1, 2, 3, 3, 3, 4, 3, 1, 4, 2, 3, 2, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 4, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 4, 4, 1, 4, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.4990, Accuracy: 0.8375, Precision: 0.7565, Recall: 0.6947, F1: 0.7129
+Attention LayerNorm derivatives:  {11: 3.055471461266279e-05, 10: 8.655012788949534e-05, 9: 9.223215602105483e-05, 8: 0.0002768362464848906, 7: 0.00021092961833346635, 6: 0.00038398124161176383, 5: 0.00031975473393686116, 4: 0.00034747080644592643, 3: 0.00033585631172172725, 2: 0.0005975400563329458, 1: 0.0009289919398725033, 0: 0.06768390536308289}
+Output LayerNorm derivatives:  {11: 1.2087339200661518e-05, 10: 3.4406097256578505e-05, 9: 7.243568688863888e-05, 8: 9.60918259806931e-05, 7: 0.0002337500045541674, 6: 0.0002819372166413814, 5: 0.0002952145005110651, 4: 0.00035016864421777427, 3: 0.0004068508860655129, 2: 0.0003498831356409937, 1: 0.0005468514864332974, 0: 0.0013019619509577751}
+
+Epoch 9/70
+Train Loss: 0.0209, Accuracy: 0.9933, Precision: 0.9869, Recall: 0.9867, F1: 0.9868
+Validation Loss: 0.2405, Accuracy: 0.9315, Precision: 0.9221, Recall: 0.8858, F1: 0.8984
+Test Loss: 0.2405, Accuracy: 0.9240, Precision: 0.8968, Recall: 0.8640, F1: 0.8752
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 5, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 5, 4, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 4, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1333, Accuracy: 0.9688, Precision: 0.8190, Recall: 0.8103, F1: 0.8138
+Attention LayerNorm derivatives:  {11: 2.8128823032602668e-05, 10: 7.751231169095263e-05, 9: 8.549183257855475e-05, 8: 0.00024337574723176658, 7: 0.00019483665528241545, 6: 0.0003461177693679929, 5: 0.0002891444892156869, 4: 0.00031998861231841147, 3: 0.00032257361453957856, 2: 0.0005642218748107553, 1: 0.0008849574951454997, 0: 0.06499367207288742}
+Output LayerNorm derivatives:  {11: 1.0943877896352205e-05, 10: 3.0221497581806034e-05, 9: 6.796830712119117e-05, 8: 9.018588752951473e-05, 7: 0.0002128632622770965, 6: 0.00025218012160621583, 5: 0.00026989233447238803, 4: 0.00032254226971417665, 3: 0.0003845420724246651, 2: 0.00034332863288000226, 1: 0.0005310215055942535, 0: 0.0012572618434205651}
+
+Epoch 10/70
+Train Loss: 0.0182, Accuracy: 0.9948, Precision: 0.9905, Recall: 0.9911, F1: 0.9908
+Validation Loss: 0.2653, Accuracy: 0.9200, Precision: 0.9027, Recall: 0.8584, F1: 0.8737
+Test Loss: 0.2653, Accuracy: 0.9140, Precision: 0.8711, Recall: 0.8492, F1: 0.8562
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 0, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 0, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0802, Accuracy: 0.9812, Precision: 0.9801, Recall: 0.9838, F1: 0.9813
+Attention LayerNorm derivatives:  {11: 2.958864570246078e-05, 10: 8.595884719397873e-05, 9: 8.982202416518703e-05, 8: 0.0002580152067821473, 7: 0.00020036111527588218, 6: 0.000341093516908586, 5: 0.00028861407190561295, 4: 0.000326257519191131, 3: 0.00032244037720374763, 2: 0.0005824717809446156, 1: 0.000912642921321094, 0: 0.06692204624414444}
+Output LayerNorm derivatives:  {11: 1.1910647117474582e-05, 10: 3.030128573300317e-05, 9: 6.969259266043082e-05, 8: 9.202263754559681e-05, 7: 0.00022210307361092418, 6: 0.00024774938356131315, 5: 0.0002733711153268814, 4: 0.0003254085604567081, 3: 0.00038826430682092905, 2: 0.0003499365411698818, 1: 0.0005450819153338671, 0: 0.0012945804046466947}
+
+Epoch 11/70
+Train Loss: 0.0195, Accuracy: 0.9944, Precision: 0.9897, Recall: 0.9903, F1: 0.9900
+Validation Loss: 0.2321, Accuracy: 0.9350, Precision: 0.9183, Recall: 0.9039, F1: 0.9101
+Test Loss: 0.2321, Accuracy: 0.9195, Precision: 0.8684, Recall: 0.8771, F1: 0.8719
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0587, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.8178192224004306e-05, 10: 7.871094567235559e-05, 9: 8.375030301976949e-05, 8: 0.0002459152601659298, 7: 0.00018674931197892874, 6: 0.00032759224995970726, 5: 0.000277630053460598, 4: 0.00030615864670835435, 3: 0.00030083893216215074, 2: 0.0005426628631539643, 1: 0.0008783306111581624, 0: 0.0642697736620903}
+Output LayerNorm derivatives:  {11: 1.1107187674497254e-05, 10: 3.0269966373452917e-05, 9: 6.601340282941237e-05, 8: 8.724112558411434e-05, 7: 0.0002110880595864728, 6: 0.00023957328812684864, 5: 0.0002528222685214132, 4: 0.0003083439078181982, 3: 0.0003618866903707385, 2: 0.0003283272380940616, 1: 0.0005192473181523383, 0: 0.00125645671505481}
+
+Epoch 12/70
+Train Loss: 0.0192, Accuracy: 0.9934, Precision: 0.9898, Recall: 0.9892, F1: 0.9895
+Validation Loss: 0.2575, Accuracy: 0.9335, Precision: 0.9164, Recall: 0.8952, F1: 0.9038
+Test Loss: 0.2575, Accuracy: 0.9185, Precision: 0.8826, Recall: 0.8683, F1: 0.8725
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 4, 5, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 4, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 5, 2, 1, 4, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 4, 2, 4, 0, 3, 4, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 4, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 4, 4, 3, 1, 4, 1, 3, 2, 2, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 5, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 4, 1, 0, 2, 4, 5, 4, 0, 4, 2, 3, 4, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.3586, Accuracy: 0.8875, Precision: 0.7801, Recall: 0.7506, F1: 0.7542
+Attention LayerNorm derivatives:  {11: 2.6450559744262137e-05, 10: 6.820716225774959e-05, 9: 7.247948087751865e-05, 8: 0.0002088129986077547, 7: 0.00016758927085902542, 6: 0.0002904754946939647, 5: 0.0002472382038831711, 4: 0.0002735332236625254, 3: 0.00028997354093007743, 2: 0.000491276616230607, 1: 0.0007620487594977021, 0: 0.06030917540192604}
+Output LayerNorm derivatives:  {11: 1.111368510464672e-05, 10: 2.8444394047255628e-05, 9: 5.710257755708881e-05, 8: 7.494978490285575e-05, 7: 0.00017888723232317716, 6: 0.00020800568745471537, 5: 0.0002246741350973025, 4: 0.00027619852335192263, 3: 0.00033688711118884385, 2: 0.00030395257635973394, 1: 0.0004657635581679642, 0: 0.0011369251878932118}
+
+Epoch 13/70
+Train Loss: 0.0172, Accuracy: 0.9949, Precision: 0.9909, Recall: 0.9919, F1: 0.9914
+Validation Loss: 0.2510, Accuracy: 0.9290, Precision: 0.9227, Recall: 0.8725, F1: 0.8911
+Test Loss: 0.2510, Accuracy: 0.9180, Precision: 0.8861, Recall: 0.8416, F1: 0.8579
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 5, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0677, Accuracy: 0.9812, Precision: 0.8235, Recall: 0.8184, F1: 0.8206
+Attention LayerNorm derivatives:  {11: 2.8442511393222958e-05, 10: 7.516864570789039e-05, 9: 8.560716378269717e-05, 8: 0.0002440784010104835, 7: 0.0001885078236227855, 6: 0.00031670171301811934, 5: 0.000284783513052389, 4: 0.00031551369465887547, 3: 0.00031109360861591995, 2: 0.0005457413499243557, 1: 0.0008637878345325589, 0: 0.06484010070562363}
+Output LayerNorm derivatives:  {11: 1.1321909369144123e-05, 10: 3.030815969395917e-05, 9: 6.444587779697031e-05, 8: 8.887081639841199e-05, 7: 0.00020193411910440773, 6: 0.0002352009469177574, 5: 0.0002516474050935358, 4: 0.0003070110105909407, 3: 0.00036560773150995374, 2: 0.0003304623533040285, 1: 0.0005181970191188157, 0: 0.0012378051178529859}
+
+Epoch 14/70
+Train Loss: 0.0179, Accuracy: 0.9946, Precision: 0.9894, Recall: 0.9891, F1: 0.9893
+Validation Loss: 0.2881, Accuracy: 0.9220, Precision: 0.8996, Recall: 0.8666, F1: 0.8727
+Test Loss: 0.2881, Accuracy: 0.9130, Precision: 0.8829, Recall: 0.8466, F1: 0.8559
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 2, 4, 2, 0, 5, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 4, 0, 4, 1, 4, 1, 1, 4, 3, 3, 4, 3, 2, 0, 2, 3, 2, 1, 4, 0, 4, 4, 0, 3, 0, 1, 4, 1, 4, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 4, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 4, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 4, 4, 1, 3, 1, 3, 2, 3, 1, 3, 4, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 4, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.2751, Accuracy: 0.8938, Precision: 0.7665, Recall: 0.7417, F1: 0.7469
+Attention LayerNorm derivatives:  {11: 3.581465352908708e-05, 10: 9.669378778198734e-05, 9: 0.00010580106027191505, 8: 0.00029304876807145774, 7: 0.0002297131868544966, 6: 0.00038212566869333386, 5: 0.00033907542820088565, 4: 0.00036258390173316, 3: 0.0003489490773063153, 2: 0.0006384491571225226, 1: 0.0009672647574916482, 0: 0.07427172362804413}
+Output LayerNorm derivatives:  {11: 1.2557201443996746e-05, 10: 3.9406750147463754e-05, 9: 8.537005487596616e-05, 8: 0.0001178392194560729, 7: 0.0002559548011049628, 6: 0.0002837210486177355, 5: 0.0003081004833802581, 4: 0.00037885596975684166, 3: 0.000421693897806108, 2: 0.0003854809619951993, 1: 0.0005923863500356674, 0: 0.0013767924392595887}
+
+Epoch 15/70
+Train Loss: 0.0218, Accuracy: 0.9933, Precision: 0.9896, Recall: 0.9876, F1: 0.9886
+Validation Loss: 0.2409, Accuracy: 0.9330, Precision: 0.9147, Recall: 0.8927, F1: 0.9010
+Test Loss: 0.2409, Accuracy: 0.9190, Precision: 0.8723, Recall: 0.8516, F1: 0.8573
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0730, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.9071057724650018e-05, 10: 8.014433842618018e-05, 9: 8.342624641954899e-05, 8: 0.000205867356271483, 7: 0.00016180310922209173, 6: 0.00027189735556021333, 5: 0.00023891706950962543, 4: 0.0002717908064369112, 3: 0.00027920567663386464, 2: 0.0004612924240063876, 1: 0.0006986762746237218, 0: 0.05844583734869957}
+Output LayerNorm derivatives:  {11: 1.1777580766647588e-05, 10: 3.169868068653159e-05, 9: 6.729304732289165e-05, 8: 9.038412827067077e-05, 7: 0.00017841527005657554, 6: 0.00021348646259866655, 5: 0.0002195251581724733, 4: 0.00027237823815084994, 3: 0.0003168307011947036, 2: 0.00029935012571513653, 1: 0.00044075059122405946, 0: 0.0010630118194967508}
+
+Epoch 16/70
+Train Loss: 0.0110, Accuracy: 0.9964, Precision: 0.9932, Recall: 0.9937, F1: 0.9934
+Validation Loss: 0.2369, Accuracy: 0.9310, Precision: 0.9065, Recall: 0.9030, F1: 0.9032
+Test Loss: 0.2369, Accuracy: 0.9195, Precision: 0.8732, Recall: 0.8770, F1: 0.8733
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0132, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.7734244213206694e-05, 10: 7.457956235157326e-05, 9: 8.280141628347337e-05, 8: 0.0002307569229742512, 7: 0.00017502106493338943, 6: 0.0002909671457018703, 5: 0.0002597904240246862, 4: 0.0002882695698644966, 3: 0.000288850482320413, 2: 0.0005074702203273773, 1: 0.0007510294090025127, 0: 0.06053125113248825}
+Output LayerNorm derivatives:  {11: 1.1088760402344633e-05, 10: 3.09179158648476e-05, 9: 6.403497536666691e-05, 8: 8.887525473255664e-05, 7: 0.00019167992286384106, 6: 0.0002256583538837731, 5: 0.00023318137391470373, 4: 0.00029124971479177475, 3: 0.00034492654958739877, 2: 0.0003101389738731086, 1: 0.00047806010115891695, 0: 0.0011097468668594956}
+
+Epoch 17/70
+Train Loss: 0.0107, Accuracy: 0.9968, Precision: 0.9938, Recall: 0.9949, F1: 0.9943
+Validation Loss: 0.2800, Accuracy: 0.9280, Precision: 0.9230, Recall: 0.8718, F1: 0.8937
+Test Loss: 0.2800, Accuracy: 0.9180, Precision: 0.8970, Recall: 0.8294, F1: 0.8554
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0393, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 3.0142336981953122e-05, 10: 7.835587894078344e-05, 9: 8.611808152636513e-05, 8: 0.00021787523292005062, 7: 0.00017103012942243367, 6: 0.0002874139463528991, 5: 0.00025971652939915657, 4: 0.00029431559960357845, 3: 0.00030534795951098204, 2: 0.0005105569143779576, 1: 0.0007703028386458755, 0: 0.06409198045730591}
+Output LayerNorm derivatives:  {11: 1.2088459698134102e-05, 10: 3.211012881365605e-05, 9: 6.697410572087392e-05, 8: 9.20767561183311e-05, 7: 0.0001827320083975792, 6: 0.00022189940500538796, 5: 0.0002341055078431964, 4: 0.00029185821767896414, 3: 0.0003476130950730294, 2: 0.00032112927874550223, 1: 0.0005002195830456913, 0: 0.001181080937385559}
+
+Epoch 18/70
+Train Loss: 0.0126, Accuracy: 0.9960, Precision: 0.9916, Recall: 0.9921, F1: 0.9919
+Validation Loss: 0.2821, Accuracy: 0.9200, Precision: 0.9015, Recall: 0.8535, F1: 0.8656
+Test Loss: 0.2821, Accuracy: 0.9150, Precision: 0.8916, Recall: 0.8253, F1: 0.8374
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 4, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 4, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 4, 3, 3, 4, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 4, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 4, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1852, Accuracy: 0.9500, Precision: 0.9600, Recall: 0.9527, F1: 0.9532
+Attention LayerNorm derivatives:  {11: 3.06150468531996e-05, 10: 7.601583638461307e-05, 9: 8.976313984021544e-05, 8: 0.00025177939096465707, 7: 0.00019584140682127327, 6: 0.00031536610913462937, 5: 0.0002926058950833976, 4: 0.0003334731445647776, 3: 0.00035030467552132905, 2: 0.0005392167367972434, 1: 0.0008038973901420832, 0: 0.0692257285118103}
+Output LayerNorm derivatives:  {11: 1.0967803973471746e-05, 10: 3.22367632179521e-05, 9: 6.583327922271565e-05, 8: 9.22794861253351e-05, 7: 0.0002110659988829866, 6: 0.0002366808184888214, 5: 0.0002543677110224962, 4: 0.00032456181361339986, 3: 0.00038579563261009753, 2: 0.0003448176139499992, 1: 0.0005286366795189679, 0: 0.0012632216094061732}
+
+Epoch 19/70
+Train Loss: 0.0230, Accuracy: 0.9927, Precision: 0.9876, Recall: 0.9865, F1: 0.9870
+Validation Loss: 0.2395, Accuracy: 0.9345, Precision: 0.9229, Recall: 0.9012, F1: 0.9108
+Test Loss: 0.2395, Accuracy: 0.9220, Precision: 0.8860, Recall: 0.8646, F1: 0.8741
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0466, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.6406882170704193e-05, 10: 7.115642802091315e-05, 9: 7.589891174575314e-05, 8: 0.00020181090803816915, 7: 0.00016052534920163453, 6: 0.00026200112188234925, 5: 0.00023438451171386987, 4: 0.0002671394031494856, 3: 0.00026278855511918664, 2: 0.0004301283915992826, 1: 0.0006122082122601569, 0: 0.05446753278374672}
+Output LayerNorm derivatives:  {11: 1.0679317711037584e-05, 10: 2.9701886887778528e-05, 9: 5.850005254615098e-05, 8: 7.855219155317172e-05, 7: 0.00016606318240519613, 6: 0.00019942304061260074, 5: 0.00021316374477464706, 4: 0.0002766056568361819, 3: 0.00033036275999620557, 2: 0.00027934095123782754, 1: 0.0004205156001262367, 0: 0.0009619686752557755}
+
+Epoch 20/70
+Train Loss: 0.0082, Accuracy: 0.9970, Precision: 0.9950, Recall: 0.9957, F1: 0.9954
+Validation Loss: 0.2940, Accuracy: 0.9295, Precision: 0.9281, Recall: 0.8667, F1: 0.8878
+Test Loss: 0.2940, Accuracy: 0.9185, Precision: 0.9026, Recall: 0.8333, F1: 0.8566
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0229, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.921236227848567e-05, 10: 7.597044896101579e-05, 9: 8.228532533394173e-05, 8: 0.00022951957362238318, 7: 0.00017921060498338193, 6: 0.00029421818908303976, 5: 0.00026844043168239295, 4: 0.00029701500898227096, 3: 0.00028724901494570076, 2: 0.00047925583203323185, 1: 0.0006955732242204249, 0: 0.061051223427057266}
+Output LayerNorm derivatives:  {11: 1.053480173140997e-05, 10: 3.179015766363591e-05, 9: 6.391586066456512e-05, 8: 8.753440488362685e-05, 7: 0.00019072441500611603, 6: 0.00022288007312454283, 5: 0.0002382337988819927, 4: 0.000302638130960986, 3: 0.0003542797639966011, 2: 0.0003081995528191328, 1: 0.00047110632294788957, 0: 0.0010831798426806927}
+
+Epoch 21/70
+Train Loss: 0.0079, Accuracy: 0.9971, Precision: 0.9954, Recall: 0.9941, F1: 0.9947
+Validation Loss: 0.2585, Accuracy: 0.9305, Precision: 0.9187, Recall: 0.8909, F1: 0.9022
+Test Loss: 0.2585, Accuracy: 0.9235, Precision: 0.8951, Recall: 0.8638, F1: 0.8764
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0067, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.6813113436219282e-05, 10: 7.40127288736403e-05, 9: 8.429185254499316e-05, 8: 0.0002206734352512285, 7: 0.0001777971046976745, 6: 0.0002992459631059319, 5: 0.0002657177101355046, 4: 0.0002921752748079598, 3: 0.00028538776678033173, 2: 0.0005017236107960343, 1: 0.000732719840016216, 0: 0.06328991800546646}
+Output LayerNorm derivatives:  {11: 1.072486429620767e-05, 10: 2.945814048871398e-05, 9: 6.036748891347088e-05, 8: 8.478180097881705e-05, 7: 0.00018430885393172503, 6: 0.00022068714315537363, 5: 0.00023476389469578862, 4: 0.00029728037770837545, 3: 0.0003573254798538983, 2: 0.00030919595155864954, 1: 0.0004879585176240653, 0: 0.0011502300621941686}
+
+Epoch 22/70
+Train Loss: 0.0144, Accuracy: 0.9949, Precision: 0.9927, Recall: 0.9927, F1: 0.9927
+Validation Loss: 0.2716, Accuracy: 0.9240, Precision: 0.9015, Recall: 0.8608, F1: 0.8722
+Test Loss: 0.2716, Accuracy: 0.9125, Precision: 0.8748, Recall: 0.8430, F1: 0.8533
+LM Predictions:  [0, 1, 4, 2, 2, 3, 1, 1, 2, 3, 1, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 5, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0716, Accuracy: 0.9688, Precision: 0.8121, Recall: 0.8083, F1: 0.8098
+Attention LayerNorm derivatives:  {11: 2.8927814128110185e-05, 10: 7.574083429062739e-05, 9: 8.586359035689384e-05, 8: 0.00024005105660762638, 7: 0.00018311646999791265, 6: 0.0003050953964702785, 5: 0.0002887547016143799, 4: 0.00032091254252009094, 3: 0.00031655951170250773, 2: 0.000529743148945272, 1: 0.0007836938602849841, 0: 0.07018470764160156}
+Output LayerNorm derivatives:  {11: 1.1580683349166065e-05, 10: 3.185729656252079e-05, 9: 6.201061478350312e-05, 8: 8.691784023540094e-05, 7: 0.00019798154244199395, 6: 0.00022278819233179092, 5: 0.0002448317827656865, 4: 0.00031264382414519787, 3: 0.0003719626402016729, 2: 0.00035443142405711114, 1: 0.000536332605406642, 0: 0.0012496388517320156}
+
+Epoch 23/70
+Train Loss: 0.0110, Accuracy: 0.9957, Precision: 0.9935, Recall: 0.9929, F1: 0.9932
+Validation Loss: 0.2664, Accuracy: 0.9310, Precision: 0.9261, Recall: 0.8780, F1: 0.8995
+Test Loss: 0.2664, Accuracy: 0.9200, Precision: 0.8948, Recall: 0.8388, F1: 0.8629
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 1, 2, 5, 0, 1, 0, 1, 1, 4, 1, 0, 4, 1, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 1, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1333, Accuracy: 0.9563, Precision: 0.8024, Recall: 0.8007, F1: 0.8002
+Attention LayerNorm derivatives:  {11: 2.8027086955262348e-05, 10: 6.653956370428205e-05, 9: 7.652949716430157e-05, 8: 0.00019585892732720822, 7: 0.00015740501112304628, 6: 0.00026137992972508073, 5: 0.0002369704016018659, 4: 0.00027766908169724047, 3: 0.00027938091079704463, 2: 0.00045438550296239555, 1: 0.0006749625317752361, 0: 0.060227636247873306}
+Output LayerNorm derivatives:  {11: 1.0894434126385022e-05, 10: 3.0272150979726575e-05, 9: 5.946796591160819e-05, 8: 8.409419388044626e-05, 7: 0.00016870452964212745, 6: 0.00020166604372207075, 5: 0.00021563636255450547, 4: 0.0002781517105177045, 3: 0.0003309664025437087, 2: 0.00030496023828163743, 1: 0.0004411547852214426, 0: 0.0010838416637852788}
+
+Epoch 24/70
+Train Loss: 0.0108, Accuracy: 0.9964, Precision: 0.9941, Recall: 0.9949, F1: 0.9945
+Validation Loss: 0.2298, Accuracy: 0.9385, Precision: 0.9250, Recall: 0.9073, F1: 0.9151
+Test Loss: 0.2298, Accuracy: 0.9255, Precision: 0.8847, Recall: 0.8659, F1: 0.8735
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0278, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.3274995328392833e-05, 10: 5.9316174883861095e-05, 9: 6.581321940757334e-05, 8: 0.00017751181439962238, 7: 0.0001400250184815377, 6: 0.00022715791419614106, 5: 0.00020102571579627693, 4: 0.00022794622054789215, 3: 0.00022427177464123815, 2: 0.00035041364026255906, 1: 0.0005138290580362082, 0: 0.04925203695893288}
+Output LayerNorm derivatives:  {11: 9.623516234569252e-06, 10: 2.6154937586397864e-05, 9: 5.017567309550941e-05, 8: 6.867215415695682e-05, 7: 0.00014725457003805786, 6: 0.00017624929023440927, 5: 0.00018183779320679605, 4: 0.0002253278944408521, 3: 0.0002654678246472031, 2: 0.00023900796077214181, 1: 0.0003474834666121751, 0: 0.0008599634747952223}
+
+Epoch 25/70
+Train Loss: 0.0081, Accuracy: 0.9967, Precision: 0.9942, Recall: 0.9942, F1: 0.9942
+Validation Loss: 0.2920, Accuracy: 0.9290, Precision: 0.9180, Recall: 0.8694, F1: 0.8812
+Test Loss: 0.2920, Accuracy: 0.9245, Precision: 0.8976, Recall: 0.8533, F1: 0.8627
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0297, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.4067085178103298e-05, 10: 5.941607741988264e-05, 9: 6.616964674321935e-05, 8: 0.00016965196118690073, 7: 0.00013586402928922325, 6: 0.00022065374650992453, 5: 0.00019619864178821445, 4: 0.00022516766330227256, 3: 0.0002238679735455662, 2: 0.000376540410798043, 1: 0.0005545872845686972, 0: 0.05242845043540001}
+Output LayerNorm derivatives:  {11: 1.0064381967822555e-05, 10: 2.6126801458303817e-05, 9: 4.7757013817317784e-05, 8: 6.681949162157252e-05, 7: 0.00014290747640188783, 6: 0.00016423001943621784, 5: 0.00017833418678492308, 4: 0.0002205187047366053, 3: 0.00025957118486985564, 2: 0.0002457219816278666, 1: 0.00037712030461989343, 0: 0.0009244153625331819}
+
+Epoch 26/70
+Train Loss: 0.0066, Accuracy: 0.9973, Precision: 0.9960, Recall: 0.9955, F1: 0.9957
+Validation Loss: 0.2847, Accuracy: 0.9280, Precision: 0.9160, Recall: 0.8789, F1: 0.8910
+Test Loss: 0.2847, Accuracy: 0.9160, Precision: 0.8811, Recall: 0.8503, F1: 0.8607
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0268, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.7900321583729237e-05, 10: 7.474511949112639e-05, 9: 8.40597422211431e-05, 8: 0.00022795709082856774, 7: 0.0001719807623885572, 6: 0.0002904475259128958, 5: 0.00026980246184393764, 4: 0.0002994143287651241, 3: 0.00029575996450148523, 2: 0.00047904744860716164, 1: 0.0007237400277517736, 0: 0.06544462591409683}
+Output LayerNorm derivatives:  {11: 1.1138152331113815e-05, 10: 2.9557832021964714e-05, 9: 6.005922841723077e-05, 8: 8.462309779133648e-05, 7: 0.00018621287017595023, 6: 0.0002078902762150392, 5: 0.00022833142429590225, 4: 0.00028768181800842285, 3: 0.0003468679788056761, 2: 0.00031747447792440653, 1: 0.0004802420735359192, 0: 0.0011654210975393653}
+
+Epoch 27/70
+Train Loss: 0.0083, Accuracy: 0.9975, Precision: 0.9950, Recall: 0.9950, F1: 0.9950
+Validation Loss: 0.2642, Accuracy: 0.9335, Precision: 0.9071, Recall: 0.9069, F1: 0.9068
+Test Loss: 0.2642, Accuracy: 0.9200, Precision: 0.8740, Recall: 0.8850, F1: 0.8791
+LM Predictions:  [4, 1, 4, 5, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 5, 5, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 5, 5, 3, 4, 1, 5, 4, 0, 1, 4, 4, 1, 1, 2, 3, 5, 4, 2, 5, 5, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 5, 3, 0, 5, 2, 5, 5, 1, 3, 0, 5, 4, 0, 3, 0, 1, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 5, 4, 0, 3, 5, 1, 1, 2, 3, 1, 2, 4, 4, 5, 0, 0, 3, 1, 5, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 5, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 5, 3, 4, 4, 4, 0, 2, 1, 3, 4, 5, 2, 5, 1, 0, 0, 2, 2, 4, 4, 1, 5, 1, 4, 2, 4, 5, 4, 0, 4, 2, 3, 5, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.4901, Accuracy: 0.8063, Precision: 0.8026, Recall: 0.6792, F1: 0.7285
+Attention LayerNorm derivatives:  {11: 2.90326770482352e-05, 10: 8.371788135264069e-05, 9: 9.286045678891242e-05, 8: 0.0002560008142609149, 7: 0.00019637017976492643, 6: 0.0003215008764527738, 5: 0.00030015470110811293, 4: 0.0003280972596257925, 3: 0.00031790236243978143, 2: 0.000534690625499934, 1: 0.0007663164869882166, 0: 0.06749078631401062}
+Output LayerNorm derivatives:  {11: 1.1716542758222204e-05, 10: 3.307961014797911e-05, 9: 6.930639938218519e-05, 8: 9.772459452506155e-05, 7: 0.0002056873927358538, 6: 0.00023958543897606432, 5: 0.00025441107572987676, 4: 0.0003223742241971195, 3: 0.0003865938924718648, 2: 0.00034192006569355726, 1: 0.0004926617839373648, 0: 0.0012070713564753532}
+
+Epoch 28/70
+Train Loss: 0.0129, Accuracy: 0.9958, Precision: 0.9934, Recall: 0.9933, F1: 0.9934
+Validation Loss: 0.2627, Accuracy: 0.9295, Precision: 0.9074, Recall: 0.8917, F1: 0.8975
+Test Loss: 0.2627, Accuracy: 0.9175, Precision: 0.8711, Recall: 0.8603, F1: 0.8635
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 0, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0513, Accuracy: 0.9812, Precision: 0.9811, Recall: 0.9836, F1: 0.9819
+Attention LayerNorm derivatives:  {11: 2.704147482290864e-05, 10: 7.055334572214633e-05, 9: 8.150542998919263e-05, 8: 0.00020032109750900418, 7: 0.00016730134666431695, 6: 0.00027188551030121744, 5: 0.0002585103502497077, 4: 0.0002925684384535998, 3: 0.00029724830528721213, 2: 0.0004662932478822768, 1: 0.0006721085519529879, 0: 0.061462294310331345}
+Output LayerNorm derivatives:  {11: 1.1265691682638135e-05, 10: 2.9194137823651545e-05, 9: 5.838693323312327e-05, 8: 8.691070979693905e-05, 7: 0.00016943534137681127, 6: 0.00020323188800830394, 5: 0.0002207061043009162, 4: 0.0002866148133762181, 3: 0.00034933851566165686, 2: 0.0003119930624961853, 1: 0.00044332933612167835, 0: 0.0010765192564576864}
+
+Epoch 29/70
+Train Loss: 0.0074, Accuracy: 0.9972, Precision: 0.9952, Recall: 0.9956, F1: 0.9954
+Validation Loss: 0.2543, Accuracy: 0.9315, Precision: 0.9217, Recall: 0.8905, F1: 0.9040
+Test Loss: 0.2543, Accuracy: 0.9175, Precision: 0.8735, Recall: 0.8478, F1: 0.8584
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 4, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0291, Accuracy: 0.9812, Precision: 0.9829, Recall: 0.9838, F1: 0.9826
+Attention LayerNorm derivatives:  {11: 2.5925217414624058e-05, 10: 6.54256873531267e-05, 9: 7.544097752543166e-05, 8: 0.00017912863404490054, 7: 0.0001436741731595248, 6: 0.00023675522243138403, 5: 0.00022562108642887324, 4: 0.0002574563550297171, 3: 0.0002592165255919099, 2: 0.00042494756053201854, 1: 0.0006145964725874364, 0: 0.0569995753467083}
+Output LayerNorm derivatives:  {11: 1.139038704423001e-05, 10: 2.8728138204314746e-05, 9: 5.28558884980157e-05, 8: 7.736285624559969e-05, 7: 0.00014751229900866747, 6: 0.0001738182472763583, 5: 0.00018812762573361397, 4: 0.00024710927391424775, 3: 0.000298153143376112, 2: 0.00027055563987232745, 1: 0.0003996039158664644, 0: 0.0010054188314825296}
+
+Epoch 30/70
+Train Loss: 0.0066, Accuracy: 0.9970, Precision: 0.9951, Recall: 0.9943, F1: 0.9947
+Validation Loss: 0.2618, Accuracy: 0.9340, Precision: 0.9038, Recall: 0.9160, F1: 0.9093
+Test Loss: 0.2618, Accuracy: 0.9185, Precision: 0.8657, Recall: 0.8776, F1: 0.8706
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0200, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.549563032516744e-05, 10: 6.516605208162218e-05, 9: 7.661675772396848e-05, 8: 0.00018102306057699025, 7: 0.00014629100041929632, 6: 0.00023889918520580977, 5: 0.000222535731154494, 4: 0.00025391869712620974, 3: 0.0002522613212931901, 2: 0.00041394535219296813, 1: 0.0006003755843266845, 0: 0.05577758327126503}
+Output LayerNorm derivatives:  {11: 1.1219449334021192e-05, 10: 2.8829048460465856e-05, 9: 5.459384192363359e-05, 8: 8.020723180379719e-05, 7: 0.00015317543875426054, 6: 0.0001818541786633432, 5: 0.000193545944057405, 4: 0.0002520184207241982, 3: 0.00030042187427170575, 2: 0.0002683641214389354, 1: 0.0003937047440558672, 0: 0.0009777090745046735}
+
+Epoch 31/70
+Train Loss: 0.0065, Accuracy: 0.9974, Precision: 0.9955, Recall: 0.9960, F1: 0.9957
+Validation Loss: 0.3095, Accuracy: 0.9280, Precision: 0.9286, Recall: 0.8749, F1: 0.8984
+Test Loss: 0.3095, Accuracy: 0.9140, Precision: 0.8817, Recall: 0.8294, F1: 0.8512
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0274, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.7188545573153533e-05, 10: 7.108061254257336e-05, 9: 8.333217556355521e-05, 8: 0.00019996163609903306, 7: 0.00015677152259740978, 6: 0.0002523672301322222, 5: 0.00024389344616793096, 4: 0.000275400816462934, 3: 0.0002730141277424991, 2: 0.0004524488758761436, 1: 0.0006683188839815557, 0: 0.06068011000752449}
+Output LayerNorm derivatives:  {11: 1.1856360288220458e-05, 10: 3.0297516786959022e-05, 9: 5.781195068266243e-05, 8: 8.34892489365302e-05, 7: 0.00016320706345140934, 6: 0.0001914941385621205, 5: 0.00020400664652697742, 4: 0.0002642789331730455, 3: 0.00031928252428770065, 2: 0.00028282683342695236, 1: 0.0004253459337633103, 0: 0.0010648756287992}
+
+Epoch 32/70
+Train Loss: 0.0079, Accuracy: 0.9969, Precision: 0.9950, Recall: 0.9947, F1: 0.9949
+Validation Loss: 0.2833, Accuracy: 0.9255, Precision: 0.9161, Recall: 0.8764, F1: 0.8921
+Test Loss: 0.2833, Accuracy: 0.9185, Precision: 0.8830, Recall: 0.8620, F1: 0.8707
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 5, 1, 2, 3, 2, 3, 2, 3, 0, 1, 5, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 3, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 5, 0, 3, 1, 3, 4, 5, 1, 2, 2, 4, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 5, 2, 1, 3, 5, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 5, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1560, Accuracy: 0.9313, Precision: 0.8141, Recall: 0.7709, F1: 0.7899
+Attention LayerNorm derivatives:  {11: 2.499304355296772e-05, 10: 6.62916645524092e-05, 9: 7.031880522845313e-05, 8: 0.00020720504107885063, 7: 0.00015476970293093473, 6: 0.00026014031027443707, 5: 0.00024021010904107243, 4: 0.00027343054534867406, 3: 0.0002720140037126839, 2: 0.0004355203127488494, 1: 0.0006583138019777834, 0: 0.06388396769762039}
+Output LayerNorm derivatives:  {11: 1.016936766973231e-05, 10: 2.7959231374552473e-05, 9: 5.011127359466627e-05, 8: 6.950827810214832e-05, 7: 0.00016253521607723087, 6: 0.0001806962100090459, 5: 0.0002024496061494574, 4: 0.00025164394173771143, 3: 0.00031012584804557264, 2: 0.0002997895353473723, 1: 0.0004297002451494336, 0: 0.0011184861650690436}
+
+Epoch 33/70
+Train Loss: 0.0108, Accuracy: 0.9956, Precision: 0.9919, Recall: 0.9906, F1: 0.9912
+Validation Loss: 0.2752, Accuracy: 0.9325, Precision: 0.9145, Recall: 0.8971, F1: 0.9025
+Test Loss: 0.2752, Accuracy: 0.9145, Precision: 0.8707, Recall: 0.8510, F1: 0.8556
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0159, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.7542120733414777e-05, 10: 7.680095586692914e-05, 9: 8.762979996390641e-05, 8: 0.00020984609727747738, 7: 0.00017314247088506818, 6: 0.0002751412976067513, 5: 0.0002636307617649436, 4: 0.0003016674017999321, 3: 0.00030288807465694845, 2: 0.00048111469368450344, 1: 0.0006576519226655364, 0: 0.0639282763004303}
+Output LayerNorm derivatives:  {11: 1.0949157513095997e-05, 10: 3.0414921639021486e-05, 9: 6.507759826490656e-05, 8: 9.244910324923694e-05, 7: 0.00017829984426498413, 6: 0.00021030679636169225, 5: 0.0002309029659954831, 4: 0.0003032010281458497, 3: 0.0003558041644282639, 2: 0.00031065894290804863, 1: 0.0004733227251563221, 0: 0.001107598072849214}
+
+Epoch 34/70
+Train Loss: 0.0063, Accuracy: 0.9972, Precision: 0.9954, Recall: 0.9958, F1: 0.9956
+Validation Loss: 0.2372, Accuracy: 0.9350, Precision: 0.9207, Recall: 0.8975, F1: 0.9071
+Test Loss: 0.2372, Accuracy: 0.9150, Precision: 0.8666, Recall: 0.8527, F1: 0.8585
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 5, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0251, Accuracy: 0.9938, Precision: 0.8333, Recall: 0.8287, F1: 0.8310
+Attention LayerNorm derivatives:  {11: 2.6728977900347672e-05, 10: 7.609555177623406e-05, 9: 8.027345029404387e-05, 8: 0.00020034657791256905, 7: 0.00015905479085631669, 6: 0.00025169833679683506, 5: 0.00024343517725355923, 4: 0.00027595629217103124, 3: 0.00028412305982783437, 2: 0.00043995564919896424, 1: 0.0006130021647550166, 0: 0.059137288480997086}
+Output LayerNorm derivatives:  {11: 1.082603102986468e-05, 10: 2.8676458896370605e-05, 9: 6.30305876256898e-05, 8: 8.398650243179873e-05, 7: 0.0001648750330787152, 6: 0.00018640104099176824, 5: 0.00020493922056630254, 4: 0.00026856581098400056, 3: 0.00032086443388834596, 2: 0.00028428700170479715, 1: 0.0004341335443314165, 0: 0.001024539233185351}
+
+Epoch 35/70
+Train Loss: 0.0060, Accuracy: 0.9969, Precision: 0.9949, Recall: 0.9946, F1: 0.9948
+Validation Loss: 0.2586, Accuracy: 0.9360, Precision: 0.9235, Recall: 0.9004, F1: 0.9092
+Test Loss: 0.2586, Accuracy: 0.9170, Precision: 0.8730, Recall: 0.8528, F1: 0.8599
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0045, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.5761239157873206e-05, 10: 7.254529191413894e-05, 9: 8.153101953212172e-05, 8: 0.00019941585196647793, 7: 0.00016357666754629463, 6: 0.00026115242508240044, 5: 0.00024895204114727676, 4: 0.00028274531359784305, 3: 0.0002840899978764355, 2: 0.000449044891865924, 1: 0.0006177815957926214, 0: 0.059605855494737625}
+Output LayerNorm derivatives:  {11: 1.0794125955726486e-05, 10: 2.8476581064751372e-05, 9: 6.1315149650909e-05, 8: 8.38732739794068e-05, 7: 0.00016817649884615093, 6: 0.00019340463040862232, 5: 0.0002137588307959959, 4: 0.00027317635249346495, 3: 0.0003298681986052543, 2: 0.0002910751791205257, 1: 0.00044600566616281867, 0: 0.0010309360222890973}
+
+Epoch 36/70
+Train Loss: 0.0092, Accuracy: 0.9960, Precision: 0.9931, Recall: 0.9930, F1: 0.9930
+Validation Loss: 0.2569, Accuracy: 0.9270, Precision: 0.9053, Recall: 0.8772, F1: 0.8867
+Test Loss: 0.2569, Accuracy: 0.9140, Precision: 0.8791, Recall: 0.8530, F1: 0.8608
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0213, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.3461801902158186e-05, 10: 6.565958028659225e-05, 9: 7.065992394927889e-05, 8: 0.00016890490951482207, 7: 0.00013916249736212194, 6: 0.00021970369562041014, 5: 0.00020877695351373404, 4: 0.00022962241200730205, 3: 0.00022724407608620822, 2: 0.0003798865946009755, 1: 0.0005550861824303865, 0: 0.05476094037294388}
+Output LayerNorm derivatives:  {11: 1.0810173080244567e-05, 10: 2.618222606542986e-05, 9: 5.236250945017673e-05, 8: 7.199680840130895e-05, 7: 0.0001398171589244157, 6: 0.00016197057266253978, 5: 0.00017635186668485403, 4: 0.00022986065596342087, 3: 0.0002692453272175044, 2: 0.00023946896544657648, 1: 0.00036532830563373864, 0: 0.0009600143530406058}
+
+Epoch 37/70
+Train Loss: 0.0055, Accuracy: 0.9973, Precision: 0.9958, Recall: 0.9956, F1: 0.9957
+Validation Loss: 0.2503, Accuracy: 0.9355, Precision: 0.9212, Recall: 0.8884, F1: 0.8999
+Test Loss: 0.2503, Accuracy: 0.9215, Precision: 0.8848, Recall: 0.8536, F1: 0.8644
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0049, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.390584268141538e-05, 10: 6.724725244566798e-05, 9: 7.377802830887958e-05, 8: 0.00019018020248040557, 7: 0.00015231686120387167, 6: 0.00024213943106587976, 5: 0.0002297593018738553, 4: 0.0002562337613198906, 3: 0.0002539579290896654, 2: 0.0004064610693603754, 1: 0.0005703705246560276, 0: 0.05656472593545914}
+Output LayerNorm derivatives:  {11: 9.942456017597578e-06, 10: 2.743568256846629e-05, 9: 5.714263170375489e-05, 8: 7.596723298775032e-05, 7: 0.0001588177983649075, 6: 0.00017665248014964163, 5: 0.0001938834902830422, 4: 0.00025025446666404605, 3: 0.00029797820025123656, 2: 0.0002639109443407506, 1: 0.0003871455555781722, 0: 0.000972005829680711}
+
+Epoch 38/70
+Train Loss: 0.0054, Accuracy: 0.9972, Precision: 0.9953, Recall: 0.9954, F1: 0.9953
+Validation Loss: 0.2344, Accuracy: 0.9410, Precision: 0.9243, Recall: 0.9123, F1: 0.9180
+Test Loss: 0.2344, Accuracy: 0.9190, Precision: 0.8739, Recall: 0.8663, F1: 0.8692
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0147, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.3800730559742078e-05, 10: 6.551368278451264e-05, 9: 7.117559289326891e-05, 8: 0.00017489663150627166, 7: 0.00014411886513698846, 6: 0.0002301483618794009, 5: 0.00021891362848691642, 4: 0.0002441336546326056, 3: 0.0002443199628032744, 2: 0.00039151034434325993, 1: 0.0005694575374945998, 0: 0.0566413551568985}
+Output LayerNorm derivatives:  {11: 1.0294826097378973e-05, 10: 2.681009027583059e-05, 9: 5.4186792112886906e-05, 8: 7.34934292268008e-05, 7: 0.00014616831322200596, 6: 0.00016811063687782735, 5: 0.00018369501049164683, 4: 0.00023810449056327343, 3: 0.00028463240596465766, 2: 0.0002563180751167238, 1: 0.0003781509294640273, 0: 0.0009817166719585657}
+
+Epoch 39/70
+Train Loss: 0.0052, Accuracy: 0.9976, Precision: 0.9958, Recall: 0.9957, F1: 0.9957
+Validation Loss: 0.2974, Accuracy: 0.9330, Precision: 0.9050, Recall: 0.9167, F1: 0.9088
+Test Loss: 0.2974, Accuracy: 0.9155, Precision: 0.8590, Recall: 0.8753, F1: 0.8643
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0075, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4867949832696468e-05, 10: 7.587049913126975e-05, 9: 8.47475603222847e-05, 8: 0.00020742214110214263, 7: 0.00016544682148378342, 6: 0.00026612900546751916, 5: 0.0002462372067384422, 4: 0.0002693611604627222, 3: 0.0002652801922522485, 2: 0.0004212456988170743, 1: 0.0006134906434454024, 0: 0.060477364808321}
+Output LayerNorm derivatives:  {11: 1.084321138478117e-05, 10: 2.9586479286081158e-05, 9: 6.646793190157041e-05, 8: 8.773658919380978e-05, 7: 0.0001728867064230144, 6: 0.00019496658933348954, 5: 0.0002128616615664214, 4: 0.0002710480475798249, 3: 0.00031605985714122653, 2: 0.00027693150332197547, 1: 0.00040874897968024015, 0: 0.0010428141104057431}
+
+Epoch 40/70
+Train Loss: 0.0075, Accuracy: 0.9965, Precision: 0.9940, Recall: 0.9946, F1: 0.9943
+Validation Loss: 0.2952, Accuracy: 0.9305, Precision: 0.9090, Recall: 0.9001, F1: 0.9018
+Test Loss: 0.2952, Accuracy: 0.9200, Precision: 0.8831, Recall: 0.8689, F1: 0.8734
+LM Predictions:  [0, 1, 4, 5, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 5, 2, 3, 0, 5, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 5, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 5, 2, 2, 4, 4, 1, 2, 1, 5, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1781, Accuracy: 0.9500, Precision: 0.8232, Recall: 0.7904, F1: 0.8060
+Attention LayerNorm derivatives:  {11: 2.253013190056663e-05, 10: 5.426791176432744e-05, 9: 6.326442235149443e-05, 8: 0.0001599989045644179, 7: 0.00013275156379677355, 6: 0.00021462664881255478, 5: 0.00022183029795996845, 4: 0.0002562949957791716, 3: 0.0002694320573937148, 2: 0.00043223972897976637, 1: 0.0006437677657231688, 0: 0.06556586176156998}
+Output LayerNorm derivatives:  {11: 1.01398654805962e-05, 10: 2.5251449187635444e-05, 9: 4.664467633119784e-05, 8: 6.370549817802384e-05, 7: 0.00012979745224583894, 6: 0.00014940382970962673, 5: 0.000170773797435686, 4: 0.0002374326140852645, 3: 0.0003046256606467068, 2: 0.0002726991951931268, 1: 0.0004144578706473112, 0: 0.0011474961647763848}
+
+Epoch 41/70
+Train Loss: 0.0129, Accuracy: 0.9957, Precision: 0.9933, Recall: 0.9939, F1: 0.9936
+Validation Loss: 0.2842, Accuracy: 0.9340, Precision: 0.9257, Recall: 0.8826, F1: 0.8989
+Test Loss: 0.2842, Accuracy: 0.9150, Precision: 0.8778, Recall: 0.8420, F1: 0.8548
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0309, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.9564485885202885e-05, 10: 7.395199645543471e-05, 9: 8.108735346468166e-05, 8: 0.00018446898320689797, 7: 0.0001592479384271428, 6: 0.00023996726667974144, 5: 0.00024017019313760102, 4: 0.0002801372029352933, 3: 0.00029197262483648956, 2: 0.00042431821930222213, 1: 0.0006446351180784404, 0: 0.06429696828126907}
+Output LayerNorm derivatives:  {11: 1.1478776286821812e-05, 10: 3.248908615205437e-05, 9: 6.311888864729553e-05, 8: 8.56993137858808e-05, 7: 0.00015766215801704675, 6: 0.00018075824482366443, 5: 0.0002068168978439644, 4: 0.00027378692175261676, 3: 0.0003395656531210989, 2: 0.00029747330700047314, 1: 0.00045003366540186107, 0: 0.0011018855730071664}
+
+Epoch 42/70
+Train Loss: 0.0052, Accuracy: 0.9968, Precision: 0.9946, Recall: 0.9954, F1: 0.9950
+Validation Loss: 0.2918, Accuracy: 0.9235, Precision: 0.9180, Recall: 0.8589, F1: 0.8808
+Test Loss: 0.2918, Accuracy: 0.9210, Precision: 0.8924, Recall: 0.8357, F1: 0.8571
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0137, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.7369422241463326e-05, 10: 7.249211193993688e-05, 9: 7.715146784903482e-05, 8: 0.00018733390606939793, 7: 0.00016075783059932292, 6: 0.00024691224098205566, 5: 0.00024038449919316918, 4: 0.0002794261963572353, 3: 0.0002874486381188035, 2: 0.0004319169092923403, 1: 0.0006128565291874111, 0: 0.060197923332452774}
+Output LayerNorm derivatives:  {11: 1.0712522453104611e-05, 10: 3.119782923022285e-05, 9: 6.384353764588013e-05, 8: 8.24135058792308e-05, 7: 0.0001595623471075669, 6: 0.00018937629647552967, 5: 0.00020857038907706738, 4: 0.0002770678838714957, 3: 0.00033208425156772137, 2: 0.0003021477605216205, 1: 0.00043760184780694544, 0: 0.0010352593380957842}
+
+Epoch 43/70
+Train Loss: 0.0040, Accuracy: 0.9978, Precision: 0.9966, Recall: 0.9957, F1: 0.9961
+Validation Loss: 0.2624, Accuracy: 0.9395, Precision: 0.9203, Recall: 0.9128, F1: 0.9153
+Test Loss: 0.2624, Accuracy: 0.9220, Precision: 0.8717, Recall: 0.8721, F1: 0.8712
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0197, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.523611874494236e-05, 10: 6.82705212966539e-05, 9: 7.324382022488862e-05, 8: 0.0001754303666530177, 7: 0.0001506062544649467, 6: 0.00023207628692034632, 5: 0.00022688243188895285, 4: 0.0002633352414704859, 3: 0.0002724998921621591, 2: 0.00040776727837510407, 1: 0.0005794518510811031, 0: 0.05733311548829079}
+Output LayerNorm derivatives:  {11: 1.0666966772987507e-05, 10: 2.9634318707394414e-05, 9: 5.8233756135450676e-05, 8: 7.725477189524099e-05, 7: 0.0001490275317337364, 6: 0.00017763310461305082, 5: 0.0001947270502569154, 4: 0.00026104686548933387, 3: 0.00031206104904413223, 2: 0.00028352561639621854, 1: 0.00041034375317394733, 0: 0.000978353200480342}
+
+Epoch 44/70
+Train Loss: 0.0048, Accuracy: 0.9975, Precision: 0.9954, Recall: 0.9956, F1: 0.9955
+Validation Loss: 0.2572, Accuracy: 0.9325, Precision: 0.9168, Recall: 0.8881, F1: 0.8990
+Test Loss: 0.2572, Accuracy: 0.9210, Precision: 0.8766, Recall: 0.8631, F1: 0.8677
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0082, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.3644457542104647e-05, 10: 6.32761511951685e-05, 9: 6.799092807341367e-05, 8: 0.00017216481501236558, 7: 0.00014570780331268907, 6: 0.0002260539768030867, 5: 0.00021901984291616827, 4: 0.00025052769342437387, 3: 0.00025715629453770816, 2: 0.0003869182546623051, 1: 0.0005549489869736135, 0: 0.05509202927350998}
+Output LayerNorm derivatives:  {11: 1.0208172170678154e-05, 10: 2.7485179089126177e-05, 9: 5.3272473451215774e-05, 8: 7.104483665898442e-05, 7: 0.00014355801977217197, 6: 0.00017045147251337767, 5: 0.00018631470447871834, 4: 0.00024770040181465447, 3: 0.0002942905994132161, 2: 0.0002679916506167501, 1: 0.000388134503737092, 0: 0.0009451476507820189}
+
+Epoch 45/70
+Train Loss: 0.0044, Accuracy: 0.9975, Precision: 0.9960, Recall: 0.9957, F1: 0.9958
+Validation Loss: 0.2741, Accuracy: 0.9345, Precision: 0.9234, Recall: 0.8884, F1: 0.9000
+Test Loss: 0.2741, Accuracy: 0.9195, Precision: 0.8834, Recall: 0.8555, F1: 0.8654
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0039, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4981098249554634e-05, 10: 6.785398727515712e-05, 9: 7.450250268448144e-05, 8: 0.00018159947649110109, 7: 0.0001563711412018165, 6: 0.0002442625700496137, 5: 0.00023978266108315438, 4: 0.00027360153035260737, 3: 0.0002846830466296524, 2: 0.00042719070916064084, 1: 0.0006125881918706, 0: 0.060020193457603455}
+Output LayerNorm derivatives:  {11: 1.0820275747391861e-05, 10: 2.9388836992438883e-05, 9: 5.861876343260519e-05, 8: 7.770151569275185e-05, 7: 0.00015276961494237185, 6: 0.00018301329691894352, 5: 0.0002024304703809321, 4: 0.00026905754930339754, 3: 0.0003219577483832836, 2: 0.00029440256184898317, 1: 0.00042599221342243254, 0: 0.0010311908554285765}
+
+Epoch 46/70
+Train Loss: 0.0047, Accuracy: 0.9974, Precision: 0.9956, Recall: 0.9959, F1: 0.9957
+Validation Loss: 0.2873, Accuracy: 0.9345, Precision: 0.9197, Recall: 0.8873, F1: 0.8953
+Test Loss: 0.2873, Accuracy: 0.9210, Precision: 0.8905, Recall: 0.8553, F1: 0.8618
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0231, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.3859784050728194e-05, 10: 6.33503295830451e-05, 9: 7.039869524305686e-05, 8: 0.00017286352522205561, 7: 0.00015013340453151613, 6: 0.00023359034094028175, 5: 0.00022604210244026035, 4: 0.00025666397414170206, 3: 0.0002641858300194144, 2: 0.00040513178100809455, 1: 0.0005866135470569134, 0: 0.05696839839220047}
+Output LayerNorm derivatives:  {11: 1.0515514077269472e-05, 10: 2.864292218873743e-05, 9: 5.517956378753297e-05, 8: 7.424768409691751e-05, 7: 0.00014656526036560535, 6: 0.00017512438353151083, 5: 0.00019055277516599745, 4: 0.00025125444517470896, 3: 0.00029991226620040834, 2: 0.0002714460715651512, 1: 0.00039897242095321417, 0: 0.0009840673301368952}
+
+Epoch 47/70
+Train Loss: 0.0044, Accuracy: 0.9976, Precision: 0.9962, Recall: 0.9961, F1: 0.9961
+Validation Loss: 0.2907, Accuracy: 0.9315, Precision: 0.9044, Recall: 0.8965, F1: 0.8983
+Test Loss: 0.2907, Accuracy: 0.9250, Precision: 0.8871, Recall: 0.8745, F1: 0.8772
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0068, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.294588011864107e-05, 10: 6.3288927776739e-05, 9: 7.164851558627561e-05, 8: 0.00017490910249762237, 7: 0.00015218208136502653, 6: 0.00023921276442706585, 5: 0.00023068705922923982, 4: 0.0002587101480457932, 3: 0.00026810733834281564, 2: 0.0004107154381927103, 1: 0.0005895643262192607, 0: 0.057409338653087616}
+Output LayerNorm derivatives:  {11: 1.0536676199990325e-05, 10: 2.8868147637695074e-05, 9: 5.736988168791868e-05, 8: 7.707945042056963e-05, 7: 0.00014901766553521156, 6: 0.00017861330707091838, 5: 0.0001963150134542957, 4: 0.0002564224414527416, 3: 0.0003026705526281148, 2: 0.00027455820236355066, 1: 0.0004006147792097181, 0: 0.0009920282755047083}
+
+Epoch 48/70
+Train Loss: 0.0122, Accuracy: 0.9953, Precision: 0.9932, Recall: 0.9924, F1: 0.9928
+Validation Loss: 0.2511, Accuracy: 0.9340, Precision: 0.9127, Recall: 0.8898, F1: 0.9002
+Test Loss: 0.2511, Accuracy: 0.9185, Precision: 0.8745, Recall: 0.8696, F1: 0.8719
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 5, 0, 5, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0606, Accuracy: 0.9750, Precision: 0.8235, Recall: 0.8120, F1: 0.8172
+Attention LayerNorm derivatives:  {11: 2.4548338842578232e-05, 10: 6.456546543631703e-05, 9: 7.055927562760189e-05, 8: 0.00016695015074219555, 7: 0.0001341327151749283, 6: 0.0002069080073852092, 5: 0.0002207816141890362, 4: 0.00025775592075660825, 3: 0.00027710216818377376, 2: 0.00040849970537237823, 1: 0.0005986741161905229, 0: 0.05817775800824165}
+Output LayerNorm derivatives:  {11: 1.1108142643934116e-05, 10: 2.767260593827814e-05, 9: 5.579719800152816e-05, 8: 7.621807890245691e-05, 7: 0.00013644184218719602, 6: 0.00015878812700975686, 5: 0.0001685403985902667, 4: 0.00023996202799025923, 3: 0.00028899527387693524, 2: 0.0002725996891967952, 1: 0.0004041353822685778, 0: 0.0009997072629630566}
+
+Epoch 49/70
+Train Loss: 0.0061, Accuracy: 0.9970, Precision: 0.9954, Recall: 0.9949, F1: 0.9951
+Validation Loss: 0.2832, Accuracy: 0.9315, Precision: 0.9168, Recall: 0.8830, F1: 0.8954
+Test Loss: 0.2832, Accuracy: 0.9185, Precision: 0.8764, Recall: 0.8491, F1: 0.8569
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0110, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.527137075958308e-05, 10: 6.864738679723814e-05, 9: 7.232297502923757e-05, 8: 0.0001725967158563435, 7: 0.00013972206215839833, 6: 0.00020876176131423563, 5: 0.00021777368965558708, 4: 0.0002621097373776138, 3: 0.000278861029073596, 2: 0.000404488731874153, 1: 0.0005730493576265872, 0: 0.05811294540762901}
+Output LayerNorm derivatives:  {11: 1.1094235560449306e-05, 10: 2.884638524847105e-05, 9: 5.9963553212583065e-05, 8: 7.970931619638577e-05, 7: 0.00014173892850521952, 6: 0.0001590153551660478, 5: 0.00017295576981268823, 4: 0.0002402028621872887, 3: 0.0003034357796423137, 2: 0.0002774182357825339, 1: 0.0004048324190080166, 0: 0.0009830782655626535}
+
+Epoch 50/70
+Train Loss: 0.0037, Accuracy: 0.9971, Precision: 0.9950, Recall: 0.9951, F1: 0.9950
+Validation Loss: 0.2715, Accuracy: 0.9370, Precision: 0.9217, Recall: 0.8918, F1: 0.9027
+Test Loss: 0.2715, Accuracy: 0.9200, Precision: 0.8842, Recall: 0.8546, F1: 0.8643
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0148, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.5351640942972153e-05, 10: 6.932049291208386e-05, 9: 7.401077164104208e-05, 8: 0.00017928525630850345, 7: 0.0001456612371839583, 6: 0.0002176068810513243, 5: 0.00022668574820272624, 4: 0.000269003096036613, 3: 0.0002884756540879607, 2: 0.0004100715450476855, 1: 0.0005795593606308103, 0: 0.05930324271321297}
+Output LayerNorm derivatives:  {11: 1.0625584764056839e-05, 10: 2.927207970060408e-05, 9: 6.251643208088353e-05, 8: 8.25146198621951e-05, 7: 0.00014790166460443288, 6: 0.00016576987400185317, 5: 0.00017971129273064435, 4: 0.0002483972639311105, 3: 0.00031510944245383143, 2: 0.00028797212871722877, 1: 0.00041119009256362915, 0: 0.0010016150772571564}
+
+Epoch 51/70
+Train Loss: 0.0037, Accuracy: 0.9979, Precision: 0.9967, Recall: 0.9962, F1: 0.9964
+Validation Loss: 0.2836, Accuracy: 0.9330, Precision: 0.9204, Recall: 0.8822, F1: 0.8973
+Test Loss: 0.2836, Accuracy: 0.9190, Precision: 0.8846, Recall: 0.8449, F1: 0.8606
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0138, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.583453169791028e-05, 10: 7.000777986831963e-05, 9: 7.465027738362551e-05, 8: 0.0001788917143130675, 7: 0.0001455903402529657, 6: 0.0002180369629058987, 5: 0.00022852770052850246, 4: 0.00027089097420684993, 3: 0.0002890628529712558, 2: 0.0004105861880816519, 1: 0.0005869814776815474, 0: 0.05932042747735977}
+Output LayerNorm derivatives:  {11: 1.084440100385109e-05, 10: 2.9758859454886988e-05, 9: 6.252761522773653e-05, 8: 8.354623423656449e-05, 7: 0.0001480259234085679, 6: 0.00016758250421844423, 5: 0.00018029974307864904, 4: 0.0002503126743249595, 3: 0.00031531316926702857, 2: 0.0002880654064938426, 1: 0.00041145129944197834, 0: 0.0010036887833848596}
+
+Epoch 52/70
+Train Loss: 0.0041, Accuracy: 0.9973, Precision: 0.9955, Recall: 0.9953, F1: 0.9954
+Validation Loss: 0.2962, Accuracy: 0.9335, Precision: 0.9233, Recall: 0.8880, F1: 0.9017
+Test Loss: 0.2962, Accuracy: 0.9170, Precision: 0.8777, Recall: 0.8464, F1: 0.8573
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0037, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4535469492548145e-05, 10: 6.785486039007083e-05, 9: 7.420423935400322e-05, 8: 0.00018073059618473053, 7: 0.0001480908103985712, 6: 0.00022314410307444632, 5: 0.0002305784437339753, 4: 0.0002746198733802885, 3: 0.00029058055952191353, 2: 0.0004152254550717771, 1: 0.0005885018035769463, 0: 0.05996042862534523}
+Output LayerNorm derivatives:  {11: 1.0469905646459665e-05, 10: 2.878606210288126e-05, 9: 6.075235432945192e-05, 8: 8.127989713102579e-05, 7: 0.00014941123663447797, 6: 0.00016964020323939621, 5: 0.00018311530584469438, 4: 0.00025306749739684165, 3: 0.0003189047856722027, 2: 0.0002892696065828204, 1: 0.00041413676808588207, 0: 0.001011609216220677}
+
+Epoch 53/70
+Train Loss: 0.0040, Accuracy: 0.9974, Precision: 0.9956, Recall: 0.9954, F1: 0.9955
+Validation Loss: 0.2938, Accuracy: 0.9320, Precision: 0.9165, Recall: 0.8885, F1: 0.8977
+Test Loss: 0.2938, Accuracy: 0.9200, Precision: 0.8895, Recall: 0.8565, F1: 0.8684
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0175, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.3867885829531588e-05, 10: 6.534723070217296e-05, 9: 6.934750854270533e-05, 8: 0.00016967777628451586, 7: 0.0001393430429743603, 6: 0.00021491135703399777, 5: 0.00022008430096320808, 4: 0.00026059828815050423, 3: 0.0002718982577789575, 2: 0.00039135085535235703, 1: 0.000563950277864933, 0: 0.05647367611527443}
+Output LayerNorm derivatives:  {11: 1.0437302989885211e-05, 10: 2.8259568352950737e-05, 9: 5.717042586184107e-05, 8: 7.533323514508083e-05, 7: 0.00013993446191307157, 6: 0.00016077722830232233, 5: 0.00017339813348371536, 4: 0.00023819175839889795, 3: 0.00029629399068653584, 2: 0.00026676032575778663, 1: 0.0003864106838591397, 0: 0.0009602797217667103}
+
+Epoch 54/70
+Train Loss: 0.0040, Accuracy: 0.9978, Precision: 0.9969, Recall: 0.9964, F1: 0.9966
+Validation Loss: 0.2822, Accuracy: 0.9325, Precision: 0.9151, Recall: 0.8942, F1: 0.9035
+Test Loss: 0.2822, Accuracy: 0.9215, Precision: 0.8807, Recall: 0.8588, F1: 0.8685
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 4, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0251, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9890, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.4455051971017383e-05, 10: 6.725544517394155e-05, 9: 7.119151996448636e-05, 8: 0.000174570333911106, 7: 0.00014386633120011538, 6: 0.00022070080740377307, 5: 0.00022557968623004854, 4: 0.0002642626059241593, 3: 0.0002713468566071242, 2: 0.0003896784328389913, 1: 0.0005557421245612204, 0: 0.05703490599989891}
+Output LayerNorm derivatives:  {11: 1.0314628525520675e-05, 10: 2.9051163437543437e-05, 9: 6.11677096458152e-05, 8: 7.976496999617666e-05, 7: 0.00014733137504663318, 6: 0.00016846043581608683, 5: 0.00018426371389068663, 4: 0.0002466194855514914, 3: 0.0003070298698730767, 2: 0.0002771395375020802, 1: 0.0003921795287169516, 0: 0.0009567531524226069}
+
+Epoch 55/70
+Train Loss: 0.0097, Accuracy: 0.9958, Precision: 0.9905, Recall: 0.9924, F1: 0.9915
+Validation Loss: 0.3527, Accuracy: 0.9280, Precision: 0.9082, Recall: 0.8844, F1: 0.8890
+Test Loss: 0.3527, Accuracy: 0.9170, Precision: 0.8704, Recall: 0.8585, F1: 0.8574
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 5, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0288, Accuracy: 0.9812, Precision: 0.8235, Recall: 0.8198, F1: 0.8212
+Attention LayerNorm derivatives:  {11: 2.3161954231909476e-05, 10: 6.639013008680195e-05, 9: 7.876098970882595e-05, 8: 0.00017969596956390887, 7: 0.00015575092402286828, 6: 0.00024667117395438254, 5: 0.0002532766666263342, 4: 0.0002885325229726732, 3: 0.00029438783531077206, 2: 0.0004494361928664148, 1: 0.0006377093377523124, 0: 0.06723764538764954}
+Output LayerNorm derivatives:  {11: 1.1097894457634538e-05, 10: 2.803190000122413e-05, 9: 5.7726269005797803e-05, 8: 7.954047032399103e-05, 7: 0.00015063871978782117, 6: 0.00018112042744178325, 5: 0.00019594236800912768, 4: 0.0002734808367677033, 3: 0.00033691682619974017, 2: 0.0003200661449227482, 1: 0.00044056549086235464, 0: 0.0011364691890776157}
+
+Epoch 56/70
+Train Loss: 0.0043, Accuracy: 0.9974, Precision: 0.9954, Recall: 0.9957, F1: 0.9955
+Validation Loss: 0.3407, Accuracy: 0.9270, Precision: 0.9211, Recall: 0.8668, F1: 0.8873
+Test Loss: 0.3407, Accuracy: 0.9180, Precision: 0.8911, Recall: 0.8391, F1: 0.8589
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0129, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.2970083591644652e-05, 10: 6.216831388883293e-05, 9: 7.025277591310441e-05, 8: 0.00016072533617261797, 7: 0.0001374636049149558, 6: 0.00021899193234276026, 5: 0.00022289346088655293, 4: 0.0002471786574460566, 3: 0.00024704146198928356, 2: 0.0003775401273742318, 1: 0.0005428501754067838, 0: 0.05725732818245888}
+Output LayerNorm derivatives:  {11: 1.1531073141668458e-05, 10: 2.766783654806204e-05, 9: 5.208295988268219e-05, 8: 7.036697206785902e-05, 7: 0.00013383316399995238, 6: 0.00016473751747980714, 5: 0.00017154403030872345, 4: 0.00022774770332034677, 3: 0.0002712794521357864, 2: 0.00025712346541695297, 1: 0.0003620284260250628, 0: 0.0009679773938842118}
+
+Epoch 57/70
+Train Loss: 0.0054, Accuracy: 0.9969, Precision: 0.9952, Recall: 0.9950, F1: 0.9951
+Validation Loss: 0.3119, Accuracy: 0.9285, Precision: 0.8988, Recall: 0.8808, F1: 0.8876
+Test Loss: 0.3119, Accuracy: 0.9215, Precision: 0.8792, Recall: 0.8710, F1: 0.8735
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0058, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4188855604734272e-05, 10: 7.009614637354389e-05, 9: 8.11204663477838e-05, 8: 0.00018118943262379616, 7: 0.0001510192232672125, 6: 0.00023032606986816972, 5: 0.0002426358696538955, 4: 0.0002751616993919015, 3: 0.0002746468526311219, 2: 0.0004110191366635263, 1: 0.0005712611600756645, 0: 0.062041979283094406}
+Output LayerNorm derivatives:  {11: 1.1562738109205384e-05, 10: 3.0148099540383555e-05, 9: 6.137981108622625e-05, 8: 8.329787669936195e-05, 7: 0.00015200783673208207, 6: 0.00017551585915498435, 5: 0.0001857865136116743, 4: 0.0002488408936187625, 3: 0.00030750257428735495, 2: 0.0002855868369806558, 1: 0.0003929610247723758, 0: 0.001026321784593165}
+
+Epoch 58/70
+Train Loss: 0.0035, Accuracy: 0.9976, Precision: 0.9961, Recall: 0.9960, F1: 0.9961
+Validation Loss: 0.3108, Accuracy: 0.9285, Precision: 0.9021, Recall: 0.8857, F1: 0.8905
+Test Loss: 0.3108, Accuracy: 0.9200, Precision: 0.8714, Recall: 0.8719, F1: 0.8697
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0054, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.329402559553273e-05, 10: 6.657736230408773e-05, 9: 7.730947982054204e-05, 8: 0.00017767104145605117, 7: 0.00014774805458728224, 6: 0.00022756260295864195, 5: 0.00023672707902733237, 4: 0.0002691168920136988, 3: 0.00026979565154761076, 2: 0.00040569042903371155, 1: 0.0005628119106404483, 0: 0.06067701801657677}
+Output LayerNorm derivatives:  {11: 1.1220063242944889e-05, 10: 2.9065691705909558e-05, 9: 5.772858639829792e-05, 8: 7.889965490903705e-05, 7: 0.0001483280211687088, 6: 0.0001707343035377562, 5: 0.00018268596613779664, 4: 0.000244172231759876, 3: 0.0003018179559148848, 2: 0.0002798825444187969, 1: 0.0003880301082972437, 0: 0.0010104217799380422}
+
+Epoch 59/70
+Train Loss: 0.0037, Accuracy: 0.9974, Precision: 0.9955, Recall: 0.9956, F1: 0.9955
+Validation Loss: 0.3142, Accuracy: 0.9315, Precision: 0.9035, Recall: 0.8899, F1: 0.8946
+Test Loss: 0.3142, Accuracy: 0.9235, Precision: 0.8756, Recall: 0.8765, F1: 0.8751
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0135, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.294101068400778e-05, 10: 6.579957698704675e-05, 9: 7.72304119891487e-05, 8: 0.00017900756211020052, 7: 0.00014860536612104625, 6: 0.0002292279968969524, 5: 0.0002355848700972274, 4: 0.00026764560607261956, 3: 0.00026776979211717844, 2: 0.00040224959957413375, 1: 0.000555761216674, 0: 0.06043393537402153}
+Output LayerNorm derivatives:  {11: 1.1015245945600327e-05, 10: 2.8961392672499642e-05, 9: 5.746407259721309e-05, 8: 7.856366573832929e-05, 7: 0.00014877147623337805, 6: 0.00017141982971224934, 5: 0.000184839780558832, 4: 0.0002458288217894733, 3: 0.0003018419083673507, 2: 0.0002776611363515258, 1: 0.00038471363950520754, 0: 0.001007662620395422}
+
+Epoch 60/70
+Train Loss: 0.0055, Accuracy: 0.9972, Precision: 0.9949, Recall: 0.9964, F1: 0.9957
+Validation Loss: 0.3556, Accuracy: 0.9230, Precision: 0.8933, Recall: 0.8567, F1: 0.8636
+Test Loss: 0.3556, Accuracy: 0.9120, Precision: 0.8790, Recall: 0.8382, F1: 0.8488
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 1, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0417, Accuracy: 0.9875, Precision: 0.9870, Recall: 0.9890, F1: 0.9879
+Attention LayerNorm derivatives:  {11: 2.691734152904246e-05, 10: 7.398479647235945e-05, 9: 9.252317977370694e-05, 8: 0.0002075965458061546, 7: 0.00018613392603583634, 6: 0.00029027913114987314, 5: 0.0003220900543965399, 4: 0.0003839805140160024, 3: 0.0003971301775891334, 2: 0.0005562568549066782, 1: 0.0007311800727620721, 0: 0.08115897327661514}
+Output LayerNorm derivatives:  {11: 1.1745086339942645e-05, 10: 3.108186137978919e-05, 9: 6.047809074516408e-05, 8: 9.121177572524175e-05, 7: 0.00017682179168332368, 6: 0.00020917241636198014, 5: 0.00023487691942136735, 4: 0.00035012702574022114, 3: 0.0004614934732671827, 2: 0.0004235300002619624, 1: 0.0005521398852579296, 0: 0.001349321799352765}
+
+Epoch 61/70
+Train Loss: 0.0061, Accuracy: 0.9964, Precision: 0.9941, Recall: 0.9947, F1: 0.9944
+Validation Loss: 0.3292, Accuracy: 0.9255, Precision: 0.9041, Recall: 0.8802, F1: 0.8868
+Test Loss: 0.3292, Accuracy: 0.9175, Precision: 0.8719, Recall: 0.8592, F1: 0.8617
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 4, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0252, Accuracy: 0.9812, Precision: 0.9829, Recall: 0.9836, F1: 0.9827
+Attention LayerNorm derivatives:  {11: 2.5826979253906757e-05, 10: 6.944212509552017e-05, 9: 8.04099763627164e-05, 8: 0.00018879651906900108, 7: 0.0001510627189418301, 6: 0.00024970187223516405, 5: 0.0002589299692772329, 4: 0.0002946813474409282, 3: 0.0003055840206798166, 2: 0.00045784536632709205, 1: 0.0006234727334231138, 0: 0.06820179522037506}
+Output LayerNorm derivatives:  {11: 1.1487210031191353e-05, 10: 3.157737955916673e-05, 9: 5.7085930166067556e-05, 8: 7.89624682511203e-05, 7: 0.00015276619524229318, 6: 0.00017545151058584452, 5: 0.0001965607953025028, 4: 0.0002694422728382051, 3: 0.0003361309936735779, 2: 0.0003069847298320383, 1: 0.00041744744521565735, 0: 0.001135294558480382}
+
+Epoch 62/70
+Train Loss: 0.0036, Accuracy: 0.9976, Precision: 0.9966, Recall: 0.9952, F1: 0.9959
+Validation Loss: 0.3351, Accuracy: 0.9290, Precision: 0.9024, Recall: 0.8865, F1: 0.8898
+Test Loss: 0.3351, Accuracy: 0.9195, Precision: 0.8722, Recall: 0.8678, F1: 0.8671
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0075, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4100438167806715e-05, 10: 6.533471605507657e-05, 9: 7.595417264383286e-05, 8: 0.00017794891027733684, 7: 0.00014699576422572136, 6: 0.00024500564904883504, 5: 0.0002489025064278394, 4: 0.0002876291982829571, 3: 0.0002949890331365168, 2: 0.0004406966036185622, 1: 0.0006038324791006744, 0: 0.06670857965946198}
+Output LayerNorm derivatives:  {11: 1.088464523490984e-05, 10: 2.9922464818810113e-05, 9: 5.5369608162436634e-05, 8: 7.676518725929782e-05, 7: 0.00014774645387660712, 6: 0.0001737144193612039, 5: 0.0001914540771394968, 4: 0.0002613691322039813, 3: 0.0003235262993257493, 2: 0.00029790756525471807, 1: 0.0004052748263347894, 0: 0.0011146276956424117}
+
+Epoch 63/70
+Train Loss: 0.0036, Accuracy: 0.9976, Precision: 0.9960, Recall: 0.9962, F1: 0.9961
+Validation Loss: 0.3352, Accuracy: 0.9285, Precision: 0.9224, Recall: 0.8649, F1: 0.8867
+Test Loss: 0.3352, Accuracy: 0.9195, Precision: 0.8829, Recall: 0.8438, F1: 0.8604
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0074, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.4504237444489263e-05, 10: 6.415179814212024e-05, 9: 7.314390677493066e-05, 8: 0.00017493114864919335, 7: 0.00014568828919436783, 6: 0.00023912196047604084, 5: 0.0002440062671666965, 4: 0.0002802845847327262, 3: 0.0002846579300239682, 2: 0.00042696265154518187, 1: 0.0005836866912432015, 0: 0.06398192048072815}
+Output LayerNorm derivatives:  {11: 1.0665684385458007e-05, 10: 3.0204793802113272e-05, 9: 5.450478784041479e-05, 8: 7.435414590872824e-05, 7: 0.0001447438116883859, 6: 0.00016992179735098034, 5: 0.00018763572734314948, 4: 0.00025515182642266154, 3: 0.00031649667653255165, 2: 0.00028917635791003704, 1: 0.0003963878261856735, 0: 0.001064745825715363}
+
+Epoch 64/70
+Train Loss: 0.0035, Accuracy: 0.9981, Precision: 0.9972, Recall: 0.9966, F1: 0.9969
+Validation Loss: 0.3220, Accuracy: 0.9365, Precision: 0.9087, Recall: 0.9182, F1: 0.9114
+Test Loss: 0.3220, Accuracy: 0.9170, Precision: 0.8612, Recall: 0.8896, F1: 0.8733
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0088, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.3524067728430964e-05, 10: 6.445258622989058e-05, 9: 7.342307071667165e-05, 8: 0.00017669193039182574, 7: 0.0001474886666983366, 6: 0.0002435783389955759, 5: 0.0002404822880635038, 4: 0.0002729266998358071, 3: 0.00027431471971794963, 2: 0.00041286597843281925, 1: 0.0005694772698916495, 0: 0.06274156272411346}
+Output LayerNorm derivatives:  {11: 1.0704020496632438e-05, 10: 2.98447921522893e-05, 9: 5.442185283754952e-05, 8: 7.517690391978249e-05, 7: 0.00014755941811017692, 6: 0.0001705418835626915, 5: 0.0001876333262771368, 4: 0.00025323982117697597, 3: 0.000310909585095942, 2: 0.00028225488495081663, 1: 0.000384241109713912, 0: 0.0010368423536419868}
+
+Epoch 65/70
+Train Loss: 0.0069, Accuracy: 0.9972, Precision: 0.9949, Recall: 0.9954, F1: 0.9951
+Validation Loss: 0.3330, Accuracy: 0.9270, Precision: 0.9119, Recall: 0.8833, F1: 0.8892
+Test Loss: 0.3330, Accuracy: 0.9175, Precision: 0.8795, Recall: 0.8606, F1: 0.8615
+LM Predictions:  [0, 5, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 4, 2, 3, 2, 2, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 5, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 4, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 1, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.1146, Accuracy: 0.9625, Precision: 0.8127, Recall: 0.8008, F1: 0.8064
+Attention LayerNorm derivatives:  {11: 2.0067736841156147e-05, 10: 5.0929098506458104e-05, 9: 6.881739682285115e-05, 8: 0.00016632323968224227, 7: 0.00014723233471158892, 6: 0.00024232431314885616, 5: 0.00024807322188280523, 4: 0.00028240724350325763, 3: 0.0002982829755637795, 2: 0.00043962712516076863, 1: 0.000552003737539053, 0: 0.06472431868314743}
+Output LayerNorm derivatives:  {11: 9.198593943438027e-06, 10: 2.4573855625931174e-05, 9: 4.410096153151244e-05, 8: 6.877498526591808e-05, 7: 0.00013929756823927164, 6: 0.00017186993500217795, 5: 0.00018640782218426466, 4: 0.00026513077318668365, 3: 0.00031483982456848025, 2: 0.0002712277928367257, 1: 0.0003987577510997653, 0: 0.0010771543020382524}
+
+Epoch 66/70
+Train Loss: 0.0061, Accuracy: 0.9971, Precision: 0.9938, Recall: 0.9941, F1: 0.9939
+Validation Loss: 0.3348, Accuracy: 0.9320, Precision: 0.9142, Recall: 0.8888, F1: 0.8996
+Test Loss: 0.3348, Accuracy: 0.9215, Precision: 0.8817, Recall: 0.8538, F1: 0.8648
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0092, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.51586770900758e-05, 10: 6.591573037439957e-05, 9: 7.505447138100863e-05, 8: 0.0001727169001242146, 7: 0.00014737494348082691, 6: 0.00023123733990360051, 5: 0.0002469821774866432, 4: 0.00028395303525030613, 3: 0.0002864561975002289, 2: 0.0004126735439058393, 1: 0.0005234486889094114, 0: 0.061661962419748306}
+Output LayerNorm derivatives:  {11: 1.1057109077228233e-05, 10: 2.9726015782216564e-05, 9: 5.374035026761703e-05, 8: 7.768320938339457e-05, 7: 0.00014143985754344612, 6: 0.00017020091763697565, 5: 0.00018794447532854974, 4: 0.00027009742916561663, 3: 0.000323521438986063, 2: 0.00027378456434234977, 1: 0.0003904390905518085, 0: 0.0010138036450371146}
+
+Epoch 67/70
+Train Loss: 0.0034, Accuracy: 0.9978, Precision: 0.9970, Recall: 0.9953, F1: 0.9961
+Validation Loss: 0.3541, Accuracy: 0.9270, Precision: 0.9149, Recall: 0.8691, F1: 0.8841
+Test Loss: 0.3541, Accuracy: 0.9250, Precision: 0.8904, Recall: 0.8573, F1: 0.8690
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0059, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.6625339160091244e-05, 10: 7.009761611698195e-05, 9: 8.005851123016328e-05, 8: 0.00018196532619185746, 7: 0.00015611815615557134, 6: 0.00024655202287249267, 5: 0.00026055649504996836, 4: 0.0002956668904516846, 3: 0.0002995177055709064, 2: 0.0004277510161045939, 1: 0.0005470889736898243, 0: 0.06459448486566544}
+Output LayerNorm derivatives:  {11: 1.1348633051966317e-05, 10: 3.1173258321359754e-05, 9: 5.689464524039067e-05, 8: 8.196550334105268e-05, 7: 0.00014842613018117845, 6: 0.00017913644842337817, 5: 0.00020049804879818112, 4: 0.0002818304637912661, 3: 0.00033438525861129165, 2: 0.0002837670035660267, 1: 0.0004050425486639142, 0: 0.0010644631693139672}
+
+Epoch 68/70
+Train Loss: 0.0035, Accuracy: 0.9971, Precision: 0.9946, Recall: 0.9957, F1: 0.9951
+Validation Loss: 0.3342, Accuracy: 0.9275, Precision: 0.9221, Recall: 0.8680, F1: 0.8898
+Test Loss: 0.3342, Accuracy: 0.9200, Precision: 0.8898, Recall: 0.8463, F1: 0.8646
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0062, Accuracy: 1.0000, Precision: 1.0000, Recall: 1.0000, F1: 1.0000
+Attention LayerNorm derivatives:  {11: 2.492575549695175e-05, 10: 6.535919237649068e-05, 9: 7.415969594148919e-05, 8: 0.0001738391729304567, 7: 0.00015035778051242232, 6: 0.00023886111739557236, 5: 0.0002519101253710687, 4: 0.00028405481134541333, 3: 0.00028821444720961154, 2: 0.00041205165325663984, 1: 0.0005264848005026579, 0: 0.06154309958219528}
+Output LayerNorm derivatives:  {11: 1.106753097701585e-05, 10: 2.927817877207417e-05, 9: 5.227818473940715e-05, 8: 7.524994725827128e-05, 7: 0.00014124551671557128, 6: 0.0001710350625216961, 5: 0.0001920425274875015, 4: 0.0002698532771319151, 3: 0.00032198679400607944, 2: 0.00027429754845798016, 1: 0.00039022366399876773, 0: 0.0010137270437553525}
+
+Epoch 69/70
+Train Loss: 0.0036, Accuracy: 0.9972, Precision: 0.9953, Recall: 0.9946, F1: 0.9949
+Validation Loss: 0.3165, Accuracy: 0.9355, Precision: 0.9177, Recall: 0.8980, F1: 0.9055
+Test Loss: 0.3165, Accuracy: 0.9220, Precision: 0.8764, Recall: 0.8763, F1: 0.8757
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0089, Accuracy: 0.9938, Precision: 0.9939, Recall: 0.9946, F1: 0.9942
+Attention LayerNorm derivatives:  {11: 2.453463093843311e-05, 10: 6.601224595215172e-05, 9: 7.459188054781407e-05, 8: 0.00017385177488904446, 7: 0.00014939469110686332, 6: 0.0002393130271229893, 5: 0.0002488085883669555, 4: 0.0002779248752631247, 3: 0.00028135674074292183, 2: 0.00040395237738266587, 1: 0.0005164676113054156, 0: 0.06035221368074417}
+Output LayerNorm derivatives:  {11: 1.0869844118133187e-05, 10: 2.9691507734241895e-05, 9: 5.436765786726028e-05, 8: 7.738833664916456e-05, 7: 0.0001430395059287548, 6: 0.00017191594815813005, 5: 0.00019271242490503937, 4: 0.0002673765120562166, 3: 0.00031549151754006743, 2: 0.0002705331426113844, 1: 0.0003827233740594238, 0: 0.0009879637509584427}
+
+Epoch 70/70
+Train Loss: 0.0038, Accuracy: 0.9975, Precision: 0.9953, Recall: 0.9960, F1: 0.9957
+Validation Loss: 0.3456, Accuracy: 0.9310, Precision: 0.9215, Recall: 0.8809, F1: 0.8945
+Test Loss: 0.3456, Accuracy: 0.9220, Precision: 0.8884, Recall: 0.8592, F1: 0.8689
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0140, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+Attention LayerNorm derivatives:  {11: 2.4946975827333517e-05, 10: 6.59261058899574e-05, 9: 7.390242535620928e-05, 8: 0.00017252311226911843, 7: 0.00014781947538722306, 6: 0.0002358464407734573, 5: 0.00024392653722316027, 4: 0.00027282049995847046, 3: 0.0002756631001830101, 2: 0.00039862122503109276, 1: 0.0005184790934436023, 0: 0.05958866328001022}
+Output LayerNorm derivatives:  {11: 1.103689555748133e-05, 10: 3.02417938655708e-05, 9: 5.481761763803661e-05, 8: 7.709272904321551e-05, 7: 0.00014126664609648287, 6: 0.00016804621554911137, 5: 0.00018858387193176895, 4: 0.0002601283777039498, 3: 0.0003070257371291518, 2: 0.0002654126437846571, 1: 0.0003766847657971084, 0: 0.0009836723329499364}
+
+Label Memorization Analysis: 
+LM Predictions:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 4, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 4, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Labels:  [0, 1, 4, 2, 2, 3, 4, 1, 2, 3, 3, 4, 2, 0, 1, 3, 3, 1, 4, 2, 2, 3, 4, 1, 1, 2, 4, 2, 2, 3, 4, 1, 3, 4, 0, 2, 4, 4, 1, 1, 2, 3, 2, 4, 2, 3, 0, 1, 0, 2, 1, 4, 1, 0, 4, 3, 3, 3, 3, 0, 0, 2, 3, 2, 1, 3, 0, 4, 4, 0, 3, 0, 0, 4, 1, 1, 0, 0, 3, 2, 0, 2, 4, 3, 2, 4, 0, 3, 3, 1, 1, 2, 3, 1, 2, 4, 4, 0, 0, 0, 3, 1, 3, 4, 0, 1, 2, 2, 2, 4, 1, 2, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 0, 4, 2, 3, 3, 4, 4, 2, 0, 2, 1, 3, 4, 4, 2, 0, 1, 0, 0, 2, 2, 4, 4, 1, 2, 1, 0, 2, 4, 3, 4, 0, 4, 2, 3, 2, 2]
+LM Loss: 0.0140, Accuracy: 0.9875, Precision: 0.9882, Recall: 0.9892, F1: 0.9884
+---------------------------------------------------------------------------
+
+
+
